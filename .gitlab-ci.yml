@@ -1,12 +1,9 @@
 stages:
-  - build
-
-
-  build_job:
+    - build
+build_job:
     stage: build
     tags:
-      - immersive-runner-cgi
+        - immersive-runner-cgi
     image: maven:latest
     script:
-      - mvn clean package test
-
+        - mvn clean package test
