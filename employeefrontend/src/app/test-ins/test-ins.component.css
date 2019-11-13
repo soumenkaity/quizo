@@ -9,4 +9,8 @@
 }
 .mat-raised-button{
     margin-left:600px;
+    margin-top:50px;
 }
+.mi{border-style: double;
+border: block width 10px; }
+

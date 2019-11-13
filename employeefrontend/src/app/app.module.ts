@@ -14,6 +14,7 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
 import { ErrorComponent } from './error/error.component'
 import { TopicService } from './topic.service';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [UserService, DataService, TopicService],
