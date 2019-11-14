@@ -1,5 +1,15 @@
   version : "3"
   services:
+    employee-service:
+      image: employeeservice
+      build: employeeservice/
+      restart: always
+      network_mode: host
+      container_name: employeeservice.jar
+      ports:
+        - "9090:9090"
+      expose:
+        - 9090
 
     eureka-service:
       image: eureka
@@ -11,13 +21,6 @@
         - "8761:8761"
       expose:
         - 8761
-
-    mongo:
-      image: mongo
-      ports:
-        - "27017:27017"
-      container_name: mongo-container
-      network_mode: host
 
     spring-config-server:
       image: config
@@ -46,7 +49,6 @@
       network_mode: host
       container_name: springapp-container
       depends_on:
-        - mongo
         - spring-config-server
         - eureka-service
       ports:
