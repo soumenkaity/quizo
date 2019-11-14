@@ -8,8 +8,8 @@ import { topicName } from './models/topicName';
   providedIn: 'root'
 })
 export class TopicService {
-
-  url: string = 'http://localhost:5000/api/topic';
+  url: string = 'http://localhost:9090/quiz/test/questions/';
+  public topic:string="java";
   constructor(private http: HttpClient) { }
 
   httpOptions = {
@@ -18,9 +18,8 @@ export class TopicService {
     })
   };
   getQuestions(topic:string){
-    var topicJSON:topicName = {
-      topic: topic
-    }
-    return this.http.post<topic[]>(this.url, topicJSON, this.httpOptions);
+    console.log("here");
+    return this.http.get(this.url);
   }
+
 }

@@ -7,7 +7,7 @@ import { score } from './models/score';
 })
 export class ScoreService {
 
-  url: string = 'http://localhost:5000/api/score';
+  url: string = 'http://localhost:9090/quiz/test/questions';
   constructor(private http: HttpClient) { }
 
   httpOptions = {

@@ -17,7 +17,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
   answerChoices:any = [];
   
   subscription;
-  topic: string;
+  topic: string="java";
   questionList;
   correct:number = 0;
   incorrect:number = 0;
@@ -28,16 +28,18 @@ export class TestPageComponent implements OnInit, OnDestroy {
     this.data.userName.subscribe(data => {
       //if user is not logged on, they cannot access this page
       if(data === ''){
-        this.r.navigate(['/error']);
+        // this.r.navigate(['/error']);
       }
     });
     this.subscription = this.data.topicSelected.subscribe(message => {
       this.topic = message;
-      this.s.getQuestions(this.topic).subscribe(data => this.questionList = data);
+      
     });
+    this.s.getQuestions(this.topic).subscribe(data => {this.questionList = data[1].questions; console.log(data[0].questions)});
+      console.log(this.questionList)
   }
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+   // this.subscription.unsubscribe();
   }
   submitQuiz(){
     //Edge case for submitting the quiz early
