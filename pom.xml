@@ -20,7 +20,7 @@
         <module>eurekaservice</module>
         <module>zuulservice</module>
         <module>springapp</module>
-        <module>employeeservice</module>
+        <module>employeeService</module>
     </modules>
 
     <properties>
