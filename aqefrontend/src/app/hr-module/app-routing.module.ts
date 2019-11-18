@@ -11,7 +11,7 @@ const routes: Routes = [
     { path:'main' , component: TopicComponent,pathMatch:'full'},
     { path:'employees' , component:EmployeeComponent},
     { path:'confirm' , component:ConfirmComponent}
-  ]}
+  ]},
 ];
 
 @NgModule({
