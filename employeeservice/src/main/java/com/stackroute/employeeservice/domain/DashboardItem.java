@@ -1,22 +1,24 @@
 package com.stackroute.employeeservice.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Data
 @Document
-@NoArgsConstructor
-@AllArgsConstructor
-public class DashboardUser {
-    public String get_employeeid() {
-        return _employeeid;
+public class DashboardItem {
+    @Id
+    private String _id;
+    private String employeename;
+    private String testname;
+    private int _testid;
+    private String _employeeId;
+    private int employeescore;
+
+    public String get_id() {
+        return _id;
     }
 
-    public void set_employeeid(String _employeeid) {
-        this._employeeid = _employeeid;
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getEmployeename() {
@@ -43,6 +45,14 @@ public class DashboardUser {
         this._testid = _testid;
     }
 
+    public String get_employeeId() {
+        return _employeeId;
+    }
+
+    public void set_employeeId(String _employeeId) {
+        this._employeeId = _employeeId;
+    }
+
     public int getEmployeescore() {
         return employeescore;
     }
@@ -50,13 +60,4 @@ public class DashboardUser {
     public void setEmployeescore(int employeescore) {
         this.employeescore = employeescore;
     }
-
-    @Id
-    private String _employeeid;
-    private String employeename;
-    private String testname;
-    private int _testid;
-    private int employeescore;
-
-
 }

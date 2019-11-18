@@ -1,11 +1,11 @@
-package com.stackroute.dashboard.service;
+package com.stackroute.employeeservice.service;
 
-import com.stackroute.dashboard.domain.DashboardUser;
+import com.stackroute.employeeservice.domain.DashboardItem;
 
 import java.util.List;
 
 public interface UserService {
-    public DashboardUser saveDashboardUser(DashboardUser dashboarduser);
-    public List<DashboardUser> getAllDashboardUser();
-    public void deleteUser(int userid);
+    public DashboardItem saveDashboardUser(DashboardItem dashboarduser);
+    public List<DashboardItem> getAllDashboardUser();
+    public DashboardItem deleteDashboardItem(DashboardItem dashboardItem);
 }

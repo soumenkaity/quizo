@@ -1,6 +1,7 @@
-package com.stackroute.dashboard.repository;
+package com.stackroute.employeeservice.repository;
 
-import com.stackroute.dashboard.domain.DashboardUser;
+import com.stackroute.employeeservice.domain.DashboardItem;
 import org.springframework.data.mongodb.repository.MongoRepository;
-public interface UserRepository extends MongoRepository<DashboardUser,Integer> {
+
+public interface UserRepository extends MongoRepository<DashboardItem,Integer> {
 }
