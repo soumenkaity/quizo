@@ -1,0 +1,15 @@
+<head>
+    <h3>
+        Enter your details
+    </h3>
+</head>
+<form class="empDetailsForm" #employeeDetailsForm="ngForm">
+    EmployeeId: <input #id type="text"><br>
+    EmployeeName: <input #name type="text"><br>
+    EmailId: <input #emailid type="text"><br>
+    Company: <input #company type="text"><br>
+    Designation: <input #designation type="text"><br>
+    PhoneNo.: <input #phoneno type="text"><br>
+    <button (click)="saveDetailsAndGoToInstructions(id.value, name.value, emailid.value, company.value, designation.value, phoneno.value)" id="submit">Submit</button>
+    
+</form>
