@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { HrModule } from './hr-module/hr.module';
 import { EmployeeModule } from './employee-module/employee.module';
+import { AuthenticationModule } from './authentication-module/authentication.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { EmployeeModule } from './employee-module/employee.module';
     AppRoutingModule,
     HrModule,
     EmployeeModule,
+    AuthenticationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
