@@ -7,17 +7,18 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
 import { ErrorComponent } from './error/error.component';
 import { EmployeedetailsComponent } from './employeedetails/employeedetails.component';
 import {EmptypageComponent} from './emptypage/emptypage.component'
+import { AuthGaurdService } from '../authentication-module/service/auth-gaurd.service';
 
 const routes: Routes = [
   {path:'employee' , children:[
-  { path:'',component:EmptypageComponent},
-  { path: 'employee-details' , component: EmployeedetailsComponent},
-  { path: 'test-instructions' , component: TestInsComponent},
-  { path: 'test-page' , component: TestPageComponent},
-  { path: 'error', component: ErrorComponent},  
-  { path: 'thankyou', component: ThankyouComponent},
-  { path: '**' , component: PageNotFoundComponent}
-  ]}
+    { path:'',component:EmptypageComponent},
+    { path: 'employee-details' , component: EmployeedetailsComponent},
+    { path: 'test-instructions' , component: TestInsComponent},
+    { path: 'test-page' , component: TestPageComponent},
+    { path: 'error', component: ErrorComponent},  
+    { path: 'thankyou', component: ThankyouComponent},
+    { path: '**' , component: PageNotFoundComponent}
+  ], canActivate:[AuthGaurdService]}
 ];
 
 @NgModule({
@@ -26,7 +27,7 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [
+export const EmployeeRoutingComponents = [
   EmptypageComponent,
   EmployeedetailsComponent,
   TestInsComponent,

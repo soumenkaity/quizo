@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { EmployeeComponent } from './employee/employee.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { TopicComponent } from './topic/topic.component';
+import { AuthGaurdService } from '../authentication-module/service/auth-gaurd.service';
 
 
 const routes: Routes = [
@@ -11,7 +12,7 @@ const routes: Routes = [
     { path:'main' , component: TopicComponent,pathMatch:'full'},
     { path:'employees' , component:EmployeeComponent},
     { path:'confirm' , component:ConfirmComponent}
-  ]},
+  ],canActivate:[AuthGaurdService]},
 ];
 
 @NgModule({

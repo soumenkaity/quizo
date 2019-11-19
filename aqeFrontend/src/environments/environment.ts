@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 
-  HrURLprefix: 'https://localhost:8080/hr',
+  HrURLprefix: 'http://localhost:8080/hr',
 };
 
 /*
