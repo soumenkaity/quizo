@@ -8,6 +8,6 @@ export class RegistrationService {
 
   constructor(private httpClient:HttpClient) { }
   register(username,password,email){
-    return this.httpClient.post<any>('http://localhost:8080/auth/register',{username,password,email})
+    return this.httpClient.post<any>('http://localhost:8080/auth/register',{username,password,email,"role":"EMP"})
   }
 }

@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { EmployeeComponent } from './employee/employee.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { TopicComponent } from './topic/topic.component';
-import { AuthGaurdService } from '../authentication-module/service/auth-gaurd.service';
+import { RoleGuardService } from '../authentication-module/service/role-guard.service';
 
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
     { path:'main' , component: TopicComponent,pathMatch:'full'},
     { path:'employees' , component:EmployeeComponent},
     { path:'confirm' , component:ConfirmComponent}
-  ],canActivate:[AuthGaurdService]},
+  ],canActivate:[RoleGuardService],data:{role:'HRM'}},
 ];
 
 @NgModule({

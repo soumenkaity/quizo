@@ -23,11 +23,7 @@ public class UserinfoController {
     public ResponseEntity currentUser(@AuthenticationPrincipal UserDetails userDetails){
         Map<Object, Object> model = new HashMap<>();
         model.put("username", userDetails.getUsername());
-        model.put("roles", userDetails.getAuthorities()
-            .stream()
-            .map(a -> ((GrantedAuthority) a).getAuthority())
-            .collect(toList())
-        );
+        model.put("role",userDetails.getAuthorities());
         return ok(model);
     }
 }

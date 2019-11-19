@@ -30,13 +30,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
             .httpBasic().disable()
             .csrf().disable()
-                .cors().disable()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
                 .authorizeRequests()
-                .antMatchers("/auth/signin").permitAll()
-                .antMatchers("/auth/register").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/employee/**").hasRole("ADM")
+                    .antMatchers("/employee/**").hasRole("EMP")
+                    .antMatchers("/hr/**").hasRole("HRM")
+                    .antMatchers("/admin/**").hasRole("ADM")
+                    .antMatchers("/auth/signin").permitAll()
+                    .antMatchers("/auth/register").permitAll()
                 .anyRequest().authenticated()
             .and()
             .apply(new JwtSecurityConfigurer(jwtTokenProvider));

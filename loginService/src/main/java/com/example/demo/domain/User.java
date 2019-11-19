@@ -12,6 +12,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -36,31 +37,29 @@ public class User implements UserDetails {
     @NotEmpty
     private String email;
 
+    @NotEmpty
+    private String role;
+
 
 
 //    @ElementCollection(fetch = FetchType.EAGER)
 //    @Builder.Default
 //    private List<String> roles = new ArrayList<>();
 
-    public List<String> getRoles() {
-        List<String> roles = new ArrayList<>();
-        roles.add("ROLE_ADMIN");
-        roles.add("ROLE_USER");
-        return roles;
+    public String getRole() {
+        return role;
     }
 //
 //    public void setRoles(List<String> roles) {
 //        this.roles = roles;
 //    }
-//
-//    @Override
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        return this.roles.stream().map(SimpleGrantedAuthority::new).collect(toList());
-//    }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+      HashSet<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + getRole()));
+        return authorities;
     }
 
     @Override

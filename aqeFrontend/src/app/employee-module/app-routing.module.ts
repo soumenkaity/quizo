@@ -7,7 +7,7 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
 import { ErrorComponent } from './error/error.component';
 import { EmployeedetailsComponent } from './employeedetails/employeedetails.component';
 import {EmptypageComponent} from './emptypage/emptypage.component'
-import { AuthGaurdService } from '../authentication-module/service/auth-gaurd.service';
+import { RoleGuardService } from '../authentication-module/service/role-guard.service';
 
 const routes: Routes = [
   {path:'employee' , children:[
@@ -18,7 +18,7 @@ const routes: Routes = [
     { path: 'error', component: ErrorComponent},  
     { path: 'thankyou', component: ThankyouComponent},
     { path: '**' , component: PageNotFoundComponent}
-  ], canActivate:[AuthGaurdService]}
+  ], canActivate:[RoleGuardService],data:{role:'EMP'}}
 ];
 
 @NgModule({

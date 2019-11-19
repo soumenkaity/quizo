@@ -22,13 +22,13 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 @Component
 public class JwtTokenProvider {
-	
+
 	@Autowired
     private JwtProperties jwtProperties;
 
     @Autowired
     private UserDetailsService userDetailsService;
-    
+
     private String secretKey;
 
     @PostConstruct
@@ -36,10 +36,10 @@ public class JwtTokenProvider {
         secretKey = Base64.getEncoder().encodeToString(jwtProperties.getSecretKey().getBytes());
     }
 
-    public String createToken(String username, List<String> roles) {
+    public String createToken(String username, String role) {
 
         Claims claims = Jwts.claims().setSubject(username);
-        claims.put("roles", "ROLE_ADMIN");
+        claims.put("role", role);
 
         Date now = new Date();
         Date validity = new Date(now.getTime() + jwtProperties.getValidityInMs());

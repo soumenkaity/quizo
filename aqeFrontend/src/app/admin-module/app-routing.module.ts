@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {AdminComponent} from './admin/admin.component'
 import { CreatedPageComponent } from './created-page/created-page.component';
-import { AuthGaurdService } from '../authentication-module/service/auth-gaurd.service';
+import { RoleGuardService } from '../authentication-module/service/role-guard.service';
+
 
 
 const routes: Routes = [
@@ -11,7 +12,7 @@ const routes: Routes = [
     {path:'testCreated/:id',component:CreatedPageComponent},
     {path:' ', redirectTo:"/createTest", pathMatch:'full'},
     {path:'**',component:AdminComponent  }
-  ], canActivate:[AuthGaurdService]}
+  ], canActivate:[RoleGuardService],data:{role:'ADM'}}
 ];
 
 @NgModule({
