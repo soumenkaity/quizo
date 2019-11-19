@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .header {
+            height: 60px;
+            background-color: #A3E4D7;
+            padding-top: 2px;
+            opacity: 1;
+        }
+        
+        .btn {
+            height: 60px;
+            background-color: #A3E4D7;
+            opacity: 1;
+        }
+        
+        .login {
+            background-color: blanchedalmond;
+            color: brown;
+            position: relative;
+            font-size: 24px;
+            top: 25%;
+            left: 47%;
+        }
+        
+        .hero-image {
+            background-image: url("../assets/lib3.jpeg");
+            opacity: 0.7;
+            background-color: #cccccc;
+            height: 520px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .text {
+            position: absolute;
+            top: 30%;
+            left: 40%;
+            font-family: cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h2 style="text-align: center">{{title}}</h2>
+
+    </div>
+    <div class="hero-image">
+    </div>
+    <div class="text">
+        <h2 style="color:midnightblue">Knowledge is power!<br><br> Want to test yours?<br><br> Login and take a quiz with us.
+        </h2>
+    </div>
+    <div class="btn">
+        <button class="login" routerLink='/auth/login'> login</button>
+    </div>
+</body>
+
+</html>

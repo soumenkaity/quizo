@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HrModule } from './hr-module/hr.module';
 import { EmployeeModule } from './employee-module/employee.module';
 import { AuthenticationModule } from './authentication-module/authentication.module';
+import { LandingModule } from './landing-module/landing.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AuthenticationModule } from './authentication-module/authentication.mod
   imports: [
     BrowserModule,
     AppRoutingModule,
+    LandingModule,
     HrModule,
     EmployeeModule,
     AuthenticationModule,
