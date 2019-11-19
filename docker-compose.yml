@@ -13,7 +13,6 @@
         interval: 4m30s
         timeout: 10s
         retries: 3
-        start_period: 40s
 
     admin-service:
       image: adminservice
@@ -28,7 +27,6 @@
         interval: 4m30s
         timeout: 10s
         retries: 3
-        start_period: 40s
 
     employee-service:
       image: employeeservice
@@ -43,7 +41,6 @@
         interval: 4m30s
         timeout: 10s
         retries: 3
-        start_period: 40s
 
     hr-service:
       image: hrservice
@@ -58,11 +55,10 @@
         interval: 4m30s
         timeout: 10s
         retries: 3
-        start_period: 40s
 
     eureka-service:
       image: eureka
-      build: eurekaservice/
+      build: eurekaService/
       restart: always
       network_mode: host
       container_name: eureka-container
@@ -71,7 +67,7 @@
 
     spring-config-server:
       image: config
-      build: configserver/
+      build: configServer/
       restart: always
       network_mode: host
       container_name: config-container
@@ -80,7 +76,7 @@
 
     api-gateway-service:
       image: zuul
-      build: zuulservice/
+      build: zuulService/
       restart: always
       network_mode: host
       container_name: zuul-container
