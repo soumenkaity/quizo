@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { score } from '../models/score';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScoreService {
+  private URLprefix = environment.employeeURLprefix;
 
   url: string = 'http://localhost:9090/quiz/test/questions';
   constructor(private http: HttpClient) { }
@@ -21,6 +23,6 @@ export class ScoreService {
       correct: c,
       incorrect: i
     };
-    return this.http.post<score>(this.url, scoreJSON, this.httpOptions);
+    return this.http.post<score>(this.URLprefix+'/questions', scoreJSON, this.httpOptions);
   }
 }

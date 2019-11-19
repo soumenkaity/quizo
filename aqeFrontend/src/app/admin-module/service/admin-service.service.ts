@@ -1,20 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminServiceService {
 
-  private userUrl: string;
+  private URLprefix = environment.adminURLprefix
 
-  private res;
-  constructor(private http: HttpClient) {
-    this.userUrl = 'http://localhost:8091/quiz/admin'
-  }
-
+  constructor(private http: HttpClient) {}
   public createTest(topic): Observable<any> {
-    return this.http.post<any>(this.userUrl, topic);
+    return this.http.post<any>(this.URLprefix+'createTest', topic);
   }
 }
