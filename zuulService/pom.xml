@@ -9,9 +9,9 @@
 		<relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.stackroute</groupId>
-	<artifactId>zuulservice</artifactId>
+	<artifactId>zuulService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ZuulService</name>
+	<name>zuulService</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

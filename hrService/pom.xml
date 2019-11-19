@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.1.RELEASE</version>
+		<version>2.2.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.stackroute</groupId>
-	<artifactId>hrservice</artifactId>
+	<artifactId>hrService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>HRservice</name>
+	<name>hrService</name>
 	<description>HR service for AQE</description>
 
 	<properties>

@@ -9,12 +9,12 @@
 		<relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.stackroute</groupId>
-	<artifactId>configserver</artifactId>
+	<artifactId>configServer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ConfigServer</name>
+	<name>configServer</name>
 	<description>Demo project for Spring Boot</description>
 
-	
+
 
 	<dependencies>
 		<dependency>

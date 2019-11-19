@@ -12,15 +12,17 @@
     <artifactId>parentpom</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>parentpom</name>
+    <name>adaptive-quiz-engine</name>
     <description>Demo project for Spring Boot</description>
 
     <modules>
         <module>configServer</module>
         <module>eurekaService</module>
         <module>zuulService</module>
-        <module>springApp</module>
         <module>employeeService</module>
+      <module>loginService</module>
+      <module>adminService</module>
+      <module>hrService</module>
     </modules>
 
     <properties>
