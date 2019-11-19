@@ -1,15 +1,64 @@
   version : "3"
   services:
-    employee-service:
-      image: employeeservice
-      build: employeeservice/
+    login-service:
+      image: loginservice
+      build: loginService/
       restart: always
       network_mode: host
-      container_name: employeeservice.jar
+      container_name: login-service
       ports:
-        - "9090:9090"
-      expose:
-        - 9090
+        - "8091:8091"
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8091"]
+        interval: 4m30s
+        timeout: 10s
+        retries: 3
+        start_period: 40s
+
+    admin-service:
+      image: adminservice
+      build: adminService/
+      restart: always
+      network_mode: host
+      container_name: admin-service
+      ports:
+        - "8092:8092"
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8092"]
+        interval: 4m30s
+        timeout: 10s
+        retries: 3
+        start_period: 40s
+
+    employee-service:
+      image: employeeservice
+      build: employeeService/
+      restart: always
+      network_mode: host
+      container_name: employee-service
+      ports:
+        - "8093:8093"
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8093"]
+        interval: 4m30s
+        timeout: 10s
+        retries: 3
+        start_period: 40s
+
+    hr-service:
+      image: hrservice
+      build: hrService/
+      restart: always
+      network_mode: host
+      container_name: hr-service
+      ports:
+        - "8094:8094"
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8094"]
+        interval: 4m30s
+        timeout: 10s
+        retries: 3
+        start_period: 40s
 
     eureka-service:
       image: eureka
@@ -19,8 +68,6 @@
       container_name: eureka-container
       ports:
         - "8761:8761"
-      expose:
-        - 8761
 
     spring-config-server:
       image: config
@@ -30,8 +77,7 @@
       container_name: config-container
       ports:
         - "8888:8888"
-      expose:
-        - 8888
+
     api-gateway-service:
       image: zuul
       build: zuulservice/
@@ -39,19 +85,4 @@
       network_mode: host
       container_name: zuul-container
       ports:
-        - "8081:8081"
-      expose:
-        - 8081
-    springapplication:
-      image: springapp
-      build: springapp/
-      restart: always
-      network_mode: host
-      container_name: springapp-container
-      depends_on:
-        - spring-config-server
-        - eureka-service
-      ports:
-        - "8090:8090"
-      expose:
-        - 8090
+        - "8080:8080"
