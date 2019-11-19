@@ -45,12 +45,12 @@ export class TopicComponent implements OnInit {
       .filter(v => v !== null)[0];
     console.log(selectedTopic);
     this.dataService.setSelectedTest(selectedTopic)
-    this.router.navigate(['/employees'])
+    this.router.navigate(['/hr/employees'])
   }
   selectedTopic(selectedTopic){
     // console.log(selectedTopic);
     this.dataService.setSelectedTest(selectedTopic)
-    this.router.navigate(['/employees'])
+    this.router.navigate(['/hr/employees'])
   }
 
 }

@@ -54,7 +54,7 @@ export class EmployeeComponent implements OnInit {
       .filter(v => v !== null);
       console.log(selectedEmp);
       this.dataService.setSelectedEmployees(selectedEmp);
-      this.router.navigate(['/confirm']);
+      this.router.navigate(['/hr/confirm']);
     
   }
 

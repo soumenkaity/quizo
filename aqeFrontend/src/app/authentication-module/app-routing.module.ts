@@ -9,7 +9,6 @@ import { AuthGaurdService } from './service/auth-gaurd.service';
 const routes: Routes = [
   {path:'auth' , children:[
     { path: '', component: EmployeeComponent,canActivate:[AuthGaurdService] },
-    { path: 'addemployee', component: AddEmployeeComponent,canActivate:[AuthGaurdService]},
     { path: 'login', component: LoginComponent },
     { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService] }
   ]}

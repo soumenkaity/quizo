@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   username = ''
   password = ''
+  email = ''
   invalidLogin = false
 
   constructor(private router: Router,
@@ -24,19 +25,18 @@ export class LoginComponent implements OnInit {
   checkLogin() {
     (this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
-        this.router.navigate([''])
+        this.router.navigate(['/hr/main'])
         this.invalidLogin = false
       },
       error => {
         this.invalidLogin = true
-
       }
     )
     );
 
   }
   register(){
-    this.registrationService.register(this.username,this.password).subscribe(data => console.log(data));
+    this.registrationService.register(this.username,this.password,this.email).subscribe(data => console.log(data));
   }
 
 }
