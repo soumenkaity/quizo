@@ -1,0 +1,65 @@
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">QuizO</span>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h3>MOVIE-TEST</h3>
+        </div>
+        <div class="col-sm">
+            <p>Timer</p>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <p>Question.no:{{count+1}}</p>
+        <h5 class="card-title">{{question.question}}</h5>
+        <div class="card-text">
+            <div class="custom-control custom-radio" (click)="saveAnswer(0)">
+                <label>
+                    <input type="radio" name="options">
+                    {{question.options[0]}}
+                </label>
+            </div>
+            <div class="custom-control custom-radio" (click)="saveAnswer(1)">
+                <label>
+                    <input type="radio" name="options">
+                    {{question.options[1]}}
+                </label>
+            </div>
+            <div class="custom-control custom-radio" (click)="saveAnswer(2)">
+                <label>
+                    <input type="radio" name="options">
+                    {{question.options[2]}}
+                </label>
+            </div>
+            <div class="custom-control" (click)="saveAnswer(3)">
+                <label>
+                    <input type="radio" name="options">
+                    {{question.options[3]}}
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="actions row ">
+        <div class="col-sm-3">
+            <button class="btn btn-primary" type="submit" (click)="nextQuestion()" *ngIf="count!=3">next</button>
+        </div>
+        <div class="col-sm-3" >
+            <button class="btn btn-primary" type="submit" (click)="prevQuestion()" *ngIf="count!=0">previous</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-danger" type="submit" (click)="submitTest()">submit test</button>
+        </div>
+    </div>
+</div>
+
+<div [class.d-none]="bool">
+    {{optionList}}
+</div>
+<!-- 
+class="custom-control-input" id="defaultUnchecked" -->
