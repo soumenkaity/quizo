@@ -14,10 +14,8 @@ import org.mockito.MockitoAnnotations;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.google.inject.matcher.Matchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static reactor.retry.Repeat.times;
 
 public class FetchQuestionsServiceTest {
     private Question question;
@@ -40,7 +38,7 @@ public class FetchQuestionsServiceTest {
         question.setId("5dca5b58eb6ffd1e13f10534");
         question.setQuestion("What is shahrukh khan's first child name?");
         question.setAnswer("Aryan khan");
-        question.setChoices(mockOptions);
+        question.setOptions(mockOptions);
         question.setDifficulty(Difficulty.E);
         question.setWeight(10);
         list = new ArrayList<>();
