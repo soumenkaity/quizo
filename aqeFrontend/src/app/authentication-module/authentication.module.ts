@@ -21,6 +21,7 @@ import {
   MatButtonModule
   } from '@angular/material';
   import { FlexLayoutModule } from '@angular/flex-layout';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,

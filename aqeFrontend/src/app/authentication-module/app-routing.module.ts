@@ -4,12 +4,14 @@ import { EmployeeComponent } from './employee/employee.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
+import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
   {path:'auth' , children:[
     { path: '', component: EmployeeComponent,canActivate:[AuthGaurdService] },
     { path: 'login', component: LoginComponent },
-    { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService] }
+    { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService] },
+    { path: 'register', component: RegistrationComponent },
   ]}
   
 ];
