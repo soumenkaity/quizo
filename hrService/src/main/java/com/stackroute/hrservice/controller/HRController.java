@@ -31,4 +31,16 @@ public class HRController {
   public ResponseEntity assignTests(@RequestBody UserTest userTest){
     return new ResponseEntity(hrService.assignTests(userTest),HttpStatus.OK);
   }
+  @PostMapping("/sendemail")
+  public String mailSend(@RequestBody Employee employee) {
+    try
+    {
+    notificationService.sendNotification(employee);
+    }
+    catch (MailException e)
+    {
+     return "authentication Exception";
+    }
+   return "mailsent";
+  }
 }
