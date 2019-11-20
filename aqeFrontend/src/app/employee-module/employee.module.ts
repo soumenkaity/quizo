@@ -13,13 +13,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { DashService } from './service/dash.service';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeRoutingComponents,
     DashboardComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
