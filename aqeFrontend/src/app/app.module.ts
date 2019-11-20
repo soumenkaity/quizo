@@ -9,9 +9,8 @@ import { EmployeeModule } from './employee-module/employee.module';
 import { AdminModule } from './admin-module/admin.module';
 import { AuthenticationModule } from './authentication-module/authentication.module';
 import { LandingModule } from './landing-module/landing.module';
+import { MaterialModule } from './employee-module/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
 
 @NgModule({
   declarations: [
@@ -25,9 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EmployeeModule,
     AdminModule,
     AuthenticationModule,
-    BrowserAnimationsModule,
-
-    
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
