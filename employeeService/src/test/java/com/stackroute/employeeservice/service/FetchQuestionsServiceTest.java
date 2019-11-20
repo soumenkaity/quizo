@@ -38,7 +38,7 @@ public class FetchQuestionsServiceTest {
         question.setId("5dca5b58eb6ffd1e13f10534");
         question.setQuestion("What is shahrukh khan's first child name?");
         question.setAnswer("Aryan khan");
-        question.setOptions(mockOptions);
+        question.setChoices(mockOptions);
         question.setDifficulty(Difficulty.E);
         question.setWeight(10);
         list = new ArrayList<>();

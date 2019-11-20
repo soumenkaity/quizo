@@ -6,13 +6,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 
-@Document(collection = "question")
+@Document(collection = "topic_srk")
 public class Question {
     @Id
     private String id;
     private String question;
     private String answer;
-    private String[] options =new String[4];
+    private String[] choices =new String[4];
     private Difficulty difficulty;
     private int weight;
 
@@ -40,12 +40,12 @@ public class Question {
         this.answer = answer;
     }
 
-    public String[] getOptions() {
-        return options;
+    public String[] getChoices() {
+        return choices;
     }
 
-    public void setOptions(String[] options) {
-        this.options = options;
+    public void setChoices(String[] choices) {
+        this.choices = choices;
     }
 
     public Difficulty getDifficulty() {
