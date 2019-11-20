@@ -11,13 +11,14 @@ import { RoleGuardService } from '../authentication-module/service/role-guard.se
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { LandingComponent } from './landing/landing.component';
+import { FetchTestComponent } from './fetch-test/fetch-test.component';
 
 const routes: Routes = [
   {path:'employee' , children:[
     { path:'',component:LandingComponent},
     { path: 'employee-details' , component: EmployeedetailsComponent},
     { path: 'test-instructions' , component: TestInsComponent},
-    { path: 'test-page' , component: TestPageComponent},
+    { path: 'test-page' , component: FetchTestComponent},
     { path: 'error', component: ErrorComponent},  
     { path: 'thankyou', component: ThankyouComponent},
     { path: 'dash', component:DashboardComponent},
