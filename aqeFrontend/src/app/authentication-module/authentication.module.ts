@@ -12,6 +12,16 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 
+
+import { CommonModule } from '@angular/common';
+import {
+  MatFormFieldModule,
+  MatInputModule,
+  MatCardModule,
+  MatButtonModule
+  } from '@angular/material';
+  import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +36,17 @@ import { LogoutComponent } from './logout/logout.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+
+
+    
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatButtonModule,
+    FlexLayoutModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
