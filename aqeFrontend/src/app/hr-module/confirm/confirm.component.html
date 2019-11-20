@@ -1,0 +1,11 @@
+<p>confirm works!</p>
+<h2>selected Employees</h2>
+<ul>
+    <li *ngFor="let employee of employees">
+        {{employee.name}}
+    </li>
+</ul>
+<hr>
+<h2>selected test</h2>
+<h3>{{test.name}}</h3>
+<button (click)="confirmMapping()">CONFIRM!</button>

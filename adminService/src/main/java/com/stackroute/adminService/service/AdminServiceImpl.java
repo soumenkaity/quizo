@@ -16,7 +16,7 @@ public class AdminServiceImpl implements AdminService{
 
         Process p;
         try {
-            String[] cmd = { "sh", "/home/cgi/testscript.sh"};
+            String[] cmd = { "sh", "/home/cgi/testscript.sh","sh","/home/cgi/testscript.sh"};
             p = Runtime.getRuntime().exec(cmd);
             p.waitFor();
             BufferedReader reader=new BufferedReader(new InputStreamReader(
