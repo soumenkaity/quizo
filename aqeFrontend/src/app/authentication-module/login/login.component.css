@@ -4,3 +4,9 @@
     mat-card{
     min-width: 27%;
     }
+.back{
+    background-color:#F5F5F5;
+}
+.text{
+    color: #585858;
+}
