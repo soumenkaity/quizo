@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {MaterialModule} from './material/material.module';
 
 import { HrModule } from './hr-module/hr.module';
 import { EmployeeModule } from './employee-module/employee.module';
@@ -10,8 +11,6 @@ import { AdminModule } from './admin-module/admin.module';
 import { AuthenticationModule } from './authentication-module/authentication.module';
 import { LandingModule } from './landing-module/landing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
 
 @NgModule({
   declarations: [
@@ -23,11 +22,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LandingModule,
     HrModule,
     EmployeeModule,
+    MaterialModule,
     AdminModule,
     AuthenticationModule,
-    BrowserAnimationsModule,
-
-    
+    BrowserAnimationsModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
