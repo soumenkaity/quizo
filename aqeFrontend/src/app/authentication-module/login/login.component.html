@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div>
         User Name : <input type="text" name="username" [(ngModel)]="username"> Password : <input type="password" name="password" [(ngModel)]="password"> Email : <input type="text" name="email" [(ngModel)]="email">
     </div>
@@ -8,4 +8,25 @@
     <button (click)=register() class="btn btn-success">
     Register
   </button>
-</div>
+</div> -->
+<div fxLayout="row" fxLayoutAlign="center center" class="login-main">
+  <mat-card >
+  <mat-card-header>
+    <mat-card-title>Login Here</mat-card-title>
+  </mat-card-header>
+  <mat-card-content fxLayout="column">
+    <mat-form-field>
+      <input matInput placeholder="User Name" name="username" [(ngModel)]="username">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="password">
+    </mat-form-field>
+  <mat-form-field>
+        <input matInput placeholder="Email Id" name="email" [(ngModel)]="email">
+      </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary" (click)=checkLogin()>Login</button>
+  </mat-card-actions>
+  </mat-card>
+  </div>
