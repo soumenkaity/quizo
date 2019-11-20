@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { DashService } from './service/dash.service';
 import { LandingComponent } from './landing/landing.component';
+import { FetchTestComponent } from './fetch-test/fetch-test.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { LandingComponent } from './landing/landing.component';
     EmployeeRoutingComponents,
     DashboardComponent,
     FeedbackComponent,
+    FetchTestComponent,
     LandingComponent
   ],
   imports: [

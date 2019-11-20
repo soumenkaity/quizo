@@ -58,6 +58,7 @@ export class FetchTestComponent implements OnInit {
   submitTest(){
     console.log(this.resultList);
     this.bool=false;
+    this.router.navigate(['/employee/feedback']);
 
   }
 
