@@ -10,11 +10,16 @@ import {DataService} from './service/data.service';
 import { TopicService } from './service/topic.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { DashService } from './service/dash.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeRoutingComponents
+    EmployeeRoutingComponents,
+    DashboardComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule
   ],
-  providers: [UserService, DataService, TopicService],
+  providers: [UserService, DataService, TopicService, DashService],
   bootstrap: [AppComponent]
 })
 export class EmployeeModule { }

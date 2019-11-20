@@ -8,6 +8,8 @@ import { ErrorComponent } from './error/error.component';
 import { EmployeedetailsComponent } from './employeedetails/employeedetails.component';
 import {EmptypageComponent} from './emptypage/emptypage.component'
 import { RoleGuardService } from '../authentication-module/service/role-guard.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 const routes: Routes = [
   {path:'employee' , children:[
@@ -17,6 +19,8 @@ const routes: Routes = [
     { path: 'test-page' , component: TestPageComponent},
     { path: 'error', component: ErrorComponent},  
     { path: 'thankyou', component: ThankyouComponent},
+    { path: 'dash', component:DashboardComponent},
+    { path: 'feedback', component: FeedbackComponent},
     { path: '**' , component: PageNotFoundComponent}
   ], canActivate:[RoleGuardService],data:{role:'EMP'}}
 ];
@@ -34,5 +38,7 @@ export const EmployeeRoutingComponents = [
   TestPageComponent,
   ErrorComponent,
   ThankyouComponent,
-  PageNotFoundComponent
+  PageNotFoundComponent,
+  DashboardComponent,
+  FeedbackComponent
 ]
