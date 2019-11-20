@@ -1,0 +1,26 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+.example-button-row {
+  margin-right: 8px;
+  text-align: center;
+  
+}
+
+.feedback{
+  
+  width: 80%;
+  margin-left: 100px;
+  margin-top: 50px;
+  display: block;
+  border: 1px solid black;
+}
+.feed{
+  width: 100%;
+}
+

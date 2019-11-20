@@ -1,0 +1,29 @@
+
+<mat-card class="feedback">
+  <mat-card-header >
+    <mat-card-title>Send us your feedback!</mat-card-title>
+    <mat-card-subtitle>Do you have a suggestion? Let us know in the field below.</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content style="padding-left:1rem;">
+    <div>
+    <p>How was your experience?</p>
+    <mat-radio-group>
+    <mat-radio-button value="good"> Good </mat-radio-button>
+    <p></p>
+    <mat-radio-button value="bad"> Bad </mat-radio-button>
+    </mat-radio-group>
+    </div>
+    <form id="feed">
+        <mat-form-field>
+            <textarea matInput placeholder="Describe your experience here..."></textarea>
+          </mat-form-field>
+    </form>
+  </mat-card-content>
+
+ <mat-card-footer>
+  <div class="example-button-row" style="align-self: center;">
+    <button mat-raised-button color="primary"><a routerLink="/employee/dash">Submit</a></button>
+  </div>
+ </mat-card-footer>
+</mat-card>
+  
