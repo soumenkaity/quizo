@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class FetchTestService {
 
-  url: string = 'http://localhost:9090/quiz/test/questions/';
+  url: string = 'http://172.23.234.85:8093/quiz/test/questions/';
   public topic:string="java"; 
   constructor(private http: HttpClient) { }
 

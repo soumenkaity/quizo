@@ -21,25 +21,25 @@
             <div class="custom-control custom-radio" (click)="saveAnswer(0)">
                 <label>
                     <input type="radio" name="options">
-                    {{question.options[0]}}
+                    {{question.choices[0]}}
                 </label>
             </div>
             <div class="custom-control custom-radio" (click)="saveAnswer(1)">
                 <label>
                     <input type="radio" name="options">
-                    {{question.options[1]}}
+                    {{question.choices[1]}}
                 </label>
             </div>
             <div class="custom-control custom-radio" (click)="saveAnswer(2)">
                 <label>
                     <input type="radio" name="options">
-                    {{question.options[2]}}
+                    {{question.choices[2]}}
                 </label>
             </div>
             <div class="custom-control" (click)="saveAnswer(3)">
                 <label>
                     <input type="radio" name="options">
-                    {{question.options[3]}}
+                    {{question.choices[3]}}
                 </label>
             </div>
         </div>
@@ -58,8 +58,3 @@
     </div>
 </div>
 
-<div [class.d-none]="bool">
-    {{optionList}}
-</div>
-<!-- 
-class="custom-control-input" id="defaultUnchecked" -->

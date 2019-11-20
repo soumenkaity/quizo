@@ -2,7 +2,7 @@ export interface Question{
     id:string;
     question:string;
     answer:string;
-    options:string[];
+    choices:string[];
     difficulty:any;
     weight:number;
 }
