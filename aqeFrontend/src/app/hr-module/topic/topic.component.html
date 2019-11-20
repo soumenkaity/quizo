@@ -1,17 +1,15 @@
-<p>topic works!</p>
-<!-- <form [formGroup]="form" (ngSubmit)="goToEmployeeSelection()">
-    <li formArrayName="topics" *ngFor="let topic of form.controls.topics.controls; let i = index">
-        <input type="checkbox" [formControlName]="i">
-        <span> {{topics[i].name}} -----------{{topics[i].id}} </span>
-    </li>
 
-    <button>submit</button>
-</form> -->
+ <div class="mat-display-1" > Select Topic</div>
+ <mat-divider></mat-divider>
+<mat-list>
+    <h3 mat-subheader>Select Topic</h3>
+    <mat-list-item *ngFor="let topic of topics" value=topic (click)="selectedTopic(topic)">
+      <mat-icon mat-list-icon>topic</mat-icon>
+      <h4 mat-line>{{topic.name}}</h4>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+  
+  <button mat-raised-button color="primary" (click)="goToEmployeeSelection()">Go To Employees</button>
+  
 
-<ul>
-    <button *ngFor="let topic of topics" value=topic (click)="selectedTopic(topic)">{{topic.name}}</button>
-</ul>
-
-<hr>
-<br>
-<span (click)="goToEmployeeSelection()">go to employees</span>

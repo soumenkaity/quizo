@@ -1,0 +1,21 @@
+
+
+.mat-display-1{
+    align-self: center;
+    margin-top: 50px;
+    margin-left: 530px;
+}
+.mat-subheader{
+    margin-top: 100px;
+    margin-left: 530px;
+}
+#io{
+    margin-top: 20px;  
+}
+.mat-list{
+    margin-left: 20px;
+}
+.mat-raised-button{
+    margin-left:50px;
+    margin-top:50px;
+}
