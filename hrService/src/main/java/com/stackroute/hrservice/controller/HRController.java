@@ -27,10 +27,12 @@ public class HRController {
 
   @GetMapping("/users")
   public ResponseEntity getAllUsers(){return new ResponseEntity(hrService.getAllUsers(), HttpStatus.OK); }
+
   @GetMapping("/topics")
   public ResponseEntity getAllTests(){
     return new ResponseEntity(hrService.getAllTopics(), HttpStatus.OK);
   }
+
   @GetMapping("/assigned")
   public ResponseEntity showAssignedTests(){ return new ResponseEntity(hrService.getAllTestsAssigned(),HttpStatus.OK); }
   @PostMapping("/assign")

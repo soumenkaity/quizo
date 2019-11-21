@@ -11,7 +11,7 @@ import { AuthenticationModule } from './authentication-module/authentication.mod
 import { LandingModule } from './landing-module/landing.module';
 import { MaterialModule } from './employee-module/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent
@@ -25,7 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminModule,
     AuthenticationModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule
   ],
   providers: [],
   bootstrap: [AppComponent]
