@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../service/authentication.service';
 import {RegistrationService } from '../service/registration.service';
-import {ToastrService} from 'ngx-toastr'
+import { ToastrService } from 'ngx-toastr'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

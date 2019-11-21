@@ -19,7 +19,7 @@ export class DashService {
   }
   getDetails(): Observable<any> {
     console.log("test call");
-    return this.httpClient.get<Detail[]>("http://localhost:9090/employee/dashboard/employees");
+    return this.httpClient.get<Detail[]>("http://172.23.234.85:8093/employee/dashboard/");
   }
 }
 

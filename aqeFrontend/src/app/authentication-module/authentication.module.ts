@@ -21,6 +21,8 @@ import {
   MatButtonModule
   } from '@angular/material';
   import { FlexLayoutModule } from '@angular/flex-layout';
+import { RegistrationComponent } from './registration/registration.component';
+import { ToastrService, ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -30,25 +32,24 @@ import {
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-
-
-    
     CommonModule,
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ToastrModule.forRoot()
 
   ],
-  providers: [],
+  providers: [ ToastrService ],
   bootstrap: [AppComponent]
 })
 export class AuthenticationModule { }

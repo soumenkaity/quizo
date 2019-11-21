@@ -10,6 +10,8 @@ import { TopicComponent } from './topic/topic.component';
 
 
 import { HttpClientModule } from '@angular/common/http';
+
+import {MaterialModule} from './material/material.module';
 import { TopicService } from './service/topic.service';
 import { EmployeeService } from './service/employee.service';
 import { ConfirmService } from './service/confirm.service';
@@ -27,6 +29,7 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    MaterialModule,
     ReactiveFormsModule,
     HttpClientModule
   ],

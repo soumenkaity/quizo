@@ -1,0 +1,14 @@
+h1 {
+    background-color: beige
+}
+
+.btn {
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+.container-fluid {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}

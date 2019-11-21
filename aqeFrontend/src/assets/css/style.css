@@ -9,10 +9,13 @@ body {
 a {
     color: darkblue;
 }
-.login{
+
+.login {
     background-color: #225ea8;
     color: #ffffff;
     font-size: 1em;
+    margin-right: 0%;
+    padding-right: 5px;
 }
 
 .left {
@@ -62,8 +65,9 @@ section {
 }
 
 #outermost {
-    top: 75px;
-    padding-top: 75px;
+    top: 35px;
+    padding-top: 35px;
+    padding-bottom: 0em;
 }
 
 #one {
@@ -77,14 +81,14 @@ section {
 .grid_12 {
     width: 1280px;
     margin-top: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     background-color: white;
     color: black;
 }
 
 #two {
-    margin: 20px;
+    margin: 0px;
     background-color: white;
     margin-left: 0px;
 }
@@ -95,9 +99,6 @@ section {
     background-color: white;
     color: blue;
 }
-
-
-
 
 footer {
     border-block: 10px solid black;
@@ -112,7 +113,7 @@ footer {
     text-align: left;
     font: normal 16px sans-serif;
     padding: 45px 50px;
-    margin-top: 80px;
+    margin-top: 0px;
 }
 
 .footer-distributed .footer-left p {
