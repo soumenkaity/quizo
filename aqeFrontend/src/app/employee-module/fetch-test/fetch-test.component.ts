@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FetchTestService } from '../fetch-test.service';
+import { FetchTestService } from '../service/fetch-test.service';
 import { Question } from '../model/questions';
 import { result } from '../model/result';
 import { Router } from '@angular/router';
