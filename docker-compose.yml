@@ -8,6 +8,8 @@
       container_name: login-service
       ports:
         - "8091:8091"
+      environment:
+        - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:8091"]
         interval: 4m30s
@@ -22,6 +24,8 @@
       container_name: admin-service
       ports:
         - "8092:8092"
+      environment:
+        - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:8092"]
         interval: 4m30s
@@ -36,6 +40,8 @@
       container_name: employee-service
       ports:
         - "8093:8093"
+      environment:
+        - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:8093"]
         interval: 4m30s
@@ -50,6 +56,8 @@
       container_name: hr-service
       ports:
         - "8094:8094"
+      environment:
+        - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:8094"]
         interval: 4m30s
