@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FetchTestService } from '../service/fetch-test.service';
+import { FetchTestService } from '../fetch-test.service';
 import { Question } from '../model/questions';
 import { result } from '../model/result';
 import { Router } from '@angular/router';
@@ -15,6 +15,9 @@ export class FetchTestComponent implements OnInit {
   public minutes = Math.floor(this.totalSeconds / 60);
   public seconds = this.totalSeconds % 60;
 
+  public roundedMins = this.pad(this.minutes);
+
+  public roundedSecs=this.pad(this.seconds);
   public options;
 
   private topic;
@@ -94,28 +97,36 @@ export class FetchTestComponent implements OnInit {
   checkTime() {
     if (this.count != 3) {
       if (this.totalSeconds <= 0) {
-        setTimeout(()=>{this.nextQuestion()},1);
-        setTimeout(()=>{this.checkTime()},1000);
+        setTimeout(() => { this.nextQuestion() }, 1);
+        setTimeout(() => { this.checkTime() }, 1000);
       }
-      else{
-        this.totalSeconds-=1;
+      else {
+        this.totalSeconds -= 1;
         this.minutes = Math.floor(this.totalSeconds / 60);
         this.seconds = this.totalSeconds % 60;
-        setTimeout(()=>{this.checkTime()},1000);
+        this.roundedMins = this.pad(this.minutes);
+        this.roundedSecs=this.pad(this.seconds);
+        setTimeout(() => { this.checkTime() }, 1000);
       }
     }
-    else{
+    else {
       if (this.totalSeconds <= 0) {
-        setTimeout(()=>{this.submitTest()},1);
+        setTimeout(() => { this.submitTest() }, 1);
       }
-      else{
-        this.totalSeconds-=1;
+      else {
+        this.totalSeconds -= 1;
         this.minutes = Math.floor(this.totalSeconds / 60);
         this.seconds = this.totalSeconds % 60;
-        setTimeout(()=>{this.checkTime()},1000);
+        this.roundedMins = this.pad(this.minutes);
+        this.roundedSecs=this.pad(this.seconds);
+        setTimeout(() => { this.checkTime() }, 1000);
+      }
+
     }
 
   }
+  pad(number){
+    return (number<10?'0':'')+number;
 
-}
+  }
 }
