@@ -5,9 +5,12 @@
       build: loginService/
       restart: always
       network_mode: host
+      hostname: localhost
       container_name: login-service
       ports:
         - "8091:8091"
+      environment:
+        - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:8091"]
         interval: 4m30s
@@ -19,9 +22,12 @@
       build: adminService/
       restart: always
       network_mode: host
+      hostname: localhost
       container_name: admin-service
       ports:
         - "8092:8092"
+      environment:
+        - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:8092"]
         interval: 4m30s
@@ -33,9 +39,12 @@
       build: employeeService/
       restart: always
       network_mode: host
+      hostname: localhost
       container_name: employee-service
       ports:
         - "8093:8093"
+      environment:
+        - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:8093"]
         interval: 4m30s
@@ -47,9 +56,12 @@
       build: hrService/
       restart: always
       network_mode: host
+      hostname: localhost
       container_name: hr-service
       ports:
         - "8094:8094"
+      environment:
+        - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:8094"]
         interval: 4m30s
@@ -61,6 +73,7 @@
       build: eurekaService/
       restart: always
       network_mode: host
+      hostname: localhost
       container_name: eureka-container
       ports:
         - "8761:8761"
@@ -70,6 +83,7 @@
       build: configServer/
       restart: always
       network_mode: host
+      hostname: localhost
       container_name: config-container
       ports:
         - "8888:8888"
@@ -79,6 +93,7 @@
       build: zuulService/
       restart: always
       network_mode: host
+      hostname: localhost
       container_name: zuul-container
       ports:
         - "8080:8080"

@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5dd38aad50240e388d26a893"},"employeename":"ayush","testname":"java","_testid":9876,"employeescore":0,"_class":"com.stackroute.employeeservice.domain.DashboardItem"}
+{"_id":{"$oid":"5dd38b0850240e388d26a894"},"employeename":"shikhar","testname":"java","_testid":9876,"employeescore":70,"_class":"com.stackroute.employeeservice.domain.DashboardItem"}
+{"_id":{"$oid":"5dd38b2150240e388d26a895"},"employeename":"arun","testname":"java","_testid":9876,"employeescore":40,"_class":"com.stackroute.employeeservice.domain.DashboardItem"}
+{"_id":{"$oid":"5dd38b3750240e388d26a896"},"employeename":"punkaj","testname":"java","_testid":9876,"employeescore":80,"_class":"com.stackroute.employeeservice.domain.DashboardItem"}
