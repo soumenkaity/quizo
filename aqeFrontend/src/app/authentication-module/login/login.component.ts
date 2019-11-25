@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../service/authentication.service';
 import {RegistrationService } from '../service/registration.service';
 import { ToastrService } from 'ngx-toastr'
+import { ToasterService } from '../service/toaster-service.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router,
     private loginservice: AuthenticationService,
-    private registrationService: RegistrationService, private toastr: ToastrService) { }
+    private registrationService: RegistrationService, private toastr: ToastrService, private toasterService: ToasterService) { }
 
   ngOnInit() {
   }
@@ -39,12 +40,12 @@ export class LoginComponent implements OnInit {
         if(userRole=='HRM'){
           this.router.navigate(['/hr'])
         }
-        this.toastr.success('Login successful');
+        this.toasterService.success('Login successful');
         this.invalidLogin = false
       },
       error => {
         console.log(error.error.message);
-        this.toastr.error('Login failed, login again');
+        this.toasterService.error('Login failed, login again');
         this.invalidLogin = true
       }
     )

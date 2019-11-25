@@ -46,7 +46,11 @@ import { ToastrService, ToastrModule } from 'ngx-toastr';
     MatCardModule,
     MatButtonModule,
     FlexLayoutModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass:'toast-top-right',
+      preventDuplicates: true,
+    }),
 
   ],
   providers: [ ToastrService ],
