@@ -8,7 +8,8 @@ export const environment = {
   HrURLprefix: 'http://172.23.234.59:8094/hr',
   employeeURLprefix: 'http://172.23.234.85:8093/quiz/test',
   adminURLprefix:'http://172.23.234.54:8092/admin',
-  authURLprefix:'http://172.23.239.75:8091/auth'
+  authURLprefix:'http://172.23.239.75:8091/auth',
+  fetchTestURLprefix:'http://172.23.234.85:8093/quiz/test/questions/'
 };
 
 /*

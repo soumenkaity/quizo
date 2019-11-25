@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FetchTestService } from '../fetch-test.service';
+import { FetchTestService } from '../service/fetch-test.service';
 import { Question } from '../model/questions';
 import { result } from '../model/result';
 import { Router } from '@angular/router';
@@ -31,7 +31,7 @@ export class FetchTestComponent implements OnInit {
   private result: result;
   private resultList = [];
 
-  private bool = true;
+  private selectedOption;
 
   constructor(private fetchTestService: FetchTestService,
     private router: Router,
@@ -44,6 +44,7 @@ export class FetchTestComponent implements OnInit {
       this.questionList = data;
       this.question = this.questionList[0];
       console.log(this.question);
+      this.options=this.question.options;
       this.count = 0;
     });
     this.checkTime();
@@ -84,7 +85,6 @@ export class FetchTestComponent implements OnInit {
 
   submitTest() {
     console.log(this.resultList);
-    this.bool = false;
 
   }
 
