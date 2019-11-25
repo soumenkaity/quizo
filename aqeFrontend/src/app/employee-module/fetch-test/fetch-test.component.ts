@@ -32,6 +32,7 @@ export class FetchTestComponent implements OnInit {
   private resultList = [];
 
   private selectedOption;
+  choices: any;
 
   constructor(private fetchTestService: FetchTestService,
     private router: Router,
@@ -40,11 +41,12 @@ export class FetchTestComponent implements OnInit {
   ngOnInit() {
     console.log("in ngoninit");
     this.fetchTestService.getQuestions(this.topic).subscribe(data => {
-      console.log(data);
+      console.log( data[1]);
       this.questionList = data;
       this.question = this.questionList[0];
-      console.log(this.question);
-      this.options=this.question.options;
+      // console.log(this.question);
+      this.choices=this.question['choices'];
+      console.log(this.options)
       this.count = 0;
     });
     this.checkTime();
