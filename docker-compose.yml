@@ -67,33 +67,3 @@
         interval: 4m30s
         timeout: 10s
         retries: 3
-
-    eureka-service:
-      image: eureka
-      build: eurekaService/
-      restart: always
-      network_mode: host
-      hostname: localhost
-      container_name: eureka-container
-      ports:
-        - "8761:8761"
-
-    spring-config-server:
-      image: config
-      build: configServer/
-      restart: always
-      network_mode: host
-      hostname: localhost
-      container_name: config-container
-      ports:
-        - "8888:8888"
-
-    api-gateway-service:
-      image: zuul
-      build: zuulService/
-      restart: always
-      network_mode: host
-      hostname: localhost
-      container_name: zuul-container
-      ports:
-        - "8080:8080"
