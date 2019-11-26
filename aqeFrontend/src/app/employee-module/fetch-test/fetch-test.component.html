@@ -1,58 +1,64 @@
-<nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">QuizO</span>
-</nav>
-
-<div class="container">
+<div class="container navbar2">
     <div class="row">
-        <div class="col-sm">
+        <div class="col-6  testName">
             <h3>MOVIE-TEST</h3>
         </div>
-        <div class="col-sm">
-            <h3>{{roundedMins}}:{{roundedSecs}}</h3>
+        <div class="col-6 timerContainer">
+            <div class="timer">
+                <h3>{{roundedMins}}:{{roundedSecs}}</h3>
+            </div>
         </div>
+
     </div>
 </div>
 
-<div class="card ">
+
+
+<div class="card questionContainer">
     <div class="card-body">
-        <p>Question.no:{{count+1}}</p>
-        <h5 class="card-title">{{question?.question}}</h5>
-        <div class="card-text">
-            <div class="custom-control" (click)="saveAnswer(1)">
-                <label>
-                    <input type="radio" name="options" value="1" [(ngModel)]="options">
-                    {{question?.options[0]}}
-                </label>
-            </div>
-            <div class="custom-control"  (click)="saveAnswer(2)">
-                <label>
-                    <input type="radio" name="options" value="2" [(ngModel)]="options">
-                    {{question?.options[1]}}
-                </label>
-            </div>
-            <div class="custom-control" (click)="saveAnswer(3)">
-                <label>
-                    <input type="radio" name="options" value="3" [(ngModel)]="options">
-                    {{question?.options[2]}}
-                </label>
-            </div>
-            <div class="custom-control" (click)="saveAnswer(4)">
-                <label>
-                    <input type="radio" name="options"  value="4"[(ngModel)]="options">
-                    {{question?.options[3]}}
-                </label>
+        <h4>Q{{count+1}})</h4>
+        <div class="question">
+            <h5 class="card-title">{{question?.question}}</h5>
+            <div class="card-text">
+                <div class="custom-control" (click)="saveAnswer(1)">
+                    <label>
+                        <input type="radio" name="options" value="1" [(ngModel)]="options">
+                        {{choices[0]}}
+                    </label>
+                </div>
+                <div class="custom-control" (click)="saveAnswer(2)">
+                    <label>
+                        <input type="radio" name="options" value="2" [(ngModel)]="options">
+                        {{choices[1]}}
+                    </label>
+                </div>
+                <div class="custom-control" (click)="saveAnswer(3)">
+                    <label>
+                        <input type="radio" name="options" value="3" [(ngModel)]="options">
+                        {{choices[2]}}
+                    </label>
+                </div>
+                <div class="custom-control" (click)="saveAnswer(4)">
+                    <label>
+                        <input type="radio" name="options" value="4" [(ngModel)]="options">
+                        {{choices[3]}}
+                    </label>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="actions row ">
-        <div class="col-sm-3" >
+
+
+    <div class="row">
+        <div class="col-sm-4 button">
             <button class="btn btn-primary" type="submit" (click)="prevQuestion()" *ngIf="count!=0">previous</button>
         </div>
-        <div class="col-sm-3">
-            <button class="btn btn-primary" type="submit" ng-click="options=null" (click)="nextQuestion()" *ngIf="count!=3">next</button>
+        <div class="col-sm-4 button">
+            <button class="btn btn-primary" type="submit" ng-click="options=null" (click)="nextQuestion()"
+                *ngIf="count!=3">next</button>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-4 button" >
             <button class="btn btn-danger" type="submit" (click)="submitTest()">submit test</button>
         </div>
     </div>

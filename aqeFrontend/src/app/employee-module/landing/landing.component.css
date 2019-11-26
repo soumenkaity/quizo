@@ -1,14 +1,12 @@
-h1 {
-    background-color: beige
+
+h3 {
+   margin-top:50px;
+   margin-left: 20%;
 }
 
-.btn {
-    font-size: 2em;
-    margin-top: 10px;
-}
+.mat-flat-button {
 
-.container-fluid {
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left:600px;
+    margin-top:50px;
+    margin-bottom:100px;
 }

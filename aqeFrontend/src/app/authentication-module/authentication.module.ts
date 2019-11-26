@@ -7,8 +7,6 @@ import { EmployeeComponent } from './employee/employee.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 
@@ -29,8 +27,6 @@ import { ToastrService, ToastrModule } from 'ngx-toastr';
     AppComponent,
     EmployeeComponent,
     AddEmployeeComponent,
-    HeaderComponent,
-    FooterComponent,
     LoginComponent,
     LogoutComponent,
     RegistrationComponent
@@ -46,7 +42,11 @@ import { ToastrService, ToastrModule } from 'ngx-toastr';
     MatCardModule,
     MatButtonModule,
     FlexLayoutModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass:'toast-top-right',
+      preventDuplicates: true,
+    }),
 
   ],
   providers: [ ToastrService ],

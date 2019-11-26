@@ -11,7 +11,8 @@ import { AdminModule } from './admin-module/admin.module';
 import { AuthenticationModule } from './authentication-module/authentication.module';
 import { LandingModule } from './landing-module/landing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { ToasterService } from './authentication-module/service/toaster-service.service';
 @NgModule({
   declarations: [
     AppComponent
@@ -30,11 +31,11 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 10000,
-      positionClass: 'toast-bottom-left',
+      positionClass:'toast-top-right',
       preventDuplicates: true,
     }),
   ],
-  providers: [],
+  providers: [ToasterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

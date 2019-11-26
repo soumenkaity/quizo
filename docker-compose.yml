@@ -5,13 +5,14 @@
       build: loginService/
       restart: always
       network_mode: host
+      hostname: localhost
       container_name: login-service
       ports:
-        - "8091:8091"
+        - "8081:8081"
       environment:
         - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8091"]
+        test: ["CMD", "curl", "-f", "http://localhost:8081"]
         interval: 4m30s
         timeout: 10s
         retries: 3
@@ -21,13 +22,14 @@
       build: adminService/
       restart: always
       network_mode: host
+      hostname: localhost
       container_name: admin-service
       ports:
-        - "8092:8092"
+        - "8082:8082"
       environment:
         - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8092"]
+        test: ["CMD", "curl", "-f", "http://localhost:8082"]
         interval: 4m30s
         timeout: 10s
         retries: 3
@@ -37,13 +39,14 @@
       build: employeeService/
       restart: always
       network_mode: host
+      hostname: localhost
       container_name: employee-service
       ports:
-        - "8093:8093"
+        - "8083:8083"
       environment:
         - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8093"]
+        test: ["CMD", "curl", "-f", "http://localhost:8083"]
         interval: 4m30s
         timeout: 10s
         retries: 3
@@ -53,17 +56,17 @@
       build: hrService/
       restart: always
       network_mode: host
+      hostname: localhost
       container_name: hr-service
       ports:
-        - "8094:8094"
+        - "8084:8084"
       environment:
         - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8094"]
+        test: ["CMD", "curl", "-f", "http://localhost:8084"]
         interval: 4m30s
         timeout: 10s
         retries: 3
-
     eureka-service:
       image: eureka
       build: eurekaService/
