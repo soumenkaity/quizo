@@ -16,9 +16,6 @@
     <description>Demo project for Spring Boot</description>
 
     <modules>
-        <module>configServer</module>
-        <module>eurekaService</module>
-        <module>zuulService</module>
         <module>employeeService</module>
       <module>loginService</module>
       <module>adminService</module>
