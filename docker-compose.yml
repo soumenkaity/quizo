@@ -76,20 +76,20 @@
       ports:
         - "8761:8761"
 
-      spring-config-server:
-        image: config
-        build: configServer/
-        restart: always
-        network_mode: host
-        container_name: config-container
-        ports:
-          - "8888:8888"
+    spring-config-server:
+      image: config
+      build: configServer/
+      restart: always
+      network_mode: host
+      container_name: config-container
+      ports:
+        - "8888:8888"
 
-      api-gateway-service:
-        image: zuul
-        build: zuulService/
-        restart: always
-        network_mode: host
-        container_name: zuul-container
-        ports:
-          - "8080:8080"
+    api-gateway-service:
+      image: zuul
+      build: zuulService/
+      restart: always
+      network_mode: host
+      container_name: zuul-container
+      ports:
+        - "8080:8080"
