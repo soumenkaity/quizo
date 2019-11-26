@@ -1,20 +1,24 @@
+<div class="mat-display-1">
 
+    Selected Employees</div>
 
-<div class="mat-display-1" >Selected Employees</div>
 <mat-list>
     <h3 mat-subheader> Selected Employees</h3>
     <mat-list-item *ngFor="let employee of employees">
-      <mat-icon mat-list-icon>accessibility</mat-icon>
-      <h4 mat-line>{{employee.name}}</h4>
+        <mat-icon mat-list-icon>perm_identity</mat-icon>
+        <h4 mat-line>{{employee.name}}</h4>
+        <h4 mat-line>{{employee.email}}</h4>
     </mat-list-item>
     <mat-divider></mat-divider>
-  </mat-list>
-    <mat-list>
+</mat-list>
+
+
+
+
+<mat-list>
     <h3 mat-subheader id="io">Selected Test</h3>
-    <mat-list-item *ngFor="let Test of test">
-      <mat-icon mat-list-icon>assignment</mat-icon>
-      <h4 mat-line>{{Test.name}}</h4>
-    </mat-list-item>
-  </mat-list>
-  
-  <button mat-raised-button color="accent" (click)="confirmMapping()">CONFIRM!</button>
+
+    <h4 mat-line>{{test.name}}</h4>
+</mat-list>
+
+<button mat-raised-button color="accent" (click)="confirmMapping()">CONFIRM!</button>
