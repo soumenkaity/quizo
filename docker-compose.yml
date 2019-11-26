@@ -67,6 +67,20 @@
         interval: 4m30s
         timeout: 10s
         retries: 3
+    angular-app:
+      image: angularApp
+      build: aqeFrontend/
+      restart: always
+      network_mode: host
+      hostname: localhost
+      container_name: angular-app
+      ports:
+        - "4200:80"
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8080"]
+        interval: 4m30s
+        timeout: 10s
+        retries: 3
     eureka-service:
       image: eureka
       build: eurekaService/
