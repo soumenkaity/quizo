@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+
+
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatButtonModule} from '@angular/material/button';
@@ -15,9 +17,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatExpansionModule} from '@angular/material/expansion'
-
 import {MatRadioModule} from '@angular/material/radio'; 
-const MaterialComponents= [ MatButtonModule,
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+const MaterialComponents= [ 
+  MatButtonModule,
   MatMenuModule,
   MatIconModule,
   MatCardModule,
@@ -25,13 +29,16 @@ const MaterialComponents= [ MatButtonModule,
   MatProgressBarModule,
   MatAutocompleteModule,
   MatInputModule,
-  MatCardModule,
   MatGridListModule,
   MatSnackBarModule,
   MatProgressSpinnerModule,
   MatTooltipModule,
   MatListModule,
-  MatDialogModule,FlexLayoutModule,MatButtonModule,MatRadioModule,MatExpansionModule
+  MatDialogModule,
+  FlexLayoutModule,
+  MatRadioModule,
+  MatExpansionModule,
+  MatToolbarModule
 
 ];
 

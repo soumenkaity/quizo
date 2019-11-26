@@ -1,28 +1,32 @@
-
+<app-header></app-header>
 <div fxLayout="row" fxLayoutAlign="center center" class="login-main">
     <mat-card class="back">
-    <mat-card-header>
-      <mat-card-title>Register</mat-card-title>
-    </mat-card-header>
-    <mat-card-content fxLayout="column">
-      <mat-form-field>
-        <input #name type="text" matInput placeholder="Name" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input #email type="email" matInput placeholder="Email" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input #password type="password" matInput placeholder="Password" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input #phone type="text" matInput placeholder="Mobile Number" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input #mobile type="company" matInput placeholder="Company" required>
-      </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions align="end">
-      <button mat-raised-button color="primary" (click)=sendinfo(name.value,email.value,password.value,company.value,mobile.value)>Register</button>
-    </mat-card-actions>
+        <mat-card-header>
+
+            <mat-card-title>Fill your details</mat-card-title>
+        </mat-card-header>
+        <mat-card-content fxLayout="column">
+
+            <mat-form-field>
+                <input #name type="text" matInput placeholder="Name" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input #email type="email" matInput placeholder="Email" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input #password type="password" matInput placeholder="Password" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input #phone type="text" matInput placeholder="Mobile Number" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input #mobile type="company" matInput placeholder="Company" required>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-raised-button color="primary" (click)=sendinfo(name.value,email.value,password.value,company.value,mobile.value)>Register</button>
+        </mat-card-actions>
     </mat-card>
-    </div>
+</div>
+<app-footer></app-footer>
