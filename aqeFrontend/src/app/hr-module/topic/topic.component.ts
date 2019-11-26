@@ -27,6 +27,7 @@ export class TopicComponent implements OnInit {
   getAllTopics(){
     this.topicService.getAllTopics().subscribe(
       (response: Topic[]) => {
+        console.log(response)
         this.topics = response
         this.addCheckBoxesToTopics()
       }
