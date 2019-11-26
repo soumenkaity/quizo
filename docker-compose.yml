@@ -12,7 +12,7 @@
       environment:
         - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8091"]
+        test: ["CMD", "curl", "-f", "http://localhost:8081"]
         interval: 4m30s
         timeout: 10s
         retries: 3
@@ -29,7 +29,7 @@
       environment:
         - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8092"]
+        test: ["CMD", "curl", "-f", "http://localhost:8082"]
         interval: 4m30s
         timeout: 10s
         retries: 3
@@ -46,7 +46,7 @@
       environment:
         - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8093"]
+        test: ["CMD", "curl", "-f", "http://localhost:8083"]
         interval: 4m30s
         timeout: 10s
         retries: 3
@@ -63,7 +63,52 @@
       environment:
         - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8094"]
+        test: ["CMD", "curl", "-f", "http://localhost:8084"]
+        interval: 4m30s
+        timeout: 10s
+        retries: 3
+    gateway:
+      image: app/zuul
+      container_name: service-gateway
+      ports:
+        - "8080:8080"
+      build:
+        context: ./zuulService
+        dockerfile: Dockerfile
+      network_mode: host
+      hostname: localhost
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8080"]
+        interval: 4m30s
+        timeout: 10s
+        retries: 3
+    config:
+      image: app/config
+      container_name: config-service
+      ports:
+        - "8888:8888"
+      build:
+        context: ./configServer
+        dockerfile: Dockerfile
+      network_mode: host
+      hostname: localhost
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8888"]
+        interval: 4m30s
+        timeout: 10s
+        retries: 3
+    discovery:
+      image: app/eureka
+      container_name: eureka-service
+      ports:
+        - "8761:8761"
+      build:
+        context: ./eurekaService
+        dockerfile: Dockerfile
+      network_mode: host
+      hostname: localhost
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8761"]
         interval: 4m30s
         timeout: 10s
         retries: 3
