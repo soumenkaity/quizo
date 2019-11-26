@@ -5,10 +5,10 @@
 export const environment = {
   production: false,
 
-  HrURLprefix: 'http://172.23.234.59:8094/hr',
-  employeeURLprefix: 'http://172.23.234.85:8093/quiz/test',
-  adminURLprefix:'http://172.23.234.54:8092/admin',
-  authURLprefix:'http://172.23.239.75:8091/auth'
+  HrURLprefix: 'http://15.206.152.181:8094/hr',
+  employeeURLprefix: 'http://15.206.152.181:8080/employeeService/quiz/test',
+  adminURLprefix:'http://15.206.152.181:8092/admin',
+  authURLprefix:'http://15.206.152.181:8091/auth',
 };
 
 /*
