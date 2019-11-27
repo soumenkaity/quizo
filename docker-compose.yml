@@ -68,7 +68,7 @@
         timeout: 10s
         retries: 3
     angular-app:
-      image: angularApp
+      image: angular-app
       build: aqeFrontend/
       restart: always
       network_mode: host
