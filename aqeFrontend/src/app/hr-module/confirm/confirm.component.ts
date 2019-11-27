@@ -4,6 +4,7 @@ import { ConfirmService } from '../service/confirm.service';
 import { Topic } from '../model/topic';
 import { Employee } from '../model/employee';
 import { DataService } from '../service/data.service';
+import { TestUser} from '../model/testUser';
 
 @Component({
   selector: 'app-confirm',
@@ -15,6 +16,7 @@ export class ConfirmComponent implements OnInit {
   private testMapping = <Mapping>{};
   private test: Topic;
   private employees: Employee[]
+  private statList: TestUser[];
 
   constructor(private confirmService: ConfirmService,
               private dataService: DataService) 
@@ -38,6 +40,14 @@ export class ConfirmComponent implements OnInit {
     this.employees.forEach((v,k)=>this.testMapping.users.push({id:v.id,status:"N"}))
     console.log(this.testMapping)
     this.confirmService.postTestMapping(this.testMapping).subscribe(
+      response => console.log(response)
+    );
+  }
+  statusMapping(){
+    this.employees.forEach((user : Employee) => {
+      this.statList.push(new TestUser(user.id, this.test.id, "N"))
+    });
+    this.confirmService.postStat(this.statList).subscribe(
       response => console.log(response)
     );
   }

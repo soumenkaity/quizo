@@ -1,6 +1,7 @@
 package com.stackroute.hrservice.controller;
 
 import com.stackroute.hrservice.model.Employee;
+import com.stackroute.hrservice.model.TestUser;
 import com.stackroute.hrservice.model.UserTest;
 import com.stackroute.hrservice.service.HRService;
 import com.stackroute.hrservice.service.NotificationService;
@@ -39,6 +40,14 @@ public class HRController {
   public ResponseEntity assignTests(@RequestBody UserTest userTest){
     return new ResponseEntity(hrService.assignTests(userTest),HttpStatus.OK);
   }
+
+  @GetMapping("/stats")
+  public ResponseEntity showAssignedTestsStat(){ return new ResponseEntity(hrService.getAllTestsStatAssigned(),HttpStatus.OK); }
+  @PostMapping("/stats")
+  public ResponseEntity assignTestsStat(@RequestBody List<TestUser> testUsers){
+    return new ResponseEntity(hrService.assignTestsStat(testUsers),HttpStatus.OK);
+  }
+
   @PostMapping("/sendemail")
   public String mailSend(@RequestBody List<Employee> employees) {
     try
