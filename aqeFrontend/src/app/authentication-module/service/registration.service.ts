@@ -12,4 +12,8 @@ export class RegistrationService {
   register(username,password,email){
     return this.httpClient.post<any>(this.URLprefix+'/register',{username,password,email,"role":"EMP"})
   }
+  registerhr(hr)
+  {
+     return this.httpClient.post<any>(this.URLprefix+'/registerhr', {hr});
+  }
 }

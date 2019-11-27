@@ -1,31 +1,33 @@
 package com.stackroute.service;
 
-import com.stackroute.domain.Hr;
-import com.stackroute.repository.HrRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.stackroute.domain.Hr;
+import com.stackroute.repository.HrRepository;
 
 import java.util.List;
 
 
+
+
 @Service
 public class HrServiceImpl implements HrService {
-    HrRepository hrrepository;
+    private HrRepository hrRepository;
 
 
     @Autowired
     public HrServiceImpl(HrRepository hrrepository) {
-        this.hrrepository = hrrepository;
+        this.hrRepository = hrrepository;
     }
 
+
     @Override
-    public Hr saveHr(Hr hr) {
-        com.stackroute.domain.Hr hr1=hrrepository.save(hr);
-        return hr1;
+    public Hr saveHr(Hr Hr) {
+        return hrRepository.save(Hr);
     }
 
     @Override
     public List<Hr> getAllHrs() {
-        return hrrepository.findAll();
+        return hrRepository.findAll();
     }
 }

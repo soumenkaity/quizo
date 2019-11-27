@@ -16,13 +16,14 @@
     <description>Demo project for Spring Boot</description>
 
     <modules>
-        <module>configServer</module>
-        <module>eurekaService</module>
-        <module>zuulService</module>
-        <module>employeeService</module>
+      <module>employeeService</module>
       <module>loginService</module>
+        <module>hrRegistrationService</module>
       <module>adminService</module>
       <module>hrService</module>
+      <module>zuulService</module>
+      <module>configServer</module>
+      <module>eurekaService</module>
     </modules>
 
     <properties>
@@ -62,6 +63,10 @@
             <artifactId>spring-data-mongodb</artifactId>
             <version>2.2.1.RELEASE</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
         </dependency>
 
     </dependencies>

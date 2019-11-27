@@ -1,19 +1,7 @@
-# base image
-FROM node:12.2.0
 
-# set working directory
-WORKDIR /app
-
-
-ENV PATH /app/node_modules/.bin:$PATH
-
-# install and cache app dependencies
-COPY package.json /app/package.json
-RUN npm install
-RUN npm install -g @angular/cli
-
-# add app
-COPY . /app
-
-# start app
-CMD ng serve --host 0.0.0.0
+FROM nginx:1.13.3-alpine
+## Remove default nginx website
+RUN rm -rf /usr/share/nginx/html/*
+## From 'builder' stage copy over the artifacts in dist folder to default nginx public folder
+COPY /dist/aqefrontend /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]

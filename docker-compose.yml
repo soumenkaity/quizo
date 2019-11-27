@@ -8,11 +8,11 @@
       hostname: localhost
       container_name: login-service
       ports:
-        - "8091:8091"
+        - "8081:8081"
       environment:
         - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8091"]
+        test: ["CMD", "curl", "-f", "http://localhost:8081"]
         interval: 4m30s
         timeout: 10s
         retries: 3
@@ -25,11 +25,11 @@
       hostname: localhost
       container_name: admin-service
       ports:
-        - "8092:8092"
+        - "8082:8082"
       environment:
         - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8092"]
+        test: ["CMD", "curl", "-f", "http://localhost:8082"]
         interval: 4m30s
         timeout: 10s
         retries: 3
@@ -42,11 +42,11 @@
       hostname: localhost
       container_name: employee-service
       ports:
-        - "8093:8093"
+        - "8083:8083"
       environment:
         - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8093"]
+        test: ["CMD", "curl", "-f", "http://localhost:8083"]
         interval: 4m30s
         timeout: 10s
         retries: 3
@@ -59,21 +59,33 @@
       hostname: localhost
       container_name: hr-service
       ports:
-        - "8094:8094"
+        - "8084:8084"
       environment:
         - "SPRING_PROFILES_ACTIVE=prod"
       healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8094"]
+        test: ["CMD", "curl", "-f", "http://localhost:8084"]
         interval: 4m30s
         timeout: 10s
         retries: 3
-
+    angular-app:
+      image: angular-app
+      build: aqeFrontend/
+      restart: always
+      network_mode: host
+      hostname: localhost
+      container_name: angular-app
+      ports:
+        - "4200:80"
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8080"]
+        interval: 4m30s
+        timeout: 10s
+        retries: 3
     eureka-service:
       image: eureka
       build: eurekaService/
       restart: always
       network_mode: host
-      hostname: localhost
       container_name: eureka-container
       ports:
         - "8761:8761"
@@ -83,7 +95,6 @@
       build: configServer/
       restart: always
       network_mode: host
-      hostname: localhost
       container_name: config-container
       ports:
         - "8888:8888"
@@ -93,7 +104,6 @@
       build: zuulService/
       restart: always
       network_mode: host
-      hostname: localhost
       container_name: zuul-container
       ports:
         - "8080:8080"

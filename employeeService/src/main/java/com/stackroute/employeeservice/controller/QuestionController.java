@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/quiz/test/")
+@CrossOrigin("*")
 public class QuestionController {
 
     private FetchQuestionsService fetchQuestionsService;

@@ -1,7 +1,6 @@
 package com.stackroute.domain;
 
 
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,15 +14,12 @@ public class Hr {
     private String id;
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String name;
-    private long mobileNo;
+    private String mobileNo;
     private String emailId;
     private String company;
     private String password;
 
-    public Hr() {
-    }
-
-    public Hr(String id, String name, long mobileNo, String emailId, String company, String password) {
+    public Hr(String id, String name, String mobileNo, String emailId, String company, String password) {
         this.id = id;
         this.name = name;
         this.mobileNo = mobileNo;
@@ -48,11 +44,11 @@ public class Hr {
         this.name = name;
     }
 
-    public long getMobileNo() {
+    public String getMobileNo() {
         return mobileNo;
     }
 
-    public void setMobileNo(long mobileNo) {
+    public void setMobileNo(String mobileNo) {
         this.mobileNo = mobileNo;
     }
 
