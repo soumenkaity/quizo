@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { ToasterService } from './authentication-module/service/toaster-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'aqefrontend';
+  constructor(private toasterService: ToasterService)
+  {
+
+  }
 }

@@ -21,6 +21,7 @@
         <module>zuulService</module>
         <module>employeeService</module>
       <module>loginService</module>
+        <module>hrRegistrationService</module>
       <module>adminService</module>
       <module>hrService</module>
     </modules>
@@ -62,6 +63,10 @@
             <artifactId>spring-data-mongodb</artifactId>
             <version>2.2.1.RELEASE</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
         </dependency>
 
     </dependencies>

@@ -1,17 +1,16 @@
 package com.stackroute.controller;
 
-
-import com.stackroute.domain.Hr;
-import com.stackroute.service.HrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.stackroute.domain.Hr;
+import com.stackroute.service.HrService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "api/v1")
+@RequestMapping(value = "auth/")
 @CrossOrigin("*")
 public class HrController {
     private HrService hrService;
@@ -22,7 +21,7 @@ public class HrController {
         this.hrService = hrService;
     }
 
-    @PostMapping("hr")
+    @PostMapping("registerhr")
     public ResponseEntity<?> saveHr(@RequestBody Hr hr){
 
             hrService.saveHr(hr);
