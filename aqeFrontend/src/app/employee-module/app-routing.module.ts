@@ -24,7 +24,9 @@ const routes: Routes = [
     { path: 'dash', component:DashboardComponent},
     { path: 'feedback', component: FeedbackComponent},
     { path: '**' , component: PageNotFoundComponent}
-  ], canActivate:[RoleGuardService],data:{role:'EMP'}}
+  ]
+  // , canActivate:[RoleGuardService],data:{role:'EMP'}
+}
 ];
 
 @NgModule({

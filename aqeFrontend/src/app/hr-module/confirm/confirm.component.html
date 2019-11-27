@@ -1,9 +1,9 @@
 <div class="mat-display-1">
 
-    Selected Employees</div>
-
+    Selected Employees and Tests</div>
+    <mat-divider></mat-divider>
 <mat-list>
-    <h3 mat-subheader> Selected Employees</h3>
+    <h3 class="x" mat-header> Selected Employees</h3>
     <mat-list-item *ngFor="let employee of employees">
         <mat-icon mat-list-icon>perm_identity</mat-icon>
         <h4 mat-line>{{employee.name}}</h4>
@@ -16,7 +16,7 @@
 
 
 <mat-list>
-    <h3 mat-subheader id="io">Selected Test</h3>
+    <h3 class="x" mat-header id="io">Selected Test</h3>
 
     <h4 mat-line>{{test.name}}</h4>
 </mat-list>

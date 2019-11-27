@@ -14,16 +14,13 @@ export class EmployeedetailsComponent implements OnInit {
   }
 
   employee = {
-    id:0, name: "", email: "", company: "", designation: "", phoneno:9999999999
+    id:0, name: "", email: ""
 
   }
-  saveDetailsAndGoToInstructions(id,name,email,company,designation,phoneno){
+  saveDetailsAndGoToInstructions(id,name,email){
     this.employee.id=id;
     this.employee.name=name;
     this.employee.email=email;
-    this.employee.company=company;
-    this.employee.designation=designation;
-    this.employee.phoneno=phoneno;
    
     sessionStorage.setItem(id,JSON.stringify(this.employee));
     console.log(JSON.parse(sessionStorage.getItem(id)));

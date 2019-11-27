@@ -1,10 +1,15 @@
 
+.x{
+    
+    margin-top: 50px;
+    margin-left:530px;
+}
 .mat-display-1{
     align-self: center;
     margin-top: 50px;
     margin-left: 530px;
 }
 .mat-raised-button{
-    margin-left:50px;
+    margin-left:530px;
     margin-top:50px;
 }

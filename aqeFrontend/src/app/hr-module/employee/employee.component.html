@@ -5,10 +5,10 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
     <li formArrayName="employees" *ngFor="let employee of form.controls.employees.controls; let i = index" class="emp">
         <input type="checkbox" [formControlName]="i">
-        <span> {{employees[i].name}} -----------{{employees[i].id}} </span>
+        <span class=x> {{employees[i].name}} -----------{{employees[i].id}} </span>
     </li>
     <mat-divider></mat-divider>
-    <button mat-raised-button color="primary" >Submit</button>
+    <button mat-raised-button color="accent" >Submit</button>
 </form>
 
 
