@@ -1,10 +1,27 @@
-
-.mat-display-1{
+.mat-display-1 {
     align-self: center;
     margin-top: 50px;
     margin-left: 530px;
 }
-.mat-raised-button{
-    margin-left:50px;
-    margin-top:50px;
+
+.mat-raised-button {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.example-card {
+    max-width: 400px;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+.box {
+    margin: 50px
+}
+
+.spacing-top {
+    margin-top: 50px
 }

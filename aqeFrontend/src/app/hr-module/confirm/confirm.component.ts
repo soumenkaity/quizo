@@ -4,6 +4,8 @@ import { ConfirmService } from '../service/confirm.service';
 import { Topic } from '../model/topic';
 import { Employee } from '../model/employee';
 import { DataService } from '../service/data.service';
+import { Router } from '@angular/router';
+import { ToasterService } from 'src/app/authentication-module/service/toaster-service.service';
 
 @Component({
   selector: 'app-confirm',
@@ -17,7 +19,9 @@ export class ConfirmComponent implements OnInit {
   private employees: Employee[]
 
   constructor(private confirmService: ConfirmService,
-              private dataService: DataService) 
+              private dataService: DataService,
+              private router: Router,
+              private ts:ToasterService) 
               {
                 
                }
@@ -38,8 +42,16 @@ export class ConfirmComponent implements OnInit {
     this.employees.forEach((v,k)=>this.testMapping.users.push({id:v.id,status:"N"}))
     console.log(this.testMapping)
     this.confirmService.postTestMapping(this.testMapping).subscribe(
-      response => console.log(response)
-    );
+      response => {
+      console.log(response)
+      this.router.navigate(["/hr/finished"])
+      this.ts.success("Test Created","The Employees have been sent details about the test")
+      });
+  }
+  restart(){
+    this.dataService.clearSelectedEmployees();
+    this.dataService.clearSelectedTest();
+    this.router.navigate(['/hr'])
   }
 
 }

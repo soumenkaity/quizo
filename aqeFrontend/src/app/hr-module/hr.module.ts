@@ -10,12 +10,13 @@ import { TopicComponent } from './topic/topic.component';
 
 
 import { HttpClientModule } from '@angular/common/http';
-
-import {MaterialModule} from './material/material.module';
 import { TopicService } from './service/topic.service';
 import { EmployeeService } from './service/employee.service';
 import { ConfirmService } from './service/confirm.service';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
+import { CoreModule } from '../core/core.module';
+import { ThankyouHrComponent } from './thankyou-hr/thankyou-hr.component';
+
 
 
 @NgModule({
@@ -23,15 +24,17 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
     AppComponent,
     EmployeeComponent,
     ConfirmComponent,
-    TopicComponent
+    TopicComponent,
+    ThankyouHrComponent
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    MaterialModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CoreModule,
   ],
   providers: [TopicService,EmployeeService,ConfirmService],
   bootstrap: [AppComponent]

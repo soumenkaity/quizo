@@ -15,6 +15,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ToastrService, ToastrModule } from 'ngx-toastr';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [
@@ -24,15 +25,12 @@ import { FooterComponent } from '../footer/footer.component';
     LoginComponent,
     LogoutComponent,
     RegistrationComponent,
-    HeaderComponent,
-    FooterComponent
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MaterialModule,
     FormsModule,
     CommonModule,
     ToastrModule.forRoot({
@@ -40,6 +38,7 @@ import { FooterComponent } from '../footer/footer.component';
       positionClass:'toast-top-right',
       preventDuplicates: true,
     }),
+    CoreModule
 
   ],
   exports:[HeaderComponent],

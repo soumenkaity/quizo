@@ -19,7 +19,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatExpansionModule} from '@angular/material/expansion'
 import {MatRadioModule} from '@angular/material/radio'; 
 import {MatToolbarModule} from '@angular/material/toolbar';
-
+import { MatTableModule } from '@angular/material'
+import {MatCheckboxModule} from '@angular/material/checkbox';
 const MaterialComponents= [ 
   MatButtonModule,
   MatMenuModule,
@@ -38,7 +39,9 @@ const MaterialComponents= [
   FlexLayoutModule,
   MatRadioModule,
   MatExpansionModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatTableModule,
+  MatCheckboxModule
 
 ];
 
