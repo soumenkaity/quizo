@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         this.invalidLogin = false
       },
       error => {
-        console.log(error.error.message);
+        this.isLoading =false;
         this.toasterService.error('Login failed, login again');
         this.invalidLogin = true
       }
