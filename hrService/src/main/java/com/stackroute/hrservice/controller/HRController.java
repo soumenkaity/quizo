@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/hr")
+@CrossOrigin("*")
 public class HRController {
   private HRService hrService;
   private NotificationService notificationService;

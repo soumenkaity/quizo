@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/employee/dashboard/")
+@CrossOrigin("*")
 public class DashboardViewController {
     private UserService userService;
 
