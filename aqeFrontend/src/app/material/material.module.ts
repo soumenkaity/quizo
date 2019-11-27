@@ -14,7 +14,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import {MatExpansionModule} from '@angular/material/expansion'
 
 import {MatRadioModule} from '@angular/material/radio'; 
 const MaterialComponents= [ MatButtonModule,
@@ -31,7 +31,7 @@ const MaterialComponents= [ MatButtonModule,
   MatProgressSpinnerModule,
   MatTooltipModule,
   MatListModule,
-  MatDialogModule,FlexLayoutModule,MatButtonModule,MatRadioModule
+  MatDialogModule,FlexLayoutModule,MatButtonModule,MatRadioModule,MatExpansionModule
 
 ];
 

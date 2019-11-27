@@ -58,7 +58,7 @@ export class FetchTestComponent implements OnInit {
 
     this.count = this.count + 1;
     this.question = this.questionList[this.count];
-    this.options = null;
+    this.choices=this.question['choices'];
     this.resetTime();
   }
 
