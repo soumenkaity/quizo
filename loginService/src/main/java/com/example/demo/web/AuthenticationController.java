@@ -20,7 +20,7 @@ import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 public class AuthenticationController {
 
     @Autowired
