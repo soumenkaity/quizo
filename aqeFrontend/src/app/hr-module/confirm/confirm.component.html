@@ -1,7 +1,10 @@
-<div class="mat-display-1">
+<app-header></app-header>
+<div class="spacing-top"></div>
+<div class="mat-display-1">Selected Employees
+    <mat-progress-spinner class="text-center" mode="indeterminate" *ngIf="isLoading">
+    </mat-progress-spinner>
+</div>
 
-    Selected Employees and Tests</div>
-    <mat-divider></mat-divider>
 <mat-list>
     <h3 class="x" mat-header> Selected Employees</h3>
     <mat-list-item *ngFor="let employee of employees">
@@ -22,3 +25,7 @@
 </mat-list>
 
 <button mat-raised-button color="accent" (click)="confirmMapping()">CONFIRM!</button>
+<button mat-raised-button color="accent" (click)="restart()">RESTART!</button>
+<div class="spacing-bottom"></div>
+<div class="spacing-bottom"></div>
+<app-footer></app-footer>

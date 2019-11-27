@@ -14,7 +14,7 @@ export class EmployeeComponent implements OnInit {
   private employees: Employee[];
   private form: FormGroup;
   private selectedTopic;
-
+  private isLoading = true;
   constructor(private employeeService: EmployeeService,
               private dataService: DataService,
               private router: Router,
@@ -35,7 +35,9 @@ export class EmployeeComponent implements OnInit {
   getAllEmployeesList(){
     this.employeeService.getAllEmployees().subscribe(
       (response: Employee[]) => {
+        console.log(response)
         this.employees = response
+        this.isLoading = false;
         this.addCheckBoxesToEmp()
       }
     )

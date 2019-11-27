@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MaterialModule} from './material/material.module';
+import { MaterialModule } from './material/material.module';
 
 import { HrModule } from './hr-module/hr.module';
 import { EmployeeModule } from './employee-module/employee.module';
@@ -13,9 +13,10 @@ import { LandingModule } from './landing-module/landing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { ToasterService } from './authentication-module/service/toaster-service.service';
+import { HeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,8 +27,6 @@ import { ToasterService } from './authentication-module/service/toaster-service.
     MaterialModule,
     AdminModule,
     AuthenticationModule,
-
-    MaterialModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 10000,
@@ -35,7 +34,7 @@ import { ToasterService } from './authentication-module/service/toaster-service.
       preventDuplicates: true,
     }),
   ],
-  providers: [ToasterService],
+  providers: [ToasterService,HeaderComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

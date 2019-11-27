@@ -12,7 +12,7 @@ import { DataService } from '../service/data.service';
 })
 export class TopicComponent implements OnInit {
    form: FormGroup;
-
+  isLoading = true;
   constructor(private topicService: TopicService,private router: Router,
               private dataService: DataService,private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
@@ -29,6 +29,7 @@ export class TopicComponent implements OnInit {
       (response: Topic[]) => {
         console.log(response)
         this.topics = response
+        this.isLoading=false;
         this.addCheckBoxesToTopics()
       }
     )

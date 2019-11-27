@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="cancel()"> <h4><i class="material-icons v-center ">keyboard_backspace</i>
+        <span class="spacing-l-20">QUIZO</span></h4>
+    </button>
+    <span class="spacer"></span>
+    <span class="mr-2">
+        {{loggedInUser}}
+    </span>
+
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngIf="loggedInUser" (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon>
+              <span>Logout</span>
+            </button>
+        <button mat-menu-item>
+              <mat-icon>account_circle</mat-icon>
+              <span>View Accout</span>
+            </button>
+        <button mat-menu-item>
+              <mat-icon>notification_important</mat-icon>
+              <span>Notifications</span>
+            </button>
+    </mat-menu>
+</mat-toolbar>
