@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { ToasterService } from '../authentication-module/service/toaster-service.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,12 +9,19 @@ import { Location } from '@angular/common';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private location: Location) { }
+  constructor(private location: Location,private router: Router, private ts: ToasterService) { }
+
+  loggedInUser;
 
   ngOnInit() {
+    this.loggedInUser = sessionStorage.getItem('username');
   }
   cancel() {
     this.location.back(); // <-- go back to previous location on cancel
+  }
+  logout(){
+    this.ts.success("Logged out Sucessfully","Logged Out")
+    this.router.navigate(['/auth/logout'])
   }
 
 }
