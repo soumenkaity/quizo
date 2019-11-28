@@ -3,11 +3,15 @@
 }
 
 mat-card {
-    min-width: 27%;
+    min-width: 28%;
 }
 
 .back {
-    background-color: #F5F5F5;
+    /* background-color: #F5F5F5; */
+    box-shadow: 3px 3px 2px 2px #dadada;
+    /* border: 1px solid rgb(155, 155, 155); */
+    height: 330px;
+    margin-top: -50px;
 }
 
 .text {
@@ -24,4 +28,9 @@ mat-card {
 
 .spacer {
     flex: 1 1 auto;
+}
+
+mat-card-header {
+    display: block;
+    flex-direction: row;
 }
