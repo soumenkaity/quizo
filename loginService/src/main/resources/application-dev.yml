@@ -7,6 +7,18 @@ spring:
     prepStmtCacheSize: 250
     prepStmtCacheSqlLimit: 2048
     useServerPrepStmts: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: hariombabug123@gmail.com
+    password: quizzo123
+    protocol: smtp
+    tls: true
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
+
 logging:
   level:
     org.springframework.web: INFO

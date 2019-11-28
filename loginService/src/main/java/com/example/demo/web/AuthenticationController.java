@@ -5,6 +5,8 @@ import com.example.demo.repository.UserRepository;
 import com.example.demo.security.jwt.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -25,6 +27,9 @@ public class AuthenticationController {
 
     @Autowired
     AuthenticationManager authenticationManager;
+
+    @Autowired
+    private JavaMailSender javaMailSender;
 
     @Autowired
     JwtTokenProvider jwtTokenProvider;
@@ -61,5 +66,25 @@ public class AuthenticationController {
 
         }
         return ok("its okay");
+    }
+
+    @PostMapping("/reset")
+    public ResponseEntity reset(@RequestParam String email){
+        try{
+        User u = this.users.findByEmail(email).orElseThrow(()-> new UsernameNotFoundException("Users email  not found"));
+        u.setPassword(bcryptEncoder.encode("password"));
+        SimpleMailMessage mail=new SimpleMailMessage();
+        mail.setTo(email);
+        mail.setFrom("hariombabug123@gmail.com");
+        mail.setSubject("Reset Password");
+        mail.setText("Your password for the username : "+u.getUsername()+" has been reset to password \n ");
+
+        javaMailSender.send(mail);
+
+        this.users.save(u);
+        return (ResponseEntity) ok("Email sent");
+        }catch(Exception e){
+          return (ResponseEntity) ResponseEntity.notFound();
+        }
     }
 }
