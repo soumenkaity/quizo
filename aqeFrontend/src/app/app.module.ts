@@ -14,9 +14,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { ToasterService } from './authentication-module/service/toaster-service.service';
 import { HeaderComponent } from './header/header.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
