@@ -16,6 +16,7 @@ import { ConfirmService } from './service/confirm.service';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { ThankyouHrComponent } from './thankyou-hr/thankyou-hr.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -25,7 +26,8 @@ import { ThankyouHrComponent } from './thankyou-hr/thankyou-hr.component';
     EmployeeComponent,
     ConfirmComponent,
     TopicComponent,
-    ThankyouHrComponent
+    ThankyouHrComponent,
+    DashboardComponent
    
   ],
   imports: [
