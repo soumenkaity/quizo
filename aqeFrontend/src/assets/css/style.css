@@ -1441,3 +1441,7 @@ textarea:focus {
 .spacing-top {
     margin-top: 50px
 }
+
+body {
+    font-size: 2.5rem;
+}
