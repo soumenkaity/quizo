@@ -33,7 +33,7 @@ Table OF Contents
 /* --- typography --- */
 body {
     font-family: 'Montserrat', sans-serif;
-	font-size: 15px;
+	font-size: 300%;
     font-weight: 400;
     color: #798696;
 	overflow-x:hidden;
