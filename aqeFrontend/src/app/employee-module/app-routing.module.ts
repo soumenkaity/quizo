@@ -1,6 +1,6 @@
  import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 import { TestInsComponent } from './test-ins/test-ins.component';
 import { TestPageComponent } from './test-page/test-page.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { LandingComponent } from './landing/landing.component';
 import { FetchTestComponent } from './fetch-test/fetch-test.component';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path:'employee' , children:[
@@ -24,8 +25,9 @@ const routes: Routes = [
     { path: 'dash', component:DashboardComponent},
     { path: 'feedback', component: FeedbackComponent},
     { path: '**' , component: PageNotFoundComponent}
-  ]
-  // , canActivate:[RoleGuardService],data:{role:'EMP'}
+    
+  ], canActivate:[RoleGuardService],data:{role:'EMP'}
+  // 
 }
 ];
 
@@ -42,7 +44,6 @@ export const EmployeeRoutingComponents = [
   TestPageComponent,
   ErrorComponent,
   ThankyouComponent,
-  PageNotFoundComponent,
   DashboardComponent,
   FeedbackComponent
 ]
