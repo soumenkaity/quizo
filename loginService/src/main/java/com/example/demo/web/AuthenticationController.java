@@ -4,6 +4,7 @@ import com.example.demo.domain.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.security.jwt.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -57,15 +58,18 @@ public class AuthenticationController {
             throw new BadCredentialsException("Invalid username/password supplied");
         }
     }
+
+
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody User user){
         try{
-            user.setPassword(bcryptEncoder.encode(user.getPassword()));
-            users.save(user);
-        }catch (AuthenticationException e){
-
+          user.setPassword(bcryptEncoder.encode(user.getPassword()));
+          users.save(user);
+          return ok("its okay");
+        }catch (RuntimeException e){
+          return (ResponseEntity) ResponseEntity.status(HttpStatus.CONFLICT);
         }
-        return ok("its okay");
+
     }
 
     @PostMapping("/reset")
@@ -87,4 +91,6 @@ public class AuthenticationController {
           return (ResponseEntity) ResponseEntity.notFound();
         }
     }
+
+
 }

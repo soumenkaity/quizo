@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +8,12 @@ import { environment } from 'src/environments/environment.prod';
 export class RegistrationService {
   
   constructor(private httpClient:HttpClient) { }
-  private URLprefix = environment.adminURLprefix
+  private URLprefix = environment.authURLprefix
   register(username,password,email){
     return this.httpClient.post<any>(this.URLprefix+'/register',{username,password,email,"role":"EMP"})
   }
-  registerhr(hr)
+  registerHr(username,password,email)
   {
-     return this.httpClient.post<any>(this.URLprefix+'/registerhr', {hr});
+     return this.httpClient.post<any>(this.URLprefix+'/register',{username,password,email,"role":"HRM"} );
   }
 }
