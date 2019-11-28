@@ -1,9 +1,11 @@
 export class result{
     id:string;
-    option:string;
-    constructor(id,option){
+    option:number;
+    score:number;
+    constructor(id,option,score){
 
         this.id=id;
         this.option=option;
+        this.score=score;
     }
 }

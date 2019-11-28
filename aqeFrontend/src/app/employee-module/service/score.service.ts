@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 export class ScoreService {
   private URLprefix = environment.employeeURLprefix;
 
-  url: string = 'http://localhost:9090/quiz/test/questions';
+  url: string = 'http://localhost:8083/quiz/test/submit';
   constructor(private http: HttpClient) { }
 
   httpOptions = {
@@ -24,5 +24,10 @@ export class ScoreService {
       incorrect: i
     };
     return this.http.post<score>(this.URLprefix+'/questions', scoreJSON, this.httpOptions);
+  }
+
+  postScore2(testResult){
+    
+    return this.http.post(this.url, testResult);
   }
 }

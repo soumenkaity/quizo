@@ -3,6 +3,7 @@ import { FetchTestService } from '../service/fetch-test.service';
 import { Question } from '../model/questions';
 import { result } from '../model/result';
 import { Router } from '@angular/router';
+import { ScoreService } from '../service/score.service';
 
 @Component({
   selector: 'app-fetch-test',
@@ -27,6 +28,9 @@ export class FetchTestComponent implements OnInit {
   private question;
 
   private count: number;
+  private testResult;
+  private empId: string = '878967asdgfg';
+  private testId: string = 'u75asd87asd55';
 
   private result: result;
   private resultList = [];
@@ -35,7 +39,7 @@ export class FetchTestComponent implements OnInit {
   choices: any;
   private score:number;
 
-  constructor(private fetchTestService: FetchTestService,
+  constructor(private fetchTestService: FetchTestService, private scoreService: ScoreService,
     private router: Router,
   ) { }
 
@@ -81,7 +85,7 @@ export class FetchTestComponent implements OnInit {
     else this.score=0;
 
 
-    this.result = new result(this.question.id, option,this.score);
+    this.result = new result(this.question.id, parseInt(option)-1,this.score);
 
     console.log("result ", this.result);
 
@@ -93,6 +97,8 @@ export class FetchTestComponent implements OnInit {
 
   submitTest() {
     console.log(this.resultList);
+    this.testResult={employeeId:this.empId, testId: this.testId, testResponses: this.resultList};
+   this.scoreService.postScore2(this.testResult).subscribe(res=>console.log(res));
 
   }
 
