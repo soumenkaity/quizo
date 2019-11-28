@@ -8,7 +8,7 @@ import { ToasterService } from './authentication-module/service/toaster-service.
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'aqefrontend';
+  title = 'Quizo';
   constructor(private toasterService: ToasterService)
   {
 
