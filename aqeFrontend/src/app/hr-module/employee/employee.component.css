@@ -1,21 +1,37 @@
-
-.mat-display-1{
+.mat-display-1 {
     align-self: center;
     margin-top: 50px;
     margin-left: 530px;
 }
 
-
-
-.emp{
+.emp {
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
+    background: #fbfbfb;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.li{
-    margin-left: 20px;
+
+.li {
+    margin-left: 10px;
 }
-.mat-raised-button{
-    margin-left:50px;
-    margin-top:30px;
-    margin-right:575px; 
+
+.mat-raised-button {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.spacing-top {
+    margin-top: 50px
+}
+
+.spacing-bottom {
+    margin-bottom: 50px;
+}
+
+.mat-checkbox {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.grey-color {
+    background-color: grey;
 }

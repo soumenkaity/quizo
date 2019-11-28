@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   password = ''
   email = ''
   invalidLogin = false
+  isLoading = false;
 
   constructor(private router: Router,
     private loginservice: AuthenticationService,
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin() {
+    this.isLoading =true;
     this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
           sessionStorage.setItem('username',data.username);
@@ -44,7 +46,7 @@ export class LoginComponent implements OnInit {
         this.invalidLogin = false
       },
       error => {
-        console.log(error.error.message);
+        this.isLoading =false;
         this.toasterService.error('Login failed, login again');
         this.invalidLogin = true
       }

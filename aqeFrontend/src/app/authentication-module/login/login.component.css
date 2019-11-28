@@ -1,12 +1,36 @@
-.login-main{
+.login-main {
     padding-top: 10%;
-    }
-    mat-card{
-    min-width: 27%;
-    }
-.back{
-    background-color:#F5F5F5;
 }
-.text{
+
+mat-card {
+    min-width: 28%;
+}
+
+.back {
+    /* background-color: #F5F5F5; */
+    box-shadow: 3px 3px 2px 2px #dadada;
+    /* border: 1px solid rgb(155, 155, 155); */
+    height: 330px;
+    margin-top: -50px;
+}
+
+.text {
     color: #585858;
+}
+
+.spacing-l-20 {
+    margin-left: 20px;
+}
+
+.v-center {
+    vertical-align: -5px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+mat-card-header {
+    display: block;
+    flex-direction: row;
 }

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/quiz/test/")
+@RequestMapping(value = "/quiz/test")
 @CrossOrigin("*")
 public class QuestionController {
 
@@ -27,7 +27,7 @@ public class QuestionController {
     }
 
 
-    @GetMapping("questions")
+    @GetMapping("/questions")
     public ResponseEntity<?> getAllQuestions() throws QuestionNotFoundException{
         ResponseEntity responseEntity;
 
@@ -35,7 +35,7 @@ public class QuestionController {
 
         return responseEntity;
     }
-    @GetMapping("topics")
+    @GetMapping("/topics")
     public ResponseEntity<?> getAllTopics() throws QuestionNotFoundException{
         ResponseEntity responseEntity;
 
@@ -44,7 +44,7 @@ public class QuestionController {
         return responseEntity;
     }
 
-    @PostMapping("question")
+    @PostMapping("/question")
     public ResponseEntity<?> saveQuestion(@RequestBody Question track) {
         ResponseEntity responseEntity;
 

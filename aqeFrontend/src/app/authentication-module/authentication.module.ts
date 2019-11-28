@@ -9,18 +9,13 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
-
-
 import { CommonModule } from '@angular/common';
-import {
-  MatFormFieldModule,
-  MatInputModule,
-  MatCardModule,
-  MatButtonModule
-  } from '@angular/material';
-  import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialModule } from '../material/material.module';
 import { RegistrationComponent } from './registration/registration.component';
 import { ToastrService, ToastrModule } from 'ngx-toastr';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +24,8 @@ import { ToastrService, ToastrModule } from 'ngx-toastr';
     AddEmployeeComponent,
     LoginComponent,
     LogoutComponent,
-    RegistrationComponent
+    RegistrationComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -37,18 +33,15 @@ import { ToastrService, ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     FormsModule,
     CommonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatCardModule,
-    MatButtonModule,
-    FlexLayoutModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass:'toast-top-right',
       preventDuplicates: true,
     }),
+    CoreModule
 
   ],
+  exports:[HeaderComponent],
   providers: [ ToastrService ],
   bootstrap: [AppComponent]
 })

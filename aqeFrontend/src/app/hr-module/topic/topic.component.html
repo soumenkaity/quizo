@@ -1,15 +1,24 @@
+<app-header>
+</app-header>
+<div class="spacing-top">
+    <div class="container">
+        <h1 class="text-center">Please select a test</h1>
+        <div class="spacing-top"></div>
+        <mat-progress-spinner class="text-center" mode="indeterminate" *ngIf="isLoading">
+        </mat-progress-spinner>
+        <div class="row">
+            <div class="card col-md-4 mr-3" style="width: 18rem;" *ngFor="let topic of topics">
+                <div class="card-body">
+                    <h2 class="card-title text-uppercase">{{topic.name}}</h2>
+                    <p class="card-text">Creation date: <span>{{topic.createdAt}}</span></p>
+                    <p class="card-text">Link: <a href="{{topic.link}}">{{topic.link}}</a></p>
 
- <div class="mat-display-1" > Topic</div>
- <mat-divider></mat-divider>
-<mat-list>
-    <h3 class="x" mat-header>Select Topic</h3>
-    <mat-list-item *ngFor="let topic of topics" value=topic (click)="selectedTopic(topic)">
-      <mat-icon mat-list-icon>topic</mat-icon>
-      <h4 mat-line>{{topic.name}}</h4>
-      <mat-divider></mat-divider>
-    </mat-list-item>
-  </mat-list>
-  
-  <button mat-raised-button color="accent" (click)="goToEmployeeSelection()">Go To Employees</button>
-  
+                    <button mat-raised-button color="primary" (click)="selectedTopic(topic)">SELECT</button>
+                    <button mat-raised-button color="primary" (click)="goToEmployeeSelection()">DETAILS</button>
+                </div>
+            </div>
+        </div>
 
+    </div>
+</div>
+<app-footer></app-footer>

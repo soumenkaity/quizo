@@ -8,9 +8,5 @@ import { ToasterService } from './authentication-module/service/toaster-service.
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Quizo';
-  constructor(private toasterService: ToasterService)
-  {
-
-  }
+  title = 'QUIZO';
 }

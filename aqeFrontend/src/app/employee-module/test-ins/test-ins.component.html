@@ -1,11 +1,15 @@
-<div class="mat-display-1">
+<div class="spacing-top">
+    <div class="text-center">
 
-    Instructions</div>
-<div class="mi">
+        <h1>Instructions</h1>
+    </div>
+</div>
+
+
+<div class="container">
     <div>
 
         <mat-list>
-
             <mat-list-item> -Total duration of examination is 1 hour. </mat-list-item>
             <mat-list-item> -This paper consists of Questions </mat-list-item>
             <mat-list-item> -The clock will be set by server. The countdown timer in the top right corner of the screen will display the remaining time available for you to complete the exam. When the timer reaches zero, the examination will end by itself. </mat-list-item>
@@ -16,7 +20,11 @@
         </mat-list>
     </div>
 
-
-
-</div>
-<button  mat-raised-button color="accent" (click)="ngOnInit()"><a routerLink="/employee/test-page" >start test</a></button>
+    <div class="row m-4">
+        <div class="col-md-4">.</div>
+        <div class="col-md-4 m-auto text-center">
+            <button class="btn btn-warning " routerLink="/employee/test-page"><h3>Start Test</h3></button>
+        </div>
+        <div class="col-md-4">.
+        </div>
+    </div>
