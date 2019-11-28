@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-fetch-test',
   templateUrl: './fetch-test.component.html',
-  styleUrls: ['./fetch-test.component.css']
+  styleUrls: ['./fetch-test.component.css'],
 })
 export class FetchTestComponent implements OnInit {
 
@@ -33,6 +33,7 @@ export class FetchTestComponent implements OnInit {
 
   private selectedOption;
   choices: any;
+  private score:number;
 
   constructor(private fetchTestService: FetchTestService,
     private router: Router,
@@ -72,10 +73,15 @@ export class FetchTestComponent implements OnInit {
 
 
   saveAnswer(option: string) {
-    console.log("option data is ", this.options);
+    console.log("option data is ", option);
+
+    if(parseInt(option)-1==this.question.choices.indexOf(this.question.answer)){
+      this.score=1;
+    }
+    else this.score=0;
 
 
-    this.result = new result(this.question.id, option);
+    this.result = new result(this.question.id, option,this.score);
 
     console.log("result ", this.result);
 
