@@ -1,0 +1,62 @@
+
+================== USER ========================
+  private String id;
+  private String name;
+  private String role;
+  private double phone;
+  private String email;
+  private String designation;
+
+================================================
+
+===================TOPIC========================
+  private String id;
+  private String name;
+  private String link;
+
+================================================
+
+===================TOPIC_NAME===================
+ private String id;
+  private String question;
+  private String sentence
+  private String answer;
+  private String[] choices;
+  private String difficulty;
+  private int correctAttempts;
+  private int totalOccurences
+================================================
+
+=====================RESULT=====================
+private String id;
+private String empId;
+private String testId;
+private String empName;
+private String testName;
+private double score;
+private double correct;
+private double wrong;
+private Attempt attempts[
+    private String questionId;
+    private Result result[
+        private String response;
+        private String correct;
+    ]
+]
+private String difficulty;
+================================================
+
+==================TEST-USER=====================
+private String id;
+private String topicId;
+private String topicName;
+private String employeeId;
+private Date createdAt;
+private String status;
+================================================
+
+==================REQUEST=======================
+private String id;
+private String message;
+private String status
+================================================
