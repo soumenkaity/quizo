@@ -98,17 +98,24 @@ private score: number;
 private percentage: number;
 
   submitTest() {
+    
     console.log(this.resultList);
     console.log(this.questionList.length);
     this.correct = this.scoreService.calculateCorrectAnswers(this.resultList);
     this.incorrect = this.questionList.length - this.correct;
     this.score = this.scoreService.calculateScore(this.resultList, this.questionList);
     this.percentage = this.scoreService.calculatePercentage(this.score,this.questionList);
+    
     //this.testResult={employeeId:this.empId, testId: this.testId, testResponses: this.resultList};
     this.testResult=new testResult(this.empId,this.testId,this.resultList,this.correct,this.incorrect,this.score,this.percentage);
     console.log("Test Result is ", this.testResult);
-   this.scoreService.postScore2(this.testResult).subscribe(res=>console.log(res));
+   this.scoreService.postScore2(this.testResult).subscribe(res=>{console.log(res);
+  });
+  this.feedbackpage();
+  }
 
+  feedbackpage(){
+    this.router.navigate(['/employee/feedback']);
   }
 
   resetTime() {
