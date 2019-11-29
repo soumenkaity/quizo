@@ -4,7 +4,7 @@ import { Question } from '../model/questions';
 import { result } from '../model/result';
 import { Router } from '@angular/router';
 import { ScoreService } from '../service/score.service';
-import { testResult } from '../model/testResult';
+// import { testResult } from '../model/testResult';
 
 @Component({
   selector: 'app-fetch-test',
