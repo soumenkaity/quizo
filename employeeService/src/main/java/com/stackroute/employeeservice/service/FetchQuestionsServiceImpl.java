@@ -17,9 +17,9 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
 
     @Value("${spring.data.mongodb.database}")
     public static final String DB_NAME = "AQE";
-    public static final String QUESTION_COLLECTION = "topic_srk";
+    public static  String QUESTION_COLLECTION = "topic_srk";
     @Value("${spring.data.mongodb.host}")
-    public static final String MONGO_HOST = "172.23.239.105";
+    public static final String MONGO_HOST = "localhost";
     @Value("${spring.data.mongodb.port}")
     public static final int MONGO_PORT = 27017;
 
