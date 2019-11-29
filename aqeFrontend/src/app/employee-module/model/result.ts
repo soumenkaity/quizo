@@ -1,11 +1,13 @@
 export class result{
-    id:string;
-    option:number;
-    score:number;
-    constructor(id,option,score){
+    id : string;
+    option : number;
+    correctOption : number;
+    userResponse : boolean;
+    constructor(id,option,correctOption,userResponse){
 
         this.id=id;
         this.option=option;
-        this.score=score;
+        this.correctOption=correctOption;
+        this.userResponse=userResponse;
     }
 }

@@ -1,7 +1,7 @@
 package com.stackroute.employeeservice.controller;
 
 import com.stackroute.employeeservice.domain.DashboardItem;
-import com.stackroute.employeeservice.service.UserService;
+import com.stackroute.employeeservice.service.DashboardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,14 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/employee/dashboard/")
-@CrossOrigin("*")
 public class DashboardViewController {
-    private UserService userService;
+    private DashboardService dashboardService;
 
     @Autowired
-    public DashboardViewController(UserService userService)
+    public DashboardViewController(DashboardService dashboardService)
     {
-        this.userService=userService;
+        this.dashboardService = dashboardService;
     }
     @PostMapping("employee")
     public ResponseEntity<?> saveUser(@RequestBody DashboardItem dashboarduser)
@@ -26,7 +25,7 @@ public class DashboardViewController {
         ResponseEntity responseEntity;
         try
         {
-            userService.saveDashboardUser(dashboarduser);
+            dashboardService.saveDashboardUser(dashboarduser);
             responseEntity=new ResponseEntity<String>("successfully created", HttpStatus.CREATED);
         }
         catch(Exception ex)
@@ -42,7 +41,7 @@ public class DashboardViewController {
         ResponseEntity responseEntity;
         try
         {
-            responseEntity=new ResponseEntity<List<DashboardItem>>(userService.getAllDashboardUser(),HttpStatus.OK);
+            responseEntity=new ResponseEntity<List<DashboardItem>>(dashboardService.getAllDashboardUser(),HttpStatus.OK);
         }
         catch (Exception ex)
         {
@@ -57,7 +56,7 @@ public class DashboardViewController {
         ResponseEntity responseEntity;
          try
         {
-            userService.deleteDashboardItem(dashboardItem);
+            dashboardService.deleteDashboardItem(dashboardItem);
             responseEntity=new ResponseEntity<String>("sucessfully deleted  " ,HttpStatus.OK);
         }
         catch(Exception ex)

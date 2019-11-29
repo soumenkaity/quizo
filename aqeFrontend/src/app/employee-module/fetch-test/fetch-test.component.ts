@@ -4,6 +4,7 @@ import { Question } from '../model/questions';
 import { result } from '../model/result';
 import { Router } from '@angular/router';
 import { ScoreService } from '../service/score.service';
+import { testResult } from '../model/testResult';
 
 @Component({
   selector: 'app-fetch-test',
@@ -28,16 +29,13 @@ export class FetchTestComponent implements OnInit {
   private question;
 
   private count: number;
-  private testResult;
+  private testResult: testResult;
   private empId: string = '878967asdgfg';
   private testId: string = 'u75asd87asd55';
-
   private result: result;
   private resultList = [];
-
-  private selectedOption;
   choices: any;
-  private score:number;
+  private userResponse : boolean;
 
   constructor(private fetchTestService: FetchTestService, private scoreService: ScoreService,
     private router: Router,
@@ -46,15 +44,16 @@ export class FetchTestComponent implements OnInit {
   ngOnInit() {
     console.log("in ngoninit");
     this.fetchTestService.getQuestions(this.topic).subscribe(data => {
-      console.log( data[1]);
+      console.log( data);
       this.questionList = data;
       this.question = this.questionList[0];
       // console.log(this.question);
       this.choices=this.question['choices'];
       console.log(this.options)
       this.count = 0;
+      this.checkTime();
     });
-    this.checkTime();
+    
 
 
   }
@@ -80,12 +79,12 @@ export class FetchTestComponent implements OnInit {
     console.log("option data is ", option);
 
     if(parseInt(option)-1==this.question.choices.indexOf(this.question.answer)){
-      this.score=1;
+      this.userResponse = true;
     }
-    else this.score=0;
+    else this.userResponse = false;
 
 
-    this.result = new result(this.question.id, parseInt(option)-1,this.score);
+    this.result = new result(this.question.id, parseInt(option),this.question.choices.indexOf(this.question.answer)+1,this.userResponse);
 
     console.log("result ", this.result);
 
@@ -93,11 +92,21 @@ export class FetchTestComponent implements OnInit {
 
     console.log("the result list is ", this.resultList);
   }
-
+private correct:number;
+private incorrect: number;
+private score: number;
+private percentage: number;
 
   submitTest() {
     console.log(this.resultList);
-    this.testResult={employeeId:this.empId, testId: this.testId, testResponses: this.resultList};
+    console.log(this.questionList.length);
+    this.correct = this.scoreService.calculateCorrectAnswers(this.resultList);
+    this.incorrect = this.questionList.length - this.correct;
+    this.score = this.scoreService.calculateScore(this.resultList, this.questionList);
+    this.percentage = this.scoreService.calculatePercentage(this.score,this.questionList);
+    //this.testResult={employeeId:this.empId, testId: this.testId, testResponses: this.resultList};
+    this.testResult=new testResult(this.empId,this.testId,this.resultList,this.correct,this.incorrect,this.score,this.percentage);
+    console.log("Test Result is ", this.testResult);
    this.scoreService.postScore2(this.testResult).subscribe(res=>console.log(res));
 
   }
@@ -109,7 +118,7 @@ export class FetchTestComponent implements OnInit {
   }
 
   checkTime() {
-    if (this.count != 3) {
+    if (this.count != this.questionList.length) {
       if (this.totalSeconds <= 0) {
         setTimeout(() => { this.nextQuestion() }, 1);
         setTimeout(() => { this.checkTime() }, 1000);

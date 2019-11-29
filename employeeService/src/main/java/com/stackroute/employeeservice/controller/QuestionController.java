@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/quiz/test")
-@CrossOrigin("*")
+@RequestMapping(value = "/quiz/test/")
 public class QuestionController {
 
     private FetchQuestionsService fetchQuestionsService;
@@ -27,7 +26,7 @@ public class QuestionController {
     }
 
 
-    @GetMapping("/questions")
+    @GetMapping("questions")
     public ResponseEntity<?> getAllQuestions() throws QuestionNotFoundException{
         ResponseEntity responseEntity;
 
@@ -35,7 +34,7 @@ public class QuestionController {
 
         return responseEntity;
     }
-    @GetMapping("/topics")
+    @GetMapping("topics")
     public ResponseEntity<?> getAllTopics() throws QuestionNotFoundException{
         ResponseEntity responseEntity;
 
@@ -44,11 +43,11 @@ public class QuestionController {
         return responseEntity;
     }
 
-    @PostMapping("/question")
-    public ResponseEntity<?> saveQuestion(@RequestBody Question track) {
+    @PostMapping("question")
+    public ResponseEntity<?> saveQuestion(@RequestBody Question question) {
         ResponseEntity responseEntity;
 
-        fetchQuestionsService.saveQuestion(track);
+        fetchQuestionsService.saveQuestion(question);
         responseEntity=new ResponseEntity<String>("Successfully created", HttpStatus.CREATED);
 
         return responseEntity;

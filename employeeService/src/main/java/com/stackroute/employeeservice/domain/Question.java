@@ -16,6 +16,18 @@ public class Question {
     private Difficulty difficulty;
     private int weight;
 
+    public Question(String id, String question, String answer, String[] choices, Difficulty difficulty, int weight) {
+        this.id = id;
+        this.question = question;
+        this.answer = answer;
+        this.choices = choices;
+        this.difficulty = difficulty;
+        this.weight = weight;
+    }
+
+    public Question() {
+    }
+
     public String getId() {
         return id;
     }

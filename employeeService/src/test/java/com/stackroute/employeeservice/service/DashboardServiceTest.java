@@ -1,7 +1,7 @@
 package com.stackroute.employeeservice.service;
 
 import com.stackroute.employeeservice.domain.DashboardItem;
-import com.stackroute.employeeservice.repository.UserRepository;
+import com.stackroute.employeeservice.repository.DashboardRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -16,16 +16,16 @@ import java.util.Optional;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
-public class UserServiceTest {
+public class DashboardServiceTest {
     private DashboardItem dashboardItem;
 
     //Create a mock for UserRepository
     @Mock
-    private UserRepository userRepository;
+    private DashboardRepository dashboardRepository;
 
     //Inject the mocks as dependencies into UserServiceImpl
     @InjectMocks
-    private UserService userService = new UserServiceImpl(userRepository);
+    private DashboardService dashboardService = new DashboardServiceImpl(dashboardRepository);
     List<DashboardItem> list= null;
 
     @Before
@@ -44,27 +44,27 @@ public class UserServiceTest {
 
     @Test
     public void getAllDashboardUsers() {
-        userRepository.save(dashboardItem);
+        dashboardRepository.save(dashboardItem);
         //stubbing the mock to return specific data
-        when(userRepository.findAll()).thenReturn(list);
-        List<DashboardItem> dashboardItemList = userService.getAllDashboardUser();
+        when(dashboardRepository.findAll()).thenReturn(list);
+        List<DashboardItem> dashboardItemList = dashboardService.getAllDashboardUser();
         assertEquals(list, dashboardItemList);
     }
 
     @Test
     public void saveDashboardUser() {
 
-        when(userRepository.save(dashboardItem)).thenReturn(dashboardItem);
-        DashboardItem savedUser = userService.saveDashboardUser(dashboardItem);
+        when(dashboardRepository.save(dashboardItem)).thenReturn(dashboardItem);
+        DashboardItem savedUser = dashboardService.saveDashboardUser(dashboardItem);
         assertEquals(dashboardItem,savedUser);
     }
 
     @Test
     public  void deleteUserSuccess() {
-        when(userRepository.findOne(Matchers.any())).thenReturn(Optional.ofNullable(dashboardItem));
-        DashboardItem deleteUser = userService.deleteDashboardItem(dashboardItem);
+        when(dashboardRepository.findOne(Matchers.any())).thenReturn(Optional.ofNullable(dashboardItem));
+        DashboardItem deleteUser = dashboardService.deleteDashboardItem(dashboardItem);
         assertEquals(dashboardItem, deleteUser);
-        verify(userRepository,times(1)).delete((deleteUser));
+        verify(dashboardRepository,times(1)).delete((deleteUser));
     }
 
 

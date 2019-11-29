@@ -13,6 +13,18 @@ public class DashboardItem {
     private String _employeeId;
     private int employeescore;
 
+    public DashboardItem(String _id, String employeename, String testname, int _testid, String _employeeId, int employeescore) {
+        this._id = _id;
+        this.employeename = employeename;
+        this.testname = testname;
+        this._testid = _testid;
+        this._employeeId = _employeeId;
+        this.employeescore = employeescore;
+    }
+
+    public DashboardItem() {
+    }
+
     public String get_id() {
         return _id;
     }
