@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminServiceService } from '../service/admin-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
-import {CoreModule} from '../../core/core.module';
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
