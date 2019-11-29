@@ -7,18 +7,30 @@
         <mat-progress-spinner class="text-center" mode="indeterminate" *ngIf="isLoading">
         </mat-progress-spinner>
         <div class="row">
-            <div class="card col-md-4 mr-3" style="width: 18rem;" *ngFor="let topic of topics">
-                <div class="card-body">
-                    <h2 class="card-title text-uppercase">{{topic.name}}</h2>
-                    <p class="card-text">Creation date: <span>{{topic.createdAt}}</span></p>
-                    <p class="card-text">Link: <a href="{{topic.link}}">{{topic.link}}</a></p>
-
-                    <button mat-raised-button color="primary" (click)="selectedTopic(topic)">SELECT</button>
-                    <button mat-raised-button color="primary" (click)="goToEmployeeSelection()">DETAILS</button>
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="card col-md-3 text-center" *ngFor="let topic of topics">
+                    <div class="card-body">
+                        <h2 class="card-title text-uppercase big-text">{{topic.name}}</h2>
+                        <h4>
+                            <p class="card-text">
+                                Creation date: <span>{{topic.createdAt | slice:0:10}}</span>
+                            </p>
+                        </h4>
+                        <p class="card-text">Link: <a href="{{topic.link}}">{{topic.link}}</a></p>
+                        <div>
+                            <button mat-raised-button color="primary" class="pull-left" (click)="selectedTopic(topic)">SELECT</button>
+                            <button mat-raised-button color="primary" class="pull-right" class="ml-5" (click)=" goToEmployeeSelection() ">DETAILS</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="col-md-1"></div>
         </div>
-
     </div>
 </div>
+
+<div class="spacing-top"></div>
+<hr>
+<div class="spacing-top"></div>
 <app-footer></app-footer>
