@@ -16,6 +16,7 @@ import { ToastrService, ToastrModule } from 'ngx-toastr';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { CoreModule } from '../core/core.module';
+import { ResetComponent } from './reset/reset.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CoreModule } from '../core/core.module';
     LoginComponent,
     LogoutComponent,
     RegistrationComponent,
+    ResetComponent,
   
   ],
   imports: [

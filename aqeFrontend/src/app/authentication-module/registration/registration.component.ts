@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistrationService } from '../service/registration.service';
 import { Hr } from 'src/app/hr-module/model/hr';
+import { Router } from '@angular/router';
+import { ToasterService } from '../service/toaster-service.service';
 
 @Component({
   selector: 'app-registration',
@@ -8,16 +10,28 @@ import { Hr } from 'src/app/hr-module/model/hr';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-   hr:Hr;
-  constructor( private RegistrationService: RegistrationService ) { 
+  constructor( private RegistrationService: RegistrationService,private router:Router, private ts:ToasterService ) { 
   }
-
+  isLoading = false;
   ngOnInit() {
   }
-  sendinfo(name, email, password, company, mobile)
-  {
-    this.hr= new Hr(name,password,email,company,mobile);
-    this.RegistrationService.registerhr(this.hr);
-  }
+
+  //registers only hr 
+ register(username,password,email){
+   this.isLoading = true;
+   this.RegistrationService.registerHr(username,password,email).subscribe(
+     response => {
+      //do nothing
+     },
+     error =>{
+      if(error.status == 200){
+        this.ts.success("Sucessfully Registered","HR has been registered sucessfully");
+        this.router.navigate(['/auth/login']);
+      }else{this.ts.error("Could not Register","Please contact the office")}
+      
+      this.isLoading = false
+     }
+   );
+ }
 
 }

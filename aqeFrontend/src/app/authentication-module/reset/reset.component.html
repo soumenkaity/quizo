@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div fxLayout="row" fxLayoutAlign="center center" class="login-main">
+    <mat-card class="back ">
+        <mat-card-header>
+            <span class="text-center">
+                        <mat-card-title >Reset Password</mat-card-title>
+                </span>
+
+        </mat-card-header>
+        <span></span>
+        <mat-card-content fxLayout="column" style="margin-top:2em;">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" name="email" [(ngModel)]="email">
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="text-center">
+                <button mat-raised-button color="primary" (click)=sendMail(email)>Send Mail</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+
+</div>
+<app-footer></app-footer>

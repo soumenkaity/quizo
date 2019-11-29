@@ -10,7 +10,17 @@ spring:
       FAIL_ON_UNKNOWN_PROPERTIES: false
       ACCEPT_SINGLE_VALUE_AS_ARRAY: true
     default-property-inclusion: non_empty
-
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: hariombabug123@gmail.com
+    password: quizzo123
+    protocol: smtp
+    tls: true
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
 
   datasource:
     url: jdbc:mysql://localhost:3306/AQE

@@ -6,6 +6,12 @@ mat-card {
     min-width: 28%;
 }
 
+.footer {
+    position: fixed;
+    bottom: 0px;
+    height: 40px;
+}
+
 .back {
     /* background-color: #F5F5F5; */
     box-shadow: 3px 3px 2px 2px #dadada;

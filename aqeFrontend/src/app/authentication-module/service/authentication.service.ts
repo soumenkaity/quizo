@@ -14,14 +14,17 @@ export class User{
 })
 export class AuthenticationService {
 private URLprefix = environment.authURLprefix;
-  constructor(
-    private httpClient:HttpClient
-  ) { 
-     }
 
-     authenticate(username, password) {
-      return this.httpClient.post<any>(this.URLprefix+'/signin',{username,password})
-    }
+  constructor(private httpClient:HttpClient) { }
+
+  authenticate(username, password) {
+  return this.httpClient.post<any>(this.URLprefix+'/signin',{username,password})
+  }
+
+  sendMail(email){
+    console.log(email)
+    return this.httpClient.post<any>(this.URLprefix+'/reset?email='+email,{});
+  }
   isUserLoggedIn() {
     let user = sessionStorage.getItem('username')
     // console.log(!(user === null))
