@@ -17,6 +17,7 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { ThankyouHrComponent } from './thankyou-hr/thankyou-hr.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateuserComponent } from './createuser/createuser.component';
 
 
 
@@ -27,7 +28,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ConfirmComponent,
     TopicComponent,
     ThankyouHrComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateuserComponent
    
   ],
   imports: [
