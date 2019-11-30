@@ -9,10 +9,9 @@ import java.util.List;
 
 @Service
 public class FetchTopicService {
-    @Autowired
     private TopicRepository topicRepository;
 
-
+    @Autowired
     public FetchTopicService(TopicRepository topicRepository) {
         this.topicRepository = topicRepository;
     }
