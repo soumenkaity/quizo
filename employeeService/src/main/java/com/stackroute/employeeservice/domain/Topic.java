@@ -3,17 +3,15 @@ package com.stackroute.employeeservice.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "topic")
 public class Topic {
     @Id
     private String id;
     private String name;
-    private String createdAt;
     private String link;
 
     public Topic(String name, String createdAt, String link) {
         this.name = name;
-        this.createdAt = createdAt;
         this.link = link;
     }
 
@@ -34,14 +32,6 @@ public class Topic {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
     }
 
     public String getLink() {
