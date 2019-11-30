@@ -1,0 +1,85 @@
+<button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+<div class="icon-det">
+    <button mat-icon-button ><mat-icon>notifications</mat-icon></button>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_horiz</mat-icon>
+    </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>build</mat-icon>
+            <span>Edit Profile</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>settings</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+  </div>
+
+<mat-sidenav-container class="example-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"  opened class="example-sidenav"
+    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+    <mat-nav-list>
+        <img src="assets/img/imgUser.png" alt="UserImg">
+        <a mat-list-item routerLink=".">Dash Board</a>
+        <a mat-list-item routerLink=".">Analytics</a>
+        <a mat-list-item routerLink=".">Tests</a>
+        <a mat-list-item routerLink=".">Settings</a>
+        <a mat-list-item routerLink=".">Help</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+      <mat-toolbar class="title">User Details:</mat-toolbar>
+      <!-- <div class="forms-bhai">
+        <label>
+         Id:<input type="text" formControl="id">
+        </label>
+
+        <label>
+        Name:<input type="text" formControl="name">
+      </label>
+
+      <label>
+        Role:<input type="text" formControl="role">
+      </label>
+      
+      <label>
+        Contact:<input type="text" formControl="phone">
+      </label>
+      
+      <label>
+        E-mail:<input type="text" formControl="email">
+      </label>
+      
+      <label>
+        Designation:<input type="text" formControl="designation">
+      </label>
+      </div> -->
+
+      <!-- <form *ngIf="user | async; else " [formGroup]="userdet" (ngSubmit)="submit()"> -->
+      <form [formGroup]="userdet">
+        <label for="id">Id</label>
+        <input id="id" type="text" formControlName="id" />
+         
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name" />
+
+        <label for="role">Role</label>
+        <input id="role" type="text" formControlName="role" />
+
+        <label for="phone">Phone</label>
+        <input id="phone" type="number" formControlName="phone" />
+      
+        <label for="email">Email</label>
+        <input id="email" type="text" formControlName="email" />
+
+        <label for="designation">Designation</label>
+        <input id="designation" type="text" formControlName="designation" />
+       
+      </form>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<div>Please open on Stackblitz to see result</div>

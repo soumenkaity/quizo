@@ -15,10 +15,14 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { ToasterService } from './authentication-module/service/toaster-service.service';
 import { HeaderComponent } from './header/header.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MaterialModule,
     AdminModule,
     AuthenticationModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,ReactiveFormsModule,FormsModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass:'toast-top-right',

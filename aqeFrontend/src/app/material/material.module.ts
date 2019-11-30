@@ -22,6 +22,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material'
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 const MaterialComponents= [ 
   MatButtonModule,
   MatMenuModule,
@@ -43,8 +45,8 @@ const MaterialComponents= [
   MatToolbarModule,
   MatTableModule,
   MatPaginatorModule,
-  MatCheckboxModule
-
+  MatCheckboxModule,
+  MatSidenavModule
 ];
 
 @NgModule({ 
