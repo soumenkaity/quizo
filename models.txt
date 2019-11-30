@@ -16,7 +16,7 @@
 
 ================================================
 
-===================TOPIC_NAME===================
+===================TOPIC_NAME///also the structure of QUESTION ===================
  private String id;
   private String question;
   private String sentence
@@ -24,7 +24,7 @@
   private String[] choices;
   private String difficulty;
   private int correctAttempts;
-  private int totalOccurences
+  private int totalOccurrences;
 ================================================
 
 =====================RESULT=====================

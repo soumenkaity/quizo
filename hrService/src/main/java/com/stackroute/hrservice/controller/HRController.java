@@ -1,14 +1,13 @@
 package com.stackroute.hrservice.controller;
 
-import com.stackroute.hrservice.model.Employee;
+import com.stackroute.hrservice.model.Request;
 import com.stackroute.hrservice.model.TestUser;
-import com.stackroute.hrservice.model.UserTest;
-import com.stackroute.hrservice.service.HRService;
-import com.stackroute.hrservice.service.NotificationService;
+import com.stackroute.hrservice.model.User;
+import com.stackroute.hrservice.model.UserLogin;
+import com.stackroute.hrservice.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mail.MailException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,51 +17,92 @@ import java.util.List;
 @CrossOrigin("*")
 public class HRController {
   private HRService hrService;
-  private NotificationService notificationService;
+  private UserService userService;
+  private ResultService resultService;
+  private RequestService requestService;
+
   @Autowired
-  public HRController(HRService hrService,NotificationService notificationService) {
+  public HRController(HRService hrService, UserService userService, ResultService resultService, RequestService requestService) {
     this.hrService = hrService;
-    this.notificationService = notificationService;
+    this.userService = userService;
+    this.resultService = resultService;
+    this.requestService = requestService;
   }
 
-  @GetMapping("/users")
-  public ResponseEntity getAllUsers(){return new ResponseEntity(hrService.getAllUsers(), HttpStatus.OK); }
 
+  //---------------------------------------ALL USER MAPPINGS------------------------------------------------
+
+  @GetMapping("/users")
+  public ResponseEntity getAllUsers(){return new ResponseEntity(userService.getAllUsers(), HttpStatus.OK); }
+  @GetMapping("/users/{id}")
+  public ResponseEntity getUserById(@PathVariable String id){return new ResponseEntity(userService.getUserById(id), HttpStatus.OK); }
+  @GetMapping("/users/generate")
+  public ResponseEntity generateUserNameAndPass(){return new ResponseEntity(userService.generateUserNameAndPass(), HttpStatus.OK);}
+  @PostMapping("/users")
+  public ResponseEntity addUserToMongo(@RequestBody User user){return new ResponseEntity(userService.addUserToMongo(user), HttpStatus.OK); }
+  @PostMapping("/users/m")
+  public ResponseEntity addUserToMysql(@RequestBody UserLogin userLogin){return new ResponseEntity(userService.addUserToMyqsl(userLogin), HttpStatus.OK); }
+  @PutMapping("/users")
+  public ResponseEntity updateUser(@RequestBody User user){return new ResponseEntity(userService.updateUser(user), HttpStatus.OK); }
+  @DeleteMapping("/users")
+  public ResponseEntity<String> deleteUser(@RequestBody User user){userService.deleteUser(user);return new ResponseEntity<>("User deleted", HttpStatus.OK); }
+
+  //--------------------------------------------------------------------------------------------------------
+
+  //---------------------------------------ALL TOPIC MAPPINGS-----------------------------------------------
   @GetMapping("/topics")
   public ResponseEntity getAllTests(){
     return new ResponseEntity(hrService.getAllTopics(), HttpStatus.OK);
   }
+  @GetMapping("/topics/{id}")
+  public ResponseEntity getTestById(@PathVariable String id){
+    return new ResponseEntity(hrService.getTopicById(id), HttpStatus.OK);
+  }
+  //--------------------------------------------------------------------------------------------------------
 
+  //---------------------------------------ALL RESULT MAPPINGS-----------------------------------------------
+  @GetMapping("/results")
+  public ResponseEntity getAllResults(){
+    return new ResponseEntity(resultService.getAllResults(), HttpStatus.OK);
+  }
+  @GetMapping("/results/{id}")
+  public ResponseEntity getByTestId(@PathVariable String id){
+    return new ResponseEntity(resultService.getResultsByTestId(id), HttpStatus.OK);
+  }
+  @GetMapping("/results/e/{id}")
+  public ResponseEntity getEmpById(@PathVariable String id){
+    return new ResponseEntity(resultService.getResultsByEmpId(id), HttpStatus.OK);
+  }
+  //--------------------------------------------------------------------------------------------------------
+
+  //---------------------------------------TEST CREATION MAPPINGS-------------------------------------------
   @GetMapping("/assigned")
-  public ResponseEntity showAssignedTests(){ return new ResponseEntity(hrService.getAllTestsAssigned(),HttpStatus.OK); }
-
-  @GetMapping("/getlogindetails")
-  public ResponseEntity showAssignedLogin(){ return new ResponseEntity(notificationService.getAllEmployeelogin(),HttpStatus.OK); }
-
+  public ResponseEntity getAssignedTests(){ return new ResponseEntity(hrService.getAllTestsAssigned(),HttpStatus.OK); }
+  @GetMapping("/assigned/t")
+  public ResponseEntity getTestsByTopic(@RequestParam String topic){ return new ResponseEntity(hrService.getTestsByTopic(topic),HttpStatus.OK); }
+  @GetMapping("/assigned/s")
+  public ResponseEntity getAllTestsByStatus(@RequestParam String status){ return new ResponseEntity(hrService.getAllTestsByStatus(status),HttpStatus.OK); }
   @PostMapping("/assign")
-  public ResponseEntity assignTests(@RequestBody UserTest userTest){
-    return new ResponseEntity(hrService.assignTests(userTest),HttpStatus.OK);
+  public ResponseEntity assignTest(@RequestBody List<TestUser> testUser){ return new ResponseEntity(hrService.addTest(testUser),HttpStatus.OK); }
+  @DeleteMapping("/assign")
+  public ResponseEntity deleteTest(@RequestBody TestUser testUser){hrService.deleteTest(testUser); return new ResponseEntity("Test Deleted",HttpStatus.OK); }
+
+  //--------------------------------------------------------------------------------------------------------
+
+  //---------------------------------------REQUEST MAPPINGS---------------------------------------------------
+  @GetMapping("/request")
+  public ResponseEntity getAllRequests(){ return new ResponseEntity(requestService.getAllRequests(), HttpStatus.OK); }
+  @GetMapping("/request/{id}")
+  public ResponseEntity getRequestById(@PathVariable String id){ return new ResponseEntity(requestService.getRequestById(id), HttpStatus.OK); }
+
+  @PostMapping("/request")
+  public ResponseEntity addRequest(@RequestBody Request request){ return new ResponseEntity(requestService.addRequest(request), HttpStatus.OK); }
+
+  @DeleteMapping("/request")
+  public ResponseEntity deleteRequest(@RequestBody Request request){
+    requestService.deleteRequest(request);
+    return new ResponseEntity("Request Deleted", HttpStatus.OK);
   }
 
-  @GetMapping("/stats")
-  public ResponseEntity showAssignedTestsStat(){ return new ResponseEntity(hrService.getAllTestsStatAssigned(),HttpStatus.OK); }
-  @PostMapping("/stats")
-  public ResponseEntity assignTestsStat(@RequestBody List<TestUser> testUsers){
-    return new ResponseEntity(hrService.assignTestsStat(testUsers),HttpStatus.OK);
-  }
-
-  @PostMapping("/sendemail")
-  public String mailSend(@RequestBody List<Employee> employees) {
-    try
-    {
-      for(Employee emp: employees)
-      notificationService.sendNotification(emp);
-
-    }
-    catch (MailException e)
-    {
-     return "authentication Exception";
-    }
-   return "mailsent";
-  }
+  //--------------------------------------------------------------------------------------------------------
 }

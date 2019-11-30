@@ -13,7 +13,6 @@ public class Topic {
   @Id
   private String id;
   private String name;
-//private List<Question> questions;
   private Date createdAt;
   private String link;
   private List<String> keywords;
@@ -21,9 +20,9 @@ public class Topic {
   public Topic() {
   }
 
-  public Topic(String name, List<Question> questions, Date createdAt, String link, List<String> keywords) {
+  public Topic(String id, String name, Date createdAt, String link, List<String> keywords) {
+    this.id = id;
     this.name = name;
-//    this.questions = questions;
     this.createdAt = createdAt;
     this.link = link;
     this.keywords = keywords;
