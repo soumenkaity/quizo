@@ -37,9 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/employee/**").hasRole("EMP")
                     .antMatchers("/hr/**").hasRole("HRM")
                     .antMatchers("/admin/**").hasRole("ADM")
-                    .antMatchers("/auth/signin").permitAll()
-                    .antMatchers("/auth/register").permitAll()
-                    .antMatchers("/auth/reset").permitAll()
+                    .antMatchers("/auth/**").permitAll()
                 .anyRequest().authenticated()
             .and()
             .apply(new JwtSecurityConfigurer(jwtTokenProvider));
