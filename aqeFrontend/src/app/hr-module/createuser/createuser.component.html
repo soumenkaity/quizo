@@ -1,43 +1,35 @@
+<app-header>
+</app-header>
 
-  <h3>
-    Enter your details
+<h3>
+    Enter Employee details
 </h3>
 
-<form class="empDetailsForm" #employeeDetailsForm="ngForm">
-  <div class="form-group form" >
-  <label  for="exampleInputEmail1"> EmployeeId</label>
-  <input class="x" #id class="form-control" id="exampleInputEmail1" type="text" >
-  </div>
 
-  <div class="form-group">
-      <label for="exampleInputEmail2"> EmployeeName</label>
-      <input class="x"  #name class="form-control" id="exampleInputEmail2" type="text"><br>
-</div>
-<div class="form-group">
-    <label for="exampleInputEmail2"> Email</label>
-    <input class="x"  #name class="form-control" id="exampleInputEmail2" type="text"><br>
-</div>
-<div class="form-group">
-    <label for="exampleInputEmail2"> Company</label>
-    <input class="x"  #name class="form-control" id="exampleInputEmail2" type="text"><br>
-</div>
+<section class="sample-app-content">
+    <h1>User details form:</h1>
+    <form [formGroup]="detailsForm">
+        <p>
+            <label>First Name:</label>
+            <input type="text" formControlName="name">
+        </p>
+        <p>
+            <label>Phone:</label>
+            <input type="text" formControlName="phone">
+        </p>
+        <p>
+            <label>Email:</label>
+            <input type="text" formControlName="email">
+        </p>
+        <p>
+            <label>Designation:</label>
+            <input type="text" formControlName="designation">
+        </p>
 
-<div class="form-group">
-    <label for="exampleInputEmail2"> Designation</label>
-    <input class="x"  #name class="form-control" id="exampleInputEmail2" type="text"><br>
-</div>
-<div class="form-group">
-    <label for="exampleInputEmail2"> Contact</label>
-    <input class="x"  #name class="form-control" id="exampleInputEmail2" type="text"><br>
-</div>
-<div class="form-group">
-    <label for="exampleInputEmail2">Username</label>
-    <input class="x"  #name class="form-control" id="exampleInputEmail2" type="text"><br>
-</div>
-<div class="form-group">
-    <label  for="exampleInputEmail3"> Password</label>
-    <input #emailid class="form-control" id="exampleInputEmail3" type="text"><br>
-    <button class="x" class="btn btn-primary btn-block-sm"  (click)="saveDetails(id.value, name.value, Email.value, Company.value, Designation.value, Contact.value, Username.value, Password.value)" id="submit">Submit</button>
+        <li>
+            <button mat-raised-button (click)="openDialog(detailsForm.value)" [disabled]="!detailsForm.valid">Enter login details</button>
+        </li>
+    </form>
+</section>
 
-  </div>
-</form>
+<app-footer></app-footer>
