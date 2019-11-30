@@ -30,20 +30,22 @@
 =====================RESULT=====================
 private String id;
 private String empId;
-private String testId;
+private String topicId;
 private String empName;
-private String testName;
+private String topicName;
 private double score;
 private double correct;
 private double wrong;
+private String difficulty;
 private Attempt attempts[
     private String questionId;
+    private String question;
     private Result result[
         private String response;
-        private String correct;
+        private String answer;
     ]
 ]
-private String difficulty;
+
 ================================================
 
 ==================TEST-USER=====================

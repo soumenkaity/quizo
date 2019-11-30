@@ -10,22 +10,21 @@ public class Result {
   @Id
   private String id;
   private String empId;
-  private String testId;
+  private String topicId;
   private String empName;
-  private String testName;
+  private String topicName;
   private double score;
   private double correct;
   private double wrong;
   private String difficulty;
   private List<Attempt> attemptList;
 
-  public Result(String id, String empId, String testId, String empName, String testName, double score,
-                double correct, double wrong, String difficulty, List<Attempt> attemptList) {
-    this.id = id;
+  public Result(String empId, String topicId, String empName, String topicName,
+                double score, double correct, double wrong, String difficulty, List<Attempt> attemptList) {
     this.empId = empId;
-    this.testId = testId;
+    this.topicId = topicId;
     this.empName = empName;
-    this.testName = testName;
+    this.topicName = topicName;
     this.score = score;
     this.correct = correct;
     this.wrong = wrong;
@@ -36,21 +35,23 @@ public class Result {
 
 class Attempt{
   private String questionId;
+  private String question;
   private Response response;
 
-  public Attempt(String questionId, Response response) {
+  public Attempt(String questionId, String question, Response response) {
     this.questionId = questionId;
+    this.question = question;
     this.response = response;
   }
 }
 
 class Response{
   private String response;
-  private String correct;
+  private String answer;
 
-  public Response(String response, String correct) {
+  public Response(String response, String answer) {
     this.response = response;
-    this.correct = correct;
+    this.answer = answer;
   }
 }
 //  private Attempt attempts[
