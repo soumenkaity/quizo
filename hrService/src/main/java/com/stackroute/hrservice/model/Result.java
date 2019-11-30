@@ -36,24 +36,10 @@ public class Result {
 class Attempt{
   private String questionId;
   private String question;
-  private Response response;
-
-  public Attempt(String questionId, String question, Response response) {
-    this.questionId = questionId;
-    this.question = question;
-    this.response = response;
-  }
-}
-
-class Response{
   private String response;
   private String answer;
-
-  public Response(String response, String answer) {
-    this.response = response;
-    this.answer = answer;
-  }
 }
+
 //  private Attempt attempts[
 //  private String questionId;
 //  private Result result[

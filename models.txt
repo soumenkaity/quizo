@@ -40,12 +40,11 @@ private String difficulty;
 private Attempt attempts[
     private String questionId;
     private String question;
-    private Result result[
+    private Response response[
         private String response;
         private String answer;
     ]
 ]
-
 ================================================
 
 ==================TEST-USER=====================
