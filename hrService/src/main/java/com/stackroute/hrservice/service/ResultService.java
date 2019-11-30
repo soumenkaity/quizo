@@ -21,7 +21,7 @@ public class ResultService {
   }
 
   public List<Result> getResultsByTestId(String id){
-    return resultRepository.findByTestId(id);
+    return resultRepository.findByTopicId(id);
   }
 
   public List<Result> getResultsByEmpId(String id){
