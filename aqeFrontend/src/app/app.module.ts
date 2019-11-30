@@ -15,14 +15,13 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { ToasterService } from './authentication-module/service/toaster-service.service';
 import { HeaderComponent } from './header/header.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserDetailsComponent } from './authentication-module/user-details/user-details.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

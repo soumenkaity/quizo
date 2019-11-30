@@ -1,7 +1,7 @@
 import {ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {Employee} from '../model/employee';
+import {Employee} from '../../model/employee';
 import {DetailsService} from '../service/details.service';
 import { Observable } from 'rxjs';
 @Component({
