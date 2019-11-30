@@ -38,6 +38,7 @@ class Attempt{
   private String question;
   private String response;
   private String answer;
+  private String[] choices;
 }
 
 //  private Attempt attempts[
