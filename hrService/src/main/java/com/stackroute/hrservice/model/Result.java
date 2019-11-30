@@ -28,7 +28,6 @@ public class Result {
     this.score = score;
     this.correct = correct;
     this.wrong = wrong;
-    this.difficulty = difficulty;
     this.attemptList = attemptList;
   }
 }
