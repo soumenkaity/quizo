@@ -5,6 +5,7 @@ import { CreatedPageComponent } from './created-page/created-page.component';
 import { RoleGuardService } from '../authentication-module/service/role-guard.service';
 import { DashboardComponent} from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+import { CreateuserComponent } from './createuser/createuser.component';
 
 
 
@@ -13,6 +14,7 @@ const routes: Routes = [
     {path:'createTopic', component:AdminComponent},
     {path:'testCreated/:id',component:CreatedPageComponent},
     {path:'',component:DashboardComponent},
+    {path:'createUser', component:CreateuserComponent},
     {path:'**',component:PageNotFoundComponent  }
   ]}
   //, canActivate:[RoleGuardService],data:{role:'ADM'}

@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminServiceService } from './service/admin-service.service';
 import { CoreModule } from '../core/core.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateModalComponent } from './create-modal/create-modal.component';
+import { CreateuserComponent } from './createuser/createuser.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AdminComponent,
     CreatedPageComponent,
     DashboardComponent,
+    CreateuserComponent,
+    CreateModalComponent
     
   ],
   imports: [
@@ -28,6 +32,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   providers: [
     AdminServiceService
   ],
+  entryComponents: [CreateModalComponent],
   bootstrap: [AppComponent]
 })
 export class AdminModule { }
