@@ -34,18 +34,21 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
     console.log("okay");
-    this.detService.getAllDetails().subscribe(
-     response => {this.user = response;
-    console.log(response);  
+    const email = sessionStorage.getItem('email');
+    console.log(email)
+    this.detService.getAllDetails(email).subscribe(
+     response => {
+        this.user = response;
+        console.log(response);  
   })
-  this.userdet = this.fb.group({
-    'id' : this.user.id,
-    'name' : this.user.name,
-    'role' : this.user.role,
-    'phone' : this.user.phone,
-    'email' : this.user.email,
-    'designation' : this.user.designation
-  })
+  // this.userdet = this.fb.group({
+  //   'id' : this.user.id,
+  //   'name' : this.user.name,
+  //   'role' : this.user.role,
+  //   'phone' : this.user.phone,
+  //   'email' : this.user.email,
+  //   'designation' : this.user.designation
+  // })
    
   }
 

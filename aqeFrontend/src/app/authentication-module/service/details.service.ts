@@ -2,16 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Employee } from '../../model/employee';
 import { Observable, from } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DetailsService {
 
+  URLprefix = environment.authURLprefix;
   constructor( private http : HttpClient) { }
 
-  getAllDetails():Observable<any>{
-    console.log("test call");
-    return this.http.get<Employee[]>("http://localhost:8083/employee/getemployeesdetails");
+  getAllDetails(email):Observable<any>{
+    return this.http.get<any>(this.URLprefix+'/details?email='+email);
   }
 }

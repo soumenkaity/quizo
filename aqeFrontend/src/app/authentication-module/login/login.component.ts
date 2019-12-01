@@ -29,7 +29,8 @@ export class LoginComponent implements OnInit {
     this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
           sessionStorage.setItem('username',data.username);
-          sessionStorage.setItem('role',data.role)
+          sessionStorage.setItem('role',data.role);
+          sessionStorage.setItem('email',data.email);
           let tokenStr= 'Bearer '+data.token;
           sessionStorage.setItem('token', tokenStr);
         const userRole = data.role;
