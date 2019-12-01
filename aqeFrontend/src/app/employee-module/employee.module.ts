@@ -15,6 +15,7 @@ import { DashService } from './service/dash.service';
 import { LandingComponent } from './landing/landing.component';
 import { FetchTestComponent } from './fetch-test/fetch-test.component';
 import { CoreModule } from '../core/core.module';
+import { ResultPageComponent } from './result-page/result-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CoreModule } from '../core/core.module';
     DashboardComponent,
     FeedbackComponent,
     FetchTestComponent,
-    LandingComponent
+    LandingComponent,
+    ResultPageComponent
   ],
   imports: [
     BrowserModule,

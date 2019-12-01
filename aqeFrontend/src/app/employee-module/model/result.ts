@@ -1,5 +1,6 @@
 export class result{
     id : string;
+    question: String;
     option : number;
     correctOption : number;
     userResponse : boolean;

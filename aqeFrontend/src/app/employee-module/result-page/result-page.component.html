@@ -1,0 +1,33 @@
+<div class="card questionContainer">
+    <div class="card-body">
+        <h4>Q{{count+1}})</h4>
+        <div class="question">
+            <h5 class="card-title">{{question?.question}}</h5>
+            <div class="card-text">
+                <div class="custom-control" (click)="saveAnswer(1)">
+                    <label>
+                        <input type="radio" name="options" value="1" [(ngModel)]="options">
+                        {{choices[0]}}
+                    </label>
+                </div>
+                <div class="custom-control" (click)="saveAnswer(2)">
+                    <label>
+                        <input type="radio" name="options" value="2" [(ngModel)]="options">
+                        {{choices[1]}}
+                    </label>
+                </div>
+                <div class="custom-control" (click)="saveAnswer(3)">
+                    <label>
+                        <input type="radio" name="options" value="3" [(ngModel)]="options">
+                        {{choices[2]}}
+                    </label>
+                </div>
+                <div class="custom-control" (click)="saveAnswer(4)">
+                    <label>
+                        <input type="radio" name="options" value="4" [(ngModel)]="options">
+                        {{choices[3]}}
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
