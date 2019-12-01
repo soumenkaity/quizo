@@ -104,8 +104,8 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
 
         if(easyIndex < totalAskedInSections && correctEasy < needPassedInEasy)
             return easyQuestions.get(easyIndex);
-        else if(easyIndex >= totalAskedInSections && correctEasy < needPassedInEasy)
+        else if(easyIndex >= totalAskedInSections && correctEasy < needPassedInEasy){}
 
-
+      return new Question();
     }
 }
