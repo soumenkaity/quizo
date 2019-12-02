@@ -13,6 +13,7 @@ import { LandingComponent } from './landing/landing.component';
 import { FetchTestComponent } from './fetch-test/fetch-test.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ResultPageComponent } from './result-page/result-page.component';
 
 const routes: Routes = [
   {path:'employee' , children:[
@@ -23,8 +24,9 @@ const routes: Routes = [
     { path: 'error', component: ErrorComponent},  
     { path: 'thankyou', component: ThankyouComponent},
     { path: 'feedback', component: FeedbackComponent},
+    { path: 'result', component: ResultPageComponent},
     { path: '**' , component: PageNotFoundComponent} 
-  ], canActivate:[RoleGuardService],data:{role:'EMP'} 
+  ]//, canActivate:[RoleGuardService],data:{role:'EMP'} 
 }
 ];
 
