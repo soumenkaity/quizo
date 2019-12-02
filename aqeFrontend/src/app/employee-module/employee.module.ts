@@ -16,6 +16,7 @@ import { LandingComponent } from './landing/landing.component';
 import { FetchTestComponent } from './fetch-test/fetch-test.component';
 import { CoreModule } from '../core/core.module';
 import { ResultPageComponent } from './result-page/result-page.component';
+import { EmployeeresultserviceService } from './service/employeeresultservice.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { ResultPageComponent } from './result-page/result-page.component';
     FormsModule,
     CoreModule
   ],
-  providers: [UserService, DataService, TopicService, DashService],
+  providers: [UserService, DataService, TopicService, DashService, EmployeeresultserviceService],
   bootstrap: [AppComponent]
 })
 export class EmployeeModule { }
