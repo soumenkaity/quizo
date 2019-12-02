@@ -19,6 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.springframework.http.ResponseEntity.ok;
@@ -79,6 +80,19 @@ public class AuthenticationController {
         }
 
     }
+  @PostMapping("/register/bulk")
+  public ResponseEntity registerInMySqlBulk(@RequestBody List<User> user){
+    try{
+      for(User u:user){
+      u.setPassword(bcryptEncoder.encode(u.getPassword()));
+      users.save(u);
+      }
+      return ok("users created");
+    }catch (RuntimeException e){
+      return (ResponseEntity) ResponseEntity.status(HttpStatus.CONFLICT);
+    }
+
+  }
     @PostMapping("/register/m")
     public ResponseEntity registerInMongo(@RequestBody UserMongo userMongo){ return new ResponseEntity(userMongoRepository.save(userMongo),HttpStatus.OK); }
 

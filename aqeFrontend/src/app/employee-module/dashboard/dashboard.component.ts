@@ -1,24 +1,52 @@
-import { Component, OnInit } from '@angular/core';
-import { DashService } from "../service/dash.service";
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { DashboardService } from '../service/dashboard.service';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { DataService } from '../service/data.service';
+import { Router } from '@angular/router';
 
+
+interface TestUser{
+ id: String;
+ topicId: String;
+ topicName: String;
+ employeeId: String;
+ createdAt: Date;
+ status: String;
+}
 @Component({
-    selector: 'app-dashboard',
-    templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-    
-    private details: any;
-    private dataSource: any;
-    displayedColumns: string[] = ['_employeeid', 'employeename', 'employeescore', 'testname'];
-    constructor(private httpClientService: DashService) { }
-    ngOnInit() {
-        // this.columns = this.httpClientService.getColumns();
-        this.httpClientService.getDetails().subscribe(response => {
-            this.details = response;
-            console.log(response);
-            this.dataSource = response;
-        });
-    }
-}
+  userId
+  completeTestsDataSource;
+  activeTestsDataSource;
+  testsDisplayedColumns: string[] = ['name', 'createdAt', 'link','actions'];
 
+  constructor(private dashboardService: DashboardService, private dataService: DataService,private router:Router) { }
+
+  @ViewChildren(MatPaginator) paginators = new QueryList<MatPaginator>();
+  
+  ngOnInit() {
+    const userEmail = sessionStorage.getItem('email');
+    this.dashboardService.getActiveTests(userEmail).subscribe(
+      (response: TestUser[]) =>{
+        this.activeTestsDataSource = new MatTableDataSource(response);
+        this.activeTestsDataSource.paginator = this.paginators.toArray()[0];
+      }
+    )
+    this.dashboardService.getCompleteTests(userEmail).subscribe(
+      (response: TestUser[]) =>{
+        this.completeTestsDataSource = new MatTableDataSource(response);
+        this.completeTestsDataSource.paginator = this.paginators.toArray()[1];
+      }
+    )
+  }
+
+  giveTest(data){
+    this.dataService.setTestUserDetails(data);
+    this.router.navigate(["/employee/test-instructions"])
+  }
+
+}
