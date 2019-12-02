@@ -19,7 +19,7 @@ export class ConfirmComponent implements OnInit {
   private testMapping = <Mapping>{};
   private test: Topic;
   private employees: Employee[]
-  private mappingList: TestUser[];
+  private mappingList = new Array();
 
   constructor(private confirmService: ConfirmService,
               private dataService: DataService,
@@ -65,7 +65,7 @@ export class ConfirmComponent implements OnInit {
     console.log(this.mappingList)
     this.confirmService.postTestMapping(this.mappingList).subscribe(
       response => {
-        console.log(response)
+        console.log(response) 
         this.router.navigate(["/hr/finished"])
         this.ts.success("Test Created","The Employees have been sent details about the test")
         },
