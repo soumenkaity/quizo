@@ -1,0 +1,39 @@
+<app-header>
+</app-header>
+
+<h3>
+    Enter Employee details
+</h3>
+
+
+<section class="sample-app-content">
+    <h1>User details form:</h1>
+    <form [formGroup]="detailsForm">
+        <p>
+            <label>First Name:</label>
+            <input type="text" formControlName="name">
+        </p>
+        <p>
+            <label>Phone:</label>
+            <input type="text" formControlName="phone">
+        </p>
+        <p>
+            <label>Email:</label>
+            <input type="text" formControlName="email">
+        </p>
+        <p>
+            <label>Role:</label>
+            <input type="text" formControlName="role">
+        </p>
+        <p>
+            <label>Designation:</label>
+            <input type="text" formControlName="designation">
+        </p>
+
+        <li>
+            <button mat-raised-button (click)="openDialog(detailsForm.value)" [disabled]="!detailsForm.valid">Enter login details</button>
+        </li>
+    </form>
+</section>
+
+<app-footer></app-footer>

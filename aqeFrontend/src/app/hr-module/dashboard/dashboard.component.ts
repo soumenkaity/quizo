@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, QueryList, ViewChildren, AfterViewInit } from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import { Component, OnInit, QueryList, ViewChildren, AfterViewInit } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { TopicService } from '../service/topic.service';
 import { EmployeeService } from '../service/employee.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
@@ -16,14 +16,21 @@ import { RequestService } from '../service/request.service';
 })
 export class DashboardComponent implements OnInit,AfterViewInit {
 
-  constructor( private topicService: TopicService,private employeeService: EmployeeService,private requestService:RequestService,
-              private fb: FormBuilder,public dialog: MatDialog) { }
+  constructor(
+    private topicService: TopicService,
+    private employeeService: EmployeeService,
+    private requestService:RequestService,
+    private fb: FormBuilder,
+    public dialog: MatDialog) { }
+
+    
   topicDisplayedColumns: string[] = ['name', 'createdAt', 'link','keywords'];
   employeeDisplayedColumns: string[] = [ 'name', 'phone', 'email'];
   topicDataSource;
   employeeDataSource;
 
   requestForm: FormGroup
+
   @ViewChildren(MatPaginator) paginators = new QueryList<MatPaginator>();
 
   ngOnInit() {
