@@ -96,11 +96,7 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
         if(inEasy && !inMedium && !inHard)
             return easyQuestion(response);
 
-<<<<<<< HEAD
-        return null;
-=======
         return new Question();
->>>>>>> bec65dfefc754dd269caac4b71c67f4f7d3938f7
     }
 
     public Question easyQuestion(int response) throws QuestionNotFoundException{
@@ -110,15 +106,7 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
 
         if(easyIndex < totalAskedInSections && correctEasy < needPassedInEasy)
             return easyQuestions.get(easyIndex);
-<<<<<<< HEAD
-        else if(easyIndex >= totalAskedInSections && correctEasy < needPassedInEasy)
-              return hardQuestions.get(hardIndex);
-
-
-        return easyQuestions.get(easyIndex);
-=======
         else if(easyIndex >= totalAskedInSections && correctEasy < needPassedInEasy){}
->>>>>>> bec65dfefc754dd269caac4b71c67f4f7d3938f7
 
       return new Question();
     }
