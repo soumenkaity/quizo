@@ -7,9 +7,10 @@ import { AdminComponent } from './admin/admin.component';
 import { CreatedPageComponent } from './created-page/created-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminServiceService } from './service/admin-service.service';
-import {CoreModule} from '../core/core.module';
-import { DashBoardComponent } from './dash-board/dash-board.component';
-import {DemoMaterialModule} from './dash-board/material-module';
+import { CoreModule } from '../core/core.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateModalComponent } from './create-modal/create-modal.component';
+import { CreateuserComponent } from './createuser/createuser.component';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import {DemoMaterialModule} from './dash-board/material-module';
     AppComponent,
     AdminComponent,
     CreatedPageComponent,
-    DashBoardComponent,
+    DashboardComponent,
+    CreateuserComponent,
+    CreateModalComponent
     
   ],
   imports: [
@@ -25,11 +28,11 @@ import {DemoMaterialModule} from './dash-board/material-module';
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
-    DemoMaterialModule
   ],
   providers: [
     AdminServiceService
   ],
+  entryComponents: [CreateModalComponent],
   bootstrap: [AppComponent]
 })
 export class AdminModule { }

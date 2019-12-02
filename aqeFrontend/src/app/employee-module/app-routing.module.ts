@@ -24,10 +24,8 @@ const routes: Routes = [
     { path: 'thankyou', component: ThankyouComponent},
     { path: 'dash', component:DashboardComponent},
     { path: 'feedback', component: FeedbackComponent},
-    { path: '**' , component: PageNotFoundComponent}
-    
-  ]//, canActivate:[RoleGuardService],data:{role:'EMP'}
-  // 
+    { path: '**' , component: PageNotFoundComponent} 
+  ], canActivate:[RoleGuardService],data:{role:'EMP'} 
 }
 ];
 
