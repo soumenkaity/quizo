@@ -7,25 +7,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class ResultService {
-    private ResultRepository resultRepository;
+public interface ResultService {
 
-    @Autowired
-    public ResultService(ResultRepository resultRepository) {
-        this.resultRepository = resultRepository;
-    }
-
-    public List<Result> getAllResults(){
-        return resultRepository.findAll();
-    }
-
-    public List<Result> getResultsByTestId(String id){
-        return resultRepository.findByTestId(id);
-    }
-
-    public List<Result> getResultsByEmpId(String id){
-        return resultRepository.findByEmpId(id);
-    }
-
+    public List<Result> getResultsByTopicId(String id);
+    public List<Result> getResultsByEmpId(String id);
+    public List<Result> getResultsByEmailId(String id);
+    public List<Result> getResultsByTestId(String id);
+    public Result saveResult(Result result);
 }

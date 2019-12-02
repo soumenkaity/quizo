@@ -25,6 +25,8 @@ export class DataService {
   private defaultIncorrect = new BehaviorSubject(0);
   incorrect = this.defaultIncorrect.asObservable();
 
+  testUserDetails;
+
   constructor() { }
 
   changeUser(user: string) {
@@ -36,5 +38,12 @@ export class DataService {
   changeScore(newScore: score){
     this.defaultCorrect.next(newScore.correct);
     this.defaultIncorrect.next(newScore.incorrect);
+  }
+
+  getTestUserDetails(){
+    return this.testUserDetails;
+  }
+  setTestUserDetails(ud){
+    this.testUserDetails = ud;
   }
 }

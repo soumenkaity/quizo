@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { ToasterService } from 'src/app/authentication-module/service/toaster-service.service';
 import { TestUser} from '../model/testUser';
 
+
 @Component({
   selector: 'app-confirm',
   templateUrl: './confirm.component.html',
@@ -18,7 +19,7 @@ export class ConfirmComponent implements OnInit {
   private testMapping = <Mapping>{};
   private test: Topic;
   private employees: Employee[]
-  private mappingList: TestUser[];
+  private mappingList = new Array();
 
   constructor(private confirmService: ConfirmService,
               private dataService: DataService,
@@ -59,12 +60,12 @@ export class ConfirmComponent implements OnInit {
 
   confirmMapping(){
     this.employees.forEach((user : Employee) => {
-      this.mappingList.push(new TestUser(user.id, this.test.id,this.test.name,new Date(), "N"))
+      this.mappingList.push(new TestUser(user.id,user.name,user.email,this.test.id,this.test.name,new Date(), "N"))
     });
     console.log(this.mappingList)
     this.confirmService.postTestMapping(this.mappingList).subscribe(
       response => {
-        console.log(response)
+        console.log(response) 
         this.router.navigate(["/hr/finished"])
         this.ts.success("Test Created","The Employees have been sent details about the test")
         },

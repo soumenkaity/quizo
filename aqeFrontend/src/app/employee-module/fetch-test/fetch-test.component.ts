@@ -5,6 +5,10 @@ import { result } from '../model/result';
 import { Router } from '@angular/router';
 import { ScoreService } from '../service/score.service';
 import { testResult } from '../model/testResult';
+import { Attempt } from '../model/Attempt';
+import { EmployeeResult } from '../model/employeeresult';
+import { EmployeeresultserviceService } from '../service/employeeresultservice.service';
+
 // import { testResult } from '../model/testResult';
 
 @Component({
@@ -28,17 +32,22 @@ export class FetchTestComponent implements OnInit {
   private questionList: Question[];
 
   private question;
-
+  private empName;
+  private topicName;
+  private id;
   private count: number;
   private testResult: testResult;
   private empId: string = '878967asdgfg';
   private testId: string = 'u75asd87asd55';
   private result: result;
   private resultList = [];
+  private attemptList=[];
+  private Attempt:Attempt;
+  private employeeresult:EmployeeResult
   choices: any;
   private userResponse : boolean;
 
-  constructor(private fetchTestService: FetchTestService, private scoreService: ScoreService,
+  constructor(private fetchTestService: FetchTestService, private employeeresultserviceService:EmployeeresultserviceService, private scoreService: ScoreService,
     private router: Router,
   ) { }
 
@@ -84,20 +93,20 @@ export class FetchTestComponent implements OnInit {
     }
     else this.userResponse = false;
 
-
+    this.Attempt=new Attempt(this.question.id, this.question, parseInt(option), this.question.choices.indexOf(this.question.answer)+1, this.choices)
     this.result = new result(this.question.id, parseInt(option),this.question.choices.indexOf(this.question.answer)+1,this.userResponse);
 
     console.log("result ", this.result);
 
     this.resultList[this.count] = this.result;
-
+    this.attemptList[this.count]=this.Attempt;
     console.log("the result list is ", this.resultList);
   }
 private correct:number;
 private incorrect: number;
 private score: number;
-private percentage: number;
 
+private percentage: number;
   submitTest() {
     
     console.log(this.resultList);
@@ -106,13 +115,14 @@ private percentage: number;
     this.incorrect = this.questionList.length - this.correct;
     this.score = this.scoreService.calculateScore(this.resultList, this.questionList);
     this.percentage = this.scoreService.calculatePercentage(this.score,this.questionList);
-    
+    this.employeeresult=new EmployeeResult(this.id, this.empId, this.testId, this.empName, this.topicName, this.score, this.correct, this.incorrect, this.attemptList)
     //this.testResult={employeeId:this.empId, testId: this.testId, testResponses: this.resultList};
     this.testResult=new testResult(this.empId,this.testId,this.resultList,this.correct,this.incorrect,this.score,this.percentage);
     console.log("Test Result is ", this.testResult);
    this.scoreService.postScore2(this.testResult).subscribe(res=>{console.log(res);
   });
   this.feedbackpage();
+  this.employeeresultserviceService.postScore3(this.employeeresult);
   }
 
   feedbackpage(){

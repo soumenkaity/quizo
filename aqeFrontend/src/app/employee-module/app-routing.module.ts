@@ -8,24 +8,25 @@ import { ErrorComponent } from './error/error.component';
 import { EmployeedetailsComponent } from './employeedetails/employeedetails.component';
 import {EmptypageComponent} from './emptypage/emptypage.component'
 import { RoleGuardService } from '../authentication-module/service/role-guard.service';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { LandingComponent } from './landing/landing.component';
 import { FetchTestComponent } from './fetch-test/fetch-test.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ResultPageComponent } from './result-page/result-page.component';
 
 const routes: Routes = [
   {path:'employee' , children:[
-    { path:'',component:LandingComponent},
+    { path:'',component:DashboardComponent},
     { path: 'employee-details' , component: EmployeedetailsComponent},
     { path: 'test-instructions' , component: TestInsComponent},
     { path: 'test-page' , component: FetchTestComponent},
     { path: 'error', component: ErrorComponent},  
     { path: 'thankyou', component: ThankyouComponent},
-    { path: 'dash', component:DashboardComponent},
     { path: 'feedback', component: FeedbackComponent},
+    { path: 'result', component: ResultPageComponent},
     { path: '**' , component: PageNotFoundComponent} 
-  ], canActivate:[RoleGuardService],data:{role:'EMP'} 
+  ]//, canActivate:[RoleGuardService],data:{role:'EMP'} 
 }
 ];
 
@@ -42,6 +43,5 @@ export const EmployeeRoutingComponents = [
   TestPageComponent,
   ErrorComponent,
   ThankyouComponent,
-  DashboardComponent,
   FeedbackComponent
 ]

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/")
+@RequestMapping(value = "/employee")
 public class QuestionController {
 
     private FetchQuestionsService fetchQuestionsService;

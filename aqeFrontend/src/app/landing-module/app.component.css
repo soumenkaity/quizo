@@ -399,11 +399,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .hero-area {
 	position:relative;
 	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-bottom: 0px;
 }
 
 #home.hero-area {
-	height:calc(100vh - 80px);
+	height:calc(100vh);
 	padding-top: 0px;
 	padding-bottom: 0px;
 }

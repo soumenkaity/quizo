@@ -1,4 +1,4 @@
-package com.stackroute.hrservice.model;
+package com.stackroute.employeeservice.domain;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -9,16 +9,16 @@ import java.util.Date;
 @Data
 @Document
 public class TestUser {
-    @Id
-    private String id;
+  @Id
+  private String id;
 
-    private String userId;
-    private String userEmail;
-    private String userName;
-    private String topicId;
-    private String topicName;
-    private String status;
-    private Date createdAt;
+  private String userId;
+  private String userEmail;
+  private String userName;
+  private String topicId;
+  private String topicName;
+  private String status;
+  private Date createdAt;
 
 
   public String getUserId() {
@@ -60,16 +60,7 @@ public class TestUser {
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
   }
-
   public String getUserEmail() { return userEmail; }
 
   public void setUserEmail(String userEmail) { this.userEmail = userEmail; }
-
-  public String getUserName() {
-    return userName;
-  }
-
-  public void setUserName(String userName) {
-    this.userName = userName;
-  }
 }

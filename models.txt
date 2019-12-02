@@ -31,6 +31,7 @@
 private String id;
 private String empId;
 private String topicId;
+private String testId;	
 private String empName;
 private String topicName;
 private double score;
@@ -49,7 +50,9 @@ private Attempt attempts[
 private String id;
 private String topicId;
 private String topicName;
-private String employeeId;
+private String userId;
+private String userEmail;
+private String userName;
 private Date createdAt;
 private String status;
 ================================================

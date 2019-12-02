@@ -4,11 +4,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Document()
+@Document
 public class Result {
     private String id;
     private String empId;
     private String topicId;
+    private String testId;
     private String empName;
     private String topicName;
     private double score;
@@ -101,5 +102,13 @@ public class Result {
     }
 
     public Result() {
+    }
+
+    public String getTestId() {
+        return testId;
+    }
+
+    public void setTestId(String testId) {
+        this.testId = testId;
     }
 }
