@@ -1,6 +1,7 @@
 package com.stackroute.employeeservice.service;
 
 import com.mongodb.MongoClient;
+import com.stackroute.employeeservice.domain.Attempt;
 import com.stackroute.employeeservice.domain.Question;
 import com.stackroute.employeeservice.domain.Result;
 import com.stackroute.employeeservice.exception.QuestionNotFoundException;
@@ -36,9 +37,11 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
 
     private QuestionRepository questionRepository;
     List<Question> questions;
-    List<Question> easyQuestions = new ArrayList<Question>();
-    List<Question> mediumQuestions = new ArrayList<Question>();
-    List<Question> hardQuestions = new ArrayList<Question>();
+    List<Question> easyQuestions;
+    List<Question> mediumQuestions;
+    List<Question> hardQuestions;
+
+    List<Attempt> attempts;
 
     int easyIndex;
     int mediumIndex;
@@ -62,8 +65,9 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
     float totalMarksInHard = 40;
 
     @Autowired
-    public FetchQuestionsServiceImpl(QuestionRepository questionRepository, ResultRepository resultRepository) {
+    public FetchQuestionsServiceImpl(QuestionRepository questionRepository, TopicRepository topicRepository, ResultRepository resultRepository) {
         this.questionRepository = questionRepository;
+        this.topicRepository = topicRepository;
         this.resultRepository = resultRepository;
     }
 
@@ -73,6 +77,21 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
         if (questions.size() == 0){
             throw new QuestionNotFoundException("No questions were found");
         }
+
+        easyQuestions = new ArrayList<>();
+        mediumQuestions = new ArrayList<>();
+        hardQuestions = new ArrayList<>();
+
+        attempts = new ArrayList<>();
+        result = new Result();
+
+        result.setEmpId(empId);
+        result.setEmpName(empName);
+
+        result.setTopicId(topicRepository.findByName(collectionName).get(0).getId());
+        result.setTopicName(collectionName);
+
+
 
         for(Question question: questions){
             if(question.getDifficulty().equals("E"))
@@ -95,17 +114,117 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
     public Question getNextQuestion(int response) throws QuestionNotFoundException{
         if(inEasy && !inMedium && !inHard)
             return easyQuestion(response);
+        else if(!inEasy && inMedium && !inHard)
+            return mediumQuestion(response);
+        else if(!inEasy && !inMedium && inHard)
+            return hardQuestion(response);
+        return null;
     }
 
     public Question easyQuestion(int response) throws QuestionNotFoundException{
         easyIndex = easyIndex + 1;
-        if(easyQuestions.get(easyIndex).getAnswer().equals(easyQuestions.get(easyIndex).getChoices()[response]))
+        if(easyQuestions.get(easyIndex-1).getAnswer().equals(easyQuestions.get(easyIndex-1).getChoices()[response]))
             correctEasy = correctEasy + 1;
+
+        Attempt attempt = new Attempt();
+        attempt.setQuestionId(easyQuestions.get(easyIndex-1).getId());
+        attempt.setQuestion(easyQuestions.get(easyIndex-1).getQuestion());
+        attempt.setResponse(easyQuestions.get(easyIndex-1).getChoices()[response]);
+        attempt.setAnswer(easyQuestions.get(easyIndex-1).getAnswer());
+        attempt.setChoices(easyQuestions.get(easyIndex-1).getChoices());
+        attempts.add(attempt);
 
         if(easyIndex < totalAskedInSections && correctEasy < needPassedInEasy)
             return easyQuestions.get(easyIndex);
-        else if(easyIndex >= totalAskedInSections && correctEasy < needPassedInEasy)
+        else if(easyIndex >= totalAskedInSections && correctEasy < needPassedInEasy){
+            result.setScore((correctEasy/Double.valueOf(easyIndex))*totalMarksInEasy);
+            result.setCorrect(correctEasy);
+            result.setWrong(easyIndex-correctEasy);
+            result.setAttempts(attempts);
+            resultRepository.save(result);
 
+            System.out.println("Your test is completed in easy section");
+        }
+        else if(easyIndex < totalAskedInSections && correctEasy >= needPassedInEasy){
+            mediumIndex = 0;
+            correctMedium = 0;
+            inEasy = false;
+            inMedium = true;
+            inHard = false;
+            return mediumQuestions.get(mediumIndex);
+        }
+        return null;
 
+    }
+
+    public Question mediumQuestion(int response) throws QuestionNotFoundException{
+        mediumIndex = mediumIndex + 1;
+        if(mediumQuestions.get(mediumIndex-1).getAnswer().equals(mediumQuestions.get(mediumIndex-1).getChoices()[response]))
+            correctMedium = correctMedium + 1;
+
+        Attempt attempt = new Attempt();
+        attempt.setQuestionId(mediumQuestions.get(mediumIndex-1).getId());
+        attempt.setQuestion(mediumQuestions.get(mediumIndex-1).getQuestion());
+        attempt.setResponse(mediumQuestions.get(mediumIndex-1).getChoices()[response]);
+        attempt.setAnswer(mediumQuestions.get(mediumIndex-1).getAnswer());
+        attempt.setChoices(mediumQuestions.get(mediumIndex-1).getChoices());
+        attempts.add(attempt);
+
+        if(mediumIndex < totalAskedInSections && correctMedium < needPassedInMedium)
+            return mediumQuestions.get(mediumIndex);
+        else if(mediumIndex >= totalAskedInSections && correctMedium < needPassedInMedium){
+            result.setScore(((correctMedium/Double.valueOf(mediumIndex))*totalMarksInMedium) + ((correctEasy/Double.valueOf(easyIndex))*totalMarksInEasy));
+            result.setCorrect(correctMedium + correctEasy);
+            result.setWrong((mediumIndex-correctMedium) + (easyIndex-correctEasy));
+            result.setAttempts(attempts);
+            resultRepository.save(result);
+
+            System.out.println("Your test is completed in medium section");
+        }
+        else if(mediumIndex < totalAskedInSections && correctMedium >= needPassedInMedium){
+            hardIndex = 0;
+            correctHard = 0;
+            inEasy = false;
+            inMedium = false;
+            inHard = true;
+            return hardQuestions.get(hardIndex);
+        }
+        return null;
+    }
+
+    public Question hardQuestion(int response) throws QuestionNotFoundException{
+        hardIndex = hardIndex + 1;
+        if(hardQuestions.get(hardIndex-1).getAnswer().equals(hardQuestions.get(hardIndex-1).getChoices()[response]))
+            correctHard = correctHard + 1;
+
+        Attempt attempt = new Attempt();
+        attempt.setQuestionId(hardQuestions.get(hardIndex-1).getId());
+        attempt.setQuestion(hardQuestions.get(hardIndex-1).getQuestion());
+        attempt.setResponse(hardQuestions.get(hardIndex-1).getChoices()[response]);
+        attempt.setAnswer(hardQuestions.get(hardIndex-1).getAnswer());
+        attempt.setChoices(hardQuestions.get(hardIndex-1).getChoices());
+        attempts.add(attempt);
+
+        if(hardIndex < totalAskedInSections && correctHard < needPassedInHard)
+            return hardQuestions.get(hardIndex);
+        else if(hardIndex >= totalAskedInSections && correctHard < needPassedInHard){
+            result.setScore(((correctHard/Double.valueOf(hardIndex))*totalMarksInHard) + ((correctMedium/Double.valueOf(mediumIndex))*totalMarksInMedium) + ((correctEasy/Double.valueOf(easyIndex))*totalMarksInEasy));
+            result.setCorrect(correctHard + correctMedium + correctEasy);
+            result.setWrong((hardIndex-correctHard) + (mediumIndex-correctMedium) + (easyIndex-correctEasy));
+            result.setAttempts(attempts);
+            resultRepository.save(result);
+
+            System.out.println("Your test is completed in hard section");
+        }
+        else if(hardIndex < totalAskedInSections && correctHard >= needPassedInHard){
+            result.setScore(((correctHard/Double.valueOf(hardIndex))*totalMarksInHard) + ((correctMedium/Double.valueOf(mediumIndex))*totalMarksInMedium) + ((correctEasy/Double.valueOf(easyIndex))*totalMarksInEasy));
+            result.setCorrect(correctHard + correctMedium + correctEasy);
+            result.setWrong((hardIndex-correctHard) + (mediumIndex-correctMedium) + (easyIndex-correctEasy));
+            result.setAttempts(attempts);
+            resultRepository.save(result);
+
+            System.out.println("You have passed all the three sections");
+        }
+        return null;
     }
 }
