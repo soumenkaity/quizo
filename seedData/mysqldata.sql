@@ -39,7 +39,15 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (5,'user','email','{bcrypt}$2a$10$GTFGD83Y5wE4uP8.AttjnuaZusBvbP5F64ZBRX.gN6/cTUHyd4e6y',NULL,'HRM'),(6,'useradm','email','{bcrypt}$2a$10$vFFQpgfdRn3k5Z9njlh6auFBZM29yHmFE2doFF1S9T/UHqxDZc/yq',NULL,'ADM'),(7,'userh','email','{bcrypt}$2a$10$owSQ9srJxz7C1fT2zI0ERO25UhGml/SJ2ziamGS5a1309x.PZTe5e',NULL,'HRM'),(8,'usere','email','{bcrypt}$2a$10$XnhxgpIMl9.edwKs79tTOudKUEysLhiBfPFtLhLDo5oNOGAa0Wfya',NULL,'EMP'),(15,'userh2','email','{bcrypt}$2a$10$QSncqW5EXx0Ygay8VkQT.eeKX.1YWzUhlAze3fzvT8e4L8W7wnS3u',NULL,'EMP'),(16,'asd','asf','{bcrypt}$2a$10$HxNGTop/2zb0FaG7Jrx61.YOXrH/.OCz0Wtb2haeAnmeFLWdj3HOy',NULL,'EMP'),(17,'user12','123','{bcrypt}$2a$10$fZ5H48sBo83ziFjHQ2lpOuF4i.u/l25ys6H2TyxXtgRqcI6lRmacy',NULL,'EMP');
+INSERT INTO `users` VALUES (5,'user','email','{bcrypt}$2a$10$GTFGD83Y5wE4uP8.AttjnuaZusBvbP5F64ZBRX.gN6/cTUHyd4e6y',NULL,'HRM'),
+(6,'useradm','email','{bcrypt}$2a$10$vFFQpgfdRn3k5Z9njlh6auFBZM29yHmFE2doFF1S9T/UHqxDZc/yq',NULL,'ADM'),
+(7,'userh','email','{bcrypt}$2a$10$owSQ9srJxz7C1fT2zI0ERO25UhGml/SJ2ziamGS5a1309x.PZTe5e',NULL,'HRM'),
+(8,'usere','email','{bcrypt}$2a$10$XnhxgpIMl9.edwKs79tTOudKUEysLhiBfPFtLhLDo5oNOGAa0Wfya',NULL,'EMP'),
+(15,'userh2','email','{bcrypt}$2a$10$QSncqW5EXx0Ygay8VkQT.eeKX.1YWzUhlAze3fzvT8e4L8W7wnS3u',NULL,'EMP'),
+(16,'asd','asf','{bcrypt}$2a$10$HxNGTop/2zb0FaG7Jrx61.YOXrH/.OCz0Wtb2haeAnmeFLWdj3HOy',NULL,'EMP'),
+(17,'user12','123','{bcrypt}$2a$10$fZ5H48sBo83ziFjHQ2lpOuF4i.u/l25ys6H2TyxXtgRqcI6lRmacy',NULL,'EMP'),
+(18,'chinmay','123','{bcrypt}$2a$10$fZ5H48sBo83ziFjHQ2lpOuF4i.u/l25ys6H2TyxXtgRqcI6lRmacy',NULL,'EMP');
+
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

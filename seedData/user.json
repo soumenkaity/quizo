@@ -1,8 +1,10 @@
-{"_id":{"$oid":"5dca38de27670ed5007b782d"},"name":"renu","role":"emp","phone":1.23456789e+09,"email":"renu123@gmail.com","designation":"SD"}
-{"_id":{"$oid":"5dca394327670ed5007b782e"},"name":"vishal","role":"emp","phone":9.87654321e+09,"email":"vishal123@gmail.com","designation":"SD"}
-{"_id":{"$oid":"5dca396127670ed5007b782f"},"name":"chinmay","role":"emp","phone":8.765432109e+09,"email":"chinmay123@gmail.com","designation":"SD"}
-{"_id":{"$oid":"5dca397c27670ed5007b7830"},"name":"aayush","role":"emp","phone":8.965432109e+09,"email":"aayush123@gmail.com","designation":"SD"}
-{"_id":{"$oid":"5dca39a027670ed5007b7831"},"name":"sikhar","role":"emp","phone":8.965488109e+09,"email":"sikhar123@gmail.com","designation":"SD"}
-{"_id":{"$oid":"5dca39c127670ed5007b7832"},"name":"pankaj","role":"emp","phone":8.965488709e+09,"email":"pankaj123@gmail.com","designation":"SD"}
-{"_id":{"$oid":"5dca39db27670ed5007b7833"},"name":"saumen","role":"emp","phone":9.965488709e+09,"email":"saumen123@gmail.com","designation":"SD"}
-{"_id":{"$oid":"5dca3a2327670ed5007b7834"},"name":"pranjal","role":"emp","phone":9.985488709e+09,"email":"pranjal123@gmail.com","designation":"SD"}
+[
+    { "_id": { "$oid": "5dca38de27670ed5007b782d" }, "name": "renu", "role": "emp", "phone": 1.23456789e+09, "email": "renu123@gmail.com", "designation": "SD" },
+    { "_id": { "$oid": "5dca394327670ed5007b782e" }, "name": "vishal", "role": "emp", "phone": 9.87654321e+09, "email": "vishal123@gmail.com", "designation": "SD" },
+    { "_id": { "$oid": "5dca396127670ed5007b782f" }, "name": "chinmay", "role": "emp", "phone": 8.765432109e+09, "email": "chinmay123@gmail.com", "designation": "SD" },
+    { "_id": { "$oid": "5dca397c27670ed5007b7830" }, "name": "aayush", "role": "emp", "phone": 8.965432109e+09, "email": "aayush123@gmail.com", "designation": "SD" },
+    { "_id": { "$oid": "5dca39a027670ed5007b7831" }, "name": "sikhar", "role": "emp", "phone": 8.965488109e+09, "email": "sikhar123@gmail.com", "designation": "SD" },
+    { "_id": { "$oid": "5dca39c127670ed5007b7832" }, "name": "pankaj", "role": "emp", "phone": 8.965488709e+09, "email": "pankaj123@gmail.com", "designation": "SD" },
+    { "_id": { "$oid": "5dca39db27670ed5007b7833" }, "name": "saumen", "role": "emp", "phone": 9.965488709e+09, "email": "saumen123@gmail.com", "designation": "SD" },
+    { "_id": { "$oid": "5dca3a2327670ed5007b7834" }, "name": "pranjal", "role": "emp", "phone": 9.985488709e+09, "email": "pranjal123@gmail.com", "designation": "SD" }
+]
