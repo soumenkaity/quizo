@@ -28,16 +28,6 @@ public class ResultServiceImpl implements ResultService {
     }
 
     @Override
-    public List<Result> getResultsByEmailId(String id) {
-        return resultRepository.findByEmailId(id);
-    }
-
-    @Override
-    public List<Result> getResultsByTestId(String id) {
-        return resultRepository.findByEmailId(id);
-    }
-
-    @Override
     public Result saveResult(Result result) {
         return resultRepository.save(result);
     }

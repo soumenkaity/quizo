@@ -34,14 +34,4 @@ public class ResultController {
     @GetMapping("/resultbytopic/{id}")
     public ResponseEntity getResultByTopicId(@PathVariable String id)
     {return new ResponseEntity(resultService.getResultsByTopicId(id), HttpStatus.OK); }
-    @GetMapping("/resultbyemail/{email}")
-    public ResponseEntity getResultByEmailId(@PathVariable String id)
-    {return new ResponseEntity(resultService.getResultsByEmailId(id), HttpStatus.OK); }
-
-    @GetMapping("/resultbytest/{id}")
-    public ResponseEntity getResultByTestId(@PathVariable String id)
-    {return new ResponseEntity(resultService.getResultsByTestId(id), HttpStatus.OK); }
-
-
-
 }

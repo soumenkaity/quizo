@@ -114,16 +114,11 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
     public Question getNextQuestion(int response) throws QuestionNotFoundException{
         if(inEasy && !inMedium && !inHard)
             return easyQuestion(response);
-<<<<<<< HEAD
         else if(!inEasy && inMedium && !inHard)
             return mediumQuestion(response);
         else if(!inEasy && !inMedium && inHard)
             return hardQuestion(response);
         return null;
-=======
-
-        return new Question();
->>>>>>> 39be448af244f0b9e6de8c590886d94d5b88ba2a
     }
 
     public Question easyQuestion(int response) throws QuestionNotFoundException{
@@ -141,7 +136,6 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
 
         if(easyIndex < totalAskedInSections && correctEasy < needPassedInEasy)
             return easyQuestions.get(easyIndex);
-<<<<<<< HEAD
         else if(easyIndex >= totalAskedInSections && correctEasy < needPassedInEasy){
             result.setScore((correctEasy/Double.valueOf(easyIndex))*totalMarksInEasy);
             result.setCorrect(correctEasy);
@@ -232,10 +226,5 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
             System.out.println("You have passed all the three sections");
         }
         return null;
-=======
-        else if(easyIndex >= totalAskedInSections && correctEasy < needPassedInEasy){}
-
-      return new Question();
->>>>>>> 39be448af244f0b9e6de8c590886d94d5b88ba2a
     }
 }
