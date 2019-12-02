@@ -6,12 +6,14 @@ import { TopicComponent } from './topic/topic.component';
 import { RoleGuardService } from '../authentication-module/service/role-guard.service';
 import { ThankyouHrComponent } from './thankyou-hr/thankyou-hr.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateuserComponent } from './createuser/createuser.component';
 
 
 const routes: Routes = [
   { path:'hr',children:[
     { path:'' , component: DashboardComponent , pathMatch:'full'},
     { path:'main' , component: TopicComponent,pathMatch:'full'},
+    { path:'create-user',component: CreateuserComponent },
     { path:'create' , component:TopicComponent},
     { path:'employees' , component:EmployeeComponent},
     { path:'confirm' , component:ConfirmComponent},

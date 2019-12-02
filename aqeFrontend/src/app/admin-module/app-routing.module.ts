@@ -3,19 +3,21 @@ import { Routes, RouterModule } from '@angular/router';
 import {AdminComponent} from './admin/admin.component'
 import { CreatedPageComponent } from './created-page/created-page.component';
 import { RoleGuardService } from '../authentication-module/service/role-guard.service';
-import { DashBoardComponent} from '../admin-module/dash-board/dash-board.component';
+import { DashboardComponent} from './dashboard/dashboard.component';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+import { CreateuserComponent } from './createuser/createuser.component';
 
 
 
 const routes: Routes = [
   {path:'admin' , children:[
-    {path:'createTest', component:AdminComponent},
+    {path:'createTopic', component:AdminComponent},
     {path:'testCreated/:id',component:CreatedPageComponent},
-    {path:'dashboard',component:DashBoardComponent},
-    {path:' ', redirectTo:"/createTest", pathMatch:'full'},
-
-    {path:'**',component:AdminComponent  }
+    {path:'',component:DashboardComponent},
+    {path:'createUser', component:CreateuserComponent},
+    {path:'**',component:PageNotFoundComponent  }
   ], canActivate:[RoleGuardService],data:{role:'ADM'}}
+  //
 ];
 
 @NgModule({
