@@ -16,6 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `hibernate_sequence`
+--
+
+DROP TABLE IF EXISTS `hibernate_sequence`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `hibernate_sequence` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hibernate_sequence`
+--
+
+LOCK TABLES `hibernate_sequence` WRITE;
+/*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
+INSERT INTO `hibernate_sequence` VALUES (5);
+/*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -30,7 +52,7 @@ CREATE TABLE `users` (
   `expiry` date DEFAULT NULL,
   `role` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,15 +61,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (5,'user','email','{bcrypt}$2a$10$GTFGD83Y5wE4uP8.AttjnuaZusBvbP5F64ZBRX.gN6/cTUHyd4e6y',NULL,'HRM'),
-(6,'useradm','email','{bcrypt}$2a$10$vFFQpgfdRn3k5Z9njlh6auFBZM29yHmFE2doFF1S9T/UHqxDZc/yq',NULL,'ADM'),
-(7,'userh','email','{bcrypt}$2a$10$owSQ9srJxz7C1fT2zI0ERO25UhGml/SJ2ziamGS5a1309x.PZTe5e',NULL,'HRM'),
-(8,'usere','email','{bcrypt}$2a$10$XnhxgpIMl9.edwKs79tTOudKUEysLhiBfPFtLhLDo5oNOGAa0Wfya',NULL,'EMP'),
-(15,'userh2','email','{bcrypt}$2a$10$QSncqW5EXx0Ygay8VkQT.eeKX.1YWzUhlAze3fzvT8e4L8W7wnS3u',NULL,'EMP'),
-(16,'asd','asf','{bcrypt}$2a$10$HxNGTop/2zb0FaG7Jrx61.YOXrH/.OCz0Wtb2haeAnmeFLWdj3HOy',NULL,'EMP'),
-(17,'user12','123','{bcrypt}$2a$10$fZ5H48sBo83ziFjHQ2lpOuF4i.u/l25ys6H2TyxXtgRqcI6lRmacy',NULL,'EMP'),
-(18,'chinmay','123','{bcrypt}$2a$10$fZ5H48sBo83ziFjHQ2lpOuF4i.u/l25ys6H2TyxXtgRqcI6lRmacy',NULL,'EMP');
-
+INSERT INTO `users` VALUES (25,'chinmay','chinmay123@gmail.com','{bcrypt}$2a$10$nt.1yCB4jIahY/xdfcjzP.1ZKy3cyfWL7Wzt6cQERl8Aq8YgcrdTu',NULL,'HRM'),(26,'soumen','saumen123@gmail.com','{bcrypt}$2a$10$56Y8ICrbXn4byHRH1NYaUe//2OkDJsWhCXmPnSFEvLQbUUE8ZZ8TO',NULL,'ADM'),(27,'Ayush','aayush123@gmail.com','{bcrypt}$2a$10$1nua8Nc8FUVfg759mZUX2ud68R4EL6y9BVU8jZgp2012TPj2pXt.G',NULL,'EMP'),(28,'Shikhar','sikhar123@gmail.com','{bcrypt}$2a$10$zuJ0tNaQfio6W6S1.C1PI.oqH0LJLgpBx569z3j6yKM4TdytOqU4K',NULL,'EMP'),(29,'Renu','renu123@gmail.com','{bcrypt}$2a$10$Dc9KL3j/CVNrsIhwrSzpEuy7puMk8PAh790i9YSIJwGkAzOXo.lvq',NULL,'EMP'),(30,'Pankaj','pankaj123@gmail.com','{bcrypt}$2a$10$NksLnSiuhgwGyfWr6Loo8eOSoqhgq3mO/XToM4QklqH8E/r5bt/Gi',NULL,'EMP'),(31,'Pranjal','pranjal123@gmail.com','{bcrypt}$2a$10$MyAZE9Q9rmnpWP1gk88ai.0zYUri9G5FYCMkKHYuyzwZnywAGJVwK',NULL,'HRM'),(32,'Ganesh','ganesh123@gmail.com','{bcrypt}$2a$10$45cP3VqDErL9zqaOAQFzCuvdTxa3b57BPjG0p4KiL0241ujTLzdXm',NULL,'EMP');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +74,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-21 15:43:03
+-- Dump completed on 2019-12-02 14:47:32
