@@ -7,6 +7,8 @@ import { ScoreService } from '../service/score.service';
 import { testResult } from '../model/testResult';
 import { Attempt } from '../model/Attempt';
 import { EmployeeResult } from '../model/employeeresult';
+import { EmployeeresultserviceService } from '../service/employeeresultservice.service';
+
 // import { testResult } from '../model/testResult';
 
 @Component({
@@ -39,12 +41,13 @@ export class FetchTestComponent implements OnInit {
   private testId: string = 'u75asd87asd55';
   private result: result;
   private resultList = [];
+  private attemptList=[];
   private Attempt:Attempt;
   private employeeresult:EmployeeResult
   choices: any;
   private userResponse : boolean;
 
-  constructor(private fetchTestService: FetchTestService, private scoreService: ScoreService,
+  constructor(private fetchTestService: FetchTestService, private employeeresultserviceService:EmployeeresultserviceService, private scoreService: ScoreService,
     private router: Router,
   ) { }
 
@@ -96,7 +99,7 @@ export class FetchTestComponent implements OnInit {
     console.log("result ", this.result);
 
     this.resultList[this.count] = this.result;
-
+    this.attemptList[this.count]=this.Attempt;
     console.log("the result list is ", this.resultList);
   }
 private correct:number;
@@ -112,13 +115,14 @@ private percentage: number;
     this.incorrect = this.questionList.length - this.correct;
     this.score = this.scoreService.calculateScore(this.resultList, this.questionList);
     this.percentage = this.scoreService.calculatePercentage(this.score,this.questionList);
-    this.employeeresult=new EmployeeResult(this.id, this.empId, this.testId, this.empName, this.topicName, this.score, this.correct, this.incorrect, this.Attempt)
+    this.employeeresult=new EmployeeResult(this.id, this.empId, this.testId, this.empName, this.topicName, this.score, this.correct, this.incorrect, this.attemptList)
     //this.testResult={employeeId:this.empId, testId: this.testId, testResponses: this.resultList};
     this.testResult=new testResult(this.empId,this.testId,this.resultList,this.correct,this.incorrect,this.score,this.percentage);
     console.log("Test Result is ", this.testResult);
    this.scoreService.postScore2(this.testResult).subscribe(res=>{console.log(res);
   });
   this.feedbackpage();
+  this.employeeresultserviceService.postScore3(this.employeeresult);
   }
 
   feedbackpage(){

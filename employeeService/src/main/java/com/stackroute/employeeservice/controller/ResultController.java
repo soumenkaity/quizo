@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/")
+@RequestMapping(value = "/employee")
 public class ResultController {
 
     private ResultService resultService;
@@ -32,7 +32,16 @@ public class ResultController {
     public ResponseEntity getResultByEmployeeId(@PathVariable String id)
     {return new ResponseEntity(resultService.getResultsByEmpId(id), HttpStatus.OK); }
     @GetMapping("/resultbytopic/{id}")
-    public ResponseEntity getResultByTestId(@PathVariable String id)
+    public ResponseEntity getResultByTopicId(@PathVariable String id)
     {return new ResponseEntity(resultService.getResultsByTopicId(id), HttpStatus.OK); }
+    @GetMapping("/resultbyemail/{email}")
+    public ResponseEntity getResultByEmailId(@PathVariable String id)
+    {return new ResponseEntity(resultService.getResultsByEmailId(id), HttpStatus.OK); }
+
+    @GetMapping("/resultbytest/{id}")
+    public ResponseEntity getResultByTestId(@PathVariable String id)
+    {return new ResponseEntity(resultService.getResultsByTestId(id), HttpStatus.OK); }
+
+
 
 }

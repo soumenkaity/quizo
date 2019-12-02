@@ -3,8 +3,8 @@ export class Attempt
 {
     questionId:String;
      question:String ;
-     response:String;
-     answer:String;
+     response:Number;
+     answer:Number;
      choices:String[];
 
      constructor(questionID, question, response, answer, choices)
