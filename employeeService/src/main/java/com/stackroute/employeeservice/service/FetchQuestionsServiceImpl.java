@@ -95,6 +95,8 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
     public Question getNextQuestion(int response) throws QuestionNotFoundException{
         if(inEasy && !inMedium && !inHard)
             return easyQuestion(response);
+
+        return new Question();
     }
 
     public Question easyQuestion(int response) throws QuestionNotFoundException{
