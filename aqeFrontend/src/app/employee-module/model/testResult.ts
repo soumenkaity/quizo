@@ -1,6 +1,6 @@
 import { result } from './result';
 
-export class testResult{
+export class TestResult{
     employeeId : string;
     testId : String;
     testResponses : result[];

@@ -4,7 +4,7 @@ import { Question } from '../model/questions';
 import { result } from '../model/result';
 import { Router } from '@angular/router';
 import { ScoreService } from '../service/score.service';
-import { testResult } from '../model/testResult';
+import { TestResult } from '../model/testResult';
 import { Attempt } from '../model/Attempt';
 import { EmployeeResult } from '../model/employeeresult';
 import { EmployeeresultserviceService } from '../service/employeeresultservice.service';
@@ -36,7 +36,7 @@ export class FetchTestComponent implements OnInit {
   private topicName;
   private id;
   private count: number;
-  private testResult: testResult;
+  private testResult: TestResult;
   private empId: string = '878967asdgfg';
   private testId: string = 'u75asd87asd55';
   private result: result;
@@ -117,7 +117,7 @@ private percentage: number;
     this.percentage = this.scoreService.calculatePercentage(this.score,this.questionList);
     this.employeeresult=new EmployeeResult(this.id, this.empId, this.testId, this.empName, this.topicName, this.score, this.correct, this.incorrect, this.attemptList)
     //this.testResult={employeeId:this.empId, testId: this.testId, testResponses: this.resultList};
-    this.testResult=new testResult(this.empId,this.testId,this.resultList,this.correct,this.incorrect,this.score,this.percentage);
+    this.testResult=new TestResult(this.empId,this.testId,this.resultList,this.correct,this.incorrect,this.score,this.percentage);
     console.log("Test Result is ", this.testResult);
    this.scoreService.postScore2(this.testResult).subscribe(res=>{console.log(res);
   });
