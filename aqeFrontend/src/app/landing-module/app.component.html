@@ -1,38 +1,62 @@
 <div style="font-size: 15px;">
-    <header id="header" class="header">
-        <div class="navback">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Logo -->
-                    <div class="navbar-brand">
-                        <a class="logo" href="#">
-                            <img src="../assets/img/logo-3.png" alt="logo">
-                        </a>
-                    </div>
-                    <!-- /Logo -->
-                    <!-- Mobile toggle -->
-                    <button class="navbar-toggle">
-                        <span></span>
-                    </button>
-                    <!-- /Mobile toggle -->
-                </div>
-                <!-- Navigation -->
-                <div>
-                    <nav id="" class="">
-                        <ul class="main-menu nav  navbar-right">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#team">Team</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li><a routerLink="/auth/login">Login</a></li>
-                            <li><a routerLink="/auth/register">Register</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- /Navigation -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light items whitebg  fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <div class="navbar-brand">
+                <a class="logo" href="#">
+                    <img src="../assets/img/logo-3.png" alt="logo">
+                </a>
             </div>
+
+            <ul class=" main-menu  nav navbar-right">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home">
+                        <div class="itemk"> Home </div>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#about">
+                        <div class="itemk">About</div>
+
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#team">
+                        <div class="itemk">Team</div>
+
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link " href="#contact">
+                        <div class="itemk">Contact</div>
+
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link " routerLink="/auth/login">
+                        <div class="itemk">Login</div>
+
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link " routerLink="/auth/register">
+                        <div class="itemk">Register</div>
+
+                    </a>
+                </li>
+            </ul>
         </div>
-    </header>
+
+
+    </nav>
+
+
+
     <!-- Home -->
     <div id="home" class="hero-area">
 
@@ -241,7 +265,7 @@
                             <div class="col-md-6 float-right">
                                 <div class="h4">Vishal</div>
                                 <h6 class="font-bold blue-grey-text mb-4">Software Developer</h6>
-                                <p class="grey-text">Graduated from  xyz.
+                                <p class="grey-text">Graduated from xyz.
                                 </p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span
                                         class="ml-1">@sai.vishal</span></a>
                             </div>
@@ -280,10 +304,14 @@
                             <div class="contact-form">
                                 <h4>Send A Message</h4>
                                 <form>
-                                    <input class="input" type="text" name="name" placeholder="Name" style="border: 1px solid #909090">
-                                    <input class="input" type="email" name="email" placeholder="Email" style="border: 1px solid #909090">
-                                    <input class="input" type="text" name="subject" placeholder="Subject" style="border: 1px solid #909090">
-                                    <textarea class="input" name="message" placeholder="Enter your Message" style="border: 1px solid #909090"></textarea>
+                                    <input class="input" type="text" name="name" placeholder="Name"
+                                        style="border: 1px solid #909090">
+                                    <input class="input" type="email" name="email" placeholder="Email"
+                                        style="border: 1px solid #909090">
+                                    <input class="input" type="text" name="subject" placeholder="Subject"
+                                        style="border: 1px solid #909090">
+                                    <textarea class="input" name="message" placeholder="Enter your Message"
+                                        style="border: 1px solid #909090"></textarea>
                                     <button class="main-button icon-button pull-right">Send Message</button>
                                 </form>
                             </div>

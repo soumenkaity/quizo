@@ -21,6 +21,40 @@
 
     <!-- Custom stlylesheet -->
     <link type="text/css" rel="stylesheet" src="../src/assets/css/style.css">
+
+    <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+
+
+    <script>
+         $(window).scroll(function(){
+        var scroll = $(window).scrollTop();
+        if(scroll < 528){
+            // $('.fixed-top').css( 'background-color', 'white');
+            $('.fixed-top').css({ "color": "green","background-color": "white"});
+            $('.whitebg').css( "color", "green" );
+            $('.itemk').css( "color", "black" );
+            $('.navbar .navbar-brand img').attr('src','../assets/img/logo-b.png');
+
+        } else{
+            // $('.fixed-top').css('background-color', 'black').css("");
+            // $('.items').css( "color", "green" );
+            $('.whitebg').css({ "color": "white","background-color": "black"});
+            // $('.itemk').css({ "color": "white","background-color": "yellow"});
+            $('.itemk').css( "color", "white" );
+            $('.navbar .navbar-brand img').attr('src','../assets/img/logo-a.png');
+
+
+            // $('.fixed-top').css( "color", "green" );
+
+        }
+    });
+
+
+    </script>
 </head>
 
 <body>
