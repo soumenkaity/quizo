@@ -3,7 +3,7 @@
         <span class="spacing-l-20">QUIZO</span></h4>
     </button>
     <span class="spacer"></span>
-    <div *ngIf='loggedInUser'>
+    <div *ngIf='loggedInUser && !isLoginPage'>
         <span class="mr-2">
         {{loggedInUser}}
         </span>
@@ -20,10 +20,6 @@
             <button mat-menu-item>
               <mat-icon>account_circle</mat-icon>
               <span (click)="gotoAccount()">View Account</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>notification_important</mat-icon>
-              <span>Notifications</span>
             </button>
         </mat-menu>
     </div>

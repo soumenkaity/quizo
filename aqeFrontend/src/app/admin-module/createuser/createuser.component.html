@@ -23,16 +23,19 @@
         </p>
         <p>
             <label>Role:</label>
-            <input type="text" formControlName="role">
+            <mat-select formControlName="role">
+                <mat-option value="HRM">HRM</mat-option>
+                <mat-option value="EMP">EMP</mat-option>
+            </mat-select>
         </p>
         <p>
             <label>Designation:</label>
             <input type="text" formControlName="designation">
         </p>
 
-        
+
         <button class="button" mat-raised-button color="primary" (click)="openDialog(detailsForm.value)" [disabled]="!detailsForm.valid">Enter login details</button>
-        
+
     </form>
 </section>
 

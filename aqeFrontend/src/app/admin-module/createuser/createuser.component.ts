@@ -30,7 +30,7 @@ export class CreateuserComponent implements OnInit {
       "name": ["", Validators.required],
       "phone":["", Validators.required],
       "email":["", Validators.required],
-      "role":["", Validators.required],
+      "role":["HRM", Validators.required],
       "designation":["", Validators.required]
     });
   }
@@ -39,7 +39,7 @@ export class CreateuserComponent implements OnInit {
     this.loginForm = this.fb.group({
       "username":this.generatedUsername,
       "password":this.generatedPassword,
-      "role":["", Validators.required],
+      "role":["HRM", Validators.required],
       "email":userDetails.email
 
     })

@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/employee")
+@CrossOrigin("*")
 public class QuestionController {
 
     private FetchQuestionsService fetchQuestionsService;

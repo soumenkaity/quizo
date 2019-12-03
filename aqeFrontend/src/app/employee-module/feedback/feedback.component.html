@@ -1,28 +1,27 @@
-  <mat-card class="feedback">
-      <mat-card-header class="feedHead" >
+<mat-card class="feedback">
+    <mat-card-header class="feedHead">
         <mat-card-title>Send us your feedback!</mat-card-title>
         <mat-card-subtitle>Do you have a suggestion? Let us know in the field below.</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content class="feedContent" style="padding-left:1rem;">
+    </mat-card-header>
+    <mat-card-content class="feedContent" style="padding-left:1rem;">
         <div>
-        <p style="font-size: 15px;">How was your experience?</p>
-        <mat-radio-group>
-        <mat-radio-button value="good"> Good </mat-radio-button>
-        <p></p>
-        <mat-radio-button value="bad"> Bad </mat-radio-button>
-        </mat-radio-group>
+            <p>How was your experience?</p>
+            <mat-radio-group>
+                <mat-radio-button value="good"> Good </mat-radio-button>
+                <p></p>
+                <mat-radio-button value="bad"> Bad </mat-radio-button>
+            </mat-radio-group>
         </div>
         <form class="feed">
             <mat-form-field class="feedText">
                 <textarea matInput placeholder="Describe your experience here..."></textarea>
-              </mat-form-field>
+            </mat-form-field>
         </form>
-      </mat-card-content>
-    
-     <mat-card-footer>
-      <div class="example-button-row" style="align-self: center; height: 50px;">
-        <button mat-raised-button color="primary" routerLink='/employee/dash' style="font-size: 15px;">Submit</button>
-      </div>
-     </mat-card-footer>
-  </mat-card>
-      
+    </mat-card-content>
+
+    <mat-card-footer>
+        <div class="example-button-row" style="align-self: center;">
+            <button mat-raised-button color="primary" routerLink='/employee'>Submit</button>
+        </div>
+    </mat-card-footer>
+</mat-card>

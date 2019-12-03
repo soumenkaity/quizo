@@ -1,66 +1,61 @@
 <div class="container navbar2">
-    <div class="row">
+    <div class="row text-uppercase">
         <div class="col-6  testName">
-            <h3>MOVIE-TEST</h3>
+            <h3>{{topicName}} - TEST</h3>
         </div>
         <div class="col-6 timerContainer">
             <div class="timer">
                 <h3>{{roundedMins}}:{{roundedSecs}}</h3>
             </div>
         </div>
-
     </div>
-</div>
 
 
 
-<div class="card questionContainer">
-    <div class="card-body">
-        <h4>Q{{count+1}})</h4>
-        <div class="question">
-            <h5 class="card-title">{{question?.question}}</h5>
-            <div class="card-text">
-                <div class="custom-control" (click)="saveAnswer(1)">
-                    <label>
-                        <input type="radio" name="options" value="1" [(ngModel)]="options">
-                        {{choices[0]}}
+    <div class="card m-5">
+        <div class="card-body">
+            <h4>Q{{count+1}})</h4>
+            <div class="question">
+                <h3 class="card-title">{{question?.question}}</h3>
+                <div class="card-text">
+                    <div class="custom-control">
+                        <label>
+                        <input type="radio" name="options" value="0" [(ngModel)]="choices">
+                        {{question.choices[0]}}
                     </label>
-                </div>
-                <div class="custom-control" (click)="saveAnswer(2)">
-                    <label>
-                        <input type="radio" name="options" value="2" [(ngModel)]="options">
-                        {{choices[1]}}
+                    </div>
+                    <div class="custom-control">
+                        <label>
+                        <input type="radio" name="options" value="1" [(ngModel)]="choices">
+                        {{question.choices[1]}}
                     </label>
-                </div>
-                <div class="custom-control" (click)="saveAnswer(3)">
-                    <label>
-                        <input type="radio" name="options" value="3" [(ngModel)]="options">
-                        {{choices[2]}}
+                    </div>
+                    <div class="custom-control">
+                        <label>
+                        <input type="radio" name="options" value="2" [(ngModel)]="choices">
+                        {{question.choices[2]}}
                     </label>
-                </div>
-                <div class="custom-control" (click)="saveAnswer(4)">
-                    <label>
-                        <input type="radio" name="options" value="4" [(ngModel)]="options">
-                        {{choices[3]}}
+                    </div>
+                    <div class="custom-control">
+                        <label>
+                        <input type="radio" name="options" value="3" [(ngModel)]="choices">
+                        {{question.choices[3]}}
                     </label>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-
     <div class="row">
-        <div class="col-sm-4 button">
-            <button class="btn btn-primary" type="submit" (click)="prevQuestion()" *ngIf="count!=0">previous</button>
+        <!-- <div class="col-sm-4 button">
+    <button class="btn btn-primary" type="submit" ng-click="options=null" (click)="nextQuestion()" *ngIf="count!=questionList.length-1">next</button>
+</div> -->
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 text-center">
+            <button class="btn btn-primary" (click)="nextQuestion(choices)">NEXT QUESTION</button>
         </div>
-        <div class="col-sm-4 button">
-            <button class="btn btn-primary" type="submit" ng-click="options=null" (click)="nextQuestion()" *ngIf="count!=questionList.length-1">next</button>
-        </div>
-        <div class="col-sm-4 button">
-            <button class="btn btn-danger" type="submit" (click)="submitTest()">submit test</button>
-        </div>
+        <div class="col-sm-4"></div>
     </div>
-</div>
 
-<app-footer></app-footer>
+</div>

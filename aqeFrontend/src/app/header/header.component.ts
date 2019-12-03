@@ -12,8 +12,11 @@ export class HeaderComponent implements OnInit {
   constructor(private location: Location,private router: Router, private ts: ToasterService) { }
 
   loggedInUser;
+  isLoginPage = false;
 
   ngOnInit() {
+    if(this.router.url == '/auth/login' || this.router.url == '/auth/reset')
+      this.isLoginPage = true;
     this.loggedInUser = sessionStorage.getItem('username');
   }
   cancel() {
