@@ -36,6 +36,9 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
     private TopicRepository topicRepository;
 
     private QuestionRepository questionRepository;
+
+    String collectionName;
+
     List<Question> questions;
     List<Question> easyQuestions;
     List<Question> mediumQuestions;
@@ -73,7 +76,9 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
 
     @Override
     public Question getFirstQuestion(String testId, String collectionName, String empId, String empName) throws QuestionNotFoundException {
-        questions = mongoOperations.findAll(Question.class, collectionName);
+        this.collectionName = collectionName;
+
+        questions = mongoOperations.findAll(Question.class, this.collectionName);
         if (questions.size() == 0){
             throw new QuestionNotFoundException("No questions were found");
         }
@@ -132,6 +137,20 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
             question.setCorrectAttempts(question.getCorrectAttempts()+1);
         }
 
+        if(question.getTotalOccurrences() >= 2){
+            if(question.getCorrectAttempts()/Double.valueOf(question.getTotalOccurrences()) < 0.3){
+                question.setDifficulty("H");
+            }
+            else if(question.getCorrectAttempts()/Double.valueOf(question.getTotalOccurrences()) >= 0.3 && question.getCorrectAttempts()/Double.valueOf(question.getTotalOccurrences()) < 0.7){
+                question.setDifficulty("M");
+            }
+            else if(question.getCorrectAttempts()/Double.valueOf(question.getTotalOccurrences()) >= 0.7){
+                question.setDifficulty("E");
+            }
+        }
+
+        mongoOperations.save(question, collectionName);
+
         Attempt attempt = new Attempt();
         attempt.setQuestionId(easyQuestions.get(easyIndex-1).getId());
         attempt.setQuestion(easyQuestions.get(easyIndex-1).getQuestion());
@@ -164,9 +183,28 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
     }
 
     public Question mediumQuestion(int response) throws QuestionNotFoundException{
+        Question question = mediumQuestions.get(mediumIndex);
+        question.setTotalOccurrences(question.getTotalOccurrences()+1);
+
         mediumIndex = mediumIndex + 1;
-        if(mediumQuestions.get(mediumIndex-1).getAnswer().equals(mediumQuestions.get(mediumIndex-1).getChoices()[response]))
+        if(mediumQuestions.get(mediumIndex-1).getAnswer().equals(mediumQuestions.get(mediumIndex-1).getChoices()[response])) {
             correctMedium = correctMedium + 1;
+            question.setCorrectAttempts(question.getCorrectAttempts()+1);
+        }
+
+        if(question.getTotalOccurrences() >= 2){
+            if(question.getCorrectAttempts()/Double.valueOf(question.getTotalOccurrences()) < 0.3){
+                question.setDifficulty("H");
+            }
+            else if(question.getCorrectAttempts()/Double.valueOf(question.getTotalOccurrences()) >= 0.3 && question.getCorrectAttempts()/Double.valueOf(question.getTotalOccurrences()) < 0.7){
+                question.setDifficulty("M");
+            }
+            else if(question.getCorrectAttempts()/Double.valueOf(question.getTotalOccurrences()) >= 0.7){
+                question.setDifficulty("E");
+            }
+        }
+
+        mongoOperations.save(question, collectionName);
 
         Attempt attempt = new Attempt();
         attempt.setQuestionId(mediumQuestions.get(mediumIndex-1).getId());
@@ -199,9 +237,28 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
     }
 
     public Question hardQuestion(int response) throws QuestionNotFoundException{
+        Question question = hardQuestions.get(hardIndex);
+        question.setTotalOccurrences(question.getTotalOccurrences()+1);
+
         hardIndex = hardIndex + 1;
-        if(hardQuestions.get(hardIndex-1).getAnswer().equals(hardQuestions.get(hardIndex-1).getChoices()[response]))
+        if(hardQuestions.get(hardIndex-1).getAnswer().equals(hardQuestions.get(hardIndex-1).getChoices()[response])) {
             correctHard = correctHard + 1;
+            question.setCorrectAttempts(question.getCorrectAttempts()+1);
+        }
+
+        if(question.getTotalOccurrences() >= 2){
+            if(question.getCorrectAttempts()/Double.valueOf(question.getTotalOccurrences()) < 0.3){
+                question.setDifficulty("H");
+            }
+            else if(question.getCorrectAttempts()/Double.valueOf(question.getTotalOccurrences()) >= 0.3 && question.getCorrectAttempts()/Double.valueOf(question.getTotalOccurrences()) < 0.7){
+                question.setDifficulty("M");
+            }
+            else if(question.getCorrectAttempts()/Double.valueOf(question.getTotalOccurrences()) >= 0.7){
+                question.setDifficulty("E");
+            }
+        }
+
+        mongoOperations.save(question, collectionName);
 
         Attempt attempt = new Attempt();
         attempt.setQuestionId(hardQuestions.get(hardIndex-1).getId());
