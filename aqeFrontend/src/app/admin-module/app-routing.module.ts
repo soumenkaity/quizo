@@ -17,7 +17,6 @@ const routes: Routes = [
     {path:'createUser', component:CreateuserComponent},
     {path:'**',component:PageNotFoundComponent  }
   ], canActivate:[RoleGuardService],data:{role:'ADM'}}
-  //
 ];
 
 @NgModule({
