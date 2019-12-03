@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/quiz")
+@RequestMapping("/admin")
 @CrossOrigin("*")
 public class AdminController {
 
@@ -24,14 +24,33 @@ public class AdminController {
     public AdminController(AdminService adminService){
         this.adminService=adminService;
     }
-
-    @PostMapping("/admin")
+    
+    @PostMapping("/create-topic")
     public ResponseEntity<?> createTest(@RequestBody String topic)throws IOException {
         ResponseEntity responseEntity;
-        adminService.createTest(topic);
 
-        responseEntity=new ResponseEntity<Message>(new Message("Test is Created"), HttpStatus.CREATED);
-        lg.info(responseEntity.toString());
-        return responseEntity;
+        int value=adminService.createTest(topic);
+
+        if(value==0){
+            responseEntity=new ResponseEntity<Message>(new Message("Test is Created"), HttpStatus.CREATED);
+            lg.info(responseEntity.toString());
+            return responseEntity;
+        }
+        else if(value==1){
+            responseEntity=new ResponseEntity<Message>(new Message("wikipedia page doesnot exists for the given topic"), HttpStatus.OK);
+            lg.info(responseEntity.toString());
+            return responseEntity;
+        }
+        else if(value==2){
+            responseEntity=new ResponseEntity<Message>(new Message("test is already created"), HttpStatus.OK);
+            lg.info(responseEntity.toString());
+            return responseEntity;
+        }
+        else{
+            responseEntity=new ResponseEntity<Message>(new Message("test cannot be created.TRY AGAIN"), HttpStatus.OK);
+            lg.info(responseEntity.toString());
+            return responseEntity;
+        }
+
     }
 }

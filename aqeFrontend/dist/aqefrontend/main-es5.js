@@ -160,7 +160,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<!-- <app-header></app-header> -->\n<button mat-icon-button (click)=\"snav.toggle()\"><mat-icon>menu</mat-icon></button>\n<div class=\"icon-det\">\n    <button mat-icon-button><mat-icon>notifications</mat-icon></button>\n    <button mat-icon-button [matMenuTriggerFor]=\"menu\" aria-label=\"Example icon-button with a menu\">\n          <mat-icon>more_horiz</mat-icon>\n    </button>\n    <mat-menu #menu=\"matMenu\">\n        <button mat-menu-item>\n            <mat-icon>build</mat-icon>\n            <span>Edit Profile</span>\n          </button>\n        <button mat-menu-item>\n            <mat-icon>settings</mat-icon>\n            <span>Logout</span>\n          </button>\n    </mat-menu>\n</div>\n\n<mat-sidenav-container class=\"example-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\n\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" opened class=\"example-sidenav\" [fixedInViewport]=\"mobileQuery.matches\" fixedTopGap=\"56\">\n        <mat-nav-list>\n            <img src=\"assets/img/imgUser.png\" alt=\"UserImg\">\n            <a mat-list-item routerLink=\".\">Dash Board</a>\n            <a mat-list-item routerLink=\".\">Analytics</a>\n            <a mat-list-item routerLink=\".\">Tests</a>\n            <a mat-list-item routerLink=\".\">Settings</a>\n            <a mat-list-item routerLink=\".\">Help</a>\n        </mat-nav-list>\n    </mat-sidenav>\n\n    <mat-sidenav-content>\n        <mat-toolbar class=\"title\">User Details:</mat-toolbar>\n        <!-- <div class=\"forms-bhai\">\n        <label>\n         Id:<input type=\"text\" formControl=\"id\">\n        </label>\n\n        <label>\n        Name:<input type=\"text\" formControl=\"name\">\n      </label>\n\n      <label>\n        Role:<input type=\"text\" formControl=\"role\">\n      </label>\n      \n      <label>\n        Contact:<input type=\"text\" formControl=\"phone\">\n      </label>\n      \n      <label>\n        E-mail:<input type=\"text\" formControl=\"email\">\n      </label>\n      \n      <label>\n        Designation:<input type=\"text\" formControl=\"designation\">\n      </label>\n      </div> -->\n\n        <!-- <form *ngIf=\"user | async; else \" [formGroup]=\"userdet\" (ngSubmit)=\"submit()\"> -->\n        <!-- <form [formGroup]=\"userdet\">\n        <label for=\"id\">Id</label>\n        <input id=\"id\" type=\"text\" formControlName=\"id\" />\n         \n        <label for=\"name\">Name</label>\n        <input id=\"name\" type=\"text\" formControlName=\"name\" />\n\n        <label for=\"role\">Role</label>\n        <input id=\"role\" type=\"text\" formControlName=\"role\" />\n\n        <label for=\"phone\">Phone</label>\n        <input id=\"phone\" type=\"number\" formControlName=\"phone\" />\n      \n        <label for=\"email\">Email</label>\n        <input id=\"email\" type=\"text\" formControlName=\"email\" />\n\n        <label for=\"designation\">Designation</label>\n        <input id=\"designation\" type=\"text\" formControlName=\"designation\" />\n       \n      </form> -->\n    </mat-sidenav-content>\n</mat-sidenav-container>\n\n<app-footer></app-footer>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<!-- <app-header></app-header> -->\n<button mat-icon-button (click)=\"snav.toggle()\"><mat-icon>menu</mat-icon></button>\n<div class=\"icon-det\">\n    <button mat-icon-button><mat-icon>notifications</mat-icon></button>\n    <button mat-icon-button [matMenuTriggerFor]=\"menu\" aria-label=\"Example icon-button with a menu\">\n          <mat-icon>more_horiz</mat-icon>\n    </button>\n    <mat-menu #menu=\"matMenu\">\n        <button mat-menu-item>\n            <mat-icon>build</mat-icon>\n            <span>Edit Profile</span>\n          </button>\n        <button mat-menu-item>\n            <mat-icon>settings</mat-icon>\n            <span>Logout</span>\n          </button>\n    </mat-menu>\n</div>\n\n<mat-sidenav-container class=\"example-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\n\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" opened class=\"example-sidenav\" [fixedInViewport]=\"mobileQuery.matches\" fixedTopGap=\"56\">\n        <mat-nav-list>\n            <img src=\"assets/img/imgUser.png\" alt=\"UserImg\">\n            <a mat-list-item routerLink=\".\">Dash Board</a>\n            <a mat-list-item routerLink=\".\">Analytics</a>\n            <a mat-list-item routerLink=\".\">Tests</a>\n            <a mat-list-item routerLink=\".\">Settings</a>\n            <a mat-list-item routerLink=\".\">Help</a>\n        </mat-nav-list>\n    </mat-sidenav>\n\n    <mat-sidenav-content>\n        <mat-toolbar class=\"title\">User Details:</mat-toolbar>\n        \n      <form>\n          <div class=\"form-group row\">\n        <label for=\"id\" class=\"col-sm-2 col-form-label\">Id</label>\n        <div class=\"col-sm-10\">\n            <input  type=\"text\" readonly class=\"form-control\" [value]=\"user?.id\">\n          </div>\n        </div>\n        <div class=\"form-group row\">\n        <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n        <div class=\"col-sm-10\">\n            <input id=\"name\" type=\"text\" readonly class=\"form-control\" [value]=\"user?.name\" />\n          </div>\n        </div>\n        <div class=\"form-group row\">\n        <label for=\"role\" class=\"col-sm-2 col-form-label\">Role</label>\n        <div class=\"col-sm-10\">\n            <input id=\"role\" type=\"text\" readonly class=\"form-control\" [value]=\"user?.role\" />\n          </div>\n        </div>\n        <div class=\"form-group row\">\n       <label for=\"phone\" class=\"col-sm-2 col-form-label\">Phone</label>\n       <div class=\"col-sm-10\">\n          <input id=\"phone\" type=\"number\" readonly class=\"form-control\" [value]=\"user?.phone\" />\n        </div>\n      </div>\n        <div class=\"form-group row\">\n          <label for=\"email\" class=\"col-sm-2 col-form-label\">Email</label>\n          <div class=\"col-sm-10\">\n            <input id=\"email\" type=\"email\" readonly class=\"form-control\" [value]=\"user?.email\">\n          </div>\n        </div>\n\n        <div class=\"form-group row\">\n        <label for=\"designation\" class=\"col-sm-2 col-form-label\">Designation</label>\n        <div class=\"col-sm-10\">\n            <input id=\"designation\" type=\"text\" readonly class=\"form-control\" [value]=\"user?.designation\" />\n          </div>\n        </div>\n      </form>\n      \n    </mat-sidenav-content>\n</mat-sidenav-container>\n\n<app-footer></app-footer>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/employee-module/app.component.html": 
@@ -259,7 +259,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card questionContainer\">\n    <div class=\"card-body\">\n        <h4>Q{{count+1}})</h4>\n        <div class=\"question\">\n            <h5 class=\"card-title\">{{question?.question}}</h5>\n            <div class=\"card-text\">\n                <div class=\"custom-control\" (click)=\"saveAnswer(1)\">\n                    <label>\n                        <input type=\"radio\" name=\"options\" value=\"1\" [(ngModel)]=\"options\">\n                        {{choices[0]}}\n                    </label>\n                </div>\n                <div class=\"custom-control\" (click)=\"saveAnswer(2)\">\n                    <label>\n                        <input type=\"radio\" name=\"options\" value=\"2\" [(ngModel)]=\"options\">\n                        {{choices[1]}}\n                    </label>\n                </div>\n                <div class=\"custom-control\" (click)=\"saveAnswer(3)\">\n                    <label>\n                        <input type=\"radio\" name=\"options\" value=\"3\" [(ngModel)]=\"options\">\n                        {{choices[2]}}\n                    </label>\n                </div>\n                <div class=\"custom-control\" (click)=\"saveAnswer(4)\">\n                    <label>\n                        <input type=\"radio\" name=\"options\" value=\"4\" [(ngModel)]=\"options\">\n                        {{choices[3]}}\n                    </label>\n                </div>\n            </div>\n        </div>\n    </div>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card questionContainer\">\n    <div class=\"card-body\">\n        <h4>Q{{count+1}})</h4>\n        <!-- <div class=\"question\">\n            <h5 class=\"card-title\">{{question?.question}}</h5>\n            <div class=\"card-text\">\n                <div class=\"custom-control\" (click)=\"saveAnswer(1)\">\n                    <label>\n                        <input type=\"radio\" name=\"options\" value=\"1\" [(ngModel)]=\"options\">\n                        {{choices[0]}}\n                    </label>\n                </div>\n                <div class=\"custom-control\" (click)=\"saveAnswer(2)\">\n                    <label>\n                        <input type=\"radio\" name=\"options\" value=\"2\" [(ngModel)]=\"options\">\n                        {{choices[1]}}\n                    </label>\n                </div>\n                <div class=\"custom-control\" (click)=\"saveAnswer(3)\">\n                    <label>\n                        <input type=\"radio\" name=\"options\" value=\"3\" [(ngModel)]=\"options\">\n                        {{choices[2]}}\n                    </label>\n                </div>\n                <div class=\"custom-control\" (click)=\"saveAnswer(4)\">\n                    <label>\n                        <input type=\"radio\" name=\"options\" value=\"4\" [(ngModel)]=\"options\">\n                        {{choices[3]}}\n                    </label>\n                </div> -->\n        <div ngFor=\"let attempt of attempts;index i\">\n            <h5 class=\"card-title\">{{attempt.question}}</h5>\n            <div class=\"option1\" [style.background-color]=styleList[i]>\n                <label>\n                    <input type=\"radio\">{{attempt.choices[0]}}\n                </label>\n            </div>\n            <div class=\"option2\" style=\"background-color: 'evaluate()'\">\n                <label>\n                    <input type=\"radio\">{{attempt.choices[1]}}\n                </label>\n            </div>\n            <div class=\"option3\" style=\"background-color: 'evaluate()'\">\n                <label>\n                    <input type=\"radio\">{{attempt.choices[2]}}\n                </label>\n            </div>\n            <div  class=\"option4\" style=\"background-color: 'evaluate()'\">\n                <label>\n                    <input type=\"radio\">{{attempt.choices[3]}}\n                </label>\n            </div>\n\n        </div>\n    </div>\n</div>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/employee-module/test-ins/test-ins.component.html": 
@@ -270,7 +270,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"spacing-top\">\n    <div class=\"text-center\">\n\n        <h1>Instructions</h1>\n    </div>\n</div>\n\n\n<div class=\"container\">\n    <div>\n\n        <mat-list>\n            <mat-list-item> -This paper consists of Questions related to some programing language or some framework or some library </mat-list-item>\n            <mat-list-item> -The clock will be set by server. The countdown timer in the top of the screen will display the remaining time available for you to complete the question. When the timer reaches zero, the next question will be displayed on the screen. </mat-list-item>\n            <mat-list-item> -You can't go back to a marked question after clicking next.</mat-list-item>\n            <mat-list-item> -Once you skip a question you will not be able to go back to that question.</mat-list-item>\n            <mat-list-item> -Your score will be displayed in the dashboard </mat-list-item>\n            <mat-divider></mat-divider>\n        </mat-list>\n    </div>\n\n    <div class=\"row m-4\">\n        <div class=\"col-md-4\">.</div>\n        <div class=\"col-md-4 m-auto text-center\">\n            <button class=\"btn btn-warning \" (click)='onStartTest()'><h3>Start Test</h3></button>\n        </div>\n        <div class=\"col-md-4\">.\n        </div>\n    </div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"spacing-top\">\n    <div class=\"text-center\">\n\n        <h1>Instructions</h1>\n    </div>\n</div>\n\n\n<div class=\"container\">\n    <div>\n\n        <mat-list>\n            <mat-list-item> -This paper consists of Questions related to some programing language or some framework or some library </mat-list-item>\n            <mat-list-item> -The clock will be set by server. The countdown timer in the top of the screen will display the remaining time available for you to complete the question. When the timer reaches zero, the next question will be displayed on the screen. </mat-list-item>\n            <mat-list-item> -You can't go back to a marked question after clicking next.</mat-list-item>\n            <mat-list-item> -Once you skip a question you will not be able to go back to that question.</mat-list-item>\n            <mat-list-item> -Your score will be displayed in the dashboard </mat-list-item>\n            <mat-divider></mat-divider>\n        </mat-list>\n    </div>\n\n    <div class=\"row m-4\">\n        <div class=\"col-md-4\">.</div>\n        <div class=\"col-md-4 m-auto text-center\">\n            <button class=\"btn btn-warning \" routerLink='/employee/test-page'><h3>Start Test</h3></button>\n        </div>\n        <div class=\"col-md-4\">.\n        </div>\n    </div>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/employee-module/test-page/test-page.component.html": 
@@ -314,7 +314,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar color=\"primary\">\n    <button mat-icon-button (click)=\"cancel()\"> <h4><i class=\"material-icons v-center \">keyboard_backspace</i>\n        <span class=\"spacing-l-20\">QUIZO</span></h4>\n    </button>\n    <span class=\"spacer\"></span>\n    <span class=\"mr-2\">\n        {{loggedInUser}}\n    </span>\n\n\n    <button mat-icon-button [matMenuTriggerFor]=\"menu\" aria-label=\"Example icon-button with a menu\">\n            <mat-icon>more_vert</mat-icon>\n          </button>\n    <mat-menu #menu=\"matMenu\">\n        <button mat-menu-item *ngIf=\"loggedInUser\" (click)=\"logout()\">\n              <mat-icon>exit_to_app</mat-icon>\n              <span>Logout</span>\n            </button>\n        <button mat-menu-item>\n              <mat-icon>account_circle</mat-icon>\n              <span (click)=\"gotoAccount()\">View Account</span>\n            </button>\n        <button mat-menu-item>\n              <mat-icon>notification_important</mat-icon>\n              <span>Notifications</span>\n            </button>\n    </mat-menu>\n</mat-toolbar>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar color=\"primary\">\n    <button mat-icon-button (click)=\"cancel()\"> <h4><i class=\"material-icons v-center \">keyboard_backspace</i>\n        <span class=\"spacing-l-20\">QUIZO</span></h4>\n    </button>\n    <span class=\"spacer\"></span>\n    <div *ngIf='loggedInUser'>\n        <span class=\"mr-2\">\n        {{loggedInUser}}\n        </span>\n\n\n        <button mat-icon-button [matMenuTriggerFor]=\"menu\" aria-label=\"Example icon-button with a menu\">\n            <mat-icon>more_vert</mat-icon>\n          </button>\n        <mat-menu #menu=\"matMenu\">\n            <button mat-menu-item *ngIf=\"loggedInUser\" (click)=\"logout()\">\n              <mat-icon>exit_to_app</mat-icon>\n              <span>Logout</span>\n            </button>\n            <button mat-menu-item>\n              <mat-icon>account_circle</mat-icon>\n              <span (click)=\"gotoAccount()\">View Account</span>\n            </button>\n            <button mat-menu-item>\n              <mat-icon>notification_important</mat-icon>\n              <span>Notifications</span>\n            </button>\n        </mat-menu>\n    </div>\n</mat-toolbar>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/hr-module/app.component.html": 
@@ -402,7 +402,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"hrContainer\">\n    <div class=\"errorMessage\" layout-align=\"center center\">\n        <h1>Thankyou for submitting the selected Test and employee List</h1>\n        <h3>Emails will be sent to the recipients with the auto generated Login details</h3>\n    </div>\n    <button mat-flat-button routerLink=\"/hr\" color=\"accent\">Go to Home</button>\n    <span class=\"m-5\"></span>\n    <button mat-flat-button routerLink=\"/hr/dashboard\" color=\"accent\">Go to Dashboard</button>\n</div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"hrContainer\">\n    <div class=\"errorMessage\" layout-align=\"center center\">\n        <h1>Thankyou for submitting the selected Test and employee List</h1>\n        <h3>Emails will be sent to the recipients with the auto generated Login details</h3>\n    </div>\n    <button mat-flat-button routerLink=\"/hr\" color=\"accent\">Go to Dashboard</button>\n</div>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/hr-module/topic/topic.component.html": 
@@ -2206,14 +2206,6 @@
                         _this.user = response;
                         console.log(response);
                     });
-                    // this.userdet = this.fb.group({
-                    //   'id' : this.user.id,
-                    //   'name' : this.user.name,
-                    //   'role' : this.user.role,
-                    //   'phone' : this.user.phone,
-                    //   'email' : this.user.email,
-                    //   'designation' : this.user.designation
-                    // })
                 };
                 return UserDetailsComponent;
             }());
@@ -2297,22 +2289,23 @@
             /* harmony import */ var _error_error_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./error/error.component */ "./src/app/employee-module/error/error.component.ts");
             /* harmony import */ var _employeedetails_employeedetails_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./employeedetails/employeedetails.component */ "./src/app/employee-module/employeedetails/employeedetails.component.ts");
             /* harmony import */ var _emptypage_emptypage_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./emptypage/emptypage.component */ "./src/app/employee-module/emptypage/emptypage.component.ts");
-            /* harmony import */ var _authentication_module_service_role_guard_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../authentication-module/service/role-guard.service */ "./src/app/authentication-module/service/role-guard.service.ts");
-            /* harmony import */ var _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./feedback/feedback.component */ "./src/app/employee-module/feedback/feedback.component.ts");
-            /* harmony import */ var _fetch_test_fetch_test_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./fetch-test/fetch-test.component */ "./src/app/employee-module/fetch-test/fetch-test.component.ts");
-            /* harmony import */ var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../page-not-found/page-not-found.component */ "./src/app/page-not-found/page-not-found.component.ts");
-            /* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/employee-module/dashboard/dashboard.component.ts");
+            /* harmony import */ var _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./feedback/feedback.component */ "./src/app/employee-module/feedback/feedback.component.ts");
+            /* harmony import */ var _fetch_test_fetch_test_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./fetch-test/fetch-test.component */ "./src/app/employee-module/fetch-test/fetch-test.component.ts");
+            /* harmony import */ var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../page-not-found/page-not-found.component */ "./src/app/page-not-found/page-not-found.component.ts");
+            /* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/employee-module/dashboard/dashboard.component.ts");
+            /* harmony import */ var _result_page_result_page_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./result-page/result-page.component */ "./src/app/employee-module/result-page/result-page.component.ts");
             var routes = [
                 { path: 'employee', children: [
-                        { path: '', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_13__["DashboardComponent"] },
+                        { path: '', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_12__["DashboardComponent"] },
                         { path: 'employee-details', component: _employeedetails_employeedetails_component__WEBPACK_IMPORTED_MODULE_7__["EmployeedetailsComponent"] },
                         { path: 'test-instructions', component: _test_ins_test_ins_component__WEBPACK_IMPORTED_MODULE_3__["TestInsComponent"] },
-                        { path: 'test-page', component: _fetch_test_fetch_test_component__WEBPACK_IMPORTED_MODULE_11__["FetchTestComponent"] },
+                        { path: 'test-page', component: _fetch_test_fetch_test_component__WEBPACK_IMPORTED_MODULE_10__["FetchTestComponent"] },
                         { path: 'error', component: _error_error_component__WEBPACK_IMPORTED_MODULE_6__["ErrorComponent"] },
                         { path: 'thankyou', component: _thankyou_thankyou_component__WEBPACK_IMPORTED_MODULE_5__["ThankyouComponent"] },
-                        { path: 'feedback', component: _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_10__["FeedbackComponent"] },
-                        { path: '**', component: _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_12__["PageNotFoundComponent"] }
-                    ], canActivate: [_authentication_module_service_role_guard_service__WEBPACK_IMPORTED_MODULE_9__["RoleGuardService"]], data: { role: 'EMP' }
+                        { path: 'feedback', component: _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_9__["FeedbackComponent"] },
+                        { path: 'result', component: _result_page_result_page_component__WEBPACK_IMPORTED_MODULE_13__["ResultPageComponent"] },
+                        { path: '**', component: _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_11__["PageNotFoundComponent"] }
+                    ] //, canActivate:[RoleGuardService],data:{role:'EMP'} 
                 }
             ];
             var AppRoutingModule = /** @class */ (function () {
@@ -2333,7 +2326,7 @@
                 _test_page_test_page_component__WEBPACK_IMPORTED_MODULE_4__["TestPageComponent"],
                 _error_error_component__WEBPACK_IMPORTED_MODULE_6__["ErrorComponent"],
                 _thankyou_thankyou_component__WEBPACK_IMPORTED_MODULE_5__["ThankyouComponent"],
-                _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_10__["FeedbackComponent"]
+                _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_9__["FeedbackComponent"]
             ];
             /***/ 
         }),
@@ -2463,13 +2456,14 @@
             /* harmony import */ var _service_topic_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./service/topic.service */ "./src/app/employee-module/service/topic.service.ts");
             /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
             /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-            /* harmony import */ var _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./feedback/feedback.component */ "./src/app/employee-module/feedback/feedback.component.ts");
-            /* harmony import */ var _service_dash_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./service/dash.service */ "./src/app/employee-module/service/dash.service.ts");
-            /* harmony import */ var _landing_landing_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./landing/landing.component */ "./src/app/employee-module/landing/landing.component.ts");
-            /* harmony import */ var _fetch_test_fetch_test_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./fetch-test/fetch-test.component */ "./src/app/employee-module/fetch-test/fetch-test.component.ts");
-            /* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../core/core.module */ "./src/app/core/core.module.ts");
-            /* harmony import */ var _result_page_result_page_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./result-page/result-page.component */ "./src/app/employee-module/result-page/result-page.component.ts");
-            /* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/employee-module/dashboard/dashboard.component.ts");
+            /* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/employee-module/dashboard/dashboard.component.ts");
+            /* harmony import */ var _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./feedback/feedback.component */ "./src/app/employee-module/feedback/feedback.component.ts");
+            /* harmony import */ var _service_dash_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./service/dash.service */ "./src/app/employee-module/service/dash.service.ts");
+            /* harmony import */ var _landing_landing_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./landing/landing.component */ "./src/app/employee-module/landing/landing.component.ts");
+            /* harmony import */ var _fetch_test_fetch_test_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./fetch-test/fetch-test.component */ "./src/app/employee-module/fetch-test/fetch-test.component.ts");
+            /* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../core/core.module */ "./src/app/core/core.module.ts");
+            /* harmony import */ var _result_page_result_page_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./result-page/result-page.component */ "./src/app/employee-module/result-page/result-page.component.ts");
+            /* harmony import */ var _service_employeeresultservice_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./service/employeeresultservice.service */ "./src/app/employee-module/service/employeeresultservice.service.ts");
             var EmployeeModule = /** @class */ (function () {
                 function EmployeeModule() {
                 }
@@ -2480,11 +2474,11 @@
                     declarations: [
                         _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
                         _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["EmployeeRoutingComponents"],
-                        _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_11__["FeedbackComponent"],
-                        _fetch_test_fetch_test_component__WEBPACK_IMPORTED_MODULE_14__["FetchTestComponent"],
-                        _landing_landing_component__WEBPACK_IMPORTED_MODULE_13__["LandingComponent"],
-                        _result_page_result_page_component__WEBPACK_IMPORTED_MODULE_16__["ResultPageComponent"],
-                        _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_17__["DashboardComponent"]
+                        _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_11__["DashboardComponent"],
+                        _feedback_feedback_component__WEBPACK_IMPORTED_MODULE_12__["FeedbackComponent"],
+                        _fetch_test_fetch_test_component__WEBPACK_IMPORTED_MODULE_15__["FetchTestComponent"],
+                        _landing_landing_component__WEBPACK_IMPORTED_MODULE_14__["LandingComponent"],
+                        _result_page_result_page_component__WEBPACK_IMPORTED_MODULE_17__["ResultPageComponent"]
                     ],
                     imports: [
                         _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -2492,9 +2486,9 @@
                         _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
                         _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"],
                         _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
-                        _core_core_module__WEBPACK_IMPORTED_MODULE_15__["CoreModule"]
+                        _core_core_module__WEBPACK_IMPORTED_MODULE_16__["CoreModule"]
                     ],
-                    providers: [_service_user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"], _service_data_service__WEBPACK_IMPORTED_MODULE_7__["DataService"], _service_topic_service__WEBPACK_IMPORTED_MODULE_8__["TopicService"], _service_dash_service__WEBPACK_IMPORTED_MODULE_12__["DashService"]],
+                    providers: [_service_user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"], _service_data_service__WEBPACK_IMPORTED_MODULE_7__["DataService"], _service_topic_service__WEBPACK_IMPORTED_MODULE_8__["TopicService"], _service_dash_service__WEBPACK_IMPORTED_MODULE_13__["DashService"], _service_employeeresultservice_service__WEBPACK_IMPORTED_MODULE_18__["EmployeeresultserviceService"]],
                     bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
                 })
             ], EmployeeModule);
@@ -2697,11 +2691,15 @@
             /* harmony import */ var _model_testResult__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../model/testResult */ "./src/app/employee-module/model/testResult.ts");
             /* harmony import */ var _model_Attempt__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../model/Attempt */ "./src/app/employee-module/model/Attempt.ts");
             /* harmony import */ var _model_employeeresult__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../model/employeeresult */ "./src/app/employee-module/model/employeeresult.ts");
+            /* harmony import */ var _service_employeeresultservice_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../service/employeeresultservice.service */ "./src/app/employee-module/service/employeeresultservice.service.ts");
+            /* harmony import */ var _service_data_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../service/data.service */ "./src/app/employee-module/service/data.service.ts");
             // import { testResult } from '../model/testResult';
             var FetchTestComponent = /** @class */ (function () {
-                function FetchTestComponent(fetchTestService, scoreService, router) {
+                function FetchTestComponent(fetchTestService, employeeresultserviceService, scoreService, dataService, router) {
                     this.fetchTestService = fetchTestService;
+                    this.employeeresultserviceService = employeeresultserviceService;
                     this.scoreService = scoreService;
+                    this.dataService = dataService;
                     this.router = router;
                     this.totalSeconds = 20;
                     this.minutes = Math.floor(this.totalSeconds / 60);
@@ -2711,20 +2709,20 @@
                     this.empId = '878967asdgfg';
                     this.testId = 'u75asd87asd55';
                     this.resultList = [];
+                    this.attemptList = [];
                 }
                 FetchTestComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    console.log("in ngoninit");
-                    this.fetchTestService.getQuestions(this.topic).subscribe(function (data) {
-                        console.log(data);
-                        _this.questionList = data;
-                        _this.question = _this.questionList[0];
-                        // console.log(this.question);
-                        _this.choices = _this.question['choices'];
-                        console.log(_this.options);
-                        _this.count = 0;
-                        _this.checkTime();
-                    });
+                    var userDetails = this.dataService.getTestUserDetails();
+                    this.fetchTestService.getFirstQuestion(userDetails).subscribe(function (response) { return console.log(response); });
+                    // this.fetchTestService.getQuestions(this.topic).subscribe(data => {
+                    //   console.log( data);
+                    //   this.questionList = data;
+                    //   this.question = this.questionList[0];
+                    //   this.choices=this.question['choices'];
+                    //   console.log(this.options)
+                    //   this.count = 0;
+                    //   this.checkTime();
+                    // });
                 };
                 FetchTestComponent.prototype.nextQuestion = function () {
                     this.count = this.count + 1;
@@ -2748,6 +2746,7 @@
                     this.result = new _model_result__WEBPACK_IMPORTED_MODULE_3__["result"](this.question.id, parseInt(option), this.question.choices.indexOf(this.question.answer) + 1, this.userResponse);
                     console.log("result ", this.result);
                     this.resultList[this.count] = this.result;
+                    this.attemptList[this.count] = this.Attempt;
                     console.log("the result list is ", this.resultList);
                 };
                 FetchTestComponent.prototype.submitTest = function () {
@@ -2757,7 +2756,7 @@
                     this.incorrect = this.questionList.length - this.correct;
                     this.score = this.scoreService.calculateScore(this.resultList, this.questionList);
                     this.percentage = this.scoreService.calculatePercentage(this.score, this.questionList);
-                    this.employeeresult = new _model_employeeresult__WEBPACK_IMPORTED_MODULE_8__["EmployeeResult"](this.id, this.empId, this.testId, this.empName, this.topicName, this.score, this.correct, this.incorrect, this.Attempt);
+                    this.employeeresult = new _model_employeeresult__WEBPACK_IMPORTED_MODULE_8__["EmployeeResult"](this.id, this.empId, this.testId, this.empName, this.topicName, this.score, this.correct, this.incorrect, this.attemptList);
                     //this.testResult={employeeId:this.empId, testId: this.testId, testResponses: this.resultList};
                     this.testResult = new _model_testResult__WEBPACK_IMPORTED_MODULE_6__["testResult"](this.empId, this.testId, this.resultList, this.correct, this.incorrect, this.score, this.percentage);
                     console.log("Test Result is ", this.testResult);
@@ -2765,6 +2764,7 @@
                         console.log(res);
                     });
                     this.feedbackpage();
+                    this.employeeresultserviceService.postScore3(this.employeeresult);
                 };
                 FetchTestComponent.prototype.feedbackpage = function () {
                     this.router.navigate(['/employee/feedback']);
@@ -2811,7 +2811,9 @@
             }());
             FetchTestComponent.ctorParameters = function () { return [
                 { type: _service_fetch_test_service__WEBPACK_IMPORTED_MODULE_2__["FetchTestService"] },
+                { type: _service_employeeresultservice_service__WEBPACK_IMPORTED_MODULE_9__["EmployeeresultserviceService"] },
                 { type: _service_score_service__WEBPACK_IMPORTED_MODULE_5__["ScoreService"] },
+                { type: _service_data_service__WEBPACK_IMPORTED_MODULE_10__["DataService"] },
                 { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
             ]; };
             FetchTestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -2962,7 +2964,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2VtcGxveWVlLW1vZHVsZS9yZXN1bHQtcGFnZS9yZXN1bHQtcGFnZS5jb21wb25lbnQuY3NzIn0= */");
+            /* harmony default export */ __webpack_exports__["default"] = ("/* .option1{\n  if(attempt.)\n} */\n.option2{\n\n}\n.option3{\n\n}\n.option4{\n\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZW1wbG95ZWUtbW9kdWxlL3Jlc3VsdC1wYWdlL3Jlc3VsdC1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0dBRUc7QUFDSDs7QUFFQTtBQUNBOztBQUVBO0FBQ0E7O0FBRUEiLCJmaWxlIjoic3JjL2FwcC9lbXBsb3llZS1tb2R1bGUvcmVzdWx0LXBhZ2UvcmVzdWx0LXBhZ2UuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIC5vcHRpb24xe1xuICBpZihhdHRlbXB0Lilcbn0gKi9cbi5vcHRpb24ye1xuXG59XG4ub3B0aW9uM3tcblxufVxuLm9wdGlvbjR7XG5cbn0iXX0= */");
             /***/ 
         }),
         /***/ "./src/app/employee-module/result-page/result-page.component.ts": 
@@ -2976,13 +2978,38 @@
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResultPageComponent", function () { return ResultPageComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _service_employeeresultservice_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/employeeresultservice.service */ "./src/app/employee-module/service/employeeresultservice.service.ts");
             var ResultPageComponent = /** @class */ (function () {
-                function ResultPageComponent() {
+                function ResultPageComponent(Employeeresult) {
+                    this.Employeeresult = Employeeresult;
+                    this.correctColor = "green";
+                    this.wrongColor = "red";
+                    this.styleList = new Array();
                 }
+                // attempt:Attempt[];
                 ResultPageComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    this.emailId = sessionStorage.getItem('email');
+                    this.Employeeresult.getResult(this.emailId).subscribe(function (data) {
+                        console.log(data);
+                        _this.employeeResultList = data;
+                        _this.employeeResult = _this.employeeResultList[0];
+                        _this.attempts = _this.employeeResult.attempt;
+                        _this.attempts.forEach(function (v, k) {
+                            v.choices.forEach(function (val, key) {
+                                console.log(key);
+                            });
+                        });
+                        _this.count = 0;
+                    });
+                };
+                ResultPageComponent.prototype.evaluate = function () {
                 };
                 return ResultPageComponent;
             }());
+            ResultPageComponent.ctorParameters = function () { return [
+                { type: _service_employeeresultservice_service__WEBPACK_IMPORTED_MODULE_2__["EmployeeresultserviceService"] }
+            ]; };
             ResultPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-result-page',
@@ -3124,6 +3151,47 @@
             ], DataService);
             /***/ 
         }),
+        /***/ "./src/app/employee-module/service/employeeresultservice.service.ts": 
+        /*!**************************************************************************!*\
+          !*** ./src/app/employee-module/service/employeeresultservice.service.ts ***!
+          \**************************************************************************/
+        /*! exports provided: EmployeeresultserviceService */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmployeeresultserviceService", function () { return EmployeeresultserviceService; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            var EmployeeresultserviceService = /** @class */ (function () {
+                function EmployeeresultserviceService(http) {
+                    this.http = http;
+                    this.url = 'http://localhost:8083/quiz/test/result';
+                    this.url2 = 'http://localhost:8083/quiz/test/resultbyemployee';
+                    this.httpOptions = {
+                        headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                            'Content-Type': 'application/json'
+                        })
+                    };
+                }
+                EmployeeresultserviceService.prototype.postScore3 = function (employeeresult) {
+                    return this.http.post(this.url, employeeresult);
+                };
+                EmployeeresultserviceService.prototype.getResult = function (empid) {
+                    return this.http.get(this.url2 + '/' + empid);
+                };
+                return EmployeeresultserviceService;
+            }());
+            EmployeeresultserviceService.ctorParameters = function () { return [
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+            ]; };
+            EmployeeresultserviceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+                    providedIn: 'root'
+                })
+            ], EmployeeresultserviceService);
+            /***/ 
+        }),
         /***/ "./src/app/employee-module/service/fetch-test.service.ts": 
         /*!***************************************************************!*\
           !*** ./src/app/employee-module/service/fetch-test.service.ts ***!
@@ -3140,12 +3208,23 @@
             var FetchTestService = /** @class */ (function () {
                 function FetchTestService(http) {
                     this.http = http;
-                    this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].employeeURLprefix;
+                    this.URLprefix = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].employeeURLprefix;
                     this.topic = "java";
                 }
+                FetchTestService.prototype.getFirstQuestion = function (userDetails) {
+                    console.log(userDetails);
+                    var details = {
+                        "collectionName": userDetails.topicName,
+                        "empId": userDetails.userId,
+                        "empName": userDetails.userName
+                    };
+                    return this.http.post(this.URLprefix + '/instruction', details);
+                };
                 FetchTestService.prototype.getQuestions = function (topic) {
-                    console.log("here");
-                    return this.http.get(this.url + '/questions');
+                    return this.http.get(this.URLprefix + '/questions');
+                };
+                FetchTestService.prototype.getNextQuestion = function (response) {
+                    return this.http.post(this.URLprefix + '/test', response);
                 };
                 return FetchTestService;
             }());
@@ -3332,28 +3411,13 @@
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestInsComponent", function () { return TestInsComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-            /* harmony import */ var _service_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/data.service */ "./src/app/employee-module/service/data.service.ts");
-            /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
-            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
             var TestInsComponent = /** @class */ (function () {
-                function TestInsComponent(dataService, http) {
-                    this.dataService = dataService;
-                    this.http = http;
-                    this.URLprefix = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].employeeURLprefix;
+                function TestInsComponent() {
                 }
                 TestInsComponent.prototype.ngOnInit = function () {
                 };
-                TestInsComponent.prototype.onStartTest = function () {
-                    var userData = this.dataService.getTestUserDetails();
-                    console.log(userData);
-                    // this.http.post(this.URLprefix+'/instructions',{"collectionName":userData.topicName,"empId":userData.userId,"empName":userData.userName})
-                };
                 return TestInsComponent;
             }());
-            TestInsComponent.ctorParameters = function () { return [
-                { type: _service_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"] },
-                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }
-            ]; };
             TestInsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-test-ins',
@@ -3710,6 +3774,7 @@
                     this.router = router;
                     this.ts = ts;
                     this.testMapping = {};
+                    this.mappingList = new Array();
                 }
                 ConfirmComponent.prototype.ngOnInit = function () {
                     this.test = this.dataService.getSelectedTest();

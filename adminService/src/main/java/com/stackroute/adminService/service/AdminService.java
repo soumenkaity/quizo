@@ -5,6 +5,6 @@ import java.io.IOException;
 
 public interface AdminService {
 
-    public void createTest(String topic)throws IOException;
+    public int createTest(String topic)throws IOException;
 
 }

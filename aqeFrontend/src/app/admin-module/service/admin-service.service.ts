@@ -8,10 +8,11 @@ import { environment } from 'src/environments/environment';
 })
 export class AdminServiceService {
 
-  private URLprefix = environment.adminURLprefix
+  private URLprefix = environment.adminURLprefix;
+  
 
   constructor(private http: HttpClient) {}
   public createTest(topic): Observable<any> {
-    return this.http.post<any>(this.URLprefix+'createTest', topic);
+    return this.http.post<any>(this.URLprefix+'/create-topic', topic);
   }
 }
