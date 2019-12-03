@@ -25,7 +25,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSelectModule} from '@angular/material/select';
 
-
 const MaterialComponents= [ 
   MatButtonModule,
   MatMenuModule,

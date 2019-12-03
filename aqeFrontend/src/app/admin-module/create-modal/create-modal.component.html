@@ -28,10 +28,12 @@
         <div class="col-xs-6">
             <p> <input type="text" formControlName="username"></p>
             <p><input type="text" formControlName="password"></p>
-            <p><select formControlName="role">
-                <option value="HRM">HRM</option>
-                <option value="EMP">EMP</option>
-        </select></p>
+            <p>
+                <mat-select formControlName="role" style="width:74%">
+                    <mat-option value="HRM">HRM</mat-option>
+                    <mat-option value="EMP">EMP</mat-option>
+                </mat-select>
+            </p>
             <p> <input type="text" formControlName="email"></p>
         </div>
 

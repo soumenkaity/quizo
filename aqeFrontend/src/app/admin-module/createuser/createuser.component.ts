@@ -49,18 +49,16 @@ export class CreateuserComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result == undefined){
-        console.log('-------')
+      if(!result == undefined){
+        this.createUserService.saveUserInMongo(userDetails).subscribe(
+          res => console.log(res)
+        );
+        this.createUserService.saveUserInMysql(result).subscribe(
+          res => console.log(res)
+        );
+
+        this.router.navigate(['/admin'])
       }
-
-      this.createUserService.saveUserInMongo(userDetails).subscribe(
-        res => console.log(res)
-      );
-      this.createUserService.saveUserInMysql(result).subscribe(
-        res => console.log(res)
-      );
-
-      this.router.navigate(['/admin'])
     });
 
 
