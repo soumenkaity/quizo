@@ -8,6 +8,7 @@ import { testResult } from '../model/testResult';
 import { Attempt } from '../model/Attempt';
 import { EmployeeResult } from '../model/employeeresult';
 import { EmployeeresultserviceService } from '../service/employeeresultservice.service';
+import { DataService } from '../service/data.service';
 
 // import { testResult } from '../model/testResult';
 
@@ -47,29 +48,32 @@ export class FetchTestComponent implements OnInit {
   choices: any;
   private userResponse : boolean;
 
-  constructor(private fetchTestService: FetchTestService, private employeeresultserviceService:EmployeeresultserviceService, private scoreService: ScoreService,
-    private router: Router,
+  constructor(private fetchTestService: FetchTestService,
+     private employeeresultserviceService:EmployeeresultserviceService, 
+     private scoreService: ScoreService,
+     private dataService: DataService,
+     private router: Router,
   ) { }
 
   ngOnInit() {
-    console.log("in ngoninit");
-    this.fetchTestService.getQuestions(this.topic).subscribe(data => {
-      console.log( data);
-      this.questionList = data;
-      this.question = this.questionList[0];
-      // console.log(this.question);
-      this.choices=this.question['choices'];
-      console.log(this.options)
-      this.count = 0;
-      this.checkTime();
-    });
-    
+    const userDetails = this.dataService.getTestUserDetails();
 
+    this.fetchTestService.getFirstQuestion(userDetails).subscribe(
+      response => console.log(response)
+    )
 
+    // this.fetchTestService.getQuestions(this.topic).subscribe(data => {
+    //   console.log( data);
+    //   this.questionList = data;
+    //   this.question = this.questionList[0];
+    //   this.choices=this.question['choices'];
+    //   console.log(this.options)
+    //   this.count = 0;
+    //   this.checkTime();
+    // });
   }
 
   nextQuestion() {
-
     this.count = this.count + 1;
     this.question = this.questionList[this.count];
     this.choices=this.question['choices'];
