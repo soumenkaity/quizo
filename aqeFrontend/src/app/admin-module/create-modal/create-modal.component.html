@@ -2,27 +2,41 @@
 
     User details for login form:</h1>
 <form [formGroup]="data.form">
-    <p>
-        <label>User Name:</label>
-        <input type="text" formControlName="username">
-    </p>
-    <p>
-        <label>Password:</label>
-        <input type="text" formControlName="password">
-    </p>
-    <p>
-        <label>Role:</label>
-        <mat-select formControlName="role">
-            <mat-option value="HRM">HRM</mat-option>
-            <mat-option value="EMP">EMP</mat-option>
-        </mat-select>
-    </p>
-    <p>
-        <label>Email:</label>
-        <input type="text" formControlName="email">
-    </p>
+    <div class="row">
 
-    <li>
+        <div class="col-xs-4">
+
+            <p>
+                <label>User Name:</label>
+
+            </p>
+            <p>
+                <label>Password:</label>
+
+            </p>
+            <p>
+                <label>Role:</label>
+
+            </p>
+            <p>
+                <label>Email:</label>
+
+            </p>
+        </div>
+        <div class="col-xs-2"></div>
+
+        <div class="col-xs-6">
+            <p> <input type="text" formControlName="username"></p>
+            <p><input type="text" formControlName="password"></p>
+            <p><select formControlName="role">
+                <option value="HRM">HRM</option>
+                <option value="EMP">EMP</option>
+        </select></p>
+            <p> <input type="text" formControlName="email"></p>
+        </div>
+
         <button mat-raised-button [mat-dialog-close]=data.form.value [disabled]="!data.form.valid">Submit</button>
-    </li>
+
+
+    </div>
 </form>

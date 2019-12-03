@@ -33,8 +33,8 @@ public class NotificationService {
     mail.setFrom("hariombabug123@gmail.com");
     mail.setSubject("Registered into system");
     mail.setText("Your HR has registered you into the system with the following details \n" +
-      "Username: " +userLogin.getUsername()+"Password: "+ userLogin.getPassword()+
-      "\n please attend the test at http://15.206.152.181");
+      "Username: " +userLogin.getUsername()+" Password: "+ userLogin.getPassword()+
+      "\n please attend the test at http://15.206.152.181?email="+userLogin.getUsername()+"&password="+ userLogin.getPassword());
     javaMailSender.send(mail);
   }
 
