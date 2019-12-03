@@ -26,7 +26,7 @@ const routes: Routes = [
     { path: 'feedback', component: FeedbackComponent},
     { path: 'result', component: ResultPageComponent},
     { path: '**' , component: PageNotFoundComponent} 
-  ]//, canActivate:[RoleGuardService],data:{role:'EMP'} 
+  ], canActivate:[RoleGuardService],data:{role:'EMP'} 
 }
 ];
 
