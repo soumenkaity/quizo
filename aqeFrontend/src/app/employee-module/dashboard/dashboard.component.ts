@@ -46,7 +46,7 @@ export class DashboardComponent implements OnInit {
 
   giveTest(data){
     this.dataService.setTestUserDetails(data);
-    this.router.navigate(["/employee/test-instructions"])
+  this.router.navigate(["/employee/test-instructions"])
   }
 
 }
