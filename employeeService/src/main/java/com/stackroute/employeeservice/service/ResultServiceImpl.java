@@ -28,6 +28,9 @@ public class ResultServiceImpl implements ResultService {
     }
 
     @Override
+    public List<Result> getResultsByTestId(String id) { return resultRepository.findByTestId(id); }
+
+    @Override
     public Result saveResult(Result result) {
         return resultRepository.save(result);
     }

@@ -7,5 +7,6 @@ import java.util.List;
 public interface ResultService {
     public List<Result> getResultsByTopicId(String id);
     public List<Result> getResultsByEmpId(String id);
+    public List<Result> getResultsByTestId(String id);
     public Result saveResult(Result result);
 }

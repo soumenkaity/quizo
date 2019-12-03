@@ -72,7 +72,7 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
     }
 
     @Override
-    public Question getFirstQuestion(String collectionName, String empId, String empName) throws QuestionNotFoundException {
+    public Question getFirstQuestion(String testId, String collectionName, String empId, String empName) throws QuestionNotFoundException {
         questions = mongoOperations.findAll(Question.class, collectionName);
         if (questions.size() == 0){
             throw new QuestionNotFoundException("No questions were found");
@@ -87,6 +87,7 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
 
         result.setEmpId(empId);
         result.setEmpName(empName);
+        result.setTestId(testId);
 
         result.setTopicId(topicRepository.findByName(collectionName).get(0).getId());
         result.setTopicName(collectionName);
