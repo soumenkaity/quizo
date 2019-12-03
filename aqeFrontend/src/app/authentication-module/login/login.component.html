@@ -25,10 +25,14 @@
             <div class="text-center">
                 <button mat-raised-button color="primary" (click)=checkLogin()>Login</button>
                 <mat-progress-spinner mode="indeterminate" diameter=20 style="display: inline-flex; margin-left: 20px;" *ngIf="isLoading"></mat-progress-spinner>
+                <button mat-raised-button color="primary" (click)=forgotPassword()>Forgot Password</button>
             </div>
+
         </mat-card-actions>
-
     </mat-card>
-</div>
 
-<app-footer></app-footer>
+</div>
+<div class="text-center m-5">
+    <p>Not a registered HR for your company? <a href="" routerLink='/auth/register'>register here</a></p>
+</div>
+<!-- <app-footer></app-footer> -->

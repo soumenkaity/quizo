@@ -10,26 +10,26 @@ public class Question {
   @Id
   private String id;
   private String question;
+  private String sentence;
   private String answer;
   private String[] choices;
-  private Difficulty difficulty;
-  private int score;
-  private int weight;
+  private String difficulty;
+  private double score;
+  private int correctAttempts;
+  private int totalOccurrences;
 
   public Question() {
   }
 
-  public Question(String question, String answer, String[] choices, Difficulty difficulty, int score, int weight) {
+  public Question(String id, String question, String sentence, String answer, String[] choices, String difficulty, double score, int correctAttempts, int totalOccurrences) {
+    this.id = id;
     this.question = question;
+    this.sentence = sentence;
     this.answer = answer;
     this.choices = choices;
     this.difficulty = difficulty;
     this.score = score;
-    this.weight = weight;
+    this.correctAttempts = correctAttempts;
+    this.totalOccurrences = totalOccurrences;
   }
-}
-
-
-enum Difficulty {
-  E,M,H
 }

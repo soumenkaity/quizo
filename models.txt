@@ -1,0 +1,64 @@
+
+================== USER ========================
+  private String id;
+  private String name;
+  private String role;
+  private double phone;
+  private String email;
+  private String designation;
+
+================================================
+
+===================TOPIC========================
+  private String id;
+  private String name;
+  private String link;
+
+================================================
+
+===================TOPIC_NAME///also the structure of QUESTION ===================
+ private String id;
+  private String question;
+  private String sentence
+  private String answer;
+  private String[] choices;
+  private String difficulty;
+  private int correctAttempts;
+  private int totalOccurrences;
+================================================
+
+=====================RESULT=====================
+private String id;
+private String empId;
+private String topicId;
+private String testId;	
+private String empName;
+private String topicName;
+private double score;
+private double correct;
+private double wrong;
+private Attempt attempts[
+    private String questionId;
+    private String question;
+    private String response;
+    private String answer;
+    private String[] choices;
+]
+================================================
+
+==================TEST-USER=====================
+private String id;
+private String topicId;
+private String topicName;
+private String userId;
+private String userEmail;
+private String userName;
+private Date createdAt;
+private String status;
+================================================
+
+==================REQUEST=======================
+private String id;
+private String message;
+private String status
+================================================

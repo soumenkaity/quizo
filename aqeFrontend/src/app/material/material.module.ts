@@ -20,7 +20,10 @@ import {MatExpansionModule} from '@angular/material/expansion'
 import {MatRadioModule} from '@angular/material/radio'; 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material'
+import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 const MaterialComponents= [ 
   MatButtonModule,
   MatMenuModule,
@@ -41,8 +44,9 @@ const MaterialComponents= [
   MatExpansionModule,
   MatToolbarModule,
   MatTableModule,
-  MatCheckboxModule
-
+  MatPaginatorModule,
+  MatCheckboxModule,
+  MatSidenavModule
 ];
 
 @NgModule({ 

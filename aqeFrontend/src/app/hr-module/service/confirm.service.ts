@@ -13,7 +13,4 @@ export class ConfirmService {
   postTestMapping(testMapping){
     return this.http.post(this.URLprefix+"/assign",testMapping);
   }
-  postStat(statList){
-    return this.http.post(this.URLprefix+"/stats",statList);
-  }
 }

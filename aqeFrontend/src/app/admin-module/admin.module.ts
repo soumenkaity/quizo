@@ -7,21 +7,32 @@ import { AdminComponent } from './admin/admin.component';
 import { CreatedPageComponent } from './created-page/created-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminServiceService } from './service/admin-service.service';
+import { CoreModule } from '../core/core.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateModalComponent } from './create-modal/create-modal.component';
+import { CreateuserComponent } from './createuser/createuser.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
-    CreatedPageComponent
+    CreatedPageComponent,
+    DashboardComponent,
+    CreateuserComponent,
+    CreateModalComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CoreModule,
   ],
   providers: [
     AdminServiceService
   ],
+  entryComponents: [CreateModalComponent],
   bootstrap: [AppComponent]
 })
 export class AdminModule { }

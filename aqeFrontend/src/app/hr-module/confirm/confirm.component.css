@@ -27,5 +27,21 @@
 }
 
 .spacing-bottom {
-    margin-bottom: 50px;
+    margin-bottom: 500px;
+}
+
+.card {
+    padding: 10px;
+}
+
+.row {
+    padding: 2px
+}
+
+body {
+    font-size: 2rem;
+}
+
+ul {
+    list-style-type: none;
 }

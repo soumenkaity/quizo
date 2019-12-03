@@ -24,7 +24,7 @@ export class EmployeedetailsComponent implements OnInit {
    
     sessionStorage.setItem(id,JSON.stringify(this.employee));
     console.log(JSON.parse(sessionStorage.getItem(id)));
-    this.router.navigate(['/test-instructions'])
+    this.router.navigate(['/test-instructions']);
   }
 
 }

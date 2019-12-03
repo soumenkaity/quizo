@@ -13,9 +13,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { TopicService } from './service/topic.service';
 import { EmployeeService } from './service/employee.service';
 import { ConfirmService } from './service/confirm.service';
-import { FormsModule , ReactiveFormsModule} from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms'; 
 import { CoreModule } from '../core/core.module';
 import { ThankyouHrComponent } from './thankyou-hr/thankyou-hr.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateuserComponent } from './createuser/createuser.component';
+import { CreateModalComponent } from './create-modal/create-modal.component';
+import { RequestModalComponent } from './request-modal/request-modal.component';
 
 
 
@@ -25,7 +29,11 @@ import { ThankyouHrComponent } from './thankyou-hr/thankyou-hr.component';
     EmployeeComponent,
     ConfirmComponent,
     TopicComponent,
-    ThankyouHrComponent
+    ThankyouHrComponent,
+    DashboardComponent,
+    CreateuserComponent,
+    CreateModalComponent,
+    RequestModalComponent
    
   ],
   imports: [
@@ -36,6 +44,7 @@ import { ThankyouHrComponent } from './thankyou-hr/thankyou-hr.component';
     HttpClientModule,
     CoreModule,
   ],
+  entryComponents: [CreateModalComponent,RequestModalComponent],
   providers: [TopicService,EmployeeService,ConfirmService],
   bootstrap: [AppComponent]
 })

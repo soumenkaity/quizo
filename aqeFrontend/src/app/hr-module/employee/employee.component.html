@@ -11,7 +11,14 @@
         <mat-list role='list'>
             <mat-list-item formArrayName="employees" *ngFor="let employee of form.controls.employees.controls; let i = index" class="emp">
                 <mat-checkbox formControlName="{{i}}">
-                    <span> Name: {{employees[i].name}} Email:{{employees[i].email}} Phone: {{employees[i].phone}} Designation: {{employees[i].designation}} </span>
+
+                        <div class="card border-dark" >
+                                <div class="card-body text-dark">
+                                  <p class="card-text">Name: {{employees[i].name}}, Email:{{employees[i].email}}, Phone: {{employees[i].phone}}, Designation: {{employees[i].designation}}</p>
+                                  
+                                </div>
+                              </div>
+                    <!-- <span> Name: {{employees[i].name}} Email:{{employees[i].email}} Phone: {{employees[i].phone}} Designation: {{employees[i].designation}} </span> -->
                 </mat-checkbox>
 
             </mat-list-item>
