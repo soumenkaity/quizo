@@ -7,7 +7,7 @@
 
 
 <section class="sample-app-content">
-    <h1>User details form:</h1>
+    <h2>User details form:</h2>
     <form [formGroup]="detailsForm">
         <p>
             <label>First Name:</label>
@@ -30,9 +30,9 @@
             <input type="text" formControlName="designation">
         </p>
 
-        <li>
-            <button mat-raised-button (click)="openDialog(detailsForm.value)" [disabled]="!detailsForm.valid">Enter login details</button>
-        </li>
+        
+        <button class="button" mat-raised-button color="primary" (click)="openDialog(detailsForm.value)" [disabled]="!detailsForm.valid">Enter login details</button>
+        
     </form>
 </section>
 

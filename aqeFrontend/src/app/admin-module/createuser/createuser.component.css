@@ -1,0 +1,45 @@
+.sample-app-content{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    margin-left: 30%;
+    margin-top: 5%;
+    width: 40%;
+}
+
+td{
+    padding: 5px;
+}
+
+label{
+    font-size: 130%;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 130%;
+}
+
+.button {
+    width: 30%;
+    /* background-color: #4CAF50;
+    color: white; */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+.button:hover {
+    /* background-color: #45a049; */
+}
+
+label{
+    font-size: 15px;
+}
