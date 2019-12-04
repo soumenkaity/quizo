@@ -756,14 +756,23 @@
                                 <form>
                                     <input class="input" type="text" name="name" placeholder="Name"
                                         style="border: 1px solid #909090">
-                                    <input class="input" type="email" name="email" placeholder="Email"
+                                    <input class="input" type="text" name="email" placeholder="Email"
                                         style="border: 1px solid #909090">
-                                    <input class="input" type="text" name="subject" placeholder="Subject"
+                                        <input class="input" type="number" name="number" placeholder="Phone no"
                                         style="border: 1px solid #909090">
-                                    <textarea class="input" name="message" placeholder="Enter your Message"
-                                        style="border: 1px solid #909090"></textarea>
-                                    <button class="main-button icon-button pull-right">Send Message</button>
+                                  
+                                        <mat-form-field>
+                                          <mat-label>Subject</mat-label>
+                                          <mat-select>
+                                            <mat-option *ngFor="let food of foods" [value]="food.value">
+                                              {{food.viewValue}}
+                                            </mat-option>
+                                          </mat-select>
+                                        </mat-form-field>
+                                       
+                                   
                                 </form>
+                                <button class="main-button icon-button pull-right" (click)=checkLogin()>Send Message</button>
                             </div>
                         </div>
                         <!-- /contact form -->
@@ -774,7 +783,7 @@
                             <ul class="contact-details">
                                 <li><i class="fa fa-envelope"></i>contact@quizo.com</li>
                                 <li><i class="fa fa-phone"></i>122-547-223-45</li>
-                                <li><i class="fa fa-map-marker"></i>NIIT Kormangala</li>
+                                <li><i class="fa fa-map-marker"></i>NIIT Kormangala & Ilimi StackRoute Labs</li>
                                 <li>
                                     <div class="mapouter">
                                         <div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas"
