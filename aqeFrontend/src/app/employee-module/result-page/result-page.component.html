@@ -12,10 +12,9 @@
 
 <div class="card questionContainer" style="height:400px;width:800px;border:10px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
     <div class="card-body">
-        <h4>Q{{count+1}})</h4>
-        <!-- <div class="question">
+               <!-- <div class="question">
             <h5 class="card-title">{{question?.question}}</h5>
-            <div class="card-text">
+            <div class="card,-text">
                 <div class="custom-control" (click)="saveAnswer(1)">
                     <label>
                         <input type="radio" name="options" value="1" [(ngModel)]="options">
@@ -41,7 +40,9 @@
                     </label>
                 </div> -->
 
-        <div *ngFor="let attempt of attempts">
+        <div *ngFor="let attempt of attempts; let i = index">
+                <h4>Q{{i+1}})</h4>
+ 
             <h5 class="card-title">{{attempt.question}}</h5>
             <div *ngFor="let choice of attempt.choices ">
                 <div *ngIf="choice==attempt.response; else elseBlock">
@@ -61,9 +62,10 @@
                         <input type="radio">{{choice}}
                     </label>
                 </ng-template>
-                
+    
             </div>
             <p style="font-size: 18px"> <strong> Correct answer :  {{attempt.answer}}</strong></p>
+            <hr>
         </div>
     </div>
 </div>
