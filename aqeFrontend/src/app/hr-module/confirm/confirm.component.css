@@ -45,3 +45,14 @@ body {
 ul {
     list-style-type: none;
 }
+
+h1{
+    font-size: 35px;
+}
+
+h3{
+    font-size: 20px;
+}
+h5{
+    font-size: 18px;
+}

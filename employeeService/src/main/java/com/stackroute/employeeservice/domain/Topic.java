@@ -9,10 +9,20 @@ public class Topic {
     private String id;
     private String name;
     private String link;
+    private String createdAt;
 
-    public Topic(String name, String createdAt, String link) {
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Topic(String name, String link, String createdAt) {
         this.name = name;
         this.link = link;
+        this.createdAt = link;
     }
 
     public Topic() {

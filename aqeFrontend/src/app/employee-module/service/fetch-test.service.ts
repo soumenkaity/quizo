@@ -8,26 +8,13 @@ import { environment } from 'src/environments/environment';
 })
 export class FetchTestService {
 
-  URLprefix: string = environment.employeeURLprefix;
+  url: string = environment.employeeURLprefix;
   public topic:string="java"; 
   constructor(private http: HttpClient) { }
 
-  getFirstQuestion(userDetails){
-    console.log(userDetails);
-    const details = {
-      "collectionName":userDetails.topicName,
-      "empId":userDetails.userId,
-      "empName":userDetails.userName
-    }
-
-    return this.http.post(this.URLprefix+'/instruction',details);
-  }
  
   getQuestions(topic:string):Observable<any>{
-    return this.http.get(this.URLprefix+'/questions');
-  }
-
-  getNextQuestion(response){
-    return this.http.post(this.URLprefix+'/test', response);
+    console.log("here");
+    return this.http.get(this.url+'/questions');
   }
 }

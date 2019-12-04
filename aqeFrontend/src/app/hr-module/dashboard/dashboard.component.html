@@ -1,11 +1,11 @@
 <app-header></app-header>
-
+<div class="mt-5">  </div>
 <div class="container">
-    <div id="head" class="jumbotron mt-5" style="background-color: #E0E0E0">
+    <div id="head" class="jumbotron mt-5" style="background-color: #E0E0E0; height: 255px; padding-top: 2rem; ">
         <h1 class="display-4">HR DASHBOARD</h1>
-        <p class="lead">This is the main dashboard screen for creating tests, users and requests .</p>
+        <p class="lead" style="font-size: 18px;">This is the main dashboard screen for creating tests, users and requests .</p>
         <hr class="my-4">
-        <p>below is a overview of all the activities</p>
+        <p style="font-size: 18px;">below is a overview of all the activities</p>
         <button mat-raised-button color="primary" routerLink='/hr/create'>Create A Test</button>
         <button mat-raised-button color="primary" class="ml-5" routerLink='/hr/create-user'>Create A User</button>
         <button mat-raised-button color="primary" class="ml-5" (click)='openDialog()'>Create A Request</button>

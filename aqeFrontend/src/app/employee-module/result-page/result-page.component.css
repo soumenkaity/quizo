@@ -1,12 +1,28 @@
 /* .option1{
-  if(attempt.)
-} */
+  background-color: "'evaluate(attempt.choices[0], attempt.answer)'";
+}
 .option2{
-
+  background-color: "'evaluate(attempt.choices[0], attempt.answer)'";
 }
 .option3{
-
+  background-color: "'evaluate(attempt.choices[0], attempt.answer)'";
 }
 .option4{
+  background-color: "'evaluate(attempt.choices[0], attempt.answer)'";
+} */
 
+.red{
+  background-color: red;
+}
+.green{
+  background-color:green; 
+}
+.yellow{
+background-color: yellow;
+}
+.scroll{
+  display: flex;
+  height: 700px;
+  justify-content: center;
+  align-items: flex-end;  
 }

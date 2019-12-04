@@ -3,6 +3,7 @@ export class EmployeeResult
 {
       id: String;
       empId: String;
+      testId:String;
      topicId: String;
      empName: String;
      topicName:String;
@@ -10,7 +11,7 @@ export class EmployeeResult
      correct:number;
       wrong:number;
       attempts:Attempt[];
-      constructor(id, empId, topicId, empName, topicName, score, correct, wrong, attempts)
+      constructor(id, empId, testId, topicId, empName, topicName, score, correct, wrong, attempts)
       {
           this.id=id;
           this.empId=empId;
@@ -21,5 +22,6 @@ export class EmployeeResult
           this.correct=correct;
           this.wrong=wrong;
           this.attempts=attempts;
+          this.testId=testId;
       }
 }

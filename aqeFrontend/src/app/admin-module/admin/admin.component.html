@@ -1,8 +1,8 @@
 <app-header></app-header>
 <div>
     <img src="../assets/img/logo-3.png" />
-    <form #userForm="ngForm" name="google" (ngSubmit)="onSubmit()" action="#"><br>
+    <form #userForm="ngForm" name="quizo" (ngSubmit)="onSubmit()" action="#"><br>
         <input type="search" class="search" [(ngModel)]="topic" name ="input" placeholder="type your quiz topic here"><br>
-        <input type="submit" [disabled]="showSpinnerIndicator"class="button" value="Generate Test">
+        <button type="submit" [disabled]="showSpinnerIndicator" mat-raised-button color="primary" style="margin-top: 20px;">Generate Test</button>
     </form>
 </div>
