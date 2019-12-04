@@ -25,7 +25,7 @@
             </mat-form-field>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button color="primary" (click)=register(username,password,email)>Register</button>
+            <button mat-raised-button color="primary" (click)=register(username,password,email) style="font-size: 15px;">Register</button>
             <mat-progress-spinner mode="indeterminate" diameter=20 style="display: inline-flex; margin-left: 20px;" *ngIf="isLoading"></mat-progress-spinner>
         </mat-card-actions>
     </mat-card>
