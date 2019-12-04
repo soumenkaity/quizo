@@ -8,7 +8,7 @@ export class EmployeeresultserviceService {
    
 
   url: string = 'http://localhost:8083/quiz/test/result';
-  url2: String = 'http://localhost:8083/employee/resultbyemail';
+  url2: String = 'http://localhost:8083/employee/resultbytopic';
   constructor(private http: HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({
