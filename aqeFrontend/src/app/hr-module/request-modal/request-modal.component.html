@@ -1,6 +1,6 @@
-<h1>
+<h2>
     Type in the Request you have for the admin
-</h1>
+</h2>
 <form [formGroup]="data.requestForm">
     <mat-form-field class="example-full-width">
         <input matInput maxlength="256" placeholder="Message" formControlName="message">
@@ -8,7 +8,6 @@
         <mat-hint align="end">{{data.requestForm.value.message.length}} / 256</mat-hint>
     </mat-form-field>
 
-    <li>
-        <button mat-raised-button>Submit</button>
-    </li>
+    <button mat-raised-button [mat-dialog-close]=data.requestForm.value>Submit</button>
+
 </form>

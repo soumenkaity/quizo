@@ -23,6 +23,7 @@ import { MatTableModule } from '@angular/material'
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSelectModule} from '@angular/material/select';
 
 const MaterialComponents= [ 
   MatButtonModule,
@@ -46,7 +47,8 @@ const MaterialComponents= [
   MatTableModule,
   MatPaginatorModule,
   MatCheckboxModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatSelectModule
 ];
 
 @NgModule({ 

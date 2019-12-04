@@ -1,9 +1,20 @@
-<div class="card questionContainer">
+<app-header></app-header>
+<div class="mt-5"></div>
+<div class="container">
+<div class="jumbotron mt-2" style="background-color: #E0E0E0">
+    <h1 class="display-4">EMPLOYEE DASHBOARD</h1>
+    <p class="lead">This is the main dashboard screen for creating tests, users and requests .</p>
+    <hr class="my-4">
+    <p>below is a overview of all the activities</p>
+</div>
+</div>
+<div class="scroll" >
+
+<div class="card questionContainer" style="height:400px;width:800px;border:10px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
     <div class="card-body">
-        <h4>Q{{count+1}})</h4>
-        <!-- <div class="question">
+               <!-- <div class="question">
             <h5 class="card-title">{{question?.question}}</h5>
-            <div class="card-text">
+            <div class="card,-text">
                 <div class="custom-control" (click)="saveAnswer(1)">
                     <label>
                         <input type="radio" name="options" value="1" [(ngModel)]="options">
@@ -29,7 +40,9 @@
                     </label>
                 </div> -->
 
-        <div *ngFor="let attempt of attempts">
+        <div *ngFor="let attempt of attempts; let i = index">
+                <h4>Q{{i+1}})</h4>
+ 
             <h5 class="card-title">{{attempt.question}}</h5>
             <div *ngFor="let choice of attempt.choices ">
                 <div *ngIf="choice==attempt.response; else elseBlock">
@@ -49,9 +62,11 @@
                         <input type="radio">{{choice}}
                     </label>
                 </ng-template>
-                
+    
             </div>
-            <p> Correct answer {{attempt.answer}}</p>
+            <p style="font-size: 18px"> <strong> Correct answer :  {{attempt.answer}}</strong></p>
+            <hr>
         </div>
     </div>
+</div>
 </div>

@@ -9,18 +9,19 @@
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                <div class="card col-md-3 text-center" *ngFor="let topic of topics">
-                    <div class="card-body">
-                        <h2 class="card-title text-uppercase big-text">{{topic.name}}</h2>
-                        <h4>
-                            <p class="card-text">
-                                Creation date: <span>{{topic.createdAt | slice:0:10}}</span>
-                            </p>
-                        </h4>
-                        <p class="card-text">Link: <a href="{{topic.link}}">{{topic.link}}</a></p>
-                        <div>
-                            <button mat-raised-button color="primary" class="pull-left" (click)="selectedTopic(topic)">SELECT</button>
-                            <button mat-raised-button color="primary" class="pull-right" class="ml-5" (click)=" goToEmployeeSelection() ">DETAILS</button>
+                <div class="row">
+                    <div class="card col-md-3 text-center" *ngFor="let topic of topics">
+                        <div class="card-body">
+                            <h2 class="card-title text-uppercase big-text" style="font-size: 20px;">{{topic.name | slice:0:16}}</h2>
+                            <h5>
+                                <p class="card-text" style="font-size: 15px;">
+                                    Creation date: <span>{{topic.createdAt | slice:0:10}}</span>
+                                </p>
+                            </h5>
+                            <p class="card-text">Link: <a href="{{topic.link}}">{{topic.link}}</a></p>
+                            <div>
+                                <button mat-raised-button color="primary" class="pull-left" (click)="selectedTopic(topic)">SELECT</button>
+                            </div>
                         </div>
                     </div>
                 </div>

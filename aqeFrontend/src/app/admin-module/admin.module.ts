@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent, DialogOverviewExampleDialog } from './admin/admin.component';
 import { CreatedPageComponent } from './created-page/created-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminServiceService } from './service/admin-service.service';
@@ -20,6 +20,7 @@ import { CreateuserComponent } from './createuser/createuser.component';
     CreatedPageComponent,
     DashboardComponent,
     CreateuserComponent,
+    DialogOverviewExampleDialog,
     CreateModalComponent
     
   ],
@@ -32,7 +33,7 @@ import { CreateuserComponent } from './createuser/createuser.component';
   providers: [
     AdminServiceService
   ],
-  entryComponents: [CreateModalComponent],
+  entryComponents: [CreateModalComponent,DialogOverviewExampleDialog],
   bootstrap: [AppComponent]
 })
 export class AdminModule { }

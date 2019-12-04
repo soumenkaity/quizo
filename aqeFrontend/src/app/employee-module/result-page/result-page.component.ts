@@ -23,9 +23,10 @@ export class ResultPageComponent implements OnInit {
   private employeeResult;
   count:number;
   emailId="shikharg273@gmail.com";
+  topicId="5dd37eeed2dfaaa776485bea"
   // attempt:Attempt[];
   ngOnInit() {
-    this.Employeeresult.getResult(this.emailId).subscribe(
+    this.Employeeresult.getResult(this.topicId).subscribe(
       (data: EmployeeResult[]) => {
       console.log( data)
       this.employeeResultList = data;

@@ -40,3 +40,7 @@ mat-card-header {
     display: block;
     flex-direction: row;
 }
+
+.spacing-top {
+    margin-top: 70px;
+}

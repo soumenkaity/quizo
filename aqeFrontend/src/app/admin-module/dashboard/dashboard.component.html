@@ -1,12 +1,13 @@
 <app-header></app-header>
+<div class="mt-5">  </div>
 <div class="container">
-    <div class="jumbotron mt-5" style="background-color: #E0E0E0">
+    <div class="jumbotron mt-5" style="background-color: #E0E0E0; height: 255px; padding-top: 2rem; ">
         <h1 class="display-4">ADMIN DASHBOARD</h1>
-        <p class="lead">This is the main dashboard screen for creating topics, users and resolving requests .</p>
+        <p class="lead" >This is the main dashboard screen for creating topics, users and resolving requests .</p>
         <hr class="my-4">
-        <p>below is a overview of all the activities</p>
-        <button mat-raised-button color="accent" routerLink='/admin/createTopic'>Create A Topic</button>
-        <button mat-raised-button color="accent" class="ml-5" routerLink='/admin/createUser'>Create A User</button>
+        <p style="font-size: 18px;">below is a overview of all the activities</p>
+        <button mat-raised-button color="primary" routerLink='/admin/createTopic'>Create A Topic</button>
+        <button mat-raised-button color="primary" class="ml-5" routerLink='/admin/createUser'>Create A User</button>
     </div>
 
     <div class=text-center>
@@ -20,6 +21,11 @@
         <div class="col-md-10">
             <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="topicDataSource" style="width: 100%;">
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id | slice:20:24}} </td>
+                    </ng-container>
+
 
                     <!-- Name Column -->
                     <ng-container matColumnDef="name">
@@ -67,6 +73,11 @@
         <div class="col-md-10">
             <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="employeeDataSource" style="width: 100%;">
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id | slice:20:24}} </td>
+                    </ng-container>
+
 
 
                     <!-- Name Column -->
@@ -108,6 +119,7 @@
         <div class="col-md-10">
             <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="requestDataSource" style="width: 100%;">
+
 
 
                     <!-- Name Column -->

@@ -1,35 +1,8 @@
-<app-header>
-    </app-header>
-
-<h3>Want to create Test on new topic?</h3>
-<br>
-<!-- <input #myInput type="text" placeholder="enter the topic">topic
-<br>
-<button type="submit" (click)="onClick(myInput.value)">createTest</button>
-{{responseMessage}} -->
-
-<div class="row justify-content-center">
-    <div class="col-12 col-md-10 col-lg-8">
-        <form class="card card-sm">
-            <div class="card-body row no-gutters align-items-center">
-                <div class="col-auto">
-                    <i class="fas fa-search h4 text-body"></i>
-                </div>
-                <!--end of col-->
-                <div class="col">
-                    <input #myInput class="form-control form-control-lg form-control-borderless" type="search"
-                        placeholder="Enter topic">
-                </div>
-                <!--end of col-->
-                <div class="col-auto">
-                    <button class="btn btn-lg btn-success" type="submit" (click)="onClick(myInput.value)">Create</button>
-                    {{responseMessage}}
-                </div>
-                <!--end of col-->
-            </div>
-        </form>
-    </div>
-    <!--end of col-->
+<app-header></app-header>
+<div>
+    <img src="../assets/img/logo-3.png" />
+    <form #userForm="ngForm" name="quizo" (ngSubmit)="onSubmit()" action="#"><br>
+        <input type="search" class="search" [(ngModel)]="topic" name ="input" placeholder="type your quiz topic here"><br>
+        <button type="submit" [disabled]="showSpinnerIndicator" mat-raised-button color="primary" style="margin-top: 20px;">Generate Test</button>
+    </form>
 </div>
-
-<app-footer></app-footer>
