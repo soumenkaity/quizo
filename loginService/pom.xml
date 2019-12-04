@@ -6,7 +6,7 @@
     <groupId>com.stackroute</groupId>
     <artifactId>parentpom</artifactId>
     <version>v1.0.0</version>
-    <relativePath/> <!-- lookup parent from repository -->
+    <relativePath>../pom.xml</relativePath>
   </parent>
 
     <groupId>com.stackroute</groupId>
