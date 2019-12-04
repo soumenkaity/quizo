@@ -39,3 +39,7 @@ input[type=text], select {
 .button:hover {
     /* background-color: #45a049; */
 }
+
+label{
+    font-size: 15px;
+}

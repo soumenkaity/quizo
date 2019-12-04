@@ -11,9 +11,9 @@
             <div class="col-md-10">
                 <div class="card col-md-3 text-center" *ngFor="let topic of topics">
                     <div class="card-body">
-                        <h2 class="card-title text-uppercase big-text">{{topic.name}}</h2>
+                        <h2 class="card-title text-uppercase big-text" style="font-size: 20px;">{{topic.name}}</h2>
                         <h4>
-                            <p class="card-text">
+                            <p class="card-text" style="font-size: 18px;">
                                 Creation date: <span>{{topic.createdAt | slice:0:10}}</span>
                             </p>
                         </h4>

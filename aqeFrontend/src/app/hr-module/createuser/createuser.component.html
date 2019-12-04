@@ -2,7 +2,7 @@
 </app-header>
 
 <section class="sample-app-content">
-    <h1>User details form:</h1>
+    <h2>User details form:</h2>
     <form [formGroup]="detailsForm">
 
         <table align="center">
@@ -25,7 +25,7 @@
         </table>
 
     
-        <button class="button" mat-raised-button (click)="openDialog(detailsForm.value)" [disabled]="!detailsForm.valid">Enter login details</button>
+        <button class="button" mat-raised-button color="primary" (click)="openDialog(detailsForm.value)" [disabled]="!detailsForm.valid">Enter login details</button>
         
     </form>
 </section>

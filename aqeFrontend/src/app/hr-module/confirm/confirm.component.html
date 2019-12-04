@@ -16,10 +16,10 @@
 
         <div class="card col-md-3" *ngFor="let employee of employees">
             <div class="card-body">
-                <h5 class="card-title">{{employee.name}}</h5>
+                <h5 class="card-title text-uppercase">{{employee.name}}</h5>
                 <ul>
-                    <li>Email: {{employee.email}}</li>
-                    <li>Phone: {{employee.phone}}</li>
+                    <li style="font-size: 15px;">Email: {{employee.email}}</li>
+                    <li style="font-size: 15px;">Phone: {{employee.phone}}</li>
                 </ul>
                 <!-- <a href="#" class="btn" style="background-color:#212121; text-decoration-color: white">Unselect</a> -->
                 <button mat-raised-button color="primary" [routerLink]="['/hr/employees']" routerLinkActive="router-link-active" >Unselect</button>
