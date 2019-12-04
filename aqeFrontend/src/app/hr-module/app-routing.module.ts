@@ -19,7 +19,6 @@ const routes: Routes = [
     { path:'confirm' , component:ConfirmComponent},
     { path:'finished',component:ThankyouHrComponent}
   ],canActivate:[RoleGuardService],data:{role:'HRM'}},
-  
 ]; 
 
 @NgModule({

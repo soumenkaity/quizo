@@ -128,14 +128,9 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
     }
 
     public Question easyQuestion(int response) throws QuestionNotFoundException{
-        Question question = easyQuestions.get(easyIndex);
-        question.setTotalOccurrences(question.getTotalOccurrences()+1);
-
         easyIndex = easyIndex + 1;
-        if(easyQuestions.get(easyIndex-1).getAnswer().equals(easyQuestions.get(easyIndex-1).getChoices()[response])) {
+        if(easyQuestions.get(easyIndex-1).getAnswer().equals(easyQuestions.get(easyIndex-1).getChoices()[response]))
             correctEasy = correctEasy + 1;
-            question.setCorrectAttempts(question.getCorrectAttempts()+1);
-        }
 
         if(question.getTotalOccurrences() >= 2){
             if(question.getCorrectAttempts()/Double.valueOf(question.getTotalOccurrences()) < 0.3){

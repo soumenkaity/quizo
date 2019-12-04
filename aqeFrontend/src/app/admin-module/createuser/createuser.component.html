@@ -1,11 +1,15 @@
 <app-header>
 </app-header>
 
+<h3>
+    Enter Employee details
+</h3>
+
 
 <section class="sample-app-content">
     <h1>User details form:</h1>
     <form [formGroup]="detailsForm">
-        <!-- <p>
+        <p>
             <label>First Name:</label>
             <input type="text" formControlName="name">
         </p>
@@ -24,39 +28,12 @@
         <p>
             <label>Designation:</label>
             <input type="text" formControlName="designation">
-        </p> -->
+        </p>
 
-        <table align="center">
-            <tr>
-                <td><label>Name:</label></td>
-                <td><input type="text" formControlName="name" placeholder="Enter name..."></td>
-            </tr>
-            <tr>
-                <td><label>Phone:</label></td>
-                <td><input type="text" formControlName="phone" placeholder="Enter phone..."></td>
-            </tr>
-            <tr>
-                <td><label>Email:</label></td>
-                <td><input type="text" formControlName="email" placeholder="Enter email..."></td>
-            </tr>
-            <tr>
-                <td><label>Role:</label></td>
-                <!-- <td><input type="text" formControlName="role" placeholder="Enter role..."></td> -->
-                <td>
-                    <select formControlName="role">
-                        <option value="HRM">HRM</option>
-                        <option value="EMP">EMP</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td><label>Designation:</label></td>
-                <td><input type="text" formControlName="designation" placeholder="Enter designation..."></td>
-            </tr>
-        </table>
-
-        
-        <button class="button" mat-raised-button (click)="openDialog(detailsForm.value)" [disabled]="!detailsForm.valid">Enter login details</button>
-        
+        <li>
+            <button mat-raised-button (click)="openDialog(detailsForm.value)" [disabled]="!detailsForm.valid">Enter login details</button>
+        </li>
     </form>
 </section>
+
+<app-footer></app-footer>
