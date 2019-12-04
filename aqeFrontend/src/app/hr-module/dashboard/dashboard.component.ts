@@ -26,8 +26,8 @@ export class DashboardComponent implements OnInit,AfterViewInit {
     private toasterService:ToasterService) { }
 
     
-  topicDisplayedColumns: string[] = ['name', 'createdAt', 'link','keywords'];
-  employeeDisplayedColumns: string[] = [ 'name', 'phone', 'email'];
+  topicDisplayedColumns: string[] = ['id','name', 'createdAt', 'link','keywords'];
+  employeeDisplayedColumns: string[] = [ 'id','name', 'phone', 'email'];
   requestDisplayedColumns: string[] = [ 'id', 'message', 'status','actions'];
   topicDataSource;
   employeeDataSource;

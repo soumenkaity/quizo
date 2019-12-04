@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   userId
   completeTestsDataSource;
   activeTestsDataSource;
-  testsDisplayedColumns: string[] = ['name', 'createdAt', 'link','actions'];
+  testsDisplayedColumns: string[] = ['id', 'name', 'createdAt', 'actions'];
 
   constructor(private dashboardService: DashboardService, private dataService: DataService,private router:Router) { }
 

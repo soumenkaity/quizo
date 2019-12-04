@@ -19,6 +19,11 @@
             <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="activeTestsDataSourceactiveTestsDataSource" style="width: 100%;">
 
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id | slice:20:24}} </td>
+                    </ng-container>
+
                     <!-- Name Column -->
                     <ng-container matColumnDef="name">
                         <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -29,12 +34,6 @@
                     <ng-container matColumnDef="createdAt">
                         <th mat-header-cell *matHeaderCellDef> Creation Date </th>
                         <td mat-cell *matCellDef="let element"> {{element.createdAt | slice:0:10}} </td>
-                    </ng-container>
-
-                    <!-- Symbol Column -->
-                    <ng-container matColumnDef="link">
-                        <th mat-header-cell *matHeaderCellDef> Link </th>
-                        <td mat-cell *matCellDef="let element"> {{element.link}} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="actions">
@@ -66,6 +65,11 @@
             <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="completedTestsDataSource" style="width: 100%;">
 
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id | slice:20:24}} </td>
+                    </ng-container>
+
 
                     <!-- Name Column -->
                     <ng-container matColumnDef="name">
@@ -77,12 +81,6 @@
                     <ng-container matColumnDef="createdAt">
                         <th mat-header-cell *matHeaderCellDef> Creation Date </th>
                         <td mat-cell *matCellDef="let element"> {{element.createdAt | slice:0:10}} </td>
-                    </ng-container>
-
-                    <!-- Symbol Column -->
-                    <ng-container matColumnDef="link">
-                        <th mat-header-cell *matHeaderCellDef> Link </th>
-                        <td mat-cell *matCellDef="let element"> {{element.link}} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="actions">

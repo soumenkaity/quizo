@@ -21,6 +21,11 @@
         <div class="col-md-10">
             <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="topicDataSource" style="width: 100%;">
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id | slice:20:24}} </td>
+                    </ng-container>
+
 
                     <!-- Name Column -->
                     <ng-container matColumnDef="name">
@@ -68,6 +73,11 @@
         <div class="col-md-10">
             <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="employeeDataSource" style="width: 100%;">
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id | slice:20:24}} </td>
+                    </ng-container>
+
 
 
                     <!-- Name Column -->
@@ -109,6 +119,7 @@
         <div class="col-md-10">
             <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="requestDataSource" style="width: 100%;">
+
 
 
                     <!-- Name Column -->

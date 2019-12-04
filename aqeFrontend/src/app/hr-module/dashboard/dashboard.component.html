@@ -23,6 +23,11 @@
             <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="topicDataSource" style="width: 100%;">
 
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id | slice:20:24}} </td>
+                    </ng-container>
+
                     <!-- Name Column -->
                     <ng-container matColumnDef="name">
                         <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -70,6 +75,11 @@
             <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="employeeDataSource" style="width: 100%;">
 
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id | slice:20:24}} </td>
+                    </ng-container>
 
                     <!-- Name Column -->
                     <ng-container matColumnDef="name">
