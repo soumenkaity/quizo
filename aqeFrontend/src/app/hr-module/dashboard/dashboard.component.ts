@@ -7,6 +7,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { RequestModalComponent } from '../request-modal/request-modal.component';
 import { RequestService } from '../service/request.service';
+import { ToasterService } from 'src/app/authentication-module/service/toaster-service.service';
 
 
 @Component({
@@ -21,14 +22,16 @@ export class DashboardComponent implements OnInit,AfterViewInit {
     private employeeService: EmployeeService,
     private requestService:RequestService,
     private fb: FormBuilder,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private toasterService:ToasterService) { }
 
     
   topicDisplayedColumns: string[] = ['name', 'createdAt', 'link','keywords'];
   employeeDisplayedColumns: string[] = [ 'name', 'phone', 'email'];
+  requestDisplayedColumns: string[] = [ 'id', 'message', 'status','actions'];
   topicDataSource;
   employeeDataSource;
-
+  requestDataSource;
   requestForm: FormGroup
 
   @ViewChildren(MatPaginator) paginators = new QueryList<MatPaginator>();
@@ -43,8 +46,13 @@ export class DashboardComponent implements OnInit,AfterViewInit {
       response => {
       this.employeeDataSource = new MatTableDataSource(response)
       this.employeeDataSource.paginator = this.paginators.toArray()[1];
-    }
-    )
+    });
+    this.requestService.getAllRequests().subscribe(
+      response => {
+      this.requestDataSource = new MatTableDataSource(response)
+      this.requestDataSource.paginator = this.paginators.toArray()[2];
+    });
+
   }
 
   openDialog(): void {
@@ -59,18 +67,32 @@ export class DashboardComponent implements OnInit,AfterViewInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result == undefined){
+      console.log(result)
+      if(result != undefined){
         console.log('-------')
-      }
+      
       result.status = 'N'
-      this.requestService.addRequest(result.message).subscribe(
-        response => {console.log(response)},
+      this.requestService.addRequest(result).subscribe(
+        response => {},
         error => {console.log(error)}
       )
-
+      }
     });
 
 
+  }
+
+  deleteRequest(request){
+    console.log(request)
+    this.requestService.deleteRequest(request).subscribe(
+      res => {},
+      err => {this.toasterService.success("Request Deleted")}
+    )
+    this.requestService.getAllRequests().subscribe(
+      response => {
+      this.requestDataSource = new MatTableDataSource(response)
+      this.requestDataSource.paginator = this.paginators.toArray()[2];
+    });
   }
 
   ngAfterViewInit(): void {

@@ -8,7 +8,6 @@
         <mat-hint align="end">{{data.requestForm.value.message.length}} / 256</mat-hint>
     </mat-form-field>
 
-    <li>
-        <button mat-raised-button color="primary">Submit</button>
-    </li>
+    <button mat-raised-button [mat-dialog-close]=data.requestForm.value>Submit</button>
+
 </form>
