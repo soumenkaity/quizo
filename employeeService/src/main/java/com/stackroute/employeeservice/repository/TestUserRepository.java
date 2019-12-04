@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface TestUserRepository extends MongoRepository<TestUser,String> {
   public List<TestUser> findByTopicName(String name);
   public List<TestUser> findByStatus(String nc);

@@ -20,6 +20,19 @@ public class TestUser {
   private String status;
   private Date createdAt;
 
+  public TestUser(String id, String userId, String userEmail, String userName, String topicId, String topicName, String status, Date createdAt) {
+    this.id = id;
+    this.userId = userId;
+    this.userEmail = userEmail;
+    this.userName = userName;
+    this.topicId = topicId;
+    this.topicName = topicName;
+    this.status = status;
+    this.createdAt = createdAt;
+  }
+
+  public TestUser() {
+  }
 
   public String getUserId() {
     return userId;
