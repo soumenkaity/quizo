@@ -1,3 +1,12 @@
+.x{
+    position: fixed;
+    top: 0;
+  height: 50px;
+  z-index: 1000;
+  align-content: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
 .spacing-l-20 {
     margin-left: 20px;
 }
