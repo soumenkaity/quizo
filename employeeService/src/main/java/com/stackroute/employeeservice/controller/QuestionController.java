@@ -30,7 +30,7 @@ public class QuestionController {
     public ResponseEntity<?> getFirstQuestion(@RequestBody ObjectNode jsonNodes) throws QuestionNotFoundException{
         ResponseEntity responseEntity;
 
-        responseEntity = new ResponseEntity<Question>(fetchQuestionsService.getFirstQuestion(jsonNodes.get("collectionName").asText(), jsonNodes.get("empId").asText(), jsonNodes.get("empName").asText()), HttpStatus.OK);
+        responseEntity = new ResponseEntity<Question>(fetchQuestionsService.getFirstQuestion(jsonNodes.get("testId").asText(), jsonNodes.get("collectionName").asText(), jsonNodes.get("empId").asText(), jsonNodes.get("empName").asText()), HttpStatus.OK);
 
         return responseEntity;
     }
