@@ -43,6 +43,12 @@ body {
 	color: white;
 	
 }
+/* .logoM{
+	height: 50px;
+	width: 100px;
+} */
+
+
 .whitebg{
 	background-color: white;
 	/* height: 70px; */
@@ -1473,8 +1479,8 @@ section .section-title {
 }
 
 .frontside .card .card-body img {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
 }
 

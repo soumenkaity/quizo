@@ -1,6 +1,6 @@
 <h1>
-    User details for login form:
-</h1>
+
+    User details for login form:</h1>
 <form [formGroup]="data.form">
     <p>
         <label>User Name:</label>
@@ -12,17 +12,14 @@
     </p>
     <p>
         <label>Role:</label>
-        <select formControlName="role">
-                <option value="HRM">HRM</option>
-                <option value="EMP">EMP</option>
-        </select>
+        <input type="text" formControlName="role">
     </p>
     <p>
         <label>Email:</label>
         <input type="text" formControlName="email">
     </p>
 
-    
-    <button mat-raised-button [mat-dialog-close]=data.form.value [disabled]="!data.form.valid">Submit</button>
-    
+    <li>
+        <button mat-raised-button [mat-dialog-close]=data.form.value [disabled]="!data.form.valid">Submit</button>
+    </li>
 </form>
