@@ -93,7 +93,7 @@ export class FetchTestComponent implements OnInit {
     }
     else this.userResponse = false;
 
-    this.Attempt=new Attempt(this.question.id, this.question, parseInt(option), this.question.choices.indexOf(this.question.answer)+1, this.choices)
+    this.Attempt=new Attempt(this.question.id, this.question, option , this.question.answer, this.choices)
     this.result = new result(this.question.id, parseInt(option),this.question.choices.indexOf(this.question.answer)+1,this.userResponse);
 
     console.log("result ", this.result);

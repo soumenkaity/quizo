@@ -28,29 +28,30 @@
                         {{choices[3]}}
                     </label>
                 </div> -->
-        <div ngFor="let attempt of attempts;index i">
-            <h5 class="card-title">{{attempt.question}}</h5>
-            <div class="option1" [style.background-color]=styleList[i]>
-                <label>
-                    <input type="radio">{{attempt.choices[0]}}
-                </label>
-            </div>
-            <div class="option2" style="background-color: 'evaluate()'">
-                <label>
-                    <input type="radio">{{attempt.choices[1]}}
-                </label>
-            </div>
-            <div class="option3" style="background-color: 'evaluate()'">
-                <label>
-                    <input type="radio">{{attempt.choices[2]}}
-                </label>
-            </div>
-            <div  class="option4" style="background-color: 'evaluate()'">
-                <label>
-                    <input type="radio">{{attempt.choices[3]}}
-                </label>
-            </div>
 
+        <div *ngFor="let attempt of attempts">
+            <h5 class="card-title">{{attempt.question}}</h5>
+            <div *ngFor="let choice of attempt.choices ">
+                <div *ngIf="choice==attempt.response; else elseBlock">
+                    <div *ngIf="attempt.response==attempt.answer; else elseBlock2">
+                        <label class="green">
+                            <input type="radio">{{choice}}
+                        </label>
+                    </div>
+                    <ng-template #elseBlock2>
+                        <label class="red">
+                            <input type="radio">{{choice}}
+                        </label>
+                    </ng-template>
+                </div>
+                <ng-template #elseBlock>
+                    <label>
+                        <input type="radio">{{choice}}
+                    </label>
+                </ng-template>
+                
+            </div>
+            <p> Correct answer {{attempt.answer}}</p>
         </div>
     </div>
 </div>
