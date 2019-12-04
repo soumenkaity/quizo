@@ -8,18 +8,8 @@ import java.util.List;
 public class Result {
     private String id;
     private String empId;
-    private String emailId;
-
-    public String getEmailId() {
-        return emailId;
-    }
-
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
-    }
-
-    private String topicId;
     private String testId;
+    private String topicId;
     private String empName;
     private String topicName;
     private double score;
@@ -99,9 +89,18 @@ public class Result {
         this.attempts = attempts;
     }
 
-    public Result(String id, String empId, String topicId, String empName, String topicName, double score, double correct, double wrong, List<Attempt> attempts) {
+    public String getTestId() {
+        return testId;
+    }
+
+    public void setTestId(String testId) {
+        this.testId = testId;
+    }
+
+    public Result(String id, String empId, String testId, String topicId, String empName, String topicName, double score, double correct, double wrong, List<Attempt> attempts) {
         this.id = id;
         this.empId = empId;
+        this.testId = testId;
         this.topicId = topicId;
         this.empName = empName;
         this.topicName = topicName;
@@ -112,13 +111,5 @@ public class Result {
     }
 
     public Result() {
-    }
-
-    public String getTestId() {
-        return testId;
-    }
-
-    public void setTestId(String testId) {
-        this.testId = testId;
     }
 }

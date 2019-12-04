@@ -4,10 +4,11 @@ import { Question } from '../model/questions';
 import { result } from '../model/result';
 import { Router } from '@angular/router';
 import { ScoreService } from '../service/score.service';
-import { testResult } from '../model/testResult';
+import { TestResult } from '../model/testResult';
 import { Attempt } from '../model/Attempt';
 import { EmployeeResult } from '../model/employeeresult';
 import { EmployeeresultserviceService } from '../service/employeeresultservice.service';
+import { DataService } from '../service/data.service';
 
 // import { testResult } from '../model/testResult';
 
@@ -36,7 +37,7 @@ export class FetchTestComponent implements OnInit {
   private topicName;
   private id;
   private count: number;
-  private testResult: testResult;
+  private testResult: TestResult;
   private empId: string = '878967asdgfg';
   private testId: string = 'u75asd87asd55';
   private result: result;
@@ -47,29 +48,32 @@ export class FetchTestComponent implements OnInit {
   choices: any;
   private userResponse : boolean;
 
-  constructor(private fetchTestService: FetchTestService, private employeeresultserviceService:EmployeeresultserviceService, private scoreService: ScoreService,
-    private router: Router,
+  constructor(private fetchTestService: FetchTestService,
+     private employeeresultserviceService:EmployeeresultserviceService, 
+     private scoreService: ScoreService,
+     private dataService: DataService,
+     private router: Router,
   ) { }
 
   ngOnInit() {
-    console.log("in ngoninit");
-    this.fetchTestService.getQuestions(this.topic).subscribe(data => {
-      console.log( data);
-      this.questionList = data;
-      this.question = this.questionList[0];
-      // console.log(this.question);
-      this.choices=this.question['choices'];
-      console.log(this.options)
-      this.count = 0;
-      this.checkTime();
-    });
-    
+    const userDetails = this.dataService.getTestUserDetails();
 
+    this.fetchTestService.getFirstQuestion(userDetails).subscribe(
+      response => console.log(response)
+    )
 
+    // this.fetchTestService.getQuestions(this.topic).subscribe(data => {
+    //   console.log( data);
+    //   this.questionList = data;
+    //   this.question = this.questionList[0];
+    //   this.choices=this.question['choices'];
+    //   console.log(this.options)
+    //   this.count = 0;
+    //   this.checkTime();
+    // });
   }
 
   nextQuestion() {
-
     this.count = this.count + 1;
     this.question = this.questionList[this.count];
     this.choices=this.question['choices'];
@@ -117,7 +121,7 @@ private percentage: number;
     this.percentage = this.scoreService.calculatePercentage(this.score,this.questionList);
     this.employeeresult=new EmployeeResult(this.id, this.empId, this.testId, this.empName, this.topicName, this.score, this.correct, this.incorrect, this.attemptList)
     //this.testResult={employeeId:this.empId, testId: this.testId, testResponses: this.resultList};
-    this.testResult=new testResult(this.empId,this.testId,this.resultList,this.correct,this.incorrect,this.score,this.percentage);
+    this.testResult=new TestResult(this.empId,this.testId,this.resultList,this.correct,this.incorrect,this.score,this.percentage);
     console.log("Test Result is ", this.testResult);
    this.scoreService.postScore2(this.testResult).subscribe(res=>{console.log(res);
   });

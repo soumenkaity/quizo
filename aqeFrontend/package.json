@@ -26,6 +26,7 @@
     "@material/top-app-bar": "^4.0.0",
     "bootstrap": "^4.4.0",
     "hammerjs": "^2.0.8",
+    "ngx-spinner": "^8.0.3",
     "ngx-toast": "^1.1.4",
     "ngx-toastr": "^11.2.1",
     "node-fetch": "^2.6.0",

@@ -12,19 +12,22 @@ import java.util.List;
 public class AdminServiceImpl implements AdminService{
 
     @Override
-    public void createTest(String topic) throws IOException {
-
+    public int  createTest(String topic) throws IOException {
+        int value=4;
         Process p;
         try {
-            String[] cmd = { "sh", "/home/cgi/testscript.sh","sh","/home/cgi/testscript.sh"};
+            String[] cmd = { "sh", "/home/cgi/Documents/question-generation/QuestionGeneration/runscript.sh", topic};
             p = Runtime.getRuntime().exec(cmd);
-            p.waitFor();
+
             BufferedReader reader=new BufferedReader(new InputStreamReader(
                     p.getInputStream()));
             String line;
             while((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
+            p.waitFor();
+            value=p.exitValue();
+            System.out.println("After waitfor() exit value is : " +value);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -32,5 +35,7 @@ public class AdminServiceImpl implements AdminService{
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        return value;
+
     }
 }

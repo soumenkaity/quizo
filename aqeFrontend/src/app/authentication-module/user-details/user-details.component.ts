@@ -11,17 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class UserDetailsComponent implements OnInit {
   mobileQuery: MediaQueryList;
-  private _mobileQueryListener: () => void;
-  // profile = new FormGroup({
-  //   id : new FormControl(''),
-  //   name : new FormControl(''),
-  //   role : new FormControl(''),
-  //   phone: new FormControl(''),
-  //   email: new FormControl(''),
-  //   designation: new FormControl('')
-  // });    
+  private _mobileQueryListener: () => void;   
   user : Employee;
-  userdet : FormGroup;
   
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,
               private detService: DetailsService,
@@ -41,14 +32,6 @@ export class UserDetailsComponent implements OnInit {
         this.user = response;
         console.log(response);  
   })
-  // this.userdet = this.fb.group({
-  //   'id' : this.user.id,
-  //   'name' : this.user.name,
-  //   'role' : this.user.role,
-  //   'phone' : this.user.phone,
-  //   'email' : this.user.email,
-  //   'designation' : this.user.designation
-  // })
    
   }
 

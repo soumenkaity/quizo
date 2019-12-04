@@ -10,19 +10,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./test-ins.component.css']
 })
 export class TestInsComponent implements OnInit {
-
-  URLprefix = environment.employeeURLprefix;
-  constructor(private dataService: DataService, private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  userData;
-
-  onStartTest(){
-    const userData = this.dataService.getTestUserDetails();
-    console.log(userData);
-    // this.http.post(this.URLprefix+'/instructions',{"collectionName":userData.topicName,"empId":userData.userId,"empName":userData.userName})
   }
 
 }
