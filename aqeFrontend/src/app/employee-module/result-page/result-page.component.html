@@ -1,8 +1,16 @@
+<app-header></app-header>
+<div class="mt-5"></div>
+<div class="container">
+<div class="jumbotron mt-2" style="background-color: #E0E0E0">
+    <h1 class="display-4">EMPLOYEE DASHBOARD</h1>
+    <p class="lead">This is the main dashboard screen for creating tests, users and requests .</p>
+    <hr class="my-4">
+    <p>below is a overview of all the activities</p>
+</div>
+</div>
+<div class="scroll" >
 
-
-<div class="scroll" style="height:500px;width:500px;border:10px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-
-<div class="card questionContainer">
+<div class="card questionContainer" style="height:400px;width:800px;border:10px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
     <div class="card-body">
         <h4>Q{{count+1}})</h4>
         <!-- <div class="question">
@@ -55,7 +63,7 @@
                 </ng-template>
                 
             </div>
-            <p> Correct answer {{attempt.answer}}</p>
+            <p style="font-size: 18px"> <strong> Correct answer :  {{attempt.answer}}</strong></p>
         </div>
     </div>
 </div>
