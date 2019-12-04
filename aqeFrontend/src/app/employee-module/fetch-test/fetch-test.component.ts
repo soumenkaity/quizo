@@ -34,6 +34,7 @@ export class FetchTestComponent implements OnInit {
   private question;
   private empName;
   private topicName;
+  private topicId;
   private id;
   private count: number;
   private testResult: testResult;
@@ -115,7 +116,7 @@ private percentage: number;
     this.incorrect = this.questionList.length - this.correct;
     this.score = this.scoreService.calculateScore(this.resultList, this.questionList);
     this.percentage = this.scoreService.calculatePercentage(this.score,this.questionList);
-    this.employeeresult=new EmployeeResult(this.id, this.empId, this.testId, this.empName, this.topicName, this.score, this.correct, this.incorrect, this.attemptList)
+    this.employeeresult=new EmployeeResult(this.id, this.empId, this.testId,this.topicId,this.empName, this.topicName, this.score, this.correct, this.incorrect, this.attemptList)
     //this.testResult={employeeId:this.empId, testId: this.testId, testResponses: this.resultList};
     this.testResult=new testResult(this.empId,this.testId,this.resultList,this.correct,this.incorrect,this.score,this.percentage);
     console.log("Test Result is ", this.testResult);

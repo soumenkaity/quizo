@@ -18,7 +18,7 @@ const routes: Routes = [
     { path:'employees' , component:EmployeeComponent},
     { path:'confirm' , component:ConfirmComponent},
     { path:'finished',component:ThankyouHrComponent}
-  ],canActivate:[RoleGuardService],data:{role:'HRM'}},
+  ],canActivate:[RoleGuardService],data:{role:'HRM'}}
 ]; 
 
 @NgModule({
