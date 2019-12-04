@@ -17,7 +17,7 @@ import java.io.IOException;
 @CrossOrigin("*")
 public class AdminController {
 
-    Logger lg = LoggerFactory.getLogger(AdminController.class);
+    Logger logger = LoggerFactory.getLogger(AdminController.class);
     private AdminService adminService;
 
     @Autowired
@@ -33,22 +33,22 @@ public class AdminController {
 
         if(value==0){
             responseEntity=new ResponseEntity<Message>(new Message("Test is Created"), HttpStatus.CREATED);
-            lg.info(responseEntity.toString());
+            logger.info(responseEntity.toString());
             return responseEntity;
         }
         else if(value==1){
             responseEntity=new ResponseEntity<Message>(new Message("wikipedia page doesnot exists for the given topic"), HttpStatus.OK);
-            lg.info(responseEntity.toString());
+            logger.info(responseEntity.toString());
             return responseEntity;
         }
         else if(value==2){
             responseEntity=new ResponseEntity<Message>(new Message("test is already created"), HttpStatus.OK);
-            lg.info(responseEntity.toString());
+            logger.info(responseEntity.toString());
             return responseEntity;
         }
         else{
             responseEntity=new ResponseEntity<Message>(new Message("test cannot be created.TRY AGAIN"), HttpStatus.OK);
-            lg.info(responseEntity.toString());
+            logger.info(responseEntity.toString());
             return responseEntity;
         }
 

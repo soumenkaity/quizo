@@ -14,19 +14,19 @@ public class AdminServiceImpl implements AdminService{
     @Override
     public int  createTest(String topic) throws IOException {
         int value=4;
-        Process p;
+        Process process;
         try {
             String[] cmd = { "sh", "/home/cgi/Documents/question-generation/QuestionGeneration/runscript.sh", topic};
-            p = Runtime.getRuntime().exec(cmd);
+            process = Runtime.getRuntime().exec(cmd);
 
             BufferedReader reader=new BufferedReader(new InputStreamReader(
-                    p.getInputStream()));
+                    process.getInputStream()));
             String line;
             while((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
-            p.waitFor();
-            value=p.exitValue();
+            process.waitFor();
+            value=process.exitValue();
             System.out.println("After waitfor() exit value is : " +value);
         } catch (IOException e) {
             // TODO Auto-generated catch block
