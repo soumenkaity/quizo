@@ -3,6 +3,7 @@ import { EmployeeresultserviceService } from '../service/employeeresultservice.s
 import { EmployeeResult } from '../model/employeeresult';
 import { Attempt } from '../model/Attempt';
 import { GestureConfig } from '@angular/material';
+// import { getMaxListeners } from 'cluster';
 @Component({
   selector: 'app-result-page',
   templateUrl: './result-page.component.html',
@@ -10,37 +11,47 @@ import { GestureConfig } from '@angular/material';
 })
 export class ResultPageComponent implements OnInit {
   attempts: Attempt[];
+  response:String;
+  correct:String;
   correctColor="green";
   wrongColor="red";
-  attempt:Attempt;
+  // attempt:Attempt;
   styleList = new Array();
   constructor(private Employeeresult:EmployeeresultserviceService) { }
   
   private employeeResultList:EmployeeResult[];
   private employeeResult;
   count:number;
-  emailId;
+  emailId="shikharg273@gmail.com";
   // attempt:Attempt[];
   ngOnInit() {
-    this.emailId = sessionStorage.getItem('email');
     this.Employeeresult.getResult(this.emailId).subscribe(
       (data: EmployeeResult[]) => {
       console.log( data)
       this.employeeResultList = data;
+      console.log(this.employeeResultList);
       this.employeeResult=this.employeeResultList[0];
-      this.attempts = this.employeeResult.attempt;
-      this.attempts.forEach((v,k)=>{
-        v.choices.forEach((val,key)=>{
-          console.log(key);
-        })
-        
-      })
+      console.log(this.employeeResult);
+      this.attempts = this.employeeResult.attempts;
+      console.log(this.attempts);
       this.count=0;
 
         })
   }
-    evaluate(){
-
+    evaluate(response, correct )
+    {
+      var result= response.localeCompare(correct);
+      // var result1= response.localeCompare(choices);
+      console.log(result);
+      if(result)
+     {
+       return  true;
+     }
+     else
+     {
+       return  false;
+     }
+      
     }
 
 }

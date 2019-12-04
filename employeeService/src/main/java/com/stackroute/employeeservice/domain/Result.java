@@ -8,6 +8,16 @@ import java.util.List;
 public class Result {
     private String id;
     private String empId;
+    private String emailId;
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
     private String topicId;
     private String testId;
     private String empName;

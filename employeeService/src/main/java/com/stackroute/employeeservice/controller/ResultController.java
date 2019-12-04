@@ -34,7 +34,7 @@ public class ResultController {
     @GetMapping("/resultbytopic/{id}")
     public ResponseEntity getResultByTopicId(@PathVariable String id)
     {return new ResponseEntity(resultService.getResultsByTopicId(id), HttpStatus.OK); }
-    @GetMapping("/resultbyemail/{email}")
+    @GetMapping("/resultbyemail/{id}")
     public ResponseEntity getResultByEmailId(@PathVariable String id)
     {return new ResponseEntity(resultService.getResultsByEmailId(id), HttpStatus.OK); }
 
@@ -42,6 +42,9 @@ public class ResultController {
     public ResponseEntity getResultByTestId(@PathVariable String id)
     {return new ResponseEntity(resultService.getResultsByTestId(id), HttpStatus.OK); }
 
+    @DeleteMapping("/deleteresults")
+    public void deleteResult()
+    {resultService.deleteResult(); }
 
 
 }

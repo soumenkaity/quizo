@@ -42,5 +42,10 @@ public class ResultServiceImpl implements ResultService {
         return resultRepository.save(result);
     }
 
+    @Override
+    public void deleteResult() {
+     resultRepository.deleteAll();
+    }
+
 
 }
