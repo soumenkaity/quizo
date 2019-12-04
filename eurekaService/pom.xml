@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>com.stackroute</groupId>
 		<artifactId>parentpom</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>v1.0.0</version>
 		<relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.stackroute</groupId>
 	<artifactId>eurekaService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>eurekaService</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Eureka discovery for QUIZO</description>
 
 	<properties>
 		<java.version>11</java.version>
@@ -37,15 +37,6 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 	<repositories>
 		<repository>
