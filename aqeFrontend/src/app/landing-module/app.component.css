@@ -43,6 +43,12 @@ body {
 	color: white;
 	
 }
+/* .logoM{
+	height: 50px;
+	width: 100px;
+} */
+
+
 .whitebg{
 	background-color: white;
 	/* height: 70px; */
@@ -1349,7 +1355,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 /* @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); */
 #team {
-    background: #eee !important;
+	background: #eee !important;
+	
 }
 
 .btn-primary:hover,
@@ -1473,8 +1480,8 @@ section .section-title {
 }
 
 .frontside .card .card-body img {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
 }
 
