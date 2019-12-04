@@ -21,14 +21,15 @@
                     <li>Email: {{employee.email}}</li>
                     <li>Phone: {{employee.phone}}</li>
                 </ul>
-                <a href="#" class="btn btn-primary">Unselect</a>
+                <!-- <a href="#" class="btn" style="background-color:#212121; text-decoration-color: white">Unselect</a> -->
+                <button mat-raised-button color="primary" [routerLink]="['/hr/employees']" routerLinkActive="router-link-active" >Unselect</button>
             </div>
         </div>
     </div>
     <div class="spacing-top"></div>
     <div class="text-center mb-5">
-        <button mat-raised-button color="accent" (click)="confirmMapping()">CONFIRM!</button>
-        <button mat-raised-button color="accent" (click)="restart()">RESTART!</button>
+        <button mat-raised-button color="primary" (click)="confirmMapping()">CONFIRM!</button>
+        <button mat-raised-button color="primary" (click)="restart()">RESTART!</button>
     </div>
 </div>
 <app-footer></app-footer>
