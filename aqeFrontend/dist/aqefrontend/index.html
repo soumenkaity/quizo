@@ -6,7 +6,7 @@
     <title>QUIZO</title>
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="./assets/img/logo_icon.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/img/logoMain.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -24,6 +24,12 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <script>
@@ -34,7 +40,7 @@
                 $('.fixed-top').css({ "color": "green", "background-color": "white" });
                 $('.whitebg').css("color", "green");
                 $('.itemk').css("color", "black");
-                $('.navbar .navbar-brand img').attr('src', '../assets/img/logo-b.png');
+                $('.navbar .pic-brand img').attr('src', '../assets/img/logo102 .png');
 
             } else {
                 // $('.fixed-top').css('background-color', 'black').css("");
@@ -42,7 +48,7 @@
                 $('.whitebg').css({ "color": "white", "background-color": "black" });
                 // $('.itemk').css({ "color": "white","background-color": "yellow"});
                 $('.itemk').css("color", "white");
-                $('.navbar .navbar-brand img').attr('src', '../assets/img/logo-a1.png');
+                $('.navbar .pic-brand img').attr('src', '../assets/img/logo101.png');
 
 
                 // $('.fixed-top').css( "color", "green" );
@@ -52,6 +58,27 @@
 
 
     </script>
+
+    <script>
+
+
+var window_width = $(window).width() - $('#object').width();
+
+var document_height = $(document).height() - $(window).height();
+
+$(function () {
+    $(window).scroll(function () {
+        var scroll_position = $(window).scrollTop();
+        var object_position_left = window_width * (scroll_position / document_height);
+        $('#object').css({
+            'left': object_position_left
+        });
+    });
+});
+    </script>
+
+
+
 </head>
 
 <body>
