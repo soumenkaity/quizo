@@ -40,6 +40,7 @@ export class DashboardComponent implements OnInit,AfterViewInit {
     this.topicService.getAllTopics().subscribe(
       response => {
       this.topicDataSource = new MatTableDataSource(response)
+      console.log(this.topicDataSource);
       this.topicDataSource.paginator = this.paginators.toArray()[0];
     });
     this.employeeService.getAllEmployees().subscribe(
