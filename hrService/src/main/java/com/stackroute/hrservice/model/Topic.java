@@ -13,14 +13,14 @@ public class Topic {
   @Id
   private String id;
   private String name;
-  private Date createdAt;
+  private String createdAt;
   private String link;
   private List<String> keywords;
 
   public Topic() {
   }
 
-  public Topic(String id, String name, Date createdAt, String link, List<String> keywords) {
+  public Topic(String id, String name, String createdAt, String link, List<String> keywords) {
     this.id = id;
     this.name = name;
     this.createdAt = createdAt;

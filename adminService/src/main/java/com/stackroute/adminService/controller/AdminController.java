@@ -46,6 +46,21 @@ public class AdminController {
             logger.info(responseEntity.toString());
             return responseEntity;
         }
+        else if(value==5){
+            responseEntity=new ResponseEntity<Message>(new Message("IO Exception. TRY AGAIN"), HttpStatus.OK);
+            logger.info(responseEntity.toString());
+            return responseEntity;
+        }
+        else if(value==6){
+            responseEntity=new ResponseEntity<Message>(new Message("Interrupted Exception.TRY AGAIN"), HttpStatus.OK);
+            logger.info(responseEntity.toString());
+            return responseEntity;
+        }
+        else if(value==7){
+            responseEntity=new ResponseEntity<Message>(new Message("test cannot be created.TRY AGAIN"), HttpStatus.OK);
+            logger.info(responseEntity.toString());
+            return responseEntity;
+        }
         else{
             responseEntity=new ResponseEntity<Message>(new Message("test cannot be created.TRY AGAIN"), HttpStatus.OK);
             logger.info(responseEntity.toString());
