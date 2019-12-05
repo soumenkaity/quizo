@@ -10,10 +10,10 @@
     </parent>
     <groupId>com.stackroute</groupId>
     <artifactId>parentpom</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>v1.0.0</version>
     <packaging>pom</packaging>
     <name>adaptive-quiz-engine</name>
-    <description>Demo project for Spring Boot</description>
+    <description> Parent pom for QUIZO</description>
 
     <modules>
       <module>employeeService</module>

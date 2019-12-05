@@ -14,7 +14,7 @@ mat-card {
 
 .back {
     /* background-color: #F5F5F5; */
-    box-shadow: 3px 3px 2px 2px #dadada;
+    box-shadow: 3px 3px 4px 4px #dadada;
     /* border: 1px solid rgb(155, 155, 155); */
     height: 330px;
     margin-top: -50px;
@@ -39,4 +39,8 @@ mat-card {
 mat-card-header {
     display: block;
     flex-direction: row;
+}
+
+.spacing-top {
+    margin-top: 70px;
 }

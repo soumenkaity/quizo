@@ -34,6 +34,12 @@ export interface User{
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
+  topicDisplayedColumns: string[] = ['id','name', 'createdAt', 'link','keywords'];
+  employeeDisplayedColumns: string[] = ['id', 'name', 'phone', 'email'];
+  requestDisplayedColumns: string[] = [ 'id', 'message', 'status', 'actions'];
+  topicDataSource;
+  employeeDataSource;
+  requestDataSource;
 
   constructor(
     private topicService: TopicService,
@@ -64,12 +70,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     });
   }
 
-  topicDisplayedColumns: string[] = ['name', 'createdAt', 'link','keywords'];
-  employeeDisplayedColumns: string[] = [ 'name', 'phone', 'email'];
-  requestDisplayedColumns: string[] = [ 'id', 'message', 'status', 'actions'];
-  topicDataSource;
-  employeeDataSource;
-  requestDataSource;
+ 
 
   
   @ViewChildren(MatPaginator) paginators = new QueryList<MatPaginator>();

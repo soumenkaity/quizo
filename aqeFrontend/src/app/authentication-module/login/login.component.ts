@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../service/authentication.service';
 import {RegistrationService } from '../service/registration.service';
 import { ToastrService } from 'ngx-toastr'
@@ -19,7 +19,17 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router,
     private loginservice: AuthenticationService,
-    private registrationService: RegistrationService, private toastr: ToastrService, private toasterService: ToasterService) { }
+    private registrationService: RegistrationService, 
+    private toastr: ToastrService,
+    private toasterService: ToasterService,
+    private activatedRoute: ActivatedRoute
+     ) { 
+
+      this.activatedRoute.queryParams.subscribe(params => {
+       this.username = params['username'];
+       this.password = params['password'];
+    });
+     }
 
   ngOnInit() {
   }
