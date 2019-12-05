@@ -33,6 +33,7 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.getActiveTests(userEmail).subscribe(
       (response: TestUser[]) =>{
         this.activeTestsDataSource = new MatTableDataSource(response);
+        console.log(this.activeTestsDataSource);
         this.activeTestsDataSource.paginator = this.paginators.toArray()[0];
       }
     )
