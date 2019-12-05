@@ -47,16 +47,16 @@ export class CreateuserComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result == undefined){
         console.log('-------')
+        userDetails.role = 'EMP';
+        result.role = 'EMP';
+        this.createUserService.saveUserInMongo(userDetails).subscribe(
+          res => console.log(res)
+        );
+        this.createUserService.saveUserInMysql(result).subscribe(
+          res => console.log(res)
+        );
       }
-      userDetails.role = 'EMP';
-      result.role = 'EMP';
-      this.createUserService.saveUserInMongo(userDetails).subscribe(
-        res => console.log(res)
-      );
-      this.createUserService.saveUserInMysql(result).subscribe(
-        res => console.log(res)
-      );
-
+      //add toaster
     });
 
 

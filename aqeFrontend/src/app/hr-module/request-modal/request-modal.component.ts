@@ -12,7 +12,6 @@ export class RequestModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data) { }
 
   ngOnInit() {
-    console.log(this.data);
   }
 
   onNoClick(): void {

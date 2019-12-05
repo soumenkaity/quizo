@@ -1,25 +1,42 @@
-<h1>
+<h1 style="font-size: 20px; margin-left: 20%;">User details for login form:</h1>
+<br>
+<div style="margin-left: 18%;">
+    <form [formGroup]="data.form">
+        <div class="row">
 
-    User details for login form:</h1>
-<form [formGroup]="data.form">
-    <p>
-        <label>User Name:</label>
-        <input type="text" formControlName="username">
-    </p>
-    <p>
-        <label>Password:</label>
-        <input type="text" formControlName="password">
-    </p>
-    <p>
-        <label>Role:</label>
-        <input type="text" formControlName="role">
-    </p>
-    <p>
-        <label>Email:</label>
-        <input type="text" formControlName="email">
-    </p>
+            <div class="col-xs-4">
 
-    <li>
-        <button mat-raised-button [mat-dialog-close]=data.form.value [disabled]="!data.form.valid">Submit</button>
-    </li>
-</form>
+                <p>
+                    <label>User Name:</label>
+
+                </p>
+                <p>
+                    <label>Password:</label>
+
+                </p>
+                <p>
+                    <label>Role:</label>
+
+                </p>
+                <p>
+                    <label>Email:</label>
+
+                </p>
+            </div>
+            <div class="col-xs-2"></div>
+
+            <div class="col-xs-6">
+                <p> <input type="text" formControlName="username"></p>
+                <p><input type="text" formControlName="password"></p>
+                <p>
+                    <select formControlName="role" style="width:100%">
+                        <option value="HRM">HRM</option>
+                        <option value="EMP">EMP</option>
+                    </select>
+                </p>
+                <p> <input type="text" formControlName="email"></p>
+            </div>
+        </div>
+        <button mat-raised-button style="margin-left: 25%;" color="primary" [mat-dialog-close]=data.form.value [disabled]="!data.form.valid">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<div *ngIf="showSpinnerIndicator">
+    <h1 class="title" mat-dialog-title>Generating test...</h1>
+    <div class="content"mat-dialog-content>
+        <p>Don't refresh or close the tab</p>
+    </div>
+    <div class="lds-dual-ring"></div>
+</div>
+<div *ngIf="!(showSpinnerIndicator)">
+    <div>
+        <h1>{{responseMessage}}</h1>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onOkClick()">OK</button>
+    </div>
+</div>

@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
+interface Request{
+  id: String;
+  message: String;
+  status: String;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -11,10 +16,10 @@ export class RequestService {
 
 
   getAllRequests(){
-    return this.http.get(this.URLprefix+'/request');
+    return this.http.get<Request[]>(this.URLprefix+'/request');
   }
   getRequestById(id){
-    return this.http.get(this.URLprefix+'/request/'+id);
+    return this.http.get<Request>(this.URLprefix+'/request/'+id);
   }  
   addRequest(request){
     return this.http.post(this.URLprefix+'/request',request);
