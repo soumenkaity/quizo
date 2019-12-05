@@ -1372,7 +1372,7 @@ let AdminServiceService = class AdminServiceService {
         this.URLprefix = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].adminURLprefix;
     }
     createTest(topic) {
-        return this.http.post(this.URLprefix + 'createTest', topic);
+        return this.http.post(this.URLprefix + '/create-topic', topic);
     }
 };
 AdminServiceService.ctorParameters = () => [

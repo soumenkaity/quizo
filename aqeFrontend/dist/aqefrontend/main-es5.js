@@ -1280,7 +1280,7 @@
                     this.URLprefix = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].adminURLprefix;
                 }
                 AdminServiceService.prototype.createTest = function (topic) {
-                    return this.http.post(this.URLprefix + 'createTest', topic);
+                    return this.http.post(this.URLprefix + '/create-topic', topic);
                 };
                 return AdminServiceService;
             }());

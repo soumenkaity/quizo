@@ -21,15 +21,14 @@ public class AdminServiceImpl implements AdminService{
             process = Runtime.getRuntime().exec(cmd);
 
             //this will print the terminal logs in console during program execution
-            BufferedReader reader=new BufferedReader(new InputStreamReader(
-                    process.getInputStream()));
+            BufferedReader reader=new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;
             while((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
             process.waitFor();
-            value=process.exitValue();
-            System.out.println("After waitfor() exit value is : " +value);
+            value = process.exitValue();
+            System.out.println("After waitfor() exit value is: " +value);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -43,7 +42,7 @@ public class AdminServiceImpl implements AdminService{
             e.printStackTrace();
             value=7;
         }
-        return value;
 
+        return value;
     }
 }
