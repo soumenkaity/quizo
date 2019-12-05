@@ -1,5 +1,7 @@
 <app-header></app-header>
 
+<div class="spacing-top"></div>
+
 <div fxLayout="row" fxLayoutAlign="center center" class="login-main">
     <mat-card class="back ">
         <mat-card-header>
@@ -12,12 +14,12 @@
         <mat-card-content fxLayout="column" style="margin-top:2em;">
             <mat-form-field appearance="outline">
                 <mat-label>Username</mat-label>
-                <input matInput placeholder="Username" name="username" [(ngModel)]="username">
+                <input matInput placeholder="Username" name="username" [(ngModel)]="username" value='username'>
                 <!-- <mat-hint>Enter your email from the mail</mat-hint> -->
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput type="password" name="password" [(ngModel)]="password">
+                <input matInput type="password" name="password" [(ngModel)]="password" value='username'>
                 <!-- <mat-hint>Enter Password</mat-hint> -->
             </mat-form-field>
         </mat-card-content>
@@ -30,9 +32,5 @@
 
         </mat-card-actions>
     </mat-card>
-
-</div>
-<div class="text-center m-5">
-    <p>Not a registered HR for your company? <a href="" routerLink='/auth/register'>register here</a></p>
 </div>
 <!-- <app-footer></app-footer> -->
