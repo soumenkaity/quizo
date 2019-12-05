@@ -13,7 +13,7 @@ variables:
 clean_job:
     stage: clean
     tags:
-        - immersive-runner-cgi-clean    
+        - immersive-runner-cgi
     image: maven:latest
     script:
         - mvn clean 
@@ -21,14 +21,14 @@ clean_job:
 compile_job:
     stage: compile
     tags:
-        - immersive-runner-cgi-compile
+        - immersive-runner-cgi
     image: maven:latest
     script:
         - mvn compile 
 test_job:
     stage: test
     tags:
-        - immersive-runner-cgi-test
+        - immersive-runner-cgi
     image: maven:latest
     script:
         - mvn test
