@@ -16,9 +16,8 @@ public class AdminServiceImpl implements AdminService{
         int value=4;
         Process process;
         try {
-
             //these commands will run the script file
-            String[] cmd = { "sh", "/home/cgi/Documents/question-generation/QuestionGeneration/runscript.sh", topic};
+            String[] cmd = { "sh", "/home/ubuntu/adaptive-quiz-engine/automatic-question-generation/QuestionGeneration/runscript.sh", topic};
             process = Runtime.getRuntime().exec(cmd);
 
             //this will print the terminal logs in console during program execution
