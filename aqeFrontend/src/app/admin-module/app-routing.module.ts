@@ -13,9 +13,10 @@ const routes: Routes = [
   {path:'admin' , children:[
     {path:'createTopic', component:AdminComponent},
     {path:'testCreated/:id',component:CreatedPageComponent},
+    { path:'topic/:topic/'}
     {path:'',component:DashboardComponent},
     {path:'createUser', component:CreateuserComponent},
-    {path:'**',component:PageNotFoundComponent  }
+    {path:'**',component:PageNotFoundComponent}
   ], canActivate:[RoleGuardService],data:{role:'ADM'}}
 ];
 

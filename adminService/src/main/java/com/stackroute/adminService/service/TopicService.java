@@ -83,8 +83,6 @@ public class TopicService {
       mongoOperations.save(question,topicName);
     }
     return getMetadata(topicName);
-
-
   }
 
 

@@ -11,6 +11,8 @@ import { CoreModule } from '../core/core.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateModalComponent } from './create-modal/create-modal.component';
 import { CreateuserComponent } from './createuser/createuser.component';
+import { TopicComponent } from './topic/topic.component';
+import { QuestionsComponent } from './questions/questions.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { CreateuserComponent } from './createuser/createuser.component';
     DashboardComponent,
     CreateuserComponent,
     DialogOverviewExampleDialog,
-    CreateModalComponent
+    CreateModalComponent,
+    TopicComponent,
+    QuestionsComponent
     
   ],
   imports: [
