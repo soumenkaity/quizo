@@ -1509,6 +1509,7 @@ section .section-title {
 
 
 
+
 section {
     padding: 3px 0;
 }
@@ -1679,6 +1680,57 @@ section .section-title {
 }
 
 /* Quote CSS Ends */
+
+/* Animation on Jumbotron Starts */
+.animate a {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:400px;
+    height:60px;
+    padding:0 1rem;
+    line-height:60px;
+    text-align:center;
+    border:2px solid #fff;
+    font-size:30px;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family:sans-serif;
+    color:#fff;
+    overflow:hidden;
+}
+.animate a span  {
+    display:inline-block;
+    transition:0.5s;
+}
+.animate a span:nth-child(odd):before {
+    content:attr(data-text);
+    position:absolute;
+    transform:translateY(100%);
+}
+.animate a span:nth-child(odd){
+    transform:translateY(-100%);
+}
+.animate a:hover span:nth-child(odd){
+    transform:translateY(0);
+    color:blue;
+}
+.animate a span:nth-child(even):before {
+    content:attr(data-text);
+    position:absolute;
+    transform:translateY(-100%);
+}
+
+.animate a span:nth-child(even){
+    transform:translateY(100%);
+}
+.animate a:hover span:nth-child(even){
+    transform:translateY(0);
+    color:blue;
+}
+
+/* Animation on Jumbotron Ends */
 
 
 
