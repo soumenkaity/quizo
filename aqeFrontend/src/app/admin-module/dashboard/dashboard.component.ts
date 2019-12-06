@@ -34,7 +34,7 @@ export interface User{
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
-  topicDisplayedColumns: string[] = ['id','name', 'createdAt', 'link','keywords'];
+  topicDisplayedColumns: string[] = ['id','name', 'createdAt', 'link','keywords','actions'];
   employeeDisplayedColumns: string[] = ['id', 'name', 'phone', 'email'];
   requestDisplayedColumns: string[] = [ 'id', 'message', 'status', 'actions'];
   topicDataSource;

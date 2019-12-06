@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   userId
   completeTestsDataSource;
   activeTestsDataSource;
-  testsDisplayedColumns: string[] = ['id', 'name', 'createdAt',   'actions'];
+  testsDisplayedColumns: string[] = ['id', 'name', 'createdAt','actions'];
 
   constructor(private dashboardService: DashboardService, private dataService: DataService,private router:Router) { }
 
@@ -32,7 +32,9 @@ export class DashboardComponent implements OnInit {
     const userEmail = sessionStorage.getItem('email');
     this.dashboardService.getActiveTests(userEmail).subscribe(
       (response: TestUser[]) =>{
+        console.log(response);
         this.activeTestsDataSource = new MatTableDataSource(response);
+        console.log(this.activeTestsDataSource);
         this.activeTestsDataSource.paginator = this.paginators.toArray()[0];
       }
     )

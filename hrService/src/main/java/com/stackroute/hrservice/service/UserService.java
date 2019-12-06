@@ -14,24 +14,17 @@ import java.util.List;
 public class UserService {
 
   private UserRepository userRepository;
-  @Autowired
   private UserLoginRepository userLoginRepository;
   private PasswordEncoder bcryptEncoder;
   private NotificationService notificationService;
 
-
+  @Autowired
   public UserService(UserRepository userRepository, UserLoginRepository userLoginRepository, PasswordEncoder bcryptEncoder, NotificationService notificationService) {
     this.userRepository = userRepository;
     this.userLoginRepository = userLoginRepository;
     this.bcryptEncoder = bcryptEncoder;
     this.notificationService = notificationService;
   }
-
-  @Autowired
-
-
-
-
 
   public List<User> getAllUsers(){ return  userRepository.findAll();}
   public User getUserById(String id){ return userRepository.findById(id).orElseThrow(()->new RuntimeException());}

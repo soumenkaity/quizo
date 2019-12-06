@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FetchTestService } from '../service/fetch-test.service';
 import { Question } from '../model/questions';
 import { Router } from '@angular/router';
@@ -12,7 +12,8 @@ import { ToasterService } from 'src/app/authentication-module/service/toaster-se
   templateUrl: './fetch-test.component.html',
   styleUrls: ['./fetch-test.component.css'],
 })
-export class FetchTestComponent implements OnInit {
+export class FetchTestComponent implements OnInit, OnDestroy {
+
 
   public totalSeconds = 15;
   public minutes = Math.floor(this.totalSeconds / 60);
@@ -29,6 +30,7 @@ export class FetchTestComponent implements OnInit {
   private question;
   private count: number;
   choices: any;
+  timer: any;
 
 
   constructor(
@@ -47,7 +49,7 @@ export class FetchTestComponent implements OnInit {
         this.question = response;
         this.count = 0;
         this.choices=this.question['choices'];
-        this.checkTime();
+        // this.timer = this.checkTime();
         this.topicName = userDetails.topicName;
       }
     )
@@ -93,7 +95,7 @@ export class FetchTestComponent implements OnInit {
         this.seconds = this.totalSeconds % 60;
         this.roundedMins = this.pad(this.minutes);
         this.roundedSecs=this.pad(this.seconds);
-        setTimeout(() => { this.checkTime() }, 1000);
+         setTimeout(() => { this.checkTime() }, 1000);
       }
     }
     else {
@@ -115,5 +117,9 @@ export class FetchTestComponent implements OnInit {
   pad(number){
     return (number<10?'0':'')+number;
 
+  }
+
+  ngOnDestroy(): void {
+   clearInterval(this.timer);
   }
 }

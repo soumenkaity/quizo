@@ -36,9 +36,15 @@ public class ResultServiceImpl implements ResultService {
     }
 
     @Override
+    public Result getResultsById(String id) {
+        return resultRepository.findById(id).orElseThrow(()-> new RuntimeException());
+    }
+
+    @Override
     public void deleteResult() {
      resultRepository.deleteAll();
     }
+
 
 
 }
