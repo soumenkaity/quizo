@@ -1714,7 +1714,7 @@ section .section-title {
 }
 .animate a:hover span:nth-child(odd){
     transform:translateY(0);
-    color:blue;
+    color:yellow;
 }
 .animate a span:nth-child(even):before {
     content:attr(data-text);
@@ -1727,7 +1727,7 @@ section .section-title {
 }
 .animate a:hover span:nth-child(even){
     transform:translateY(0);
-    color:blue;
+    color:yellow;
 }
 
 /* Animation on Jumbotron Ends */
