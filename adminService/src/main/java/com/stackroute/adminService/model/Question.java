@@ -32,4 +32,20 @@ public class Question {
     this.correctAttempts = correctAttempts;
     this.totalOccurrences = totalOccurrences;
   }
+
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public String getDifficulty() {
+    return difficulty;
+  }
+
+  public void setDifficulty(String difficulty) {
+    this.difficulty = difficulty;
+  }
 }

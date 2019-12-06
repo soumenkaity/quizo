@@ -26,4 +26,12 @@ public class Topic {
     this.link = link;
     this.keywords = keywords;
   }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 }
