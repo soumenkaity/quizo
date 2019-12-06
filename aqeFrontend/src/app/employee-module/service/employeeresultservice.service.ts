@@ -8,7 +8,7 @@ export class EmployeeresultserviceService {
    
 
   url: string = 'http://localhost:8083/quiz/test/result';
-  url2: String = 'http://localhost:8083/employee/resultbytopic';
+  url2: String = 'http://localhost:8083/employee/resultbyid';
   constructor(private http: HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({
@@ -21,9 +21,9 @@ export class EmployeeresultserviceService {
     return this.http.post(this.url, employeeresult);
    }
    
-   getResult(empid:String)
+   getResult(id:String)
    {
-     return this.http.get<any>(this.url2+'/'+empid);
+     return this.http.get<any>(this.url2+'/'+id);
    }
 
 }

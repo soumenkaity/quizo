@@ -17,23 +17,6 @@
         timeout: 10s
         retries: 3
 
-    admin-service:
-      image: adminservice
-      build: adminService/
-      restart: always
-      network_mode: host
-      hostname: localhost
-      container_name: admin-service
-      ports:
-        - "8082:8082"
-      environment:
-        - "SPRING_PROFILES_ACTIVE=prod"
-      healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:8082"]
-        interval: 4m30s
-        timeout: 10s
-        retries: 3
-
     employee-service:
       image: employeeservice
       build: employeeService/

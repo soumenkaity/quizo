@@ -1,11 +1,13 @@
 package com.stackroute.employeeservice.domain;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
 @Document
 public class Result {
+    @Id
     private String id;
     private String empId;
     private String testId;

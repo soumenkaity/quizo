@@ -37,4 +37,7 @@ public class ResultController {
     @GetMapping("/resultbytest/{id}")
     public ResponseEntity getResultByTestId(@PathVariable String id)
     {return new ResponseEntity(resultService.getResultsByTestId(id), HttpStatus.OK); }
+    @GetMapping("/resultbyid/{id}")
+    public ResponseEntity getResultById(@PathVariable String id)
+    {return new ResponseEntity(resultService.getResultsById(id), HttpStatus.OK); }
 }

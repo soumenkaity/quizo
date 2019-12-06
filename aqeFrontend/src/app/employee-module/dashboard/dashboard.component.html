@@ -6,7 +6,7 @@
         <p class="lead">This is the main dashboard screen for creating tests, users and requests .</p>
         <hr class="my-4">
         <p style="font-size: 18px;">below is a overview of all the activities</p>
-    </div> 
+    </div>
     <div class=text-center>
         <h3>
             Active Tests:
@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-10">
             <div class="mat-elevation-z8">
-                <table mat-table [dataSource]="activeTestsDataSourceactiveTestsDataSource" style="width: 100%;">
+                <table mat-table [dataSource]="activeTestsDataSource" style="width: 100%;">
 
                     <ng-container matColumnDef="id">
                         <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -85,7 +85,7 @@
 
                     <ng-container matColumnDef="actions">
                         <th mat-header-cell *matHeaderCellDef> actions </th>
-                        <td mat-cell *matCellDef="let element"> <button routerLink='/hr/create'> See result </button></td>
+                        <td mat-cell *matCellDef="let element"> <button routerLink='/hr/result'> See result </button></td>
                     </ng-container>
 
                     <tr mat-header-row *matHeaderRowDef="testsDisplayedColumns"></tr>
