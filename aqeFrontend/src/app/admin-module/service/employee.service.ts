@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class EmployeeService {
-  private URLprefix = environment.HrURLprefix;
+  private URLprefix = environment.adminURLprefix;
   constructor(private http: HttpClient) { }
 
   getAllEmployees(){

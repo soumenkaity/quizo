@@ -5,6 +5,7 @@ import com.example.demo.domain.UserMongo;
 import com.example.demo.repository.UserMongoRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.security.jwt.JwtTokenProvider;
+import com.example.demo.service.RandomPasswordGenerationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,8 @@ import static org.springframework.http.ResponseEntity.ok;
 @RequestMapping("/auth")
 @CrossOrigin("*")
 public class AuthenticationController {
+    @Autowired
+    RandomPasswordGenerationService randomPasswordGenerationService;
 
     @Autowired
     AuthenticationManager authenticationManager;
@@ -100,12 +103,13 @@ public class AuthenticationController {
     public ResponseEntity reset(@RequestParam String email){
         try{
         User u = this.users.findByEmail(email).orElseThrow(()-> new UsernameNotFoundException("Users email  not found"));
-        u.setPassword(bcryptEncoder.encode("password"));
+        String password = RandomPasswordGenerationService.generateRandomPassword(10);
+        u.setPassword(bcryptEncoder.encode(password));
         SimpleMailMessage mail=new SimpleMailMessage();
         mail.setTo(email);
         mail.setFrom("hariombabug123@gmail.com");
         mail.setSubject("Reset Password");
-        mail.setText("Your password for the username : "+u.getUsername()+" has been reset to password \n ");
+        mail.setText("Your password for the username : "+u.getUsername()+" has been reset to password: "+password);
 
         javaMailSender.send(mail);
 

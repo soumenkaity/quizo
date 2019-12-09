@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/AQE
+    url: jdbc:mysql://localhost:3306/AQE
     username: chinmay
     password: Root@123
     cachePrepStmts: true
