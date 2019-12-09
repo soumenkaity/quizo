@@ -65,7 +65,7 @@ public class HRController {
   public ResponseEntity getAllResults(){
     return new ResponseEntity(resultService.getAllResults(), HttpStatus.OK);
   }
-  @GetMapping("/results/{id}")
+  @GetMapping("/result/{id}")
   public ResponseEntity getByTestId(@PathVariable String id){
     return new ResponseEntity(resultService.getResultsByTestId(id), HttpStatus.OK);
   }
@@ -73,6 +73,9 @@ public class HRController {
   public ResponseEntity getEmpById(@PathVariable String id){
     return new ResponseEntity(resultService.getResultsByEmpId(id), HttpStatus.OK);
   }
+  @GetMapping("/result")
+  public ResponseEntity getResultByTestIdAndEmpId(@RequestParam String testId,@RequestParam String empId)
+  {return new ResponseEntity(resultService.getResultByTestIdAndEmpId(testId,empId), HttpStatus.OK); }
   //--------------------------------------------------------------------------------------------------------
 
   //---------------------------------------TEST CREATION MAPPINGS-------------------------------------------

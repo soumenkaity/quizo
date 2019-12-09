@@ -13,13 +13,13 @@
             <mat-icon>more_vert</mat-icon>
           </button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item *ngIf="loggedInUser" (click)="logout()">
-              <mat-icon>exit_to_app</mat-icon>
-              <span>Logout</span>
-            </button>
             <button mat-menu-item>
               <mat-icon>account_circle</mat-icon>
               <span (click)="gotoAccount()">View Account</span>
+            </button>
+            <button mat-menu-item *ngIf="loggedInUser" (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon>
+              <span>Logout</span>
             </button>
         </mat-menu>
     </div>

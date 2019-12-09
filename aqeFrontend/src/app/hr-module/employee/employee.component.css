@@ -35,3 +35,9 @@
 .grey-color {
     background-color: grey;
 }
+.checkbox{
+    height:100px;
+}
+.inner-container{
+    height:150px;
+}
