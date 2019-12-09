@@ -25,6 +25,12 @@ public class DashboardService {
   }
 
   public List<Topic> getAllTopics(){return this.topicRepository.findAll();}
-  public List<Request> getAllRequests(){return this.requestRepository.findAll();}
+//  public List<Request> getAllRequests(){return this.requestRepository.findAll();}
+  public List<Request> getNotCompletedRequests(String status){return this.requestRepository.findByStatus(status);}
+  public Request updateRequest(Request request){
+    System.out.println(request);
+    request.setStatus("C");
+    return this.requestRepository.save(request);
+  }
   public List<User> getAllUsers(){return this.userRepository.findAll();}
 }

@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { TopicService } from '../service/topic.service';
 import { EmployeeService } from '../service/employee.service';
 import { RequestService } from '../service/request.service';
+import { ToasterService } from 'src/app/authentication-module/service/toaster-service.service';
 
 export interface UserData {
   id: string;
@@ -45,6 +46,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     private topicService: TopicService,
     private employeeService: EmployeeService,
     private requestService:RequestService,
+    private toasterService:ToasterService,
   ){}
 
   ngOnInit(): void {
@@ -71,7 +73,18 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
 
  
-
+  changeRequestStatus(request){
+    console.log(request);
+    this.requestService.updateRequest(request).subscribe(
+      res => {},
+      err => {this.toasterService.success("Request Updated")}
+    )
+    this.requestService.getAllRequests().subscribe(
+      (response: Request[]) => {
+        this.requestDataSource = new MatTableDataSource(response)
+        this.requestDataSource.paginator = this.paginators.toArray()[2];
+    });
+  }
   
   @ViewChildren(MatPaginator) paginators = new QueryList<MatPaginator>();
 

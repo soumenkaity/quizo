@@ -40,11 +40,16 @@ public class ResultServiceImpl implements ResultService {
         return resultRepository.findById(id).orElseThrow(()-> new RuntimeException());
     }
 
-    @Override
+  @Override
+  public Result getResultByTestIdAndEmpId(String testId, String empId) {
+   return resultRepository.findByTestIdAndEmpId(testId,empId);
+  }
+
+  @Override
     public void deleteResult() {
      resultRepository.deleteAll();
     }
 
-
+    public List<Result> getAllResults() { return resultRepository.findAll();}
 
 }

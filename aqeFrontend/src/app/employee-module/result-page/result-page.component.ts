@@ -3,7 +3,7 @@ import { EmployeeresultserviceService } from '../service/employeeresultservice.s
 import { EmployeeResult } from '../model/employeeresult';
 import { Attempt } from '../model/Attempt';
 import { GestureConfig, MatTableDataSource } from '@angular/material';
-// import { getMaxListeners } from 'cluster';
+import { ActivatedRoute } from '@angular/router';
 
 
  @Component({
@@ -17,24 +17,21 @@ export class ResultPageComponent implements OnInit {
   correct:String;
   correctColor="green";
   wrongColor="red";
-  // attempt:Attempt;
   styleList = new Array(); 
 
-   constructor(private Employeeresult:EmployeeresultserviceService) { } 
+   constructor(
+     private Employeeresult:EmployeeresultserviceService,
+     private route: ActivatedRoute) { } 
 
   employeeResult: EmployeeResult;
 
   count:number;
-  emailId="shikharg273@gmail.com";
-  topicId="5dd37eeed2dfaaa776485bea"
-  id="5de631d84aa9556228ecab3d";
-  // attempt:Attempt[];
   ngOnInit() {
-    this.Employeeresult.getResult(this.id).subscribe(
+    const empId = this.route.snapshot.queryParams['empId'];
+    const testId = this.route.snapshot.queryParams['testId'];
+    this.Employeeresult.getResultForEmployeeWhoGaveThisTest(empId,testId).subscribe(
       (data: EmployeeResult) => {
-      // console.log( data);   
       console.log("data ",data);
-      // console.log(this.employeeResultList);
       this.employeeResult=data;
 
        this.attempts = this.employeeResult.attempts;
@@ -44,16 +41,13 @@ export class ResultPageComponent implements OnInit {
   }  
     evaluate(response, correct ){
       var result= response.localeCompare(correct);
-      // var result1= response.localeCompare(choices);
       console.log(result);
-      if(result)
-     {
+      if(result){
        return  true;
-     }
-     else
-     {
+      }else{
        return  false;
-     }    }
+      }
+    }
 }
 
 

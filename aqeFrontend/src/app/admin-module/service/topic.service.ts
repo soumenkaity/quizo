@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class TopicService {
-  private URLprefix = environment.HrURLprefix;
+  private URLprefix = environment.adminURLprefix;
   
 
   constructor(private http: HttpClient) {  }

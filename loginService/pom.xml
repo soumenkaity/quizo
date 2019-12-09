@@ -97,6 +97,12 @@
         <artifactId>mail</artifactId>
         <version>1.4.7</version>
       </dependency>
+        <dependency>
+            <groupId>com.stackroute</groupId>
+            <artifactId>hrService</artifactId>
+            <version>v1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 
