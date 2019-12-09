@@ -48,4 +48,20 @@ public class Question {
   public void setDifficulty(String difficulty) {
     this.difficulty = difficulty;
   }
+
+  public int getCorrectAttempts() {
+    return correctAttempts;
+  }
+
+  public void setCorrectAttempts(int correctAttempts) {
+    this.correctAttempts = correctAttempts;
+  }
+
+  public int getTotalOccurrences() {
+    return totalOccurrences;
+  }
+
+  public void setTotalOccurrences(int totalOccurrences) {
+    this.totalOccurrences = totalOccurrences;
+  }
 }

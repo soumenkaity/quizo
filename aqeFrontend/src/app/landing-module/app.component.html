@@ -744,12 +744,12 @@
                     <div class="col-md-6">
                         <div class="contact-form">
                             <h4>Send A Message</h4>
-                            <form>
-                                <input class="input" type="text" name="name" placeholder="Name"
+                            <form #id="valu">
+                                <input class="input" type="text" name="name" placeholder="Name" [(ngModel)]="name" value="name"
                                     style="border: 1px solid #909090">
-                                <input class="input" type="text" name="email" placeholder="Email"
+                                <input class="input" type="text" name="email" placeholder="Email" [(ngModel)]="email" value="email"
                                     style="border: 1px solid #909090">
-                                <input class="input" type="number" name="number" placeholder="Phone no"
+                                <input class="input" type="number" name="number" placeholder="Phone no" [(ngModel)]="number" value="email"
                                     style="border: 1px solid #909090">
 
                                 <mat-form-field>
@@ -763,7 +763,7 @@
 
 
                             </form>
-                            <button class="main-button icon-button pull-right" (click)=checkLogin()>Send
+                            <button class="main-button icon-button pull-right" (click)=checkLogin(name.value,email.value,number.value)>Send
                                 Message</button>
                         </div>
                     </div>
