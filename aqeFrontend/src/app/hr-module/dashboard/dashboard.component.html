@@ -24,8 +24,8 @@
                 <table mat-table [dataSource]="topicDataSource" style="width: 100%;">
 
                     <ng-container matColumnDef="id">
-                        <th mat-header-cell *matHeaderCellDef> ID </th>
                         <td mat-cell *matCellDef="let element"> {{element.id | slice:20:24}} </td>
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
                     </ng-container>
 
                     <!-- Name Column -->

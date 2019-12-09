@@ -41,7 +41,7 @@ h3 {
     -webkit-hyphens: auto;
     hyphens: auto;
 }
-/* 
+
 @media only screen and ( max-width: 768px) {
   .lead{
       font-size: 18px;
@@ -101,4 +101,4 @@ h3 {
 .ml-5{
   text-align: center;
 }
-} */
+}
