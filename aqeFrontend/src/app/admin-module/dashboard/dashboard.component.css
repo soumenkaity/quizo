@@ -1,35 +1,47 @@
 table {
     width: 100%;
-  }
-  
-  .mat-form-field {
+}
+
+.mat-form-field {
     font-size: 14px;
     width: 100%;
-  }
-  
-  td, th {
+}
+
+td,
+th {
     width: 25%;
-  }
- 
-.display-4{
-  font-size: 35px;
-  
 }
 
-h3{
-  font-size: 20px;
+.display-4 {
+    font-size: 35px;
 }
 
-.lead{
-  font-size: 18px;
+h3 {
+    font-size: 20px;
 }
 
-.container{
-  margin-top: 63px;
+.lead {
+    font-size: 18px;
 }
 
+.container {
+    margin-top: 63px;
+}
 
-
+.mat-column-id {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 28% !important;
+    width: 12% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+/* 
 @media only screen and ( max-width: 768px) {
   .lead{
       font-size: 18px;
@@ -89,4 +101,4 @@ h3{
 .ml-5{
   text-align: center;
 }
-}
+} */

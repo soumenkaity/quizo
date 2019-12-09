@@ -9,5 +9,6 @@ public interface ResultService {
     public List<Result> getResultsByEmpId(String id);
     public List<Result> getResultsByTestId(String id);
     public Result saveResult(Result result);
+    public Result getResultsById(String id);
     public void deleteResult();
 }

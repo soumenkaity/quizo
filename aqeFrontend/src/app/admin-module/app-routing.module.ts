@@ -6,6 +6,7 @@ import { RoleGuardService } from '../authentication-module/service/role-guard.se
 import { DashboardComponent} from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { CreateuserComponent } from './createuser/createuser.component';
+import { TopicComponent } from './topic/topic.component';
 
 
 
@@ -13,9 +14,10 @@ const routes: Routes = [
   {path:'admin' , children:[
     {path:'createTopic', component:AdminComponent},
     {path:'testCreated/:id',component:CreatedPageComponent},
+    { path:'topic/:topic', component:TopicComponent},
     {path:'',component:DashboardComponent},
     {path:'createUser', component:CreateuserComponent},
-    {path:'**',component:PageNotFoundComponent  }
+    {path:'**',component:PageNotFoundComponent}
   ], canActivate:[RoleGuardService],data:{role:'ADM'}}
 ];
 

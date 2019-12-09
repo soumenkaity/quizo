@@ -43,10 +43,15 @@ body {
 	color: white;
 	
 }
-/* .logoM{
-	height: 50px;
+.logoM{
+	height: 35px;
 	width: 100px;
-} */
+}
+
+.jumbo{
+	text-align: center;
+	font-family: ‘Shift’, sans-serif;
+}
 
 
 .whitebg{
@@ -60,6 +65,21 @@ nav.scroll {
   .floatr{
 	  padding-left: 50px;
   }
+
+
+  #object {
+    position: fixed;
+    left: 0;
+    bottom: 5%;
+    height: 30px;
+    width: 30px;
+    border-radius:5px;
+    background: #d3d3d3;
+}
+
+
+
+
 
 h1,h2,h3,h4,h5,h6 {
 	margin-top: 12px;
@@ -1355,7 +1375,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 /* @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); */
 #team {
-	background: #eee !important;
+	background: white !important;
 	
 }
 
@@ -1386,7 +1406,7 @@ section .section-title {
 
 #team .card {
     border: none;
-    background: #ffffff;
+    background:white;
 }
 
 .image-flip:hover .backside,
@@ -1435,7 +1455,7 @@ section .section-title {
     position: absolute;
     top: 0;
     left: 0;
-    background: white;
+    background: gray;
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
     -o-transform: rotateY(-180deg);
@@ -1464,10 +1484,10 @@ section .section-title {
     transform-style: preserve-3d;
 }
 
-.frontside .card,
+/* .frontside .card,
 .backside .card {
     min-height: 312px;
-}
+} */
 
 .backside .card a {
     font-size: 18px;
@@ -1480,8 +1500,8 @@ section .section-title {
 }
 
 .frontside .card .card-body img {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
 }
 
@@ -1489,8 +1509,9 @@ section .section-title {
 
 
 
+
 section {
-    padding: 5px 0;
+    padding: 3px 0;
 }
 
 section .section-title {
@@ -1515,9 +1536,9 @@ section .section-title {
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
 }
-#footer ul.social li{
+/* #footer ul.social li{
 	padding: 3px 0;
-}
+} */
 #footer ul.social li a i {
     margin-right: 5px;
 	font-size:25px;
@@ -1562,6 +1583,159 @@ section .section-title {
     margin-bottom: 10px;
 }
 }
+
+
+/* Quote CSS Starts */
+.box {
+	padding-top: 350px;
+	/* position: absolute; */
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 500px;
+	height: 500px;
+	cursor: pointer;
+	transform-style: preserve-3d;
+	perspective: 2000px;
+	transition: 0.5s;
+}
+.box:hover {
+	transform: translate(-50%,-50%) rotateY(-30deg) skewY(5deg);
+}
+.box:before {
+	content:'';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	border-top: 20px solid #fff;
+	border-left: 20px solid #fff;
+	box-sizing: border-box;
+}
+.box:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	border-bottom: 20px solid #fff;
+	border-right: 20px solid #fff;
+	box-sizing: border-box;
+}
+.box .text {
+	position: absolute;
+	top: 30px;
+	left: -30px;
+	background: #262626;
+	width: calc(100% + 60px);
+	height: calc(100% - 60px);
+	transition: 0.5s;
+}
+.box:hover .text {
+	transform:rotateY(30deg) skewY(-5deg);
+}
+.text div {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	transform:translateY(-50%);
+	padding: 40px 80px;
+	box-sizing: border-box;
+	text-align: center;
+}
+.text div h1 {
+	margin: 0 0 20px;
+	padding: 0;
+	color: #fff;		
+}
+.text div p {
+	margin: 0 0 20px;
+	padding: 0;
+	color: #fff;
+	font-size: 18px;
+}
+.fk {
+	width: 80px;
+	height: 80px;
+	/* background: #fff; */
+	color: #262626;
+	text-align: center;
+	line-height: 80px !important;
+	font-size: 40px !important;
+}
+.fk.fk1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.fk.fk2 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+}
+
+/* Quote CSS Ends */
+
+/* Animation on Jumbotron Starts */
+.animate a {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:400px;
+    height:60px;
+    padding:0 1rem;
+    line-height:60px;
+    text-align:center;
+    border:2px solid #fff;
+    font-size:30px;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family:sans-serif;
+    color:#fff;
+    overflow:hidden;
+}
+.animate a span  {
+    display:inline-block;
+    transition:0.5s;
+}
+.animate a span:nth-child(odd):before {
+    content:attr(data-text);
+    position:absolute;
+    transform:translateY(100%);
+}
+.animate a span:nth-child(odd){
+    transform:translateY(-100%);
+}
+.animate a:hover span:nth-child(odd){
+    transform:translateY(0);
+    color:yellow;
+}
+.animate a span:nth-child(even):before {
+    content:attr(data-text);
+    position:absolute;
+    transform:translateY(-100%);
+}
+
+.animate a span:nth-child(even){
+    transform:translateY(100%);
+}
+.animate a:hover span:nth-child(even){
+    transform:translateY(0);
+    color:yellow;
+}
+
+/* Animation on Jumbotron Ends */
+
+/* Our team starts */
+/* Our team Ends */
+
 
 
 

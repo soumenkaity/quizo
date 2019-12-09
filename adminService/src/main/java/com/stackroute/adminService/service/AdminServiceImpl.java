@@ -16,21 +16,19 @@ public class AdminServiceImpl implements AdminService{
         int value=4;
         Process process;
         try {
-
             //these commands will run the script file
-            String[] cmd = { "sh", "/home/cgi/Documents/question-generation/QuestionGeneration/runscript.sh", topic};
+            String[] cmd = { "sh", "/home/ubuntu/adaptive-quiz-engine/automatic-question-generation/QuestionGeneration/runscript.sh", topic};
             process = Runtime.getRuntime().exec(cmd);
 
             //this will print the terminal logs in console during program execution
-            BufferedReader reader=new BufferedReader(new InputStreamReader(
-                    process.getInputStream()));
+            BufferedReader reader=new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;
             while((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
             process.waitFor();
-            value=process.exitValue();
-            System.out.println("After waitfor() exit value is : " +value);
+            value = process.exitValue();
+            System.out.println("After waitfor() exit value is: " +value);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -44,7 +42,7 @@ public class AdminServiceImpl implements AdminService{
             e.printStackTrace();
             value=7;
         }
-        return value;
 
+        return value;
     }
 }

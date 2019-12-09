@@ -21,6 +21,8 @@ public class User {
   private double phone;
   private String email;
   private String designation;
+  private String address;
+  private String gender;
 
   public String getEmail() {
     return email;

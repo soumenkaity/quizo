@@ -16,6 +16,17 @@
                 <td><input type="text" formControlName="phone" placeholder="Enter phone..."></td>
             </tr>
             <tr>
+                    <td><label>Gender:</label></td>
+                    <td>
+                        <select formControlName="gender">
+                            <option value="" disabled>Enter here...</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </td>
+                </tr>
+            <tr>
                 <td><label>Email:</label></td>
                 <td><input type="text" formControlName="email" placeholder="Enter email..."></td>
             </tr>
@@ -32,6 +43,10 @@
                 <td><label>Designation:</label></td>
                 <td><input type="text" formControlName="designation" placeholder="Enter designation..."></td>
             </tr>
+            <tr>
+                    <td><label>Address:</label></td>
+                    <td><input type="text" formControlName="address" placeholder="Enter address..."></td>
+                </tr>
         </table>
 
         
@@ -40,4 +55,4 @@
     </form>
 </section>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
