@@ -1,10 +1,12 @@
-package com.stackroute.hrservice.service;
+package com.example.demo.service;
+
+import org.springframework.stereotype.Service;
 
 import java.util.Random;
+@Service
+public class RandomPasswordGenerationService {
 
-public class GenerationService {
-
-    public static String generateRandomString(int len){
+        public static String generateRandomPassword(int len){
         String Capital_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String Small_chars = "abcdefghijklmnopqrstuvwxyz";
         String numbers = "0123456789";
