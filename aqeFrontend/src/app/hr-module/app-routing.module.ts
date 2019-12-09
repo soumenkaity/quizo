@@ -8,6 +8,7 @@ import { ThankyouHrComponent } from './thankyou-hr/thankyou-hr.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { TestsComponent } from './tests/tests.component';
+import { ResultPageComponent } from './result-page/result-page.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path:'' , component: DashboardComponent , pathMatch:'full'},
     { path:'main' , component: TopicComponent,pathMatch:'full'},
     { path:'tests' , component:TestsComponent },
+    { path:'result/:id' , component:ResultPageComponent },
     { path:'create-user',component: CreateuserComponent },
     { path:'create' , component:TopicComponent},
     { path:'employees' , component:EmployeeComponent},

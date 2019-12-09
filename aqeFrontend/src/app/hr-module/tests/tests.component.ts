@@ -11,17 +11,17 @@ import { TestUser } from '../model/testUser';
 })
 export class TestsComponent implements OnInit {
   testsDataSource;
-  testsDataSourceColumns = ['testId','userName','topicName','status','actions'];
+  testsDataSourceColumns = ['testId','empName','topicName','status','actions'];
 
   constructor(private resultService: ResultService) { }
 
   @ViewChildren(MatPaginator) paginators = new QueryList<MatPaginator>();
   ngOnInit() {
-    this.resultService.getAllTests().subscribe(
-      (response) =>{
+    this.resultService.getResultOfAllTests().subscribe(
+      (response: TestUser[]) =>{
         console.log(response);
-        // this.testsDataSource = new MatTableDataSource(response);
-        // this.testsDataSource.paginator = this.paginators.toArray()[0];
+        this.testsDataSource = new MatTableDataSource(response);
+        this.testsDataSource.paginator = this.paginators.toArray()[0];
       }
     )
   }

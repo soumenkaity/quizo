@@ -1,4 +1,5 @@
 <app-header></app-header>
+<div style="margin-top:70px"></div>
 <div class="container">
     <div class="row ">
         <div class="col-md-1">
@@ -13,10 +14,10 @@
                     </ng-container>
 
                     <!-- Name Column -->
-                    <ng-container matColumnDef="userName">
+                    <ng-container matColumnDef="empName">
                         <!-- Name Column -->
                         <th mat-header-cell *matHeaderCellDef> Employee Name </th>
-                        <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.empName}} </td>
                     </ng-container>
 
                     <!-- Weight Column -->
@@ -33,7 +34,7 @@
 
                     <ng-container matColumnDef="actions">
                         <th mat-header-cell *matHeaderCellDef> Actions </th>
-                        <td mat-cell *matCellDef="let element"><a href="/employee/result?testId={{element.id}}&empId={{element.userId}}" mat-raised-button> Show result </a></td>
+                        <td mat-cell *matCellDef="let element"><a [routerLink]="['/hr/result' , element.id ]" mat-raised-button> Show result </a></td>
                     </ng-container>
 
 

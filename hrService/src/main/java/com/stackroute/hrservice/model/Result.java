@@ -39,6 +39,9 @@ public class Result {
   }
 }
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 class Attempt{
   private String questionId;
   private String question;
