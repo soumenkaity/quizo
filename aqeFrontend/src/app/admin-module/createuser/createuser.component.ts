@@ -31,7 +31,9 @@ export class CreateuserComponent implements OnInit {
       "phone":["", Validators.required],
       "email":["", Validators.required],
       "role":["HRM", Validators.required],
-      "designation":["", Validators.required]
+      "designation":["", Validators.required],
+      "address":["", Validators.required],
+      "gender":["", Validators.required]
     });
   }
   openDialog(userDetails): void {
