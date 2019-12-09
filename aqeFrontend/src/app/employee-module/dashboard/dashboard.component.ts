@@ -19,7 +19,6 @@ interface TestUser{
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  userId
   completeTestsDataSource;
   activeTestsDataSource;
   testsDisplayedColumns: string[] = ['id', 'name', 'createdAt','actions'];

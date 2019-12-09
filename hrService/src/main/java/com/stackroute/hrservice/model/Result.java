@@ -1,15 +1,22 @@
 package com.stackroute.hrservice.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
 import java.util.List;
 
+@Data
 @Document
+@NoArgsConstructor
+@AllArgsConstructor
 public class Result {
   @Id
   private String id;
   private String empId;
+  private String testId;
   private String topicId;
   private String empName;
   private String topicName;
@@ -17,7 +24,7 @@ public class Result {
   private double correct;
   private double wrong;
   private String difficulty;
-  private List<Attempt> attemptList;
+  private List<Attempt> attempts;
 
   public Result(String empId, String topicId, String empName, String topicName,
                 double score, double correct, double wrong, String difficulty, List<Attempt> attemptList) {
@@ -28,7 +35,7 @@ public class Result {
     this.score = score;
     this.correct = correct;
     this.wrong = wrong;
-    this.attemptList = attemptList;
+    this.attempts = attemptList;
   }
 }
 

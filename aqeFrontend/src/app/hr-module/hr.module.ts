@@ -20,6 +20,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { CreateModalComponent } from './create-modal/create-modal.component';
 import { RequestModalComponent } from './request-modal/request-modal.component';
+import { TestsComponent } from './tests/tests.component';
 
 
 
@@ -33,7 +34,8 @@ import { RequestModalComponent } from './request-modal/request-modal.component';
     DashboardComponent,
     CreateuserComponent,
     CreateModalComponent,
-    RequestModalComponent
+    RequestModalComponent,
+    TestsComponent
    
   ],
   imports: [
