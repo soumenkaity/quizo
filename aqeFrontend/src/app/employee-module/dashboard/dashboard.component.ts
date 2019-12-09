@@ -32,9 +32,7 @@ export class DashboardComponent implements OnInit {
     const userEmail = sessionStorage.getItem('email');
     this.dashboardService.getActiveTests(userEmail).subscribe(
       (response: TestUser[]) =>{
-        console.log(response);
         this.activeTestsDataSource = new MatTableDataSource(response);
-        console.log(this.activeTestsDataSource);
         this.activeTestsDataSource.paginator = this.paginators.toArray()[0];
       }
     )

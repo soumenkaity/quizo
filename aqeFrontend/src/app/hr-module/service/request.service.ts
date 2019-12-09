@@ -27,7 +27,6 @@ export class RequestService {
   }
   
   deleteRequest(request){
-    console.log(request);
     let options = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
