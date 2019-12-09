@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 interface Request{
@@ -7,6 +7,7 @@ interface Request{
   message: String;
   status: String;
 }
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,7 +25,14 @@ export class RequestService {
   addRequest(request){
     return this.http.post(this.URLprefix+'/request',request);
   }
+  
   deleteRequest(request){
-    return this.http.delete(this.URLprefix+'/request',request);
+    let options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body: request,
+    };
+    return this.http.delete(this.URLprefix+'/request', options);
   }
 }
