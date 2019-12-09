@@ -10,6 +10,10 @@ export class ResultService {
   URLprefix = environment.HrURLprefix
   constructor(private http:HttpClient) { }
 
+  getAllTestUserMapping(){
+    return this.http.get(this.URLprefix+'/results')
+  }
+
   public getResultOfAllTests(){
     return this.http.get(this.URLprefix+'/results')
   }
