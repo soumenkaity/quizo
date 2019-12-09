@@ -2,17 +2,16 @@
 
 
     <nav class="navbar nav navbar-expand-lg navbar-light items whitebg  fixed-top">
-            <div class="pic-brand">
-                    <a class="logo" href="#">
-                        <img class="logoM" src="../assets/img/logo102 .png" alt="logo">
-                    </a>
-                </div>
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="pic-brand">
+            <a class="logo" href="#">
+                <img class="logoM" src="../assets/img/logo102 .png" alt="logo">
+            </a>
+        </div>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            
+
 
             <ul class=" main-menu nav   ml-auto ">
                 <li class="nav-item active">
@@ -39,9 +38,11 @@
                     </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link " routerLink="/auth/login">
+                    <a class="nav-link " routerLink="/auth/login" *ngIf='!isLoggedIn'>
                         <div class="itemk">Login</div>
-
+                    </a>
+                    <a class="nav-link " routerLink="/{{loggedInRole}}" *ngIf='isLoggedIn'>
+                        <div class="itemk">Continue as {{loggedInUser}}</div>
                     </a>
                 </li>
                 <!-- <li class="nav-item active">
@@ -56,14 +57,14 @@
 
     </nav>
 
-    
+
 
 
 
     <!-- Home -->
     <div id="home" class="hero-area">
 
-            
+
 
         <!-- Backgound Image -->
         <div class="bg-image bg-parallax overlay" style="background-image:url(../../assets/img/home-background.jpg)">
@@ -98,7 +99,7 @@
 
 
                         <div class="animate">
-                        <a href="#">
+                            <a href="#">
                                 <span data-text="W">W</span>
                                 <span data-text="E">E</span>
                                 <span data-text="L">L</span>
@@ -122,13 +123,13 @@
 
 
                         <h1 style="font-family:Alex Brush;">
-                                <a href="" style="color: white;font-family:Alex Brush;" class="typewrite" data-period="2000" data-type='[ "Hi.", "Knowledge is power.", "Want to test yours?", "Login and take a quiz with us.","Thank You." ]'>
-                                  <span class="wrap"></span>
-                                </a>
-                              </h1>
+                            <a href="" style="color: white;font-family:Alex Brush;" class="typewrite" data-period="2000" data-type='[ "Hi.", "Knowledge is power.", "Want to test yours?", "Login and take a quiz with us.","Thank You." ]'>
+                                <span class="wrap"></span>
+                            </a>
+                        </h1>
 
-                     
-                        
+
+
 
 
 
@@ -146,7 +147,7 @@
 
     <!-- Moving object starts -->
 
-    
+
 
     <!-- Moving Object Ends -->
 
@@ -198,8 +199,7 @@
                         <i class="feature-icon fa fa-comments"></i>
                         <div class="feature-content">
                             <h4>Community</h4>
-                            <p>Our users are HRs of various companies, who can create quizes,and employees who can take
-                                these quizes. </p>
+                            <p>Our users are HRs of various companies, who can create quizes,and employees who can take these quizes. </p>
                         </div>
                     </div>
                     <!-- /feature -->
@@ -231,10 +231,8 @@
         <div class="row">
             <div class="col-md-6">
                 <h3>Quiz generation made easy by quizo</h3>
-                <p>Don't waste your time thinking what questions to ask in a quiz, and give quizo the
-                    opportunity to serve you. </p>
-                <p>You are just a few steps away from creating your quiz.<br> Register with us as an HR, Type your quiz
-                    topic and we'll create the set of questions for you.<br>Yes, it's that easy here.</p>
+                <p>Don't waste your time thinking what questions to ask in a quiz, and give quizo the opportunity to serve you. </p>
+                <p>You are just a few steps away from creating your quiz.<br> Register with us as an HR, Type your quiz topic and we'll create the set of questions for you.<br>Yes, it's that easy here.</p>
             </div>
 
             <div class="col-md-5 col-md-offset-1">
@@ -397,8 +395,7 @@
                                     <div class="card">
                                         <div class="card-body text-center mt-4">
                                             <h4 class="card-title">Renu</h4>
-                                            <p class="card-text">Graduated from NITK, Surathkal.
-                                                Likes to Sing, Read and Dance.
+                                            <p class="card-text">Graduated from NITK, Surathkal. Likes to Sing, Read and Dance.
                                             </p>
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
@@ -498,8 +495,7 @@
                                     <div class="card">
                                         <div class="card-body text-center mt-4">
                                             <h4 class="card-title">Soumen Kaity</h4>
-                                            <p class="card-text">Graduated from IIEST,Shibpur.Likes to play TT and
-                                                Football. </p>
+                                            <p class="card-text">Graduated from IIEST,Shibpur.Likes to play TT and Football. </p>
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
                                                     <a class="social-icon text-xs-center" target="_blank" href="#">
@@ -549,8 +545,8 @@
                                     <div class="card">
                                         <div class="card-body text-center mt-4">
                                             <h4 class="card-title">Pranjal Sarin</h4>
-                                            <p class="card-text">Graduated from BITS,Pilani. Likes to Stay home and
-                                                Sleep.</p>
+                                            <p class="card-text">Graduated from BITS,Pilani. Likes to Stay home and Sleep.
+                                            </p>
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
                                                     <a class="social-icon text-xs-center" target="_blank" href="#">
@@ -648,8 +644,7 @@
                                     <div class="card">
                                         <div class="card-body text-center mt-4">
                                             <h4 class="card-title">Ayush Soni</h4>
-                                            <p class="card-text">Graduated from IIT(BHU),Varanasi. Likes to not drink
-                                                and get people drunk.</p>
+                                            <p class="card-text">Graduated from IIT(BHU),Varanasi. Likes to not drink and get people drunk.</p>
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
                                                     <a class="social-icon text-xs-center" target="_blank" href="#">
@@ -741,7 +736,7 @@
                                             <h4 class="card-title">Ganesh</h4>
                                             <p class="card-text">Software Developer</p>
                                             <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -859,12 +854,9 @@
                         <div class="contact-form">
                             <h4>Send A Message</h4>
                             <form>
-                                <input class="input" type="text" name="name" placeholder="Name"
-                                    style="border: 1px solid #909090">
-                                <input class="input" type="text" name="email" placeholder="Email"
-                                    style="border: 1px solid #909090">
-                                <input class="input" type="number" name="number" placeholder="Phone no"
-                                    style="border: 1px solid #909090">
+                                <input class="input" type="text" name="name" placeholder="Name" style="border: 1px solid #909090">
+                                <input class="input" type="text" name="email" placeholder="Email" style="border: 1px solid #909090">
+                                <input class="input" type="number" name="number" placeholder="Phone no" style="border: 1px solid #909090">
 
                                 <mat-form-field>
                                     <mat-label>Subject</mat-label>
@@ -889,10 +881,7 @@
                         <ul class="contact-details">
                             <li>
                                 <div class="mapouter" style="float: right;">
-                                    <div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas"
-                                            src="https://maps.google.com/maps?q=stackroute&t=&z=11&ie=UTF8&iwloc=&output=embed"
-                                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                            href="https://www.embedgooglemap.org">google
+                                    <div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q=stackroute&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.org">google
                                             map two place embed</a></div>
                                     <style>
                                         .mapouter {
@@ -901,7 +890,7 @@
                                             height: 200px;
                                             width: 200px;
                                         }
-
+                                        
                                         .gmap_canvas {
                                             overflow: hidden;
                                             background: none !important;
@@ -960,7 +949,7 @@
             <!-- <div class="row text-center text-xs-center text-sm-left text-md-left">
             </div> -->
             <div class="row">
-                
+
                 <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
                     <ul class="list-unstyled list-inline social text-center">
                         <li class="list-inline-item"><a href=""><i class="fa fa-facebook"></i></a></li>
