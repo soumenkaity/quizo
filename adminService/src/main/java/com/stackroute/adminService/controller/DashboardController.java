@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DashboardController {
  private DashboardService dashboardService;
 
- @Autowired
+  @Autowired
   public DashboardController(DashboardService dashboardService) {
     this.dashboardService = dashboardService;
   }
