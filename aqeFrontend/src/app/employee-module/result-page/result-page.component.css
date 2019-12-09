@@ -28,3 +28,9 @@ background-color: yellow;
 mat-card-subtitle{
   font-size: 15px;
 }
+h3{
+  font-size: 20px;
+}
+.mat-card-subtitle{
+  font-size: 16px;
+}
