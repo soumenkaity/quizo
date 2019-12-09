@@ -11,7 +11,7 @@ import java.util.Date;
 public class TestUser {
   @Id
   private String id;
-
+  private String testId;
   private String userId;
   private String userEmail;
   private String userName;
@@ -20,8 +20,8 @@ public class TestUser {
   private String status;
   private Date createdAt;
 
-  public TestUser(String id, String userId, String userEmail, String userName, String topicId, String topicName, String status, Date createdAt) {
-    this.id = id;
+  public TestUser(String testId, String userId, String userEmail, String userName, String topicId, String topicName, String status, Date createdAt) {
+    this.testId = testId;
     this.userId = userId;
     this.userEmail = userEmail;
     this.userName = userName;
@@ -76,4 +76,12 @@ public class TestUser {
   public String getUserEmail() { return userEmail; }
 
   public void setUserEmail(String userEmail) { this.userEmail = userEmail; }
+
+  public String getTestId() {
+    return testId;
+  }
+
+  public void setTestId(String testId) {
+    this.testId = testId;
+  }
 }

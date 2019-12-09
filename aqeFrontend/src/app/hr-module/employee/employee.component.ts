@@ -46,7 +46,7 @@ export class EmployeeComponent implements OnInit {
 
   private addCheckBoxesToEmp() {
     this.employees.forEach((o, i) => {
-      const control = new FormControl(i === 0); // if first item set to true, else false
+      const control = new FormControl(i === -1); // if first item set to true, else false
       (this.form.controls.employees as FormArray).push(control);
     });
   }

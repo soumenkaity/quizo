@@ -17,6 +17,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -120,6 +121,10 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
             else if(question.getDifficulty().equals("H"))
                 hardQuestions.add(question);
         }
+
+        Collections.shuffle(easyQuestions);
+        Collections.shuffle(mediumQuestions);
+        Collections.shuffle(hardQuestions);
 
         easyIndex = 0;
         correctEasy = 0;

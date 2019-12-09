@@ -1,11 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeresultserviceService } from '../service/employeeresultservice.service';
-import { EmployeeResult } from '../model/employeeresult';
-import { Attempt } from '../model/Attempt';
 import { GestureConfig, MatTableDataSource } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
+import { ResultService } from '../service/result.service';
 
-
+interface Attempt{
+  questionId:String;
+  question:String ;
+  response:String;
+  answer:String;
+  choices:String[];
+}
+interface Result{
+  id: String;
+  empId: String;
+  testId:String;
+  topicId: String;
+  empName: String;
+  topicName:String;
+  score:number;
+  correct:number;
+  wrong:number;
+  attempts:Attempt[];
+}
  @Component({
   selector: 'app-result-page',
   templateUrl: './result-page.component.html',
@@ -20,22 +36,21 @@ export class ResultPageComponent implements OnInit {
   styleList = new Array(); 
 
    constructor(
-     private Employeeresult:EmployeeresultserviceService,
+    private resultService: ResultService,
      private route: ActivatedRoute) { } 
 
-  employeeResult: EmployeeResult;
+  result;
 
   count:number;
   ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
     const empId = this.route.snapshot.queryParams['empId'];
     const testId = this.route.snapshot.queryParams['testId'];
-    this.Employeeresult.getResultForEmployeeWhoGaveThisTest(empId,testId).subscribe(
-      (data: EmployeeResult) => {
+    this.resultService.getResultById(id).subscribe(
+      (data) => {
       console.log("data ",data);
-      this.employeeResult=data;
-
-       this.attempts = this.employeeResult.attempts;
-        console.log(this.attempts);
+      this.result=data;
+       this.attempts = this.result.attempts;
        this.count=0;        
      })
   }  
