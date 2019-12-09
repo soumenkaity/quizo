@@ -44,10 +44,8 @@ export class ResultPageComponent implements OnInit {
   count:number;
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    const empId = this.route.snapshot.queryParams['empId'];
-    const testId = this.route.snapshot.queryParams['testId'];
     this.resultService.getResultById(id).subscribe(
-      (data) => {
+      (data: Result) => {
       console.log("data ",data);
       this.result=data;
        this.attempts = this.result.attempts;
