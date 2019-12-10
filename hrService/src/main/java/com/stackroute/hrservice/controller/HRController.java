@@ -33,7 +33,7 @@ public class HRController {
   //---------------------------------------ALL USER MAPPINGS------------------------------------------------
 
   @GetMapping("/users")
-  public ResponseEntity getAllUsers(){return new ResponseEntity(userService.getAllUsers(), HttpStatus.OK); }
+  public ResponseEntity getAllUsers(){return new ResponseEntity(userService.getAllUsersEmp(), HttpStatus.OK); }
   @GetMapping("/users/{id}")
   public ResponseEntity getUserById(@PathVariable String id){return new ResponseEntity(userService.getUserById(id), HttpStatus.OK); }
   @GetMapping("/users/generate")
