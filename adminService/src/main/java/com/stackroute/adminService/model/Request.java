@@ -15,4 +15,8 @@ public class Request {
   private String id;
   private String message;
   private String status;
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
 }

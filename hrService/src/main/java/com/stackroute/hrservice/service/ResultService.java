@@ -32,4 +32,5 @@ public class ResultService {
     return resultRepository.findByTestIdAndEmpId(testId,empId);
   }
 
+  public Result findById(String id) {return  resultRepository.findById(id).orElseThrow(()->new RuntimeException()); }
 }

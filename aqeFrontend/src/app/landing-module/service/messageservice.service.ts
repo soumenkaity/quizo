@@ -6,17 +6,20 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class MessageserviceService {
-  private message:Message;
+  //  message:Message;
+   message={'name':'','email':'','phone':''} 
+
   URLprefix = environment.adminURLprefix;
   constructor(private http:HttpClient) { }
 
-  post(name:String,email:String,number:String)
+  post(name,email,number)
   {
    this.message.name=name;
    this.message.email=email;
    this.message.phone=number;
-
-   return this.http.post(this.URLprefix+'/sendmessage', this.message);
+    console.log("message:",this.message);
+   return this.http.post<any>(this.URLprefix+'/sendmessage', this.message)
+   .subscribe();
 
   }
 

@@ -4,6 +4,7 @@ import { EmployeeResult } from '../model/employeeresult';
 import { Attempt } from '../model/Attempt';
 import { GestureConfig, MatTableDataSource } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../service/data.service';
 
 
  @Component({
@@ -21,15 +22,15 @@ export class ResultPageComponent implements OnInit {
 
    constructor(
      private Employeeresult:EmployeeresultserviceService,
-     private route: ActivatedRoute) { } 
+     private route: ActivatedRoute,
+     private dataService: DataService) { } 
 
   employeeResult: EmployeeResult;
 
   count:number;
   ngOnInit() {
-    const empId = this.route.snapshot.queryParams['empId'];
-    const testId = this.route.snapshot.queryParams['testId'];
-    this.Employeeresult.getResultForEmployeeWhoGaveThisTest(empId,testId).subscribe(
+    const result = this.dataService.getResultDetails();
+    this.Employeeresult.getResultForEmployeeWhoGaveThisTest(result.empId,result.testId).subscribe(
       (data: EmployeeResult) => {
       console.log("data ",data);
       this.employeeResult=data;

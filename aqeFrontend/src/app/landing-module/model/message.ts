@@ -1,15 +1,10 @@
-export class Message {
+export interface Message {
 
-    name: String;
-    email: String;
-    phone: String;
+    name?: String;
+    email?: String;
+    phone?: String;
     
-   constructor(name:String,email:String,phone:String)
-   {
-       this.email=email;
-       this.name=name;
-       this.phone=phone;
-   }
+   
    
     
 }

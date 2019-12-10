@@ -49,4 +49,8 @@ export class DashboardComponent implements OnInit {
   this.router.navigate(["/employee/test-instructions"])
   }
 
+  goToResult(testId,empId){
+    this.dataService.setResultDetails(testId,empId);
+    this.router.navigate(['/employee/result'])
+  }
 }

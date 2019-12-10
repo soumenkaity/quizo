@@ -14,8 +14,63 @@ h3 {
     margin-top: 63px;
 }
 
-a {
-    color: black;
-    text-decoration: none;
-    /* no underline */
-}
+@media only screen and ( max-width: 768px) {
+    .lead{
+        font-size: 18px;
+    }
+    .m{
+        font-size: 16px;
+    }
+  
+    .jumbotron{
+        font-size: 18px;
+        height: 500px; padding-top: 2rem;
+    }
+    .mat-raised-button{
+   display: flex;
+   flex-direction: row; 
+    text-align: left;
+    margin-left: 50px;
+    margin-bottom: 30px;
+  
+  }
+  .y{
+    font-size: 16px;
+  }
+  
+  .ml-5{
+    text-align: center;
+  }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .lead{
+        font-size: 12px;
+    }
+    .m{
+        font-size: 10px;
+    }
+  
+    .jumbotron{
+        font-size: 10px;
+        height: 450px; padding-top: 2rem;
+    }
+    .mat-raised-button{
+   display: flex;
+   flex-direction: row;
+    width: 8px;
+    height:10% ;
+    font-size:6px; 
+    text-align: left;
+    margin-left: 50px;
+    margin-bottom: 20px;
+  
+  }
+  .y{
+    font-size: 14px;
+  }
+  
+  .ml-5{
+    text-align: center;
+  }
+  }

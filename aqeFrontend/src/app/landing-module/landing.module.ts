@@ -26,6 +26,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const MaterialComponents= [ 
   MatButtonModule,
@@ -60,7 +61,8 @@ const MaterialComponents= [
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,MaterialComponents
+    AppRoutingModule,MaterialComponents,
+    FormsModule, ReactiveFormsModule
   ],
   exports: [MaterialComponents],
   providers: [],
