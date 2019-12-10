@@ -19,8 +19,6 @@ public class DashboardController {
     this.dashboardService = dashboardService;
   }
 
-  @GetMapping("/users")
-  public ResponseEntity getAllUsers(){ return new ResponseEntity(dashboardService.getAllUsers(), HttpStatus.OK);}
   @GetMapping("/topics")
   public ResponseEntity getAllTopics(){ return new ResponseEntity(dashboardService.getAllTopics(), HttpStatus.OK);}
   @GetMapping("/requests")

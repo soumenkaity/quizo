@@ -16,16 +16,16 @@
                 <td><input type="text" formControlName="phone" placeholder="Enter phone..."></td>
             </tr>
             <tr>
-                    <td><label>Gender:</label></td>
-                    <td>
-                        <select formControlName="gender">
+                <td><label>Gender:</label></td>
+                <td>
+                    <select formControlName="gender">
                             <option value="" disabled>Enter here...</option>
                             <option value="female">Female</option>
                             <option value="male">Male</option>
                             <option value="others">Others</option>
                         </select>
-                    </td>
-                </tr>
+                </td>
+            </tr>
             <tr>
                 <td><label>Email:</label></td>
                 <td><input type="text" formControlName="email" placeholder="Enter email..."></td>
@@ -44,15 +44,17 @@
                 <td><input type="text" formControlName="designation" placeholder="Enter designation..."></td>
             </tr>
             <tr>
-                    <td><label>Address:</label></td>
-                    <td><input type="text" formControlName="address" placeholder="Enter address..."></td>
-                </tr>
+                <td><label>Address:</label></td>
+                <td><input type="text" formControlName="address" placeholder="Enter address..."></td>
+            </tr>
         </table>
 
-        
-        <button class="button" mat-raised-button color="primary" (click)="openDialog(detailsForm.value)" [disabled]="!detailsForm.valid">Enter login details</button>
-        
+
+        <button class="button" mat-raised-button color="primary" (click)="openDialog(detailsForm.value)" [disabled]="!detailsForm.valid">Register User</button>
+        <div class="mt-3"><span class="mr-4">OR UPLOAD CSV FILE:</span> <button mat-raised-button color="primary" (click)="fileImportInput.click()">Upload</button><input hidden type="file" #fileImportInput name="File Upload" id="txtFileUpload" (change)="fileChangeListener($event)"
+                accept=".csv" /></div>
     </form>
+
 </section>
 
 <!-- <app-footer></app-footer> -->
