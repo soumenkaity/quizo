@@ -4,6 +4,10 @@ import { ToasterService } from '../authentication-module/service/toaster-service
 import { Message } from '../landing-module/model/message';
 import {MessageserviceService} from '../landing-module/service/messageservice.service'
 import { from } from 'rxjs';
+export interface Food {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -28,9 +32,13 @@ export class AppComponent implements OnInit{
     }
       
   }
+  foods: Food[] = [
+    {value: 'a-0', viewValue: 'Buy Product'},
+    {value: 'c-2', viewValue: 'Funding for Product'}
+  ];
   checkLogin() {
     this.messageservicce.post(this.name,this.email,this.number);
-    this.toasterService.success('Message sent');
+    this.toasterService.success('Message sent, we will contact you');
 
   }
   
