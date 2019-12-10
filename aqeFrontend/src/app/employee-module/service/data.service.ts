@@ -26,7 +26,7 @@ export class DataService {
   incorrect = this.defaultIncorrect.asObservable();
 
   testUserDetails;
-
+  resultDetails;
   constructor() { }
 
   changeUser(user: string) {
@@ -45,6 +45,12 @@ export class DataService {
   }
   setTestUserDetails(ud){
     this.testUserDetails = ud;
+  }
+  setResultDetails(testId,empId){
+    this.resultDetails = {testId, empId}
+  }
+  getResultDetails(){
+    return this.resultDetails;
   }
 
   getDummyDetails(){
