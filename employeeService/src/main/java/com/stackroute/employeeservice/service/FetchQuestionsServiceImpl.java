@@ -84,12 +84,12 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
 
 
     @Override
-    public Question getFirstQuestion(String testId, String collectionName, String empId, String empName) throws QuestionNotFoundException {
+    public Question getFirstQuestion(String id,String testId, String collectionName, String empId, String empName) throws QuestionNotFoundException {
 
-        TestUser currentTest = testUserRepository.findById(testId).orElseThrow(()->new RuntimeException());
+        TestUser currentTest = testUserRepository.findById(id).orElseThrow(()->new RuntimeException());
         currentTest.setStatus("C");
         testUserRepository.save(currentTest);
-        
+
         this.collectionName = collectionName;
         this.testId = testId;
         questions = mongoOperations.findAll(Question.class, this.collectionName);
@@ -149,6 +149,13 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
         Question question = easyQuestions.get(easyIndex);
         question.setTotalOccurrences(question.getTotalOccurrences()+1);
 
+        boolean endTest = false;
+
+        if(response > 3){
+            response = response - 4;
+            endTest = true;
+        }
+
         easyIndex = easyIndex + 1;
         if(easyQuestions.get(easyIndex-1).getAnswer().equals(easyQuestions.get(easyIndex-1).getChoices()[response])) {
             correctEasy = correctEasy + 1;
@@ -177,6 +184,17 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
         attempt.setChoices(easyQuestions.get(easyIndex-1).getChoices());
         attempts.add(attempt);
 
+        if(endTest){
+            result.setScore((correctEasy/Double.valueOf(easyIndex))*totalMarksInEasy);
+            result.setCorrect(correctEasy);
+            result.setWrong(easyIndex-correctEasy);
+            result.setAttempts(attempts);
+            resultRepository.save(result);
+
+            System.out.println("Your test is completed in easy section");
+            return null;
+        }
+
         if(easyIndex < totalAskedInSections && correctEasy < needPassedInEasy)
             return easyQuestions.get(easyIndex);
         else if(easyIndex >= totalAskedInSections && correctEasy < needPassedInEasy){
@@ -203,6 +221,13 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
     public Question mediumQuestion(int response) throws QuestionNotFoundException{
         Question question = mediumQuestions.get(mediumIndex);
         question.setTotalOccurrences(question.getTotalOccurrences()+1);
+
+        boolean endTest = false;
+
+        if(response > 3){
+            response = response - 4;
+            endTest = true;
+        }
 
         mediumIndex = mediumIndex + 1;
         if(mediumQuestions.get(mediumIndex-1).getAnswer().equals(mediumQuestions.get(mediumIndex-1).getChoices()[response])) {
@@ -232,6 +257,17 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
         attempt.setChoices(mediumQuestions.get(mediumIndex-1).getChoices());
         attempts.add(attempt);
 
+        if(endTest){
+            result.setScore(((correctMedium/Double.valueOf(mediumIndex))*totalMarksInMedium) + ((correctEasy/Double.valueOf(easyIndex))*totalMarksInEasy));
+            result.setCorrect(correctMedium + correctEasy);
+            result.setWrong((mediumIndex-correctMedium) + (easyIndex-correctEasy));
+            result.setAttempts(attempts);
+            resultRepository.save(result);
+
+            System.out.println("Your test is completed in medium section");
+            return null;
+        }
+
         if(mediumIndex < totalAskedInSections && correctMedium < needPassedInMedium)
             return mediumQuestions.get(mediumIndex);
         else if(mediumIndex >= totalAskedInSections && correctMedium < needPassedInMedium){
@@ -257,6 +293,13 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
     public Question hardQuestion(int response) throws QuestionNotFoundException{
         Question question = hardQuestions.get(hardIndex);
         question.setTotalOccurrences(question.getTotalOccurrences()+1);
+
+        boolean endTest = false;
+
+        if(response > 3){
+            response = response - 4;
+            endTest = true;
+        }
 
         hardIndex = hardIndex + 1;
         if(hardQuestions.get(hardIndex-1).getAnswer().equals(hardQuestions.get(hardIndex-1).getChoices()[response])) {
@@ -285,6 +328,17 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
         attempt.setAnswer(hardQuestions.get(hardIndex-1).getAnswer());
         attempt.setChoices(hardQuestions.get(hardIndex-1).getChoices());
         attempts.add(attempt);
+
+        if(endTest){
+            result.setScore(((correctHard/Double.valueOf(hardIndex))*totalMarksInHard) + ((correctMedium/Double.valueOf(mediumIndex))*totalMarksInMedium) + ((correctEasy/Double.valueOf(easyIndex))*totalMarksInEasy));
+            result.setCorrect(correctHard + correctMedium + correctEasy);
+            result.setWrong((hardIndex-correctHard) + (mediumIndex-correctMedium) + (easyIndex-correctEasy));
+            result.setAttempts(attempts);
+            resultRepository.save(result);
+
+            System.out.println("Your test is completed in hard section");
+            return null;
+        }
 
         if(hardIndex < totalAskedInSections && correctHard < needPassedInHard)
             return hardQuestions.get(hardIndex);

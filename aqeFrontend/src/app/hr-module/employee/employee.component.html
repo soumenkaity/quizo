@@ -9,44 +9,37 @@
 
 
 <div class="container">
-<div class="table-responsive">
+    <div class="table-responsive">
         <form [formGroup]="form" (ngSubmit)="submit()">
-    
-        <table class="table">
-          <thead>
-            <tr>
-             <th scope="col"></th>
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Mobile</th>
-              <th scope="col">Designation</th>
-            </tr>
-          </thead>
-         
-          <tbody *ngFor="let employee of form.controls.employees.controls; let i = index" >
-            <tr formArrayName="employees">
-                    <td><mat-checkbox class="checkbox" formControlName="{{i}}"></mat-checkbox></td>
-              <td>{{employees[i].name}}</td>
-              <td>{{employees[i].email}}</td>
-              <td>{{employees[i].phone}}</td>
-              <td>{{employees[i].designation}}</td>
-              
-            </tr>
-          </tbody>
-       
-        </table>
-        
-        <button mat-raised-button color="primary" >Submit</button>
-    </form>
-      </div></div>
 
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Designation</th>
+                    </tr>
+                </thead>
 
+                <tbody *ngFor="let employee of form.controls.employees.controls; let i = index">
+                    <tr formArrayName="employees">
+                        <td>
+                            <mat-checkbox class="checkbox" formControlName="{{i}}"></mat-checkbox>
+                        </td>
+                        <td>{{employees[i].name}}</td>
+                        <td>{{employees[i].email}}</td>
+                        <td>{{employees[i].phone}}</td>
+                        <td>{{employees[i].designation}}</td>
 
+                    </tr>
+                </tbody>
 
+            </table>
 
-
-
-
-      
-
+            <button mat-raised-button color="primary">Submit</button>
+        </form>
+    </div>
+</div>
 <app-footer></app-footer>
