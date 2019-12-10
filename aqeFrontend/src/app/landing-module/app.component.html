@@ -1,160 +1,719 @@
-<div style="font-size: 15px;">
+<!-- <div style="font-size: 15px;"> -->
 
 
-    <nav class="navbar nav navbar-expand-lg navbar-light items whitebg  fixed-top">
-            <div class="pic-brand">
-                    <a class="logo" href="#">
-                        <img class="logoM" src="../assets/img/logo102 .png" alt="logo">
-                    </a>
-                </div>
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            
-
-            <ul class=" main-menu nav   ml-auto ">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#home">
-                        <div class="itemk"> Home </div>
-                    </a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#about">
-                        <div class="itemk">About</div>
-
-                    </a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#team">
-                        <div class="itemk">Team</div>
-
-                    </a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link " href="#contact">
-                        <div class="itemk">Contact</div>
-
-                    </a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link " routerLink="/auth/login">
-                        <div class="itemk">Login</div>
-
-                    </a>
-                </li>
-                <!-- <li class="nav-item active">
-                    <a class="nav-link " routerLink="/auth/register">
-                        <div class="itemk">Register</div>
-
-                    </a>
-                </li> -->
-            </ul>
-        </div>
+<nav class="navbar nav navbar-expand-lg navbar-light items whitebg  fixed-top">
+    <a class="pic-brand logo" href="#">
+        <img class="logoM" src="../assets/img/logo102 .png" alt="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
 
 
-    </nav>
+        <ul class=" main-menu nav  ml-auto ">
+            <li class="nav-item active">
+                <a class="nav-link itemk" href="#home">Home
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link itemk" href="#about"> About
 
-    
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link itemk" href="#team">
+                    Team
+
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link itemk" href="#contact">
+                   Contact
+
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link " routerLink="/auth/login" *ngIf='!isLoggedIn'>
+                    <div class="itemk">Login</div>
+                </a>
+                <a class="nav-link " routerLink="/{{loggedInRole}}" *ngIf='isLoggedIn'>
+                    <div class="itemk">Continue as {{loggedInUser}}</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+</nav>
 
 
 
-    <!-- Home -->
-    <div id="home" class="hero-area">
 
-            
 
-        <!-- Backgound Image -->
-        <div class="bg-image bg-parallax overlay" style="background-image:url(../../assets/img/home-background.jpg)">
-        </div>
-        <!-- /Backgound Image -->
-
-        <div class="home-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 jumbo">
-                        <!-- <h1 class="white-text"><b>QUIZO </b></h1>
-                        <h3 class="white-text">Platform for online quizes</h3>
-                        <h3 class="lead white-text">Knowledge is power. Want to test yours? Login
-                            and take a quiz with us.</h3> -->
+<!-- Home -->
+<div id="home" class="hero-area">
 
 
 
-                        <!-- <div class="box">
-                            <i class="fk fk-quote-left fk2" aria-hidden="true"></i>
-                            <div class="text">
-                                <i class="fk fk-quote-right fk1" aria-hidden="true"></i>
-                                <div>
+    <!-- Backgound Image -->
+    <div class="bg-image bg-parallax overlay" style="background-image:url(../../assets/img/home-background.jpg)">
+    </div>
+    <!-- /Backgound Image -->
 
-                                    <h1 class="white-text"><b>QUIZO </b></h1>
-                                    <h5 class="white-text" style="font-family: 'Aclonica';">Platform for online quizes</h5>
-                                            <p class="lead white-text" style="font-family: Alex Brush;"><q>Knowledge is power. Want to test yours? Login
-                                                and take a quiz with us.</q></p>
-                                </div>
+    <div class="home-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 jumbo">
+                    <!-- <h1 class="white-text"><b>QUIZO </b></h1>
+                    <h3 class="white-text">Platform for online quizes</h3>
+                    <h3 class="lead white-text">Knowledge is power. Want to test yours? Login
+                        and take a quiz with us.</h3> -->
 
+
+
+                    <!-- <div class="box">
+                        <i class="fk fk-quote-left fk2" aria-hidden="true"></i>
+                        <div class="text">
+                            <i class="fk fk-quote-right fk1" aria-hidden="true"></i>
+                            <div>
+
+                                <h1 class="white-text"><b>QUIZO </b></h1>
+                                <h5 class="white-text" style="font-family: 'Aclonica';">Platform for online quizes</h5>
+                                        <p class="lead white-text" style="font-family: Alex Brush;"><q>Knowledge is power. Want to test yours? Login
+                                            and take a quiz with us.</q></p>
                             </div>
-                        </div> -->
 
-
-                        <div class="animate">
-                        <a href="#">
-                                <span data-text="W">W</span>
-                                <span data-text="E">E</span>
-                                <span data-text="L">L</span>
-                                <span data-text="C">C</span>
-                                <span data-text="O">O</span>
-                                <span data-text="M">M</span>
-                                <span data-text="E">E</span>
-                                <span data-text=" "> &nbsp;</span>
-                                <span data-text="T">T</span>
-                                <span data-text="O">O</span>
-                                <span data-text=" ">&nbsp;</span>
-                                <span data-text="Q">Q</span>
-                                <span data-text="U">U</span>
-                                <span data-text="I">I</span>
-                                <span data-text="Z">Z</span>
-                                <span data-text="O">O</span>
-                            </a>
                         </div>
-                        <br><br><br><br><br><br>
-                        <br><br><br><br><br><br>
+                    </div> -->
 
 
-                        <h1 style="font-family:Alex Brush;">
-                                <a href="" style="color: white;font-family:Alex Brush;" class="typewrite" data-period="2000" data-type='[ "Hi.", "Knowledge is power.", "Want to test yours?", "Login and take a quiz with us.","Thank You." ]'>
-                                  <span class="wrap"></span>
-                                </a>
-                              </h1>
+                    <div class="animate">
+                        <a href="#">
+                            <span data-text="W">W</span>
+                            <span data-text="E">E</span>
+                            <span data-text="L">L</span>
+                            <span data-text="C">C</span>
+                            <span data-text="O">O</span>
+                            <span data-text="M">M</span>
+                            <span data-text="E">E</span>
+                            <span data-text=" "> &nbsp;</span>
+                            <span data-text="T">T</span>
+                            <span data-text="O">O</span>
+                            <span data-text=" ">&nbsp;</span>
+                            <span data-text="Q">Q</span>
+                            <span data-text="U">U</span>
+                            <span data-text="I">I</span>
+                            <span data-text="Z">Z</span>
 
-                     
-                        
-
-
-
-
-
-
-
+                            <span data-text="O">O</span>
+                        </a>
                     </div>
+                    <br><br><br><br><br><br>
+                    <br><br><br><br><br><br>
+
+
+                    <h1 style="font-family:Alex Brush;">
+                        <a href="" style="color: white;font-family:Alex Brush;" class="typewrite" data-period="2000" data-type='[ "Hi.", "Knowledge is power.", "Want to test yours?", "Login and take a quiz with us.","Thank You." ]'>
+                            <span class="wrap"></span>
+                        </a>
+                    </h1>
                 </div>
             </div>
         </div>
+    </div>
+
+</div>
+<!-- /Home -->
+
+<!-- Moving object starts -->
+
+
+
+<!-- Moving Object Ends -->
+
+
+
+
+<!-- About -->
+<div id="about" class="section">
+
+    <!-- container -->
+    <div class="container">
+
+        <!-- row -->
+        <div class="row">
+
+
+
+
+            <div class="col-md-6">
+                <div class="section-header">
+                    <h3>Welcome to Quizo</h3>
+                    <p>Online Quiz Platform.</p>
+                </div>
+
+                <!-- feature -->
+                <div class="feature">
+                    <i class="feature-icon fa fa-flask"></i>
+                    <div class="feature-content">
+                        <h4>Online Quizes </h4>
+                        <p>Create or take online quizes.</p>
+                    </div>
+                </div>
+                <!-- /feature -->
+
+                <!-- feature -->
+                <div class="feature">
+                    <i class="feature-icon fa fa-users"></i>
+                    <div class="feature-content">
+                        <h4>Autogeneration</h4>
+                        <p>Got no time to set a quiz?
+                            <br>Quizo will do this job for you.<br> All you need to do is feed your quiz topic.
+                        </p>
+                    </div>
+                </div>
+                <!-- /feature -->
+
+                <!-- feature -->
+                <div class="feature">
+                    <i class="feature-icon fa fa-comments"></i>
+                    <div class="feature-content">
+                        <h4>Community</h4>
+                        <p>Our users are HRs of various companies, who can create quizes,and employees who can take these quizes. </p>
+                    </div>
+                </div>
+                <!-- /feature -->
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="about-img">
+                    <img src="../../assets/img/about.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
 
     </div>
-    <!-- /Home -->
+    <div style="margin-bottom: -100px"></div>
+</div>
+<!-- /About -->
+<!-- Why us -->
 
-    <!-- Moving object starts -->
+<!-- /row -->
 
-    
+<hr class="section-hr">
 
-    <!-- Moving Object Ends -->
+<!-- row -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Quiz generation made easy by quizo</h3>
+
+
+
+            <p>Don't waste your time thinking what questions to ask in a quiz, and give quizo the opportunity to serve you. </p>
+            <p>You are just a few steps away from creating your quiz.<br> Register with us as an HR, Type your quiz topic and we'll create the set of questions for you.<br>Yes, it's that easy here.</p>
+        </div>
+
+        <div class="col-md-5 col-md-offset-1">
+            <!-- <a class="about-video" href="#">
+                <img src="../../assets/img/about-video.jpg" alt="">
+                <i class="play-icon fa fa-play"></i>
+            </a> -->
+            <!-- 21:9 aspect ratio -->
+            <!-- <div class="embed-responsive embed-responsive-21by9">
+    <iframe class="embed-responsive-item" src="..."></iframe>
+  </div> -->
+
+            <!-- 16:9 aspect ratio -->
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cN4ZBaz3mLo"></iframe>
+            </div>
+        </div>
+
+
+
+    </div>
+    <br><br><br>
+    <!-- TEAM Starts -->
+
+
+    <section id="team" class="pb-5">
+        <div class="container">
+
+
+            <h5 class="section-title h3"><i>Our Developer Team</i></h5>
+            <div class="row">
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="../assets/img/emp-1.jpg" alt="card image">
+                                        </p>
+                                        <h4 class="card-title">Renu</h4>
+                                        <p class="card-text">Software Developer</p>
+                                        <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Renu</h4>
+                                        <p class="card-text">Graduated from NITK, Surathkal. Likes to Sing, Read and Dance.
+                                        </p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com/">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.twitter.com/">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.skype.com/en/">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.gmail.com">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="../assets/img/emp-2.jpg" alt="card image">
+                                        </p>
+                                        <h4 class="card-title">Shikhar</h4>
+                                        <p class="card-text">Software Developer</p>
+                                        <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Shikhar Gupta</h4>
+                                        <p class="card-text">Graduated from IIT,BHU. Likes to Read and Code.
+                                        </p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.twitter.com">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.skype.com/en/">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.gmail.com">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="../assets/img/emp-3.jpg" alt="card image">
+                                        </p>
+                                        <h4 class="card-title">Soumen</h4>
+                                        <p class="card-text">Software Developer</p>
+                                        <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Soumen Kaity</h4>
+                                        <p class="card-text">Graduated from IIEST,Shibpur.Likes to play TT and Football. </p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com/soumen.kaity.37">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://twitter.com/Som_tron">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.skype.com/en/">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.gmail.com">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="../assets/img/emp-8.jpg" alt="card image">
+                                        </p>
+                                        <h4 class="card-title">Pranjal</h4>
+                                        <p class="card-text">Software Developer</p>
+                                        <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Pranjal Sarin</h4>
+                                        <p class="card-text">Graduated from BITS,Pilani. Likes to Stay home and Sleep.
+                                        </p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.twitter.com">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.skype.com/en/">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.gmail.com">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="../assets/img/emp-5.jpg" alt="card image">
+                                        </p>
+                                        <h4 class="card-title">Pankaj</h4>
+                                        <p class="card-text">Software Developer</p>
+                                        <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Pankaj Chauhan</h4>
+                                        <p class="card-text">Graduated from IIT,BHU. Likes to Drink and Drive.</p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.twitter.com">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.skype.com/en/">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.gmail.com">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="../assets/img/emp-6.jpg" alt="card image">
+                                        </p>
+                                        <h4 class="card-title">Ayush</h4>
+                                        <p class="card-text">Software Developer</p>
+                                        <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Ayush Soni</h4>
+                                        <p class="card-text">Graduated from IIT(BHU),Varanasi. Likes to not drink and get people drunk.</p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.twitter.com">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.skype.com/en/">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.gmail.com">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="../assets/img/emp-4.png" alt="card image">
+                                        </p>
+                                        <h4 class="card-title">Chinmay</h4>
+                                        <p class="card-text">Software Developer</p>
+                                        <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Chinmay Kalegaonkar</h4>
+                                        <p class="card-text">Graduated from NIT, Surat. Likes to drink and sleep.
+                                        </p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.twitter.com">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.skype.com/en/">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.gmail.com">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="../assets/img/emp-7.jpg" alt="card image">
+                                        </p>
+                                        <h4 class="card-title">Ganesh</h4>
+                                        <p class="card-text">Software Developer</p>
+                                        <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Korada Ganesh</h4>
+                                        <p class="card-text">Graduated from NIT, Warangal. Likes to eat and sleep.
+                                        </p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.twitter.com">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.skype.com/en/">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.gmail.com">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="../assets/img/emp-9.png" alt="card image">
+                                        </p>
+                                        <h4 class="card-title">Vishal</h4>
+                                        <p class="card-text">Software Developer</p>
+                                        <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Sai Vishal Vangala</h4>
+                                        <p class="card-text">Graduated from NIT, Nagpur. Likes to crack lame jokes.
+                                        </p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.twitter.com">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.skype.com/en/">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.gmail.com">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+
+            </div>
+        </div>
+    </section>
+    <!-- Team -->
+    <br><br><br>
 
 
 
 
-    <!-- About -->
-    <div id="about" class="section">
+
+    <!-- TEAM Ends -->
+
+
+    <div style="margin-bottom: -90px"></div>
+    <!-- Contact -->
+    <div id="contact" class="section">
 
         <!-- container -->
         <div class="container">
@@ -162,830 +721,124 @@
             <!-- row -->
             <div class="row">
 
-
-
-
+                <!-- contact form -->
                 <div class="col-md-6">
-                    <div class="section-header">
-                        <h3>Welcome to Quizo</h3>
-                        <p>Online Quiz Platform.</p>
-                    </div>
+                    <div class="contact-form">
+                        <h4>Send A Message</h4>
+                        <form>
+                            <input class="input" type="text" name="name" placeholder="Name" style="border: 1px solid #909090">
+                            <input class="input" type="text" name="email" placeholder="Email" style="border: 1px solid #909090">
+                            <input class="input" type="number" name="number" placeholder="Phone no" style="border: 1px solid #909090">
 
-                    <!-- feature -->
-                    <div class="feature">
-                        <i class="feature-icon fa fa-flask"></i>
-                        <div class="feature-content">
-                            <h4>Online Quizes </h4>
-                            <p>Create or take online quizes.</p>
-                        </div>
-                    </div>
-                    <!-- /feature -->
+                            <mat-form-field>
+                                <mat-label>Subject</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                                        {{food.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
 
-                    <!-- feature -->
-                    <div class="feature">
-                        <i class="feature-icon fa fa-users"></i>
-                        <div class="feature-content">
-                            <h4>Autogeneration</h4>
-                            <p>Got no time to set a quiz?
-                                <br>Quizo will do this job for you.<br> All you need to do is feed your quiz topic.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- /feature -->
 
-                    <!-- feature -->
-                    <div class="feature">
-                        <i class="feature-icon fa fa-comments"></i>
-                        <div class="feature-content">
-                            <h4>Community</h4>
-                            <p>Our users are HRs of various companies, who can create quizes,and employees who can take
-                                these quizes. </p>
-                        </div>
-                    </div>
-                    <!-- /feature -->
-
-                </div>
-
-                <div class="col-md-6">
-                    <div class="about-img">
-                        <img src="../../assets/img/about.png" alt="">
+                        </form>
+                        <button class="main-button icon-button pull-right" (click)=checkLogin()>Send
+                            Message</button>
                     </div>
                 </div>
+                <!-- /contact form -->
 
-            </div>
-            <!-- row -->
-
-        </div>
-        <div style="margin-bottom: -100px"></div>
-    </div>
-    <!-- /About -->
-    <!-- Why us -->
-
-    <!-- /row -->
-
-    <hr class="section-hr">
-
-    <!-- row -->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Quiz generation made easy by quizo</h3>
-                <p>Don't waste your time thinking what questions to ask in a quiz, and give quizo the
-                    opportunity to serve you. </p>
-                <p>You are just a few steps away from creating your quiz.<br> Register with us as an HR, Type your quiz
-                    topic and we'll create the set of questions for you.<br>Yes, it's that easy here.</p>
-            </div>
-
-            <div class="col-md-5 col-md-offset-1">
-                <a class="about-video" href="#">
-                    <img src="../../assets/img/about-video.jpg" alt="">
-                    <i class="play-icon fa fa-play"></i>
-                </a>
-            </div>
-
-
-            <!-- /row -->
-
-
-            <!-- /Why us -->
-
-            <!-- <section class="py-5" id="team">
-                <div class="container">
-                    <div class="wow fadeIn">
-                        <h3 class="h1 pt-5 pb-3 text-center">Our team members</h3>
-                        <p>
-                            The strength of the team is each individual member. The strength of each member is the team.
-                        </p>
-                    </div>
-                    <div class="row mb-lg-4 center-on-small-only">
-                        <div class="col-lg-6 col-md-12 mb-r wow fadeInLeft" data-wow-delay=".3s">
-                            <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3"
-                                    src="../assets/img/emp-1.jpg" alt="team member" /></div>
-                            <div class="col-md-6 float-right">
-                                <div class="h4">Renu</div>
-                                <h6 class="font-bold blue-grey-text mb-4">Software Developer</h6>
-                                <p class="grey-text">Graduated from NITK,Surathkal.
-                                </p><a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i><span
-                                        class="ml-1">@choudhary_renee</span></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-r wow fadeInRight" data-wow-delay=".3s">
-                            <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3"
-                                    src="../assets/img/emp-2.jpg" alt="team member" /></div>
-                            <div class="col-md-6 float-right">
-                                <div class="h4">Shikhar</div>
-                                <h6 class="font-bold blue-grey-text mb-4">Software Developer</h6>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos
-                                    id officiis hic tenetur.
-                                </p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span
-                                        class="ml-1">@hannahcruz</span></a>
-                            </div>
-                        </div>
-
-                    </div>
-                    <hr>
-                    <div class="row center-on-small-only">
-                        <div class="col-lg-6 col-md-12 mb-r wow fadeInLeft" data-wow-delay=".3s">
-                            <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3"
-                                    src="../assets/img/emp-3.jpg" alt="team member" /></div>
-                            <div class="col-md-6 float-right">
-                                <div class="h4">Saumen</div>
-                                <h6 class="font-bold blue-grey-text mb-4">Software Developer</h6>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos
-                                    id officiis hic tenetur.
-                                </p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span
-                                        class="ml-1">@markhall</span></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-r wow fadeInRight" data-wow-delay=".3s">
-                            <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3"
-                                    src="../assets/img/emp-4.jpg" alt="team member" /></div>
-                            <div class="col-md-6 float-right">
-                                <div class="h4">Pranjal</div>
-                                <h6 class="font-bold blue-grey-text mb-4">Software Developer</h6>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos
-                                    id officiis hic tenetur.
-                                </p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span
-                                        class="ml-1">@vincentharris</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row center-on-small-only">
-                        <div class="col-lg-6 col-md-12 mb-r wow fadeInLeft" data-wow-delay=".3s">
-                            <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3"
-                                    src="../assets/img/emp-5.jpg" alt="team member" /></div>
-                            <div class="col-md-6 float-right">
-                                <div class="h4">Pankaj</div>
-                                <h6 class="font-bold blue-grey-text mb-4">Software Developer</h6>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos
-                                    id officiis hic tenetur.
-                                </p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span
-                                        class="ml-1">@markhall</span></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-r wow fadeInRight" data-wow-delay=".3s">
-                            <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3"
-                                    src="../assets/img/emp-6.jpg" alt="team member" /></div>
-                            <div class="col-md-6 float-right">
-                                <div class="h4">Aayush</div>
-                                <h6 class="font-bold blue-grey-text mb-4">Software Developer</h6>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos
-                                    id officiis hic tenetur.
-                                </p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span
-                                        class="ml-1">@vincentharris</span></a>
-                            </div>
-                        </div>
-
-                    </div>
-                    <hr>
-                    <div class="row center-on-small-only">
-                        <div class="col-lg-6 col-md-12 mb-r wow fadeInLeft" data-wow-delay=".3s">
-                            <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3"
-                                    src="../assets/img/emp-3.jpg" alt="team member" /></div>
-                            <div class="col-md-6 float-right">
-                                <div class="h4">Mark Hall</div>
-                                <h6 class="font-bold blue-grey-text mb-4">Software Developer</h6>
-                                <p class="grey-text">Graduated from xyz.
-                                </p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span
-                                        class="ml-1">@markhall</span></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-r wow fadeInRight" data-wow-delay=".3s">
-                            <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3"
-                                    src="../assets/img/emp-4.jpg" alt="team member" /></div>
-                            <div class="col-md-6 float-right">
-                                <div class="h4">Vincent Harris</div>
-                                <h6 class="font-bold blue-grey-text mb-4">Software Developer</h6>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos
-                                    id officiis hic tenetur.
-                                </p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span
-                                        class="ml-1">@vincentharris</span></a>
-                            </div>
-                        </div>
-
-                    </div>
-                    <hr>
-                </div>
-            </section> -->
-        </div>
-        <br><br><br>
-        <!-- TEAM Starts -->
-
-
-        <section id="team" class="pb-5">
-            <div class="container">
-                <h5 class="section-title h3"><i>Our Developer Team</i></h5>
-                <div class="row">
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                            <div class="mainflip">
-                                <div class="frontside">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <p><img class=" img-fluid" src="../assets/img/emp-1.jpg" alt="card image">
-                                            </p>
-                                            <h4 class="card-title">Renu</h4>
-                                            <p class="card-text">Software Developer</p>
-                                            <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="backside">
-                                    <div class="card">
-                                        <div class="card-body text-center mt-4">
-                                            <h4 class="card-title">Renu</h4>
-                                            <p class="card-text">Graduated from NITK, Surathkal.
-                                                Likes to Sing, Read and Dance.
-                                            </p>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-skype"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-google"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                            <div class="mainflip">
-                                <div class="frontside">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <p><img class=" img-fluid" src="../assets/img/emp-2.jpg" alt="card image">
-                                            </p>
-                                            <h4 class="card-title">Shikhar</h4>
-                                            <p class="card-text">Software Developer</p>
-                                            <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="backside">
-                                    <div class="card">
-                                        <div class="card-body text-center mt-4">
-                                            <h4 class="card-title">Shikhar Gupta</h4>
-                                            <p class="card-text">Graduated from IIT,BHU. Likes to Read and Code.
-                                            </p>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-skype"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-google"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                            <div class="mainflip">
-                                <div class="frontside">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <p><img class=" img-fluid" src="../assets/img/emp-3.jpg" alt="card image">
-                                            </p>
-                                            <h4 class="card-title">Soumen</h4>
-                                            <p class="card-text">Software Developer</p>
-                                            <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="backside">
-                                    <div class="card">
-                                        <div class="card-body text-center mt-4">
-                                            <h4 class="card-title">Soumen Kaity</h4>
-                                            <p class="card-text">Graduated from IIEST,Shibpur.Likes to play TT and
-                                                Football. </p>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-skype"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-google"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ./Team member -->
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                            <div class="mainflip">
-                                <div class="frontside">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <p><img class=" img-fluid" src="../assets/img/emp-8.jpg" alt="card image">
-                                            </p>
-                                            <h4 class="card-title">Pranjal</h4>
-                                            <p class="card-text">Software Developer</p>
-                                            <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="backside">
-                                    <div class="card">
-                                        <div class="card-body text-center mt-4">
-                                            <h4 class="card-title">Pranjal Sarin</h4>
-                                            <p class="card-text">Graduated from BITS,Pilani. Likes to Stay home and
-                                                Sleep.</p>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-skype"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-google"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                            <div class="mainflip">
-                                <div class="frontside">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <p><img class=" img-fluid" src="../assets/img/emp-5.jpg" alt="card image">
-                                            </p>
-                                            <h4 class="card-title">Pankaj</h4>
-                                            <p class="card-text">Software Developer</p>
-                                            <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="backside">
-                                    <div class="card">
-                                        <div class="card-body text-center mt-4">
-                                            <h4 class="card-title">Pankaj Chauhan</h4>
-                                            <p class="card-text">Graduated from IIT,BHU. Likes to Drink and Drive.</p>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-skype"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-google"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                            <div class="mainflip">
-                                <div class="frontside">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <p><img class=" img-fluid" src="../assets/img/emp-6.jpg" alt="card image">
-                                            </p>
-                                            <h4 class="card-title">Ayush</h4>
-                                            <p class="card-text">Software Developer</p>
-                                            <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="backside">
-                                    <div class="card">
-                                        <div class="card-body text-center mt-4">
-                                            <h4 class="card-title">Ayush Soni</h4>
-                                            <p class="card-text">Graduated from IIT(BHU),Varanasi. Likes to not drink
-                                                and get people drunk.</p>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-skype"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-google"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                            <div class="mainflip">
-                                <div class="frontside">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <p><img class=" img-fluid" src="../assets/img/emp-4.png" alt="card image">
-                                            </p>
-                                            <h4 class="card-title">Chinmay</h4>
-                                            <p class="card-text">Software Developer</p>
-                                            <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="backside">
-                                    <div class="card">
-                                        <div class="card-body text-center mt-4">
-                                            <h4 class="card-title">Chinmay Kalegaonkar</h4>
-                                            <p class="card-text">Graduated from NIT, Surat. Likes to drink and sleep.
-                                            </p>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-skype"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-google"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                            <div class="mainflip">
-                                <div class="frontside">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <p><img class=" img-fluid" src="../assets/img/emp-7.jpg" alt="card image">
-                                            </p>
-                                            <h4 class="card-title">Ganesh</h4>
-                                            <p class="card-text">Software Developer</p>
-                                            <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="backside">
-                                    <div class="card">
-                                        <div class="card-body text-center mt-4">
-                                            <h4 class="card-title">Korada Ganesh</h4>
-                                            <p class="card-text">Graduated from NIT, Warangal. Likes to eat and sleep.
-                                            </p>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-skype"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-google"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                            <div class="mainflip">
-                                <div class="frontside">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <p><img class=" img-fluid" src="../assets/img/emp-9.png" alt="card image">
-                                            </p>
-                                            <h4 class="card-title">Vishal</h4>
-                                            <p class="card-text">Software Developer</p>
-                                            <!-- <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="backside">
-                                    <div class="card">
-                                        <div class="card-body text-center mt-4">
-                                            <h4 class="card-title">Sai Vishal Vangala</h4>
-                                            <p class="card-text">Graduated from NIT, Nagpur. Likes to crack lame jokes.
-                                            </p>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-skype"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                        <i class="fa fa-google"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-
-                </div>
-            </div>
-        </section>
-        <!-- Team -->
-        <br><br><br>
-
-
-
-
-
-        <!-- TEAM Ends -->
-
-
-        <div style="margin-bottom: -90px"></div>
-        <!-- Contact -->
-        <div id="contact" class="section">
-
-            <!-- container -->
-            <div class="container">
-
-                <!-- row -->
-                <div class="row">
-
-                    <!-- contact form -->
-                    <div class="col-md-6">
-                        <div class="contact-form">
-                            <h4>Send A Message</h4>
-                            <form>
-                                <input class="input" type="text" name="name" placeholder="Name"
-                                    style="border: 1px solid #909090">
-                                <input class="input" type="text" name="email" placeholder="Email"
-                                    style="border: 1px solid #909090">
-                                <input class="input" type="number" name="number" placeholder="Phone no"
-                                    style="border: 1px solid #909090">
-
-                                <mat-form-field>
-                                    <mat-label>Subject</mat-label>
-                                    <mat-select>
-                                        <mat-option *ngFor="let food of foods" [value]="food.value">
-                                            {{food.viewValue}}
-                                        </mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-
-
-                            </form>
-                            <button class="main-button icon-button pull-right" (click)=checkLogin()>Send
-                                Message</button>
-                        </div>
-                    </div>
-                    <!-- /contact form -->
-
-                    <!-- contact information -->
-                    <div class="col-md-5 col-md-offset-1">
+                <!-- contact information -->
+                <div class="col-md-3">
+                    <div class="contact" style="justify-content: center;">
                         <h4>Contact Information</h4>
                         <ul class="contact-details">
                             <li>
-                                <div class="mapouter" style="float: right;">
-                                    <div class="gmap_canvas"><iframe width="250" height="250" id="gmap_canvas"
-                                            src="https://maps.google.com/maps?q=stackroute&t=&z=11&ie=UTF8&iwloc=&output=embed"
-                                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                            href="https://www.embedgooglemap.org">google
-                                            map two place embed</a></div>
-                                    <style>
-                                        .mapouter {
-                                            position: relative;
-                                            text-align: right;
-                                            height: 200px;
-                                            width: 200px;
-                                        }
 
-                                        .gmap_canvas {
-                                            overflow: hidden;
-                                            background: none !important;
-                                            height: 200px;
-                                            width: 200px;
-                                        }
-                                    </style>
-                                </div>
                             </li>
                             <li><i class="fa fa-envelope"></i>contact@quizo.com</li>
-                            <li><i class="fa fa-phone"></i>122-547-223-45</li>
+                            <li><i class="fa fa-phone"></i>(+91)987-654-32-10</li>
                             <li><i class="fa fa-map-marker"></i>Quizo Kormangala</li>
 
                         </ul>
+                    </div>
+                </div>
+                <!-- contact information -->
+                <div class="col-md-3">
+
+                    <div class="gmap_canvas">
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.594726273739!2d77.61283231436309!3d12.93374921920828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3c632a2e17aea311!2sNIIT%20-%20Koramangala%20-%20StackRoute!5e0!3m2!1sen!2sin!4v1575614398154!5m2!1sen!2sin"
+                            width="250" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 
                     </div>
-                    <!-- contact information -->
 
                 </div>
+
             </div>
         </div>
     </div>
+</div>
 
-    <!-- <div style="margin-bottom: -90px"></div> -->
+<!-- <div style="margin-bottom: -90px"></div> -->
 
-    <!-- <div style="margin-bottom: -90px"></div>
-        <footer >
-           
-                <div id="bottom-footer" class="row">
-                   
-                    <div class="col-md-4 col-md-push-8">
-                        
-                        <ul class="footer-social">
-                            <li>Follow us on:-</li>
-                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="youtube"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-8 col-md-pull-4">
-                        <div class="footer-copyright">
-                            <span>&copy; Copyright 2019. All Rights Reserved.<i class="fa fa-heart-o"
-                                    aria-hidden="true"></i> by <a href="https://colorlib.com">Quizo</a></span>
-                        </div>
-                    </div>
-                </div>
-            
-        </footer> -->
-
-
-
-    <!-- Footer -->
-    <section id="footer">
-        <div class="container">
-            <!-- <div class="row text-center text-xs-center text-sm-left text-md-left">
-            </div> -->
-            <div class="row">
-                
-                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-                    <ul class="list-unstyled list-inline social text-center">
-                        <li class="list-inline-item"><a href=""><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href=""><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href=""><i class="fa fa-instagram"></i></a></li>
-                        <li class="list-inline-item"><a href=""><i class="fa fa-google-plus"></i></a></li>
-                        <li class="list-inline-item"><a href="" target="_blank"><i class="fa fa-envelope"></i></a></li>
+<!-- <div style="margin-bottom: -90px"></div>
+    <footer >
+       
+            <div id="bottom-footer" class="row">
+               
+                <div class="col-md-4 col-md-push-8">
+                    
+                    <ul class="footer-social">
+                        <li>Follow us on:-</li>
+                        <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="youtube"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div>
-                <hr>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-                    <div class="footer-copyright h6">
-                        <span>&copy; Copyright 2019. All Rights Reserved.
-                            by <a href="#home" target="_blank">QUIZO</a></span>
+                <div class="col-md-8 col-md-pull-4">
+                    <div class="footer-copyright">
+                        <span>&copy; Copyright 2019. All Rights Reserved.<i class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a href="https://colorlib.com">Quizo</a></span>
                     </div>
                 </div>
-                <hr>
             </div>
+        
+    </footer> -->
+
+
+
+<!-- Footer -->
+<section id="footer">
+    <div class="container">
+        <!-- <div class="row text-center text-xs-center text-sm-left text-md-left">
+        </div> -->
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                <ul class="list-unstyled list-inline social text-center">
+                    <li class="list-inline-item"><a href=""><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href=""><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href=""><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href=""><i class="fa fa-google-plus"></i></a></li>
+                    <li class="list-inline-item"><a href="" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <hr>
         </div>
-    </section>
-    <!-- ./Footer -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                <div class="footer-copyright h6">
+                    <span>&copy; Copyright 2019. All Rights Reserved.
+                        by <a href="#home" target="_blank">QUIZO</a></span>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</section>
+<!-- ./Footer -->
 
 
 
-    <!-- </div> -->
-</div>
+<!-- </div> -->

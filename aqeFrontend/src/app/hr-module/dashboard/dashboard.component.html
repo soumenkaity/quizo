@@ -8,12 +8,12 @@
         <p class="m7">below is a overview of all the activities</p>
         <button mat-raised-button color="primary" routerLink='/hr/create'>Create A Test</button>
         <button mat-raised-button color="primary" class="ml-5" routerLink='/hr/create-user'>Create A User</button>
-        <button class="x" mat-raised-button color="primary" class="ml-5" (click)='openDialog()'>Create A Request</button>
-        <button class="x" mat-raised-button color="primary" class="ml-5">View ongoing tests</button>
+        <button class="x" mat-raised-button color="primary" class="ml-5" (click)='openDialog()'>Raise A Request</button>
+        <button class="x" mat-raised-button color="primary" class="ml-5" routerLink='/hr/tests'>View Results</button>
     </div>
     <div class=text-center>
         <h3>
-            Created Topics:
+            Existing Topics:
         </h3>
     </div>
     <div class="row ">
@@ -142,7 +142,7 @@
                     </ng-container>
                     <ng-container matColumnDef="actions">
                         <th mat-header-cell *matHeaderCellDef> Action </th>
-                        <td mat-cell *matCellDef="let element"> <button mat-raised-button (click)="deleteRequest(element)">Delete</button> </td>
+                        <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary" (click)="deleteRequest(element)">Delete</button> </td>
                     </ng-container>
 
 

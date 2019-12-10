@@ -19,7 +19,6 @@ interface TestUser{
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  userId
   completeTestsDataSource;
   activeTestsDataSource;
   testsDisplayedColumns: string[] = ['id', 'name', 'createdAt','actions'];
@@ -32,14 +31,13 @@ export class DashboardComponent implements OnInit {
     const userEmail = sessionStorage.getItem('email');
     this.dashboardService.getActiveTests(userEmail).subscribe(
       (response: TestUser[]) =>{
-        console.log(response);
         this.activeTestsDataSource = new MatTableDataSource(response);
-        console.log(this.activeTestsDataSource);
         this.activeTestsDataSource.paginator = this.paginators.toArray()[0];
       }
     )
     this.dashboardService.getCompleteTests(userEmail).subscribe(
       (response: TestUser[]) =>{
+        console.log(response)
         this.completeTestsDataSource = new MatTableDataSource(response);
         this.completeTestsDataSource.paginator = this.paginators.toArray()[1];
       }
@@ -51,4 +49,8 @@ export class DashboardComponent implements OnInit {
   this.router.navigate(["/employee/test-instructions"])
   }
 
+  goToResult(testId,empId){
+    this.dataService.setResultDetails(testId,empId);
+    this.router.navigate(['/employee/result'])
+  }
 }

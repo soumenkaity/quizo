@@ -28,4 +28,9 @@ public class ResultService {
     return resultRepository.findByEmpId(id);
   }
 
+  public Result getResultByTestIdAndEmpId(String testId, String empId) {
+    return resultRepository.findByTestIdAndEmpId(testId,empId);
+  }
+
+  public Result findById(String id) {return  resultRepository.findById(id).orElseThrow(()->new RuntimeException()); }
 }

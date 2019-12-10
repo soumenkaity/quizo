@@ -38,6 +38,18 @@ body {
     color: #798696;
 	overflow-x:hidden;
 }
+.mapouter {
+	position: relative;
+	text-align: right;
+	height: 200px;
+	width: 200px;
+}
+.gmap_canvas {
+	overflow: hidden;
+	background: none !important;
+	height: 270px;
+	width: 350px;
+}
 .fdown{
 	background-color: black;
 	color: white;
@@ -1375,7 +1387,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 /* @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); */
 #team {
-	background: #eee !important;
+	background: white !important;
 	
 }
 
@@ -1406,7 +1418,7 @@ section .section-title {
 
 #team .card {
     border: none;
-    background: #ffffff;
+    background:white;
 }
 
 .image-flip:hover .backside,
@@ -1455,7 +1467,7 @@ section .section-title {
     position: absolute;
     top: 0;
     left: 0;
-    background: white;
+    background: gray;
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
     -o-transform: rotateY(-180deg);
@@ -1587,12 +1599,13 @@ section .section-title {
 
 /* Quote CSS Starts */
 .box {
-	position: absolute;
+	padding-top: 350px;
+	/* position: absolute; */
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	width: 500px;
-	height: 400px;
+	height: 500px;
 	cursor: pointer;
 	transform-style: preserve-3d;
 	perspective: 2000px;
@@ -1731,6 +1744,10 @@ section .section-title {
 }
 
 /* Animation on Jumbotron Ends */
+
+/* Our team starts */
+/* Our team Ends */
+
 
 
 

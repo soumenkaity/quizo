@@ -1,17 +1,21 @@
-.display-4{
+.display-4 {
     font-size: 35px;
-    
 }
 
-h3{
+h3 {
     font-size: 20px;
 }
 
-.lead{
+.lead {
     font-size: 18px;
 }
 
-.container{
+.container {
     margin-top: 63px;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+    /* no underline */
+}

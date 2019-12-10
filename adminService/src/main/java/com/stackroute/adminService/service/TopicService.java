@@ -77,6 +77,7 @@ public class TopicService {
     List<Question> allQuestions = getAllQuestionsOfTopic(topicName);
     for(int i = 0; i < 200;i++){
       Question question = allQuestions.get(i);
+      question.setTotalOccurrences(0);question.setCorrectAttempts(0);
       if(i < easyCount){ question.setDifficulty("E"); }
       else if(i >= easyCount && i < easyCount+mediumCount ){ question.setDifficulty("M"); }
       else{ question.setDifficulty("H"); }

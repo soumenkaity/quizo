@@ -1,0 +1,30 @@
+
+
+.red{
+  background-color: red;
+}
+.green{
+  background-color:green; 
+}
+.yellow{
+background-color: yellow;
+}
+.scroll{
+  display: flex;
+  height: 700px;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;  
+}
+
+.margin-container{
+  background-color: #E0E0E0;
+  margin-top:70px;
+  padding: -8px;
+}
+.jumbotron{
+  padding: 1rem 2rem;
+}
+mat-card-subtitle{
+  font-size: 15px;
+}

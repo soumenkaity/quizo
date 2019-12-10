@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class GenerationService {
 
-    static String generateRandomString(int len){
+    public static String generateRandomString(int len){
         String Capital_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String Small_chars = "abcdefghijklmnopqrstuvwxyz";
         String numbers = "0123456789";

@@ -11,7 +11,7 @@ import java.util.Date;
 public class TestUser {
     @Id
     private String id;
-
+    private String testId;
     private String userId;
     private String userEmail;
     private String userName;
@@ -71,5 +71,13 @@ public class TestUser {
 
   public void setUserName(String userName) {
     this.userName = userName;
+  }
+
+  public String getTestId() {
+    return testId;
+  }
+
+  public void setTestId(String testId) {
+    this.testId = testId;
   }
 }

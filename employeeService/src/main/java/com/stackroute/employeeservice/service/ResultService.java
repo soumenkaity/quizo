@@ -10,5 +10,7 @@ public interface ResultService {
     public List<Result> getResultsByTestId(String id);
     public Result saveResult(Result result);
     public Result getResultsById(String id);
+    public Result getResultByTestIdAndEmpId(String testId,String empId);
     public void deleteResult();
+    public List<Result> getAllResults();
 }

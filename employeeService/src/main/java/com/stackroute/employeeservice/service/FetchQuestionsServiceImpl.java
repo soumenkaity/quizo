@@ -4,9 +4,11 @@ import com.mongodb.MongoClient;
 import com.stackroute.employeeservice.domain.Attempt;
 import com.stackroute.employeeservice.domain.Question;
 import com.stackroute.employeeservice.domain.Result;
+import com.stackroute.employeeservice.domain.TestUser;
 import com.stackroute.employeeservice.exception.QuestionNotFoundException;
 import com.stackroute.employeeservice.repository.QuestionRepository;
 import com.stackroute.employeeservice.repository.ResultRepository;
+import com.stackroute.employeeservice.repository.TestUserRepository;
 import com.stackroute.employeeservice.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,6 +17,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -37,7 +40,10 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
 
     private QuestionRepository questionRepository;
 
+    private TestUserRepository testUserRepository;
+
     String collectionName;
+    String testId;
 
     List<Question> questions;
     List<Question> easyQuestions;
@@ -67,17 +73,25 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
     float totalMarksInMedium = 30;
     float totalMarksInHard = 40;
 
-    @Autowired
-    public FetchQuestionsServiceImpl(QuestionRepository questionRepository, TopicRepository topicRepository, ResultRepository resultRepository) {
-        this.questionRepository = questionRepository;
-        this.topicRepository = topicRepository;
-        this.resultRepository = resultRepository;
-    }
+  @Autowired
+  public FetchQuestionsServiceImpl(ResultRepository resultRepository, TopicRepository topicRepository, QuestionRepository questionRepository, TestUserRepository testUserRepository) {
+    this.resultRepository = resultRepository;
+    this.topicRepository = topicRepository;
+    this.questionRepository = questionRepository;
+    this.testUserRepository = testUserRepository;
+  }
+
+
 
     @Override
     public Question getFirstQuestion(String testId, String collectionName, String empId, String empName) throws QuestionNotFoundException {
-        this.collectionName = collectionName;
 
+        TestUser currentTest = testUserRepository.findById(testId).orElseThrow(()->new RuntimeException());
+        currentTest.setStatus("C");
+        testUserRepository.save(currentTest);
+        
+        this.collectionName = collectionName;
+        this.testId = testId;
         questions = mongoOperations.findAll(Question.class, this.collectionName);
         if (questions.size() == 0){
             throw new QuestionNotFoundException("No questions were found");
@@ -107,6 +121,10 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
             else if(question.getDifficulty().equals("H"))
                 hardQuestions.add(question);
         }
+
+        Collections.shuffle(easyQuestions);
+        Collections.shuffle(mediumQuestions);
+        Collections.shuffle(hardQuestions);
 
         easyIndex = 0;
         correctEasy = 0;
