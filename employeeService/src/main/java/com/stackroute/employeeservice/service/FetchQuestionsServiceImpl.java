@@ -84,12 +84,12 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
 
 
     @Override
-    public Question getFirstQuestion(String testId, String collectionName, String empId, String empName) throws QuestionNotFoundException {
+    public Question getFirstQuestion(String id,String testId, String collectionName, String empId, String empName) throws QuestionNotFoundException {
 
-        TestUser currentTest = testUserRepository.findById(testId).orElseThrow(()->new RuntimeException());
+        TestUser currentTest = testUserRepository.findById(id).orElseThrow(()->new RuntimeException());
         currentTest.setStatus("C");
         testUserRepository.save(currentTest);
-        
+
         this.collectionName = collectionName;
         this.testId = testId;
         questions = mongoOperations.findAll(Question.class, this.collectionName);
