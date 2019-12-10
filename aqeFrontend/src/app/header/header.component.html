@@ -1,7 +1,8 @@
 <mat-toolbar color=primary class="x">
     <button mat-icon-button (click)="cancel()"> <h4><i class="material-icons v-center ">keyboard_backspace</i>
-        <span class="spacing-l-20">QUIZO</span></h4>
+       </h4>
     </button>
+    <span routerLink="/" class="spacing-l-20"></span>
     <span class="spacer"></span>
     <div *ngIf='loggedInUser && !isLoginPage'>
         <span class="mr-2">
