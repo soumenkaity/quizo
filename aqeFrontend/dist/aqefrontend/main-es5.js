@@ -2630,6 +2630,10 @@
                     this.dataService.setTestUserDetails(data);
                     this.router.navigate(["/employee/test-instructions"]);
                 };
+                DashboardComponent.prototype.goToResult = function (testId, empId) {
+                    this.dataService.setResultDetails(testId, empId);
+                    this.router.navigate(['/employee/result']);
+                };
                 return DashboardComponent;
             }());
             DashboardComponent.ctorParameters = function () { return [
@@ -3065,19 +3069,20 @@
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             /* harmony import */ var _service_employeeresultservice_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/employeeresultservice.service */ "./src/app/employee-module/service/employeeresultservice.service.ts");
             /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            /* harmony import */ var _service_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service/data.service */ "./src/app/employee-module/service/data.service.ts");
             var ResultPageComponent = /** @class */ (function () {
-                function ResultPageComponent(Employeeresult, route) {
+                function ResultPageComponent(Employeeresult, route, dataService) {
                     this.Employeeresult = Employeeresult;
                     this.route = route;
+                    this.dataService = dataService;
                     this.correctColor = "green";
                     this.wrongColor = "red";
                     this.styleList = new Array();
                 }
                 ResultPageComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    var empId = this.route.snapshot.queryParams['empId'];
-                    var testId = this.route.snapshot.queryParams['testId'];
-                    this.Employeeresult.getResultForEmployeeWhoGaveThisTest(empId, testId).subscribe(function (data) {
+                    var result = this.dataService.getResultDetails();
+                    this.Employeeresult.getResultForEmployeeWhoGaveThisTest(result.empId, result.testId).subscribe(function (data) {
                         console.log("data ", data);
                         _this.employeeResult = data;
                         _this.attempts = _this.employeeResult.attempts;
@@ -3099,7 +3104,8 @@
             }());
             ResultPageComponent.ctorParameters = function () { return [
                 { type: _service_employeeresultservice_service__WEBPACK_IMPORTED_MODULE_2__["EmployeeresultserviceService"] },
-                { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+                { type: _service_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"] }
             ]; };
             ResultPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -3232,6 +3238,12 @@
                 };
                 DataService.prototype.setTestUserDetails = function (ud) {
                     this.testUserDetails = ud;
+                };
+                DataService.prototype.setResultDetails = function (testId, empId) {
+                    this.resultDetails = { testId: testId, empId: empId };
+                };
+                DataService.prototype.getResultDetails = function () {
+                    return this.resultDetails;
                 };
                 DataService.prototype.getDummyDetails = function () {
                     return {
@@ -4128,14 +4140,16 @@
             /* harmony import */ var _request_modal_request_modal_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../request-modal/request-modal.component */ "./src/app/hr-module/request-modal/request-modal.component.ts");
             /* harmony import */ var _service_request_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../service/request.service */ "./src/app/hr-module/service/request.service.ts");
             /* harmony import */ var src_app_authentication_module_service_toaster_service_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/authentication-module/service/toaster-service.service */ "./src/app/authentication-module/service/toaster-service.service.ts");
+            /* harmony import */ var _service_data_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../service/data.service */ "./src/app/hr-module/service/data.service.ts");
             var DashboardComponent = /** @class */ (function () {
-                function DashboardComponent(topicService, employeeService, requestService, fb, dialog, toasterService) {
+                function DashboardComponent(topicService, employeeService, requestService, fb, dialog, toasterService, dataService) {
                     this.topicService = topicService;
                     this.employeeService = employeeService;
                     this.requestService = requestService;
                     this.fb = fb;
                     this.dialog = dialog;
                     this.toasterService = toasterService;
+                    this.dataService = dataService;
                     this.topicDisplayedColumns = ['id', 'name', 'createdAt', 'link', 'keywords'];
                     this.employeeDisplayedColumns = ['id', 'name', 'phone', 'email'];
                     this.requestDisplayedColumns = ['id', 'message', 'status', 'actions'];
@@ -4194,7 +4208,8 @@
                 { type: _service_request_service__WEBPACK_IMPORTED_MODULE_9__["RequestService"] },
                 { type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"] },
                 { type: _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatDialog"] },
-                { type: src_app_authentication_module_service_toaster_service_service__WEBPACK_IMPORTED_MODULE_10__["ToasterService"] }
+                { type: src_app_authentication_module_service_toaster_service_service__WEBPACK_IMPORTED_MODULE_10__["ToasterService"] },
+                { type: _service_data_service__WEBPACK_IMPORTED_MODULE_11__["DataService"] }
             ]; };
             tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"])(_angular_material_paginator__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"])
