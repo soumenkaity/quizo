@@ -38,6 +38,18 @@ body {
     color: #798696;
 	overflow-x:hidden;
 }
+.mapouter {
+	position: relative;
+	text-align: right;
+	height: 200px;
+	width: 200px;
+}
+.gmap_canvas {
+	overflow: hidden;
+	background: none !important;
+	height: 270px;
+	width: 350px;
+}
 .fdown{
 	background-color: black;
 	color: white;

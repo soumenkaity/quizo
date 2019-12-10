@@ -8,4 +8,5 @@ import java.util.List;
 public interface ResultRepository extends MongoRepository<Result,String> {
   public List<Result> findByTopicId(String id);
   public List<Result> findByEmpId(String id);
+  public Result findByTestIdAndEmpId(String testId,String empId);
 }

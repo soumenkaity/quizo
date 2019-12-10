@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material';
 import { RequestModalComponent } from '../request-modal/request-modal.component';
 import { RequestService } from '../service/request.service';
 import { ToasterService } from 'src/app/authentication-module/service/toaster-service.service';
+import { DataService } from '../service/data.service';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class DashboardComponent implements OnInit,AfterViewInit {
     private requestService:RequestService,
     private fb: FormBuilder,
     public dialog: MatDialog,
-    private toasterService:ToasterService) { }
+    private toasterService:ToasterService,
+    private dataService: DataService) { }
 
     
   topicDisplayedColumns: string[] = ['id','name', 'createdAt', 'link','keywords'];
