@@ -4,3 +4,45 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+@media only screen and (max-width: 992px) {
+    .x{
+        font-size: 16px;
+    }
+    .y{
+        font-size: 14px;
+    }
+    .mat-flat-button{
+        height:10% ;
+        font-size:14px; 
+   }
+    
+}
+
+@media only screen and ( max-width: 768px) {
+    .x{
+        font-size: 14px;
+    }
+    .y{
+        font-size: 12px;
+    }
+    .mat-flat-button{
+        height:10% ;
+        font-size:12px; 
+   }
+  
+}
+
+@media only screen and (max-width: 600px) {
+    .x{
+        font-size: 12px;
+    }
+    .y{
+        font-size: 10px;
+    }
+    .mat-flat-button{
+         height:10% ;
+         font-size:10px; 
+    }
+    
+}
+
