@@ -34,11 +34,11 @@
                 </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link " routerLink="/auth/login" *ngIf='!isLoggedIn'>
-                    <div class="itemk">Login</div>
+                <a class="nav-link itemk" routerLink="/auth/login" *ngIf='!isLoggedIn'>
+                    Login
                 </a>
-                <a class="nav-link " routerLink="/{{loggedInRole}}" *ngIf='isLoggedIn'>
-                    <div class="itemk">Continue as {{loggedInUser}}</div>
+                <a class="nav-link itemk " routerLink="/{{loggedInRole}}" *ngIf='isLoggedIn'>
+                   Continue as {{loggedInUser}}
                 </a>
             </li>
         </ul>
@@ -732,12 +732,10 @@
 
                             <mat-form-field>
                                 <mat-label>Subject</mat-label>
-                                <mat-select name="food" class="food" [(ngModel)]="food.value">
-                                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                                        {{food.viewValue}}
-                                    </mat-option>
+                                <mat-select name="food">
+                                    <mat-option value="buy">Buy the Product</mat-option>
+                                    <mat-option value="view">View a live demo</mat-option>
                                 </mat-select>
-                                <input matInput type="text" placeholder="Subject"  [formControl]="timeFormControl">
                             </mat-form-field>
 
 
@@ -831,36 +829,6 @@
         </div>
     </div>
 </div>
-
-<!-- <div style="margin-bottom: -90px"></div> -->
-
-<!-- <div style="margin-bottom: -90px"></div>
-    <footer >
-       
-            <div id="bottom-footer" class="row">
-               
-                <div class="col-md-4 col-md-push-8">
-                    
-                    <ul class="footer-social">
-                        <li>Follow us on:-</li>
-                        <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="youtube"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-8 col-md-pull-4">
-                    <div class="footer-copyright">
-                        <span>&copy; Copyright 2019. All Rights Reserved.<i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com">Quizo</a></span>
-                    </div>
-                </div>
-            </div>
-        
-    </footer> -->
-
-
-
 <!-- Footer -->
 <section id="footer">
     <div class="container">
