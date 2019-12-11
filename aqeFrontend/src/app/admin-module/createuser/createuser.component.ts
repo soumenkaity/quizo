@@ -32,21 +32,24 @@ export class CreateuserComponent implements OnInit {
 
   generatedUsername;
   generatedPassword;
+  isFileSelected: boolean = false;
+  selectedFile;
   constructor(
     private router: Router, 
     private createUserService: CreateuserService,
     private fb: FormBuilder,
     public dialog: MatDialog) {}
-
     public csvRecords: any[] = [];
 
     @ViewChild('fileImportInput', {static: false}) fileImportInput: any;
   
     fileChangeListener($event: any): void {
+      this.isFileSelected = false;
   
       let text = [];
       let files = $event.srcElement.files;
-  
+  this.selectedFile = files[0];
+  console.log(this.selectedFile)
       if (this.isCSVFile(files[0])) {
   
         let input = $event.target;
@@ -60,6 +63,7 @@ export class CreateuserComponent implements OnInit {
           let headersRow = this.getHeaderArray(csvRecordsArray);
   
           this.csvRecords = this.getDataRecordsArrayFromCSVFile(csvRecordsArray, headersRow.length);
+
         };
   
         reader.onerror = function () {
@@ -105,6 +109,7 @@ export class CreateuserComponent implements OnInit {
           jsonArr.push(obj);
         }
       }
+      this.isFileSelected = true;
       console.log(jsonArr)
       return jsonArr;
     }
@@ -179,6 +184,17 @@ export class CreateuserComponent implements OnInit {
        this.generatedUsername = error.error.text.split(',')[0]
        this.generatedPassword = error.error.text.split(',')[1]
       })
+  }
+
+  submitCsv(){
+    this.createUserService.saveUsersInBulk(this.csvRecords).subscribe(
+      response => {
+
+      },
+      error =>{
+        
+      }
+    )
   }
 
 }
