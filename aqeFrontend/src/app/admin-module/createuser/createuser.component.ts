@@ -4,6 +4,7 @@ import { CreateuserService } from '../service/createuser.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CreateModalComponent } from '../create-modal/create-modal.component';
+import { ToasterService } from 'src/app/authentication-module/service/toaster-service.service';
 
 export class CSVRecord {
 
@@ -34,9 +35,11 @@ export class CreateuserComponent implements OnInit {
   generatedPassword;
   isFileSelected: boolean = false;
   selectedFile;
+  isLoading: boolean;
   constructor(
     private router: Router, 
     private createUserService: CreateuserService,
+    private ts:ToasterService,
     private fb: FormBuilder,
     public dialog: MatDialog) {}
     public csvRecords: any[] = [];
@@ -49,7 +52,6 @@ export class CreateuserComponent implements OnInit {
       let text = [];
       let files = $event.srcElement.files;
   this.selectedFile = files[0];
-  console.log(this.selectedFile)
       if (this.isCSVFile(files[0])) {
   
         let input = $event.target;
@@ -110,7 +112,6 @@ export class CreateuserComponent implements OnInit {
         }
       }
       this.isFileSelected = true;
-      console.log(jsonArr)
       return jsonArr;
     }
   
@@ -164,10 +165,10 @@ export class CreateuserComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(!result == undefined){
         this.createUserService.saveUserInMongo(userDetails).subscribe(
-          res => console.log(res)
+          responnse => this.ts.success("User created")
         );
         this.createUserService.saveUserInMysql(result).subscribe(
-          res => console.log(res)
+          response => this.ts.success("User login details sent")
         );
 
         this.router.navigate(['/admin'])
@@ -187,14 +188,22 @@ export class CreateuserComponent implements OnInit {
   }
 
   submitCsv(){
+    this.isLoading = true;
+    this.isFileSelected = false;
     this.createUserService.saveUsersInBulk(this.csvRecords).subscribe(
+      
       response => {
-
+        this.ts.success("All users in file are Registered")
+        this.isLoading = false
       },
       error =>{
-        
-      }
+        this.ts.error("Couldnot register some users")
+        this.isLoading = false
+      },
+      () => {}
+      
     )
+    
   }
 
 }

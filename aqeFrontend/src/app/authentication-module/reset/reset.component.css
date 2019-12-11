@@ -4,11 +4,12 @@
 
 mat-card {
     min-width: 28%;
+    box-shadow: 3px 3px 4px 4px #dadada;
 }
 
 .back {
     /* background-color: #F5F5F5; */
-    box-shadow: 3px 3px 2px 2px #dadada;
+    box-shadow: 7px 8px 8px 8px #dadada;
     /* border: 1px solid rgb(155, 155, 155); */
     height: 240px;
 }
