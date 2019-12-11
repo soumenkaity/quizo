@@ -14,16 +14,14 @@ import java.util.ListIterator;
 @Service
 public class UserService {
   private UserRepository userRepository;
-
   private UserLoginRepository userLoginRepository;
-
-  @Autowired
   private PasswordEncoder bcryptEncoder;
 
   @Autowired
-  public UserService(UserRepository userRepository, UserLoginRepository userLoginRepository) {
+  public UserService(UserRepository userRepository, UserLoginRepository userLoginRepository, PasswordEncoder bcryptEncoder) {
     this.userRepository = userRepository;
     this.userLoginRepository = userLoginRepository;
+    this.bcryptEncoder = bcryptEncoder;
   }
 
   public List<User> getAllUsers(){ return userRepository.findAll();}
