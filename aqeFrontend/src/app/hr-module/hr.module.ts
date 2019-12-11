@@ -25,6 +25,9 @@ import { ResultPageComponent } from './result-page/result-page.component';
 
 
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +53,9 @@ import { ResultPageComponent } from './result-page/result-page.component';
   ],
   entryComponents: [CreateModalComponent,RequestModalComponent],
   providers: [TopicService,EmployeeService,ConfirmService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+   
+  ]
 })
 export class HrModule { }

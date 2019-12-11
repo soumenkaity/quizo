@@ -9,37 +9,66 @@
 
 
 <div class="container">
+
     <div class="table-responsive">
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Employee">
+        </mat-form-field>
         <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" formArrayName="employees" matSort>
 
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Mobile</th>
-                        <th scope="col">Designation</th>
-                    </tr>
-                </thead>
 
-                <tbody *ngFor="let employee of form.controls.employees.controls; let i = index">
-                    <tr formArrayName="employees">
-                        <td>
-                            <mat-checkbox class="checkbox" formControlName="{{i}}"></mat-checkbox>
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event ? masterToggle() : null"
+                                [checked]="selection.hasValue() && isAllSelected()"
+                                [indeterminate]="selection.hasValue() && !isAllSelected()"
+                                [aria-label]="checkboxLabel()">
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)"
+                                [aria-label]="checkboxLabel(row)">
+                            </mat-checkbox>
                         </td>
-                        <td>{{employees[i].name}}</td>
-                        <td>{{employees[i].email}}</td>
-                        <td>{{employees[i].phone}}</td>
-                        <td>{{employees[i].designation}}</td>
+                    </ng-container>
 
+
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Name </b></th>
+                        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Email</b></th>
+                        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="phone">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Phone</b> </th>
+                        <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="designation">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header><b>Designation</b> </th>
+                        <td mat-cell *matCellDef="let row"> {{row.designation}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
                     </tr>
-                </tbody>
+                </table>
 
-            </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
 
             <button mat-raised-button color="primary">Submit</button>
         </form>
+
     </div>
 </div>
 <app-footer></app-footer>

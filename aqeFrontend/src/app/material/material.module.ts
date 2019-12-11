@@ -25,6 +25,35 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSelectModule} from '@angular/material/select';
 
+
+
+
+
+import {A11yModule} from '@angular/cdk/a11y';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {PortalModule} from '@angular/cdk/portal';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {CdkStepperModule} from '@angular/cdk/stepper';
+import {CdkTableModule} from '@angular/cdk/table';
+import {CdkTreeModule} from '@angular/cdk/tree';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
+import {MatChipsModule} from '@angular/material/chips';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+import {MatDividerModule} from '@angular/material/divider';
+
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTreeModule} from '@angular/material/tree';
+
+
 const MaterialComponents= [ 
   MatButtonModule,
   MatMenuModule,
@@ -48,7 +77,31 @@ const MaterialComponents= [
   MatPaginatorModule,
   MatCheckboxModule,
   MatSidenavModule,
-  MatSelectModule
+  MatSelectModule,
+
+
+  A11yModule,
+  CdkStepperModule,
+  CdkTableModule,
+  CdkTreeModule,
+  DragDropModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonToggleModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatStepperModule,
+  MatDatepickerModule,
+    MatDividerModule,
+  MatNativeDateModule,
+  MatRippleModule,
+    MatSliderModule,
+  MatSlideToggleModule,
+  MatSortModule,
+    MatTabsModule,
+  MatTreeModule,
+  PortalModule,
+  ScrollingModule,
 ];
 
 @NgModule({ 
