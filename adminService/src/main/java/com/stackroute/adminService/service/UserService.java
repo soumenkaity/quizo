@@ -28,9 +28,10 @@ public class UserService {
 
   public List<User> getAllUsers(){ return userRepository.findAll();}
   public List<User> insertUsersInBulk(List<User> userList){
+    String password = bcryptEncoder.encode("password");
     for(User user: userList){
       userRepository.save(user);
-      userLoginRepository.save(new UserLogin(user.getName(),bcryptEncoder.encode("password"),user.getEmail(),user.getRole()));
+      userLoginRepository.save(new UserLogin(user.getName(),password,user.getEmail(),user.getRole()));
     }
     return userList;
   }
