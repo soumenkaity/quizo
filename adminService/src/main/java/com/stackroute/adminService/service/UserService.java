@@ -17,21 +17,25 @@ public class UserService {
 
   private UserLoginRepository userLoginRepository;
 
+  @Autowired
   private PasswordEncoder bcryptEncoder;
 
   @Autowired
-  public UserService(UserRepository userRepository, UserLoginRepository userLoginRepository, PasswordEncoder passwordEncoder) {
+  public UserService(UserRepository userRepository, UserLoginRepository userLoginRepository) {
     this.userRepository = userRepository;
     this.userLoginRepository = userLoginRepository;
-    this.bcryptEncoder = passwordEncoder;
   }
 
   public List<User> getAllUsers(){ return userRepository.findAll();}
   public List<User> insertUsersInBulk(List<User> userList){
-    String password = bcryptEncoder.encode("password");
     for(User user: userList){
+      UserLogin ul = new UserLogin();
+      ul.setUsername(user.getName());
+      ul.setPassword(bcryptEncoder.encode("password"));
+      ul.setEmail(user.getEmail());
+      ul.setRole(user.getRole());
       userRepository.save(user);
-      userLoginRepository.save(new UserLogin(user.getName(),password,user.getEmail(),user.getRole()));
+      userLoginRepository.save(ul);
     }
     return userList;
   }

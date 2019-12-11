@@ -13,7 +13,6 @@ import javax.validation.constraints.NotEmpty;
 @Table(name="users")
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
 public class UserLogin {
 
@@ -32,6 +31,10 @@ public class UserLogin {
 
   @NotEmpty
   private String role;
+
+  public UserLogin() {
+
+  }
 
   public String getPassword() {
     return password;
@@ -55,6 +58,14 @@ public class UserLogin {
 
   public void setUsername(String username) {
     this.username = username;
+  }
+
+  public String getRole() {
+    return role;
+  }
+
+  public void setRole(String role) {
+    this.role = role;
   }
 
   public UserLogin(@NotEmpty String username, @NotEmpty String password, @NotEmpty String email, @NotEmpty String role) {
