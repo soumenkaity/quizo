@@ -15,7 +15,8 @@ export class FetchTestService {
   getFirstQuestion(userDetails){
     console.log(userDetails);
     const details = {
-      "testId":userDetails.id,
+      "id":userDetails.id,
+      "testId":userDetails.testId,
       "collectionName":userDetails.topicName,
       "empId":userDetails.userId,
       "empName":userDetails.userName

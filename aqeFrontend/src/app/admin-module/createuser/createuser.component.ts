@@ -1,9 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CreateuserService } from '../service/createuser.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CreateModalComponent } from '../create-modal/create-modal.component';
+
+export class CSVRecord {
+
+  public name: any;
+  public role: any;
+  public phone: any;
+  public email: any;
+  public designation: any;
+  public address: any;
+  public gender: any;
+
+  constructor() {
+
+  }
+}
 
 @Component({
   selector: 'app-createuser',
@@ -22,6 +37,97 @@ export class CreateuserComponent implements OnInit {
     private createUserService: CreateuserService,
     private fb: FormBuilder,
     public dialog: MatDialog) {}
+
+    public csvRecords: any[] = [];
+
+    @ViewChild('fileImportInput', {static: false}) fileImportInput: any;
+  
+    fileChangeListener($event: any): void {
+  
+      let text = [];
+      let files = $event.srcElement.files;
+  
+      if (this.isCSVFile(files[0])) {
+  
+        let input = $event.target;
+        let reader = new FileReader();
+        reader.readAsText(input.files[0]);
+  
+        reader.onload = () => {
+          let csvData = reader.result;
+          let csvRecordsArray = (<string>csvData).split(/\r\n|\n/);
+  
+          let headersRow = this.getHeaderArray(csvRecordsArray);
+  
+          this.csvRecords = this.getDataRecordsArrayFromCSVFile(csvRecordsArray, headersRow.length);
+        };
+  
+        reader.onerror = function () {
+          alert('Unable to read ' + input.files[0]);
+        };
+  
+      } else {
+        alert("Please import valid .csv file.");
+        this.fileReset();
+      }
+    }
+  
+    getDataRecordsArrayFromCSVFile(csvRecordsArray: any, headerLength: any) {
+      let jsonArr = [];
+  
+      for (let i = 1; i < csvRecordsArray.length; i++) {
+        let data = (<string>csvRecordsArray[i]).split(',');
+  
+        // FOR EACH ROW IN CSV FILE IF THE NUMBER OF COLUMNS
+        // ARE SAME AS NUMBER OF HEADER COLUMNS THEN PARSE THE DATA
+        if (data.length == headerLength) {
+  
+          let csvRecord: CSVRecord = new CSVRecord();
+  
+          csvRecord.name = data[0].trim();
+          csvRecord.role = data[1].trim();
+          csvRecord.phone = data[2].trim();
+          csvRecord.email = data[3].trim();
+          csvRecord.designation = data[4].trim();
+          csvRecord.address = data[5].trim();
+          csvRecord.gender = data[6].trim();
+  
+          var obj = {
+            "name": csvRecord.name,
+            "role": csvRecord.role,
+            "phone": csvRecord.phone,
+            "email": csvRecord.email,
+            "designation": csvRecord.designation,
+            "address": csvRecord.address,
+            "gender": csvRecord.gender
+          }
+  
+          jsonArr.push(obj);
+        }
+      }
+      console.log(jsonArr)
+      return jsonArr;
+    }
+  
+    // CHECK IF FILE IS A VALID CSV FILE
+    isCSVFile(file: any) {
+      return file.name.endsWith(".csv");
+    }
+  
+    // GET CSV FILE HEADER COLUMNS
+    getHeaderArray(csvRecordsArr: any) {
+      let headers = (<string>csvRecordsArr[0]).split(',');
+      let headerArray = [];
+      for (let j = 0; j < headers.length; j++) {
+        headerArray.push(headers[j]);
+      }
+      return headerArray;
+    }
+  
+    fileReset() {
+      this.fileImportInput.nativeElement.value = "";
+      this.csvRecords = [];
+    }
 
   ngOnInit() {
     this.generateUserAndPass();

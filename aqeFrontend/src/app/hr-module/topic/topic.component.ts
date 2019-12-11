@@ -1,9 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChildren, QueryList } from '@angular/core';
 import { Topic } from '../model/topic';
 import { TopicService } from '../service/topic.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 import { DataService } from '../service/data.service';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-topic',
@@ -11,7 +12,7 @@ import { DataService } from '../service/data.service';
   styleUrls: ['./topic.component.css']
 })
 export class TopicComponent implements OnInit {
-   form: FormGroup;
+  form: FormGroup;
   isLoading = true;
   constructor(private topicService: TopicService,private router: Router,
               private dataService: DataService,private formBuilder: FormBuilder) {
@@ -20,7 +21,11 @@ export class TopicComponent implements OnInit {
     })
    }
   private topics: Topic[];
+  topicDataSource
+  topicDisplayedColumns: string[] = ['id', 'name', 'createdAt','actions'];
 
+  @ViewChildren(MatPaginator) paginators = new QueryList<MatPaginator>();
+  
   ngOnInit() {
     this.getAllTopics();
   }
@@ -28,7 +33,8 @@ export class TopicComponent implements OnInit {
     this.topicService.getAllTopics().subscribe(
       (response: Topic[]) => {
         console.log(response)
-        this.topics = response
+        this.topicDataSource = new MatTableDataSource(response);
+        this.topicDataSource.paginator = this.paginators.toArray()[0];
         this.isLoading=false;
         this.addCheckBoxesToTopics()
       }
