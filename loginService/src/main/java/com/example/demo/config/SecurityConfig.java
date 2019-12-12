@@ -34,11 +34,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
                 .authorizeRequests()
-                    .antMatchers("/actuator/prometheus").permitAll()
+
+                    .antMatchers("/actuator/prometheus").anonymous()
                     .antMatchers("/employee/**").hasRole("EMP")
                     .antMatchers("/hr/**").hasRole("HRM")
                     .antMatchers("/admin/**").hasRole("ADM")
-                    .antMatchers("/auth/**").permitAll()
+                    .antMatchers("/auth/**").anonymous()
+
                 .anyRequest().authenticated()
             .and()
             .apply(new JwtSecurityConfigurer(jwtTokenProvider));
