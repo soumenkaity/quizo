@@ -18,7 +18,7 @@
     </div>
     <div class="inner-container">
         <mat-form-field>
-            <input matInput (keyup)="applyFilterEmployee($event.target.value)" placeholder="Search Topic">
+            <input matInput (keyup)="applyFilterTopic($event.target.value)" placeholder="Search Topic">
         </mat-form-field>
         <div class="mat-elevation-z8">
             <table mat-table [dataSource]="topicDataSource" style="width: 100%;" matSort #topicSort="matSort">
@@ -68,12 +68,12 @@
     <div class="mt-5 mb-5"></div>
     <div class="text-center">
         <h3>
-           <b>AVAILABLE USERS</b>:
+            <b>AVAILABLE EMPLOYEES</b>:
         </h3>
     </div>
     <div class="inner-container">
         <mat-form-field>
-            <input matInput (keyup)="applyFilterTopic($event.target.value)" placeholder="Search Employee">
+            <input matInput (keyup)="applyFilterEmployee($event.target.value)" placeholder="Search Employee">
         </mat-form-field>
         <div class="mat-elevation-z8">
             <table mat-table [dataSource]="employeeDataSource" style="width: 100%;" matSort #empSort='matSort'>
@@ -98,7 +98,7 @@
 
                 <!-- Symbol Column -->
                 <ng-container matColumnDef="email">
-                    <th mat-header-cell *matHeaderCellDef > <b>Email</b> </th>
+                    <th mat-header-cell *matHeaderCellDef> <b>Email</b> </th>
                     <td mat-cell *matCellDef="let element"> {{element.email}} </td>
                 </ng-container>
 
@@ -163,4 +163,4 @@
     </div>
     <div class="m-5"></div>
 </div>
-    <app-footer></app-footer>
+<app-footer></app-footer>

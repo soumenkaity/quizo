@@ -11,7 +11,7 @@
     <div class="spacing-top"></div>
     <div class="container">
         <mat-form-field>
-            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Employee">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Topic">
         </mat-form-field>
         <div class="mat-elevation-z8">
             <table mat-table [dataSource]="topicDataSource" style="width: 100%;" matSort>
