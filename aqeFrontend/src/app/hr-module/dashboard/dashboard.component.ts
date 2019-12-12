@@ -81,11 +81,18 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       console.log(result)
       if (result != undefined) {
         console.log('-------')
-
         result.status = 'N'
         this.requestService.addRequest(result).subscribe(
-          response => { },
-          error => { console.log(error) }
+          response => {this.toasterService.success("Request ADDED")
+          this.requestService.getAllRequests().subscribe(
+            response => {
+              this.requestDataSource = new MatTableDataSource(response)
+              this.requestDataSource.sort = this.requestSort;
+              this.requestDataSource.paginator = this.paginators.toArray()[2];
+            }); },
+          error => { 
+            
+          }
         )
       }
     });
