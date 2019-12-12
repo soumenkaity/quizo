@@ -34,12 +34,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
                 .authorizeRequests()
-
-                    .antMatchers("/actuator/prometheus").anonymous()
                     .antMatchers("/employee/**").hasRole("EMP")
                     .antMatchers("/hr/**").hasRole("HRM")
                     .antMatchers("/admin/**").hasRole("ADM")
-                    .antMatchers("/auth/**").anonymous()
+                    .antMatchers("/auth/**").permitAll()
 
                 .anyRequest().authenticated()
             .and()
