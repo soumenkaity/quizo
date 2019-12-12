@@ -56,3 +56,19 @@ logging:
     org.springframework.security: DEBUG
     com.example: DEBUG
   file: app.log
+
+#Metrics related configurations
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: all
+  metrics:
+    export:
+      prometheus:
+        enabled: true

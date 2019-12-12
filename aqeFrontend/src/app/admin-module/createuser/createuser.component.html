@@ -55,9 +55,14 @@
                 accept=".csv" />
 
         </div>
-        <mat-progress-spinner mode="indeterminate" diameter=20 style="display: inline-flex; margin-left: 20px;" *ngIf="isLoading"></mat-progress-spinner>
-        <div class="text-muted" style="display: inline-flex;margin-top: 10px;">{{selectedFile?.name}}<span><i class="material-icons ml-3" style="display: inline-block;" *ngIf="isFileSelected">check</i></span></div>
-        <div> <button class="button" mat-raised-button color="primary" (click)="submitCsv()" *ngIf="isFileSelected">Register User</button></div>
+
+        <div class="text-muted" style="display: inline-flex;margin-top: 10px;">{{selectedFile?.name}}<span><i class="material-icons ml-3" style="display: inline-block;" *ngIf="isFileSelected">check</i></span>
+            <span class="text-center"><mat-progress-spinner mode="indeterminate" diameter=20 style="display: inline-block; margin-left: 20px;" *ngIf="isLoading"></mat-progress-spinner></span>
+        </div>
+        <div> <button class="button" mat-raised-button color="primary" (click)="submitCsv()" *ngIf="isFileSelected">Register Filed Users</button></div>
+        <div style="display: flex;">
+
+        </div>
     </form>
 
 </section>

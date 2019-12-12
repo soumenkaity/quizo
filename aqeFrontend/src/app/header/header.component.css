@@ -9,6 +9,7 @@
 }
 
 .spacing-l-20 {
+    cursor: pointer;
     margin-left: 20px;
     width: 75px;
     height: 35px;

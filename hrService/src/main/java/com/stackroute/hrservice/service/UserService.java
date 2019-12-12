@@ -27,7 +27,7 @@ public class UserService {
   }
 
   public List<User> getAllUsers(){ return  userRepository.findAll();}
-  public List<User> getAllUsersEmp(){return userRepository.findByRole("emp");}
+  public List<User> getAllUsersEmp(){return userRepository.findByRole("EMP");}
   public User getUserById(String id){ return userRepository.findById(id).orElseThrow(()->new RuntimeException());}
 
   public User updateUser(User user){return userRepository.save(user);}
