@@ -1,0 +1,10 @@
+===============ports==================
+zuul: quizo.stackroute.io:8080
+configServer: quizo.stackroute.io:8888
+EurekaServer: quizo.stackroute.io:8761
+prometheus: quizo.stackroute.io:9090
+portainer: quizo.stackroute.io:9000
+loginService: quizo.stackroute.io:8081
+adminService: quizo.stackroute.io:8082
+employeeService: quizo.stackroute.io:8083
+hrService: quizo.stackroute.io:8084
