@@ -11,7 +11,7 @@
 
     <groupId>com.stackroute</groupId>
     <artifactId>loginService</artifactId>
-  <version>v1.0.0</version>
+    <version>v1.0.0</version>
     <packaging>jar</packaging>
 
     <name>loginService</name>
@@ -67,11 +67,6 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <scope>test</scope>
@@ -97,12 +92,6 @@
         <artifactId>mail</artifactId>
         <version>1.4.7</version>
       </dependency>
-        <dependency>
-            <groupId>com.stackroute</groupId>
-            <artifactId>hrService</artifactId>
-            <version>v1.0.0</version>
-            <scope>compile</scope>
-        </dependency>
       <!-- Micormeter core dependecy  -->
       <dependency>
         <groupId>io.micrometer</groupId>
@@ -113,6 +102,14 @@
         <groupId>io.micrometer</groupId>
         <artifactId>micrometer-registry-prometheus</artifactId>
       </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-netflix-eureka-client -->
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-netflix-eureka-client</artifactId>
+        <version>1.1.0.RELEASE</version>
+      </dependency>
+
     </dependencies>
 
 
