@@ -5,10 +5,10 @@
 export const environment = {
   production: false,
 
-  HrURLprefix: 'https://15.206.152.181:8084/hr',
-  employeeURLprefix: 'https://15.206.152.181:8083/employee',
-  adminURLprefix:'https://15.206.152.181:8082/admin',
-  authURLprefix:'https://15.206.152.181:8081/auth',
+  HrURLprefix: 'http://15.206.152.181:8084/hr',
+  employeeURLprefix: 'http://15.206.152.181:8083/employee',
+  adminURLprefix:'http://15.206.152.181:8082/admin',
+  authURLprefix:'http://15.206.152.181:8081/auth',
 };
 
 /*
