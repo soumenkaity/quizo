@@ -5,6 +5,7 @@ import com.mongodb.util.JSON;
 import com.stackroute.adminService.model.Question;
 import com.stackroute.adminService.model.Topic;
 import com.stackroute.adminService.repository.TopicRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -20,6 +21,7 @@ import java.util.Map;
 
 @Service
 public class TopicService {
+  @Autowired
   private TopicRepository topicRepository;
 
   @Value("${spring.data.mongodb.database}")
@@ -35,7 +37,7 @@ public class TopicService {
   public List<Topic> getAllTopics(){return topicRepository.findAll();}
   public Topic getTopicById(String id){return topicRepository.findById(id).orElseThrow(()->new RuntimeException());}
   public Topic updateTopic(Topic topic){return topicRepository.save(topic);}
-  public String deleteTopic(Topic topic){ mongoOperations.dropCollection(topic.getName()); topicRepository.delete(topic); return "topic deleted form database";}
+  public String deleteTopic(String topic){ mongoOperations.dropCollection(topic);topicRepository.delete(topicRepository.findByName(topic));return "topic deleted form database";}
 
   //---------------------------------------------QUESTIONS----------------------------------------------------
   public List<Question> getAllQuestionsOfTopic(String topicName){return mongoOperations.findAll(Question.class,topicName);}

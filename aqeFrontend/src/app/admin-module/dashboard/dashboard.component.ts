@@ -35,7 +35,7 @@ export interface User{
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
-  topicDisplayedColumns: string[] = ['id','name', 'createdAt', 'link','keywords','actions'];
+  topicDisplayedColumns: string[] = ['id','name', 'createdAt', 'link','actions'];
   employeeDisplayedColumns: string[] = ['id', 'name', 'phone', 'email'];
   requestDisplayedColumns: string[] = [ 'id', 'message', 'status', 'actions'];
   topicDataSource;
@@ -88,43 +88,18 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   
   @ViewChildren(MatPaginator) paginators = new QueryList<MatPaginator>();
 
-//   displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
-//   dataSource: MatTableDataSource<UserData>;
-
-//   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-//   @ViewChild(MatSort, {static: true}) sort: MatSort;
-
-//   constructor() {
-//     // Create 100 users
-//     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
-
-//     // Assign the data to the data source for the table to render
-//     this.dataSource = new MatTableDataSource(users);
-//   }
-
-//   ngOnInit() {
-//     this.dataSource.paginator = this.paginator;
-//     this.dataSource.sort = this.sort;
-//   }
-
-//   applyFilter(filterValue: string) {
-//     this.dataSource.filter = filterValue.trim().toLowerCase();
-
-//     if (this.dataSource.paginator) {
-//       this.dataSource.paginator.firstPage();
-//     }
-//   }
-// }
-
-// /** Builds and returns a new User. */
-// function createNewUser(id: number): UserData {
-//   const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-//       NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
-
-//   return {
-//     id: id.toString(),
-//     name: name,
-//     progress: Math.round(Math.random() * 100).toString(),
-//     color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-//   };
+  deleteTopic(topic){
+    this.topicService.deleteTopic(topic.name).subscribe(
+      res => {},
+      err => {
+        this.toasterService.success("topic deleted");
+        this.topicService.getAllTopics().subscribe(
+          (response: Topic[]) => {
+          this.topicDataSource = new MatTableDataSource(response)
+          this.topicDataSource.paginator = this.paginators.toArray()[0];
+        });
+      }
+    )
+   
+  }
 }
