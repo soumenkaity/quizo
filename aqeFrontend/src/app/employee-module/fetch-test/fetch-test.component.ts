@@ -119,6 +119,19 @@ export class FetchTestComponent implements OnInit, OnDestroy {
 
   }
 
+  endTest(choice){
+    choice==null?0:choice;
+    this.fetchTestService.getNextQuestion(choice+4).subscribe(
+      (response: Question) =>{},
+      error => {
+        if(error.error == "Your test is completed"){
+          this.resetTime();
+          this.feedbackpage()
+        }
+      }
+    )
+
+  }
   ngOnDestroy(): void {
    clearInterval(this.timer);
   }
