@@ -7,19 +7,3 @@ eureka:
     fetchRegistry: false
   server:
     waitTimeInMsWhenSyncEmpty: 0    #wait time for subsequent sync
-
-#Metrics related configurations
-management:
-  endpoint:
-    metrics:
-      enabled: true
-    prometheus:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: all
-  metrics:
-    export:
-      prometheus:
-        enabled: true
