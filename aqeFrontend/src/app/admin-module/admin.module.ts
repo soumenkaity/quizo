@@ -11,7 +11,7 @@ import { CoreModule } from '../core/core.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateModalComponent } from './create-modal/create-modal.component';
 import { CreateuserComponent } from './createuser/createuser.component';
-import { TopicComponent } from './topic/topic.component';
+import { TopicComponent, TopicDetails } from './topic/topic.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { QuestionComponent } from './question/question.component';
 
@@ -27,7 +27,8 @@ import { QuestionComponent } from './question/question.component';
     CreateModalComponent,
     TopicComponent,
     QuestionsComponent,
-    QuestionComponent
+    QuestionComponent,
+    TopicDetails,
     
   ],
   imports: [
@@ -39,7 +40,7 @@ import { QuestionComponent } from './question/question.component';
   providers: [
     AdminServiceService
   ],
-  entryComponents: [CreateModalComponent,DialogOverviewExampleDialog],
+  entryComponents: [CreateModalComponent,DialogOverviewExampleDialog,TopicDetails],
   bootstrap: [AppComponent]
 })
 export class AdminModule { }

@@ -21,4 +21,7 @@ export class TopicService {
   getAllQuestionsOfTopic(topicName){
     return this.http.get(this.URLprefix+"/topic/"+topicName);
   }
+  getTopicMetadata(topicName){
+    return this.http.get(this.URLprefix+"/topic/"+topicName+"/metadata").toPromise();
+  }
 }
