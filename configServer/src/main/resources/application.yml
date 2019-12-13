@@ -12,22 +12,6 @@ spring:
   application:
     name: configserver
 
-#Metrics related configurations
-management:
-  endpoint:
-    metrics:
-      enabled: true
-    prometheus:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: all
-  metrics:
-    export:
-      prometheus:
-        enabled: true
-
 
 
 
