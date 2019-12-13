@@ -7,7 +7,7 @@ export const environment = {
 
   HrURLprefix: 'http://15.206.152.181:8080/hrService',
   employeeURLprefix: 'http://15.206.152.181:8080/employeeService',
-  adminURLprefix:'http://15.2066.152.181:8080/adminService',
+  adminURLprefix:'http://15.206.152.181:8080/adminService',
   authURLprefix:'http://15.206.152.181:8080/loginService/auth',
 };
 
