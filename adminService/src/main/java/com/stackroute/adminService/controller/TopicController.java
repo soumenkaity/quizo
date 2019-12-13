@@ -19,6 +19,7 @@ public class TopicController {
     this.topicService = topicService;
   }
 
+
   @GetMapping("/{topic}")
   public ResponseEntity getAllQuestionsOfTopic(@PathVariable String topic){ return new ResponseEntity(topicService.getAllQuestionsOfTopic(topic), HttpStatus.OK);}
 
@@ -27,6 +28,9 @@ public class TopicController {
 
   @PutMapping("/{topic}")
   public ResponseEntity updateSingleQuestionsOfTopic(@PathVariable String topic, @RequestBody Question question){ return new ResponseEntity(topicService.updateSingleQuestionsOfTopic(topic,question), HttpStatus.OK);}
+
+  @GetMapping("/delete")
+  public ResponseEntity deleteTopic(@RequestParam String name){ return  new ResponseEntity(topicService.deleteTopic(name),HttpStatus.OK);}
 
   @GetMapping("/{topic}/query")
   public ResponseEntity getQuestionsOfTopicByDifficulty(@PathVariable String topic,@RequestParam(required = false) String difficulty){ return new ResponseEntity(topicService.getQuestionsOfTopicByDifficulty(topic,difficulty), HttpStatus.OK);}

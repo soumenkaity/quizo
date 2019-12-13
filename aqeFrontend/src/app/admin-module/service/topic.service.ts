@@ -14,4 +14,8 @@ export class TopicService {
   getAllTopics(){
     return this.http.get(this.URLprefix+"/topics");
   }
+
+  deleteTopic(topicName){
+    return this.http.get(this.URLprefix+"/topic/delete?name="+topicName,{});
+  }
 }

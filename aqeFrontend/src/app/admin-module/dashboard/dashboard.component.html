@@ -46,17 +46,13 @@
                     </td>
                 </ng-container>
 
-                <ng-container matColumnDef="keywords">
-                    <th mat-header-cell *matHeaderCellDef> Keywords </th>
-                    <td mat-cell *matCellDef="let element">no keywords found ...</td>
-                </ng-container>
 
-                <ng-container matColumnDef="actions">
-                    <th mat-header-cell *matHeaderCellDef> Details </th>
-                    <td mat-cell *matCellDef="let element">
-                        <button class="btn-primary" [routerLink]="['/admin/topic/',element.name]">Details</button>
-                    </td>
-                </ng-container>
+                    <ng-container matColumnDef="actions">
+                        <th mat-header-cell *matHeaderCellDef> Details </th>
+                        <td mat-cell *matCellDef="let element">
+                            <button mat-raised-button color="primary" (click)="deleteTopic(element)">Delete</button>
+                        </td>
+                    </ng-container>
 
 
                 <tr mat-header-row *matHeaderRowDef="topicDisplayedColumns "></tr>
