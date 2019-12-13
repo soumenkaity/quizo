@@ -28,6 +28,10 @@ h3 {
     margin-top: 63px;
 }
 
+.inner-container{
+    margin-top:10px;
+}
+
 .mat-column-id {
     word-wrap: break-word !important;
     white-space: unset !important;

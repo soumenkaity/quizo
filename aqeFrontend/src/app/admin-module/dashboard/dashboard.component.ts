@@ -5,6 +5,8 @@ import { TopicService } from '../service/topic.service';
 import { EmployeeService } from '../service/employee.service';
 import { RequestService } from '../service/request.service';
 import { ToasterService } from 'src/app/authentication-module/service/toaster-service.service';
+import {ViewChild} from '@angular/core';
+import {MatSort} from '@angular/material/sort'; 
 
 export interface UserData {
   id: string;
@@ -55,19 +57,22 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.topicService.getAllTopics().subscribe(
       (response: Topic[]) => {
-      this.topicDataSource = new MatTableDataSource(response)
+      this.topicDataSource = new MatTableDataSource(response);
+      this.topicDataSource.sort = this.matSort;
       this.topicDataSource.paginator = this.paginators.toArray()[0];
     });
 
     this.employeeService.getAllEmployees().subscribe(
       (response: User[]) => {
-      this.employeeDataSource = new MatTableDataSource(response)
+      this.employeeDataSource = new MatTableDataSource(response);
+      this.employeeDataSource.sort = this.matSort;
       this.employeeDataSource.paginator = this.paginators.toArray()[1];
     });
 
     this.requestService.getAllRequests().subscribe(
       (response: Request[]) => {
-      this.requestDataSource = new MatTableDataSource(response)
+      this.requestDataSource = new MatTableDataSource(response);
+      this.requestDataSource.sort = this.matSort;
       this.requestDataSource.paginator = this.paginators.toArray()[2];
     });
   }
@@ -87,7 +92,30 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
   
   @ViewChildren(MatPaginator) paginators = new QueryList<MatPaginator>();
+  @ViewChild(MatSort, {static: true}) matSort: MatSort;
 
+  applyFilterEmployee(filterValue: string) {
+    this.employeeDataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.employeeDataSource.paginator) {
+      this.employeeDataSource.paginator.firstPage();
+    }
+  }
+
+  applyFilterTopic(filterValue: string) {
+    this.topicDataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.topicDataSource.paginator) {
+      this.topicDataSource.paginator.firstPage();
+    }
+  }
+  applyFilterRequest(filterValue: string) {
+    this.requestDataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.requestDataSource.paginator) {
+      this.requestDataSource.paginator.firstPage();
+    }
+  }
 //   displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
 //   dataSource: MatTableDataSource<UserData>;
 
