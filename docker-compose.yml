@@ -90,3 +90,19 @@
       container_name: zuul-container
       ports:
         - "8080:8080"
+
+    prometheus-service:
+      image: prom/prometheus
+      restart: always
+      network_mode: host
+      ports:
+        - "9090:9090"
+      volumes:
+        - "/home/ubuntu/adaptive-quiz-engine/prometheus.yml:/etc/prometheus/prometheus.yml"
+
+    grafana-service:
+      image: grafana/grafana
+      restart: always
+      network_mode: host
+      ports:
+        - "3000:3000"
