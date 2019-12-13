@@ -13,6 +13,7 @@ import { CreateModalComponent } from './create-modal/create-modal.component';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { TopicComponent } from './topic/topic.component';
 import { QuestionsComponent } from './questions/questions.component';
+import { QuestionComponent } from './question/question.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { QuestionsComponent } from './questions/questions.component';
     DialogOverviewExampleDialog,
     CreateModalComponent,
     TopicComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    QuestionComponent
     
   ],
   imports: [

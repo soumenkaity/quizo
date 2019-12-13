@@ -8,7 +8,6 @@ import { HttpClient } from '@angular/common/http';
 export class TopicService {
   private URLprefix = environment.adminURLprefix;
   
-
   constructor(private http: HttpClient) {  }
 
   getAllTopics(){
@@ -17,5 +16,9 @@ export class TopicService {
 
   deleteTopic(topicName){
     return this.http.get(this.URLprefix+"/topic/delete?name="+topicName,{});
+  }
+
+  getAllQuestionsOfTopic(topicName){
+    return this.http.get(this.URLprefix+"/topic/"+topicName);
   }
 }
