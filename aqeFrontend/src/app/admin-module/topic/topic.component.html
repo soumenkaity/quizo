@@ -48,9 +48,10 @@
                 <ng-container matColumnDef="actions">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Actions</b> </th>
                     <td mat-cell *matCellDef="let element">
-                        <span class="btn btn-dark mr-2 material-icons">delete_forever</span>
+                        <span class="btn btn-dark mr-2 material-icons" (click)="deleteTopic()">delete_forever</span>
                         <span class="btn btn-dark mr-2 material-icons" (click)="openDialog(element)">list</span>
                         <span class="btn btn-dark mr-2 material-icons" [routerLink]="['/admin/topic',element.name]">question_answer</span>
+                        <span class="btn btn-dark mr-2 material-icons" (click)="reshuffleTopic()">restore</span>
                     </td>
                 </ng-container>
 

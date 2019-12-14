@@ -18,8 +18,16 @@ export class TopicService {
     return this.http.get(this.URLprefix+"/topic/delete?name="+topicName,{});
   }
 
+  reshuffleTopic(topicName){
+    return this.http.get(this.URLprefix+"/topic/"+topicName+"/reshuffle");
+  }
+
   getAllQuestionsOfTopic(topicName){
     return this.http.get(this.URLprefix+"/topic/"+topicName);
+  }
+  getQuestionOfTopicByPage(topicName,page){
+    console.log(page)
+    return this.http.get(this.URLprefix+"/topic/"+topicName+"?page="+page);
   }
   getTopicMetadata(topicName){
     return this.http.get(this.URLprefix+"/topic/"+topicName+"/metadata").toPromise();

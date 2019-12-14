@@ -14,7 +14,7 @@
                 <mat-expansion-panel *ngFor="let question of questions;let i = index">
                     <mat-expansion-panel-header>
                         <mat-panel-title style="display: flex;flex-grow: 0;">
-                            Q-{{i+1}}
+                            Q-{{(pageNo-1)*40+i+1}}
                         </mat-panel-title>
                         <mat-panel-description class="float-left">
                             {{question.question}}
@@ -39,7 +39,15 @@
 
                 </mat-expansion-panel>
             </mat-accordion>
+
+            <div class="row mt-5" style="display: flex; justify-content: space-between;padding:0px 10px">
+                <span class="float-left" (click)="prevPage()"><i class="material-icons btn btn-dark" >keyboard_arrow_left</i></span>
+                <h4 class="text-center">{{pageNo}}</h4>
+                <span class="float-right" (click)="nextPage()"><i class="material-icons btn btn-dark" >keyboard_arrow_right</i></span>
+            </div>
         </div>
+
+
     </div>
 </div>
 <app-footer></app-footer>

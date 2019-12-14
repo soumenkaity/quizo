@@ -20,8 +20,11 @@ public class TopicController {
   }
 
 
-  @GetMapping("/{topic}")
+  @GetMapping("/{topic}/all")
   public ResponseEntity getAllQuestionsOfTopic(@PathVariable String topic){ return new ResponseEntity(topicService.getAllQuestionsOfTopic(topic), HttpStatus.OK);}
+
+  @GetMapping("/{topic}")
+  public ResponseEntity getAllQuestionsOfTopicByPage(@PathVariable String topic,@RequestParam int page){ return new ResponseEntity(topicService.getPageOfQuestions(topic,page), HttpStatus.OK);}
 
   @GetMapping("/{topic}/{id}")
   public ResponseEntity getSingleQuestionsOfTopic(@PathVariable String topic,@PathVariable String id){ return new ResponseEntity(topicService.getSingleQuestionsOfTopic(topic,id), HttpStatus.OK);}

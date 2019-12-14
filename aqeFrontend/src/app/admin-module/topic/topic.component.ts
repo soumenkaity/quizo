@@ -6,6 +6,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { DialogData } from '../admin/admin.component';
 import { result } from 'src/app/employee-module/model/result';
 import { Observable } from 'rxjs';
+import { ToasterService } from 'src/app/authentication-module/service/toaster-service.service';
 
 
 interface Metadata{
@@ -24,6 +25,7 @@ export class TopicComponent implements OnInit, AfterViewInit {
 
   constructor(
     private topicService: TopicService,
+    private ts: ToasterService,
     public dialog: MatDialog
   ) { }
 
@@ -54,12 +56,24 @@ export class TopicComponent implements OnInit, AfterViewInit {
   dialogRef.afterClosed().subscribe(result => {
     console.log('The dialog was closed');
   });
-  
-   
   }
-  // async getMetadata(topicName){
-  //   return await this.topicService.getTopicMetadata(topicName).toPromise().then((response)=>{return response});
-  // }
+  
+  deleteTopic(topicName){
+    this.topicService.deleteTopic(topicName).subscribe(
+      response => {},
+      error =>{
+        this.ts.success("Topic Deleted")
+      }
+    )
+  }
+  reshuffleTopic(topicName){
+    this.topicService.reshuffleTopic(topicName).subscribe(
+      response => {},
+      error =>{
+        this.ts.success("Topic Restored to original state")
+      }
+    )
+  }
 }
 
 @Component({

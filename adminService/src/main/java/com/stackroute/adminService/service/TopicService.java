@@ -8,6 +8,8 @@ import com.stackroute.adminService.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -15,6 +17,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Pageable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +45,10 @@ public class TopicService {
   //---------------------------------------------QUESTIONS----------------------------------------------------
   public List<Question> getAllQuestionsOfTopic(String topicName){return mongoOperations.findAll(Question.class,topicName);}
 
+  public List<Question> getPageOfQuestions(String topicName, int page){
+    Query query = new Query().with(PageRequest.of(page-1,40));
+    return mongoOperations.find(query,Question.class,topicName);
+  }
   public Question getSingleQuestionsOfTopic(String topicName,String id){
     Query searchQuery = new Query(Criteria.where("_id").is(id));
     return (Question) mongoOperations.findOne(searchQuery,Question.class,topicName);

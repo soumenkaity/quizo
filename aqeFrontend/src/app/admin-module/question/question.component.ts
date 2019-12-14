@@ -28,10 +28,19 @@ export class QuestionComponent implements OnInit {
     questions: Question[];
     topicName;
     isLoading = true;
-
-  ngOnInit() {
+    pageNo = 1;
+    pages=5;
+    metadata;
+  async ngOnInit() {
     this.topicName = this.route.snapshot.paramMap.get('name');
-    this.topicService.getAllQuestionsOfTopic(this.topicName).subscribe(
+    this.getQuestions(this.topicName,this.pageNo);
+    this.metadata = await this.topicService.getTopicMetadata(this.topicName).then();
+    console.log(this.metadata);
+    this.pages = this.metadata.questionCount/40;
+  }
+
+  getQuestions(topicName,page){
+    this.topicService.getQuestionOfTopicByPage(topicName,page).subscribe(
       (response: Question[])=>{
         this.questions = response;
         this.isLoading = false;
@@ -40,7 +49,15 @@ export class QuestionComponent implements OnInit {
         console.log(error) 
       }
     )
-    
+  }
+
+  nextPage(){
+    this.pageNo<this.pages?this.pageNo++:this.pageNo;
+    this.getQuestions(this.topicName,this.pageNo);
+  }
+  prevPage(){
+    this.pageNo>1?this.pageNo--:this.pageNo;
+    this.getQuestions(this.topicName,this.pageNo);
   }
 
 }
