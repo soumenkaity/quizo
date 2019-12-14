@@ -7,7 +7,14 @@
         <hr class="my-4">
         <p class="m">below is a overview of all the activities</p>
         <button mat-raised-button color="primary" routerLink='/hr/create'>Autogenerate a Topic</button>
-        <button mat-raised-button color="primary" class="ml-5" routerLink='/hr/create-user'>Generate a Topic through a CSV</button>
+
+        <button mat-raised-button color="primary" class="ml-5" (click)="fileImportInput.click()">Generate a Topic through a CSV</button><input hidden type="file" #fileImportInput name="File Upload" id="txtFileUpload" (change)="fileChangeListener($event)"
+            accept=".csv" />
+
+        <span class="text-muted" style="display: inline-flex;margin: 10px 10px;">{{selectedFile?.name}}<span><i class="material-icons ml-3" style="display: inline-block;" *ngIf="isFileSelected">check</i></span>
+        <span class="text-center"><mat-progress-spinner mode="indeterminate" diameter=20 style="display: inline-block; margin-left: 20px;" *ngIf="isLoading"></mat-progress-spinner></span>
+        </span>
+        <input [(ngModel)]="topicName" placeholder="Enter Topic Name" type="text" *ngIf="isFileSelected"><button class="button ml-3" mat-raised-button color="primary" (click)="submitCsv()" *ngIf="isFileSelected">Submit</button>
     </div>
     <div class=text-center>
         <h3>
@@ -48,7 +55,7 @@
                 <ng-container matColumnDef="actions">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Actions</b> </th>
                     <td mat-cell *matCellDef="let element">
-                        <span class="btn btn-dark mr-2 material-icons" (click)="deleteTopic()">delete_forever</span>
+                        <span class="btn btn-dark mr-2 material-icons" (click)="deleteTopic(element.name)">delete_forever</span>
                         <span class="btn btn-dark mr-2 material-icons" (click)="openDialog(element)">list</span>
                         <span class="btn btn-dark mr-2 material-icons" [routerLink]="['/admin/topic',element.name]">question_answer</span>
                         <span class="btn btn-dark mr-2 material-icons" (click)="reshuffleTopic()">restore</span>

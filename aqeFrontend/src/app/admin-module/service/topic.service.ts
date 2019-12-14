@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class TopicService {
   private URLprefix = environment.adminURLprefix;
   
-  constructor(private http: HttpClient) {  }
+  constructor(private http: HttpClient) {}
 
   getAllTopics(){
     return this.http.get(this.URLprefix+"/topics");
@@ -20,6 +20,24 @@ export class TopicService {
 
   reshuffleTopic(topicName){
     return this.http.get(this.URLprefix+"/topic/"+topicName+"/reshuffle");
+  }
+
+  createTopic(topicName){
+    const today = new Date();
+  
+
+    
+
+    return this.http.post(this.URLprefix+"/topic/add",{
+      "name":topicName,
+      "link":"created by csv upload",
+      "createdAt":today.toDateString(),
+      "keywords":["programming","stuff"]
+    });
+  }
+
+  insertQuestions(csvRecords,topicName){
+    return this.http.post(this.URLprefix+"/topic/"+topicName+"/insert",csvRecords);
   }
 
   getAllQuestionsOfTopic(topicName){

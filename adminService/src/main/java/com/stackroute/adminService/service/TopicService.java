@@ -41,6 +41,7 @@ public class TopicService {
   public Topic getTopicById(String id){return topicRepository.findById(id).orElseThrow(()->new RuntimeException());}
   public Topic updateTopic(Topic topic){return topicRepository.save(topic);}
   public String deleteTopic(String topic){ mongoOperations.dropCollection(topic);topicRepository.delete(topicRepository.findByName(topic));return "topic deleted form database";}
+  public Topic insertTopic(Topic topic){return topicRepository.save(topic);}
 
   //---------------------------------------------QUESTIONS----------------------------------------------------
   public List<Question> getAllQuestionsOfTopic(String topicName){return mongoOperations.findAll(Question.class,topicName);}
@@ -93,6 +94,11 @@ public class TopicService {
       mongoOperations.save(question,topicName);
     }
     return getMetadata(topicName);
+  }
+
+  public String insertQuestionsInTopic(String topicName, List<Question> questions){
+    for(Question question:questions)mongoOperations.save(question,topicName);
+    return "Sucessfully inserted";
   }
 
 
