@@ -51,15 +51,15 @@ export class ConfirmComponent implements OnInit {
     this.employees.forEach((user : Employee) => {
       this.mappingList.push(new TestUser("test_"+testId.slice(24,34),user.id,user.name,user.email,this.test.id,this.test.name,new Date(), "N"))
     });
-    console.log(this.mappingList)
+   // console.log(this.mappingList)
     this.confirmService.postTestMapping(this.mappingList).subscribe(
       response => {
-        console.log(response) 
+        //console.log(response) 
         this.router.navigate(["/hr/finished"])
         this.ts.success("Test Created","The Employees have been sent details about the test")
         },
       error => {
-        console.log(error)
+        //console.log(error)
         this.router.navigate(["/hr/finished"])
         this.ts.success("Test Created","The Employees have been sent details about the test")
       }

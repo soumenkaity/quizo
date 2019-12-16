@@ -13,7 +13,7 @@ export class FetchTestService {
   constructor(private http: HttpClient) { }
 
   getFirstQuestion(userDetails){
-    console.log(userDetails);
+    //console.log(userDetails);
     const details = {
       "id":userDetails.id,
       "testId":userDetails.testId,

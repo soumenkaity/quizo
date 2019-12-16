@@ -38,7 +38,7 @@ export class TopicComponent implements OnInit {
   getAllTopics(){
     this.topicService.getAllTopics().subscribe(
       (response: Topic[]) => {
-        console.log(response)
+        //console.log(response)
         this.topicDataSource = new MatTableDataSource(response);
         this.topicDataSource.paginator = this.paginators.toArray()[0];
         this.topicDataSource.sort = this.sort; 
@@ -52,7 +52,7 @@ export class TopicComponent implements OnInit {
     const selectedTopic = this.form.value.topics
       .map((v, i) => v ? this.topics[i] : null)
       .filter(v => v !== null)[0];
-    console.log(selectedTopic);
+    //console.log(selectedTopic);
     this.dataService.setSelectedTest(selectedTopic)
     this.router.navigate(['/hr/employees'])
   }

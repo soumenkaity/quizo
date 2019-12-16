@@ -78,9 +78,9 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result)
+      //console.log(result)
       if (result != undefined) {
-        console.log('-------')
+        //console.log('-------')
         result.status = 'N'
         this.requestService.addRequest(result).subscribe(
           response => {this.toasterService.success("Request ADDED")
@@ -101,7 +101,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
 
   deleteRequest(request) {
-    console.log(request)
+    //console.log(request)
     this.requestService.deleteRequest(request).subscribe(
       res => { },
       err => { this.toasterService.success("Request Deleted") }

@@ -74,7 +74,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
  
   changeRequestStatus(request){
-    console.log(request);
+    // console.log(request);
     this.requestService.updateRequest(request).subscribe(
       res => {},
       err => {this.toasterService.success("Request Updated")}

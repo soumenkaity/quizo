@@ -51,7 +51,7 @@ export class EmployeeComponent implements OnInit {
   getAllEmployeesList(){
     this.employeeService.getAllEmployees().subscribe(
       (response: Employee[]) => {
-        console.log(response)
+        //console.log(response)
         this.employees = response
         this.dataSource = new MatTableDataSource(this.employees);
         this.isLoading = false;
@@ -67,7 +67,7 @@ export class EmployeeComponent implements OnInit {
     //   .map((v, i) => v ? this.employees[i] : null)
     //   .filter(v => v !== null);
     const selectedEmp=this.selection.selected;
-      console.log(selectedEmp);
+      //console.log(selectedEmp);
       this.dataService.setSelectedEmployees(selectedEmp);
       this.router.navigate(['/hr/confirm']);
     

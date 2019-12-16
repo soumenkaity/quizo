@@ -23,7 +23,7 @@ export class RequestService {
     return this.http.delete(this.URLprefix+'/requests',request);
   }
   updateRequest(request){
-    console.log(request);
+    // console.log(request);
     return this.http.put(this.URLprefix+'/requests', request, { headers: { 'Content-Type': 'application/json' } });
   }
 }

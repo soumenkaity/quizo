@@ -68,7 +68,7 @@ export class TopicComponent implements OnInit, AfterViewInit {
 
   async openDialog(topic){
   var metadata = await this.topicService.getTopicMetadata(topic.name);
-  console.log(metadata);
+  // console.log(metadata);
    const dialogRef = this.dialog.open(TopicDetails, {
     width: '550px',
     height:'800px',
@@ -76,7 +76,7 @@ export class TopicComponent implements OnInit, AfterViewInit {
   });
 
   dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
+    // console.log('The dialog was closed');
   });
   }
   
@@ -84,7 +84,7 @@ export class TopicComponent implements OnInit, AfterViewInit {
     this.topicService.deleteTopic(topicName).subscribe(
       response => {},
       error =>{
-        console.log(error);
+        // console.log(error);
         this.ts.success("Topic Deleted")
       }
     )

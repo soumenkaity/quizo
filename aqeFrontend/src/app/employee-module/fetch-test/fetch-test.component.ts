@@ -49,7 +49,7 @@ export class FetchTestComponent implements OnInit, OnDestroy {
   
     this.fetchTestService.getFirstQuestion(userDetails).subscribe(
       response => {
-        console.log(response)
+        // console.log(response)
         this.question = response;
         this.count = 0;
         this.choices=this.question['choices'];
@@ -122,7 +122,7 @@ export class FetchTestComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
    clearInterval(this.timer);
-   console.log("Destroy timer");
+  //  console.log("Destroy timer");
         // unsubscribe here
     this.sub.unsubscribe();
   }

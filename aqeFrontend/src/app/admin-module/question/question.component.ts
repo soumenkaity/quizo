@@ -35,7 +35,7 @@ export class QuestionComponent implements OnInit {
     this.topicName = this.route.snapshot.paramMap.get('name');
     this.getQuestions(this.topicName,this.pageNo);
     this.metadata = await this.topicService.getTopicMetadata(this.topicName).then();
-    console.log(this.metadata);
+    // console.log(this.metadata);
     this.pages = this.metadata.questionCount/40;
   }
 
@@ -46,7 +46,7 @@ export class QuestionComponent implements OnInit {
         this.isLoading = false;
       },
       error =>{
-        console.log(error) 
+        // console.log(error) 
       }
     )
   }

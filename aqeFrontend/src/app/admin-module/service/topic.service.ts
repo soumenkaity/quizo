@@ -44,7 +44,7 @@ export class TopicService {
     return this.http.get(this.URLprefix+"/topic/"+topicName);
   }
   getQuestionOfTopicByPage(topicName,page){
-    console.log(page)
+    // console.log(page)
     return this.http.get(this.URLprefix+"/topic/"+topicName+"?page="+page);
   }
   getTopicMetadata(topicName){

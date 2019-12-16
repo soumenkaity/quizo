@@ -15,7 +15,7 @@ export class BasicAuthHtppInterceptorService {
           Authorization: sessionStorage.getItem('token')
         }
       })
-      console.log();
+      // console.log();
     }
 
     return next.handle(req);

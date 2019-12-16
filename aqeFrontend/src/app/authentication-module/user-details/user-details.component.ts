@@ -24,13 +24,13 @@ export class UserDetailsComponent implements OnInit {
   }
   ngOnInit(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
-    console.log("okay");
+    // console.log("okay");
     const email = sessionStorage.getItem('email');
-    console.log(email)
+    // console.log(email)
     this.detService.getAllDetails(email).subscribe(
      response => {
         this.user = response;
-        console.log(response);  
+        // console.log(response);  
   })
    
   }
