@@ -7,7 +7,6 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin("localhost:4200")
 @SpringBootApplication
 public class AdminServiceApplication {
 
