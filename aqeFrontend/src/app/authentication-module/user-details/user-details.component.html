@@ -9,14 +9,14 @@
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" opened class="example-sidenav" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
         <mat-nav-list>  
             <img src="assets/img/circle-cropped.png" alt="UserImg">
-           <div class="side-items"> 
-            <div *ngIf="user.role === 'admin'">
+           <div class="side-items navi"> 
+            <div *ngIf="user.role == 'admin'">
               <a mat-list-item class="item" routerLink="/admin">Dash Board</a>
             </div>
-            <div *ngIf="user.role === 'emp'">
+            <div *ngIf="user.role == 'EMP'">
               <a mat-list-item class="item" routerLink="/employee">Dash Board</a>
             </div>
-            <div *ngIf="user.role === 'hr'">
+            <div *ngIf="user.role == 'HRM'">
               <a mat-list-item class="item" routerLink="/hr">Dash Board</a>
             </div>
             <a mat-list-item class="item" routerLink="/auth/logout">Logout</a>
