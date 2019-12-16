@@ -6,7 +6,7 @@
         <p class="lead">This is the main dashboard screen for viewing topic details .</p>
         <hr class="my-4">
         <p class="m">below is a overview of all the activities</p>
-        <button mat-raised-button color="primary" routerLink='/hr/create'>Autogenerate a Topic</button>
+        <button mat-raised-button color="primary" routerLink='/admin/createTopic'>Autogenerate a Topic</button>
 
         <button mat-raised-button color="primary" class="ml-5" (click)="fileImportInput.click()">Generate a Topic through a CSV</button><input hidden type="file" #fileImportInput name="File Upload" id="txtFileUpload" (change)="fileChangeListener($event)"
             accept=".csv" />

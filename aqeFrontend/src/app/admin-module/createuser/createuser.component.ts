@@ -163,7 +163,7 @@ export class CreateuserComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(!result == undefined){
+      if(result != undefined){
         this.createUserService.saveUserInMongo(userDetails).subscribe(
           responnse => this.ts.success("User created")
         );
