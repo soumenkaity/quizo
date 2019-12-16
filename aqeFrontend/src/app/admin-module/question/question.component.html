@@ -1,0 +1,53 @@
+<app-header></app-header>
+<div class="container">
+    <div style="margin-top:50px"></div>
+    <div class="text-center">
+        <h2>TOPIC: {{ topicName }} </h2>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <mat-spinner *ngIf="isLoading" style="display: inline-block;"></mat-spinner>
+        </div>
+        <div class="col-md-12">
+            <mat-accordion>
+                <mat-expansion-panel *ngFor="let question of questions;let i = index">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title style="display: flex;flex-grow: 0;">
+                            Q-{{(pageNo-1)*40+i+1}}
+                        </mat-panel-title>
+                        <mat-panel-description class="float-left">
+                            {{question.question}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    Choices
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-list>
+                                <mat-list-item *ngFor="let choice of question.choices">{{ choice }} </mat-list-item>
+                            </mat-list>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-list>
+                                <mat-list-item>Answer: {{ question.answer }} </mat-list-item>
+                                <mat-list-item>Difficulty: {{ question.difficulty }} </mat-list-item>
+                                <mat-list-item>Total Occurences: {{ question.totalOccurrences }} </mat-list-item>
+                                <mat-list-item>Correct Attempts: {{ question.correctAttempts }} </mat-list-item>
+                            </mat-list>
+                        </div>
+                    </div>
+
+                </mat-expansion-panel>
+            </mat-accordion>
+
+            <div class="row mt-5" style="display: flex; justify-content: space-between;padding:0px 10px">
+                <span class="float-left" (click)="prevPage()"><i class="material-icons btn btn-dark" >keyboard_arrow_left</i></span>
+                <h4 class="text-center">{{pageNo}}</h4>
+                <span class="float-right" (click)="nextPage()"><i class="material-icons btn btn-dark" >keyboard_arrow_right</i></span>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<app-footer></app-footer>

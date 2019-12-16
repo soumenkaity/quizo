@@ -4,6 +4,7 @@ import { Question } from '../model/questions';
 import { Router } from '@angular/router';
 import { DataService } from '../service/data.service';
 import { ToasterService } from 'src/app/authentication-module/service/toaster-service.service';
+import { Observable, Subscription } from 'rxjs/Rx';
 
 // import { testResult } from '../model/testResult';
 
@@ -31,6 +32,8 @@ export class FetchTestComponent implements OnInit, OnDestroy {
   private count: number;
   choices: any;
   timer: any;
+  sub: any;
+  ticks: any;
 
 
   constructor(
@@ -43,19 +46,29 @@ export class FetchTestComponent implements OnInit, OnDestroy {
   ngOnInit() {
     const userDetails = this.dataService.getTestUserDetails();
     // const userDummyDetails = this.dataService.getDummyDetails();
+  
     this.fetchTestService.getFirstQuestion(userDetails).subscribe(
       response => {
-        console.log(response)
+        // console.log(response)
         this.question = response;
         this.count = 0;
         this.choices=this.question['choices'];
-        // this.timer = this.checkTime();
+        this.timer = Observable.timer(1000,1000);
+        // subscribing to a observable returns a subscription object
+        this.sub = this.timer.subscribe(t => this.tickerFunc(t));
         this.topicName = userDetails.topicName;
       }
     )
   }
 
   nextQuestion(choice) {
+
+    this.sub.unsubscribe()
+    this.timer = Observable.timer(1000,1000);
+    // subscribing to a observable returns a subscription object
+    this.sub = this.timer.subscribe(t => this.tickerFunc(t));
+    this.totalSeconds = 15;
+
     this.count++
     this.fetchTestService.getNextQuestion(choice).subscribe(
       (response: Question) =>{
@@ -63,13 +76,12 @@ export class FetchTestComponent implements OnInit, OnDestroy {
       },
       error => {
         if(error.error ==   "Your test is completed"){
-          this.resetTime();
+          this.ngOnDestroy();
           this.feedbackpage()
         }
       }
     )
     this.choices = null;
-    this.resetTime();
   }
 
   feedbackpage(){
@@ -77,49 +89,41 @@ export class FetchTestComponent implements OnInit, OnDestroy {
     this.router.navigate(['/employee/feedback']);
   }
 
-  resetTime() {
-    this.totalSeconds = 15;
+
+  tickerFunc(tick){
+    
+    if(tick>=15){
+      this.nextQuestion(0);
+    }
+    this.totalSeconds -= 1;
     this.minutes = Math.floor(this.totalSeconds / 60);
     this.seconds = this.totalSeconds % 60;
-  }
+    this.roundedMins = this.pad(this.minutes);
+    this.roundedSecs=this.pad(this.seconds);
+    this.ticks = tick
+}
 
-  checkTime() {
-    if (this.count != 30) {
-      if (this.totalSeconds <= 0) {
-        setTimeout(() => { this.nextQuestion(0) }, 1);
-        setTimeout(() => { this.checkTime() }, 1000);
-      }
-      else {
-        this.totalSeconds -= 1;
-        this.minutes = Math.floor(this.totalSeconds / 60);
-        this.seconds = this.totalSeconds % 60;
-        this.roundedMins = this.pad(this.minutes);
-        this.roundedSecs=this.pad(this.seconds);
-         setTimeout(() => { this.checkTime() }, 1000);
-      }
-    }
-    else {
-      if (this.totalSeconds <= 0) {
-        setTimeout(() => { this.nextQuestion(0) }, 1);
-      }
-      else {
-        this.totalSeconds -= 1;
-        this.minutes = Math.floor(this.totalSeconds / 60);
-        this.seconds = this.totalSeconds % 60;
-        this.roundedMins = this.pad(this.minutes);
-        this.roundedSecs=this.pad(this.seconds);
-        setTimeout(() => { this.checkTime() }, 1000);
-      }
-
-    }
-
-  }
   pad(number){
     return (number<10?'0':'')+number;
 
   }
 
+  endTest(choice){
+    choice==null?0:choice;
+    this.fetchTestService.getNextQuestion(choice+4).subscribe(
+      (response: Question) =>{},
+      error => {
+        if(error.error == "Your test is completed"){
+          this.feedbackpage()
+        }
+      }
+    )
+
+  }
   ngOnDestroy(): void {
    clearInterval(this.timer);
+  //  console.log("Destroy timer");
+        // unsubscribe here
+    this.sub.unsubscribe();
   }
 }

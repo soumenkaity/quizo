@@ -51,7 +51,7 @@ export class CreateuserComponent implements OnInit {
   
       let text = [];
       let files = $event.srcElement.files;
-  this.selectedFile = files[0];
+      this.selectedFile = files[0];
       if (this.isCSVFile(files[0])) {
   
         let input = $event.target;
@@ -163,7 +163,7 @@ export class CreateuserComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(!result == undefined){
+      if(result != undefined){
         this.createUserService.saveUserInMongo(userDetails).subscribe(
           responnse => this.ts.success("User created")
         );

@@ -16,7 +16,7 @@ export class MessageserviceService {
    this.message.name=name;
    this.message.email=email;
    this.message.phone=number;
-   console.log("message:",this.message);
+   //console.log("message:",this.message);
    return this.http.post<any>(this.URLprefix+'/sendmessage', this.message)
   }
 

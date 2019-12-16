@@ -36,7 +36,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
       
     });
     this.s.getQuestions(this.topic).subscribe(data => {this.questionList = data[1].questions; console.log(data[0].questions)});
-      console.log(this.questionList)
+      //console.log(this.questionList)
   }
   ngOnDestroy(): void {
    // this.subscription.unsubscribe();

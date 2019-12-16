@@ -5,6 +5,8 @@ import { TopicService } from '../service/topic.service';
 import { EmployeeService } from '../service/employee.service';
 import { RequestService } from '../service/request.service';
 import { ToasterService } from 'src/app/authentication-module/service/toaster-service.service';
+import {ViewChild} from '@angular/core';
+import {MatSort} from '@angular/material/sort'; 
 
 export interface UserData {
   id: string;
@@ -35,7 +37,7 @@ export interface User{
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
-  topicDisplayedColumns: string[] = ['id','name', 'createdAt', 'link','keywords','actions'];
+  topicDisplayedColumns: string[] = ['id','name', 'createdAt', 'link','actions'];
   employeeDisplayedColumns: string[] = ['id', 'name', 'phone', 'email'];
   requestDisplayedColumns: string[] = [ 'id', 'message', 'status', 'actions'];
   topicDataSource;
@@ -55,26 +57,29 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.topicService.getAllTopics().subscribe(
       (response: Topic[]) => {
-      this.topicDataSource = new MatTableDataSource(response)
+      this.topicDataSource = new MatTableDataSource(response);
+      this.topicDataSource.sort = this.matSort;
       this.topicDataSource.paginator = this.paginators.toArray()[0];
     });
 
     this.employeeService.getAllEmployees().subscribe(
       (response: User[]) => {
-      this.employeeDataSource = new MatTableDataSource(response)
+      this.employeeDataSource = new MatTableDataSource(response);
+      this.employeeDataSource.sort = this.matSort;
       this.employeeDataSource.paginator = this.paginators.toArray()[1];
     });
 
     this.requestService.getAllRequests().subscribe(
       (response: Request[]) => {
-      this.requestDataSource = new MatTableDataSource(response)
+      this.requestDataSource = new MatTableDataSource(response);
+      this.requestDataSource.sort = this.matSort;
       this.requestDataSource.paginator = this.paginators.toArray()[2];
     });
   }
 
  
   changeRequestStatus(request){
-    console.log(request);
+    // console.log(request);
     this.requestService.updateRequest(request).subscribe(
       res => {},
       err => {this.toasterService.success("Request Updated")}
@@ -87,44 +92,20 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
   
   @ViewChildren(MatPaginator) paginators = new QueryList<MatPaginator>();
+  @ViewChild(MatSort, {static: true}) matSort: MatSort;
 
-//   displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
-//   dataSource: MatTableDataSource<UserData>;
-
-//   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-//   @ViewChild(MatSort, {static: true}) sort: MatSort;
-
-//   constructor() {
-//     // Create 100 users
-//     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
-
-//     // Assign the data to the data source for the table to render
-//     this.dataSource = new MatTableDataSource(users);
-//   }
-
-//   ngOnInit() {
-//     this.dataSource.paginator = this.paginator;
-//     this.dataSource.sort = this.sort;
-//   }
-
-//   applyFilter(filterValue: string) {
-//     this.dataSource.filter = filterValue.trim().toLowerCase();
-
-//     if (this.dataSource.paginator) {
-//       this.dataSource.paginator.firstPage();
-//     }
-//   }
-// }
-
-// /** Builds and returns a new User. */
-// function createNewUser(id: number): UserData {
-//   const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-//       NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
-
-//   return {
-//     id: id.toString(),
-//     name: name,
-//     progress: Math.round(Math.random() * 100).toString(),
-//     color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-//   };
+  deleteTopic(topic){
+    this.topicService.deleteTopic(topic.name).subscribe(
+      res => {},
+      err => {
+        this.toasterService.success("topic deleted");
+        this.topicService.getAllTopics().subscribe(
+          (response: Topic[]) => {
+          this.topicDataSource = new MatTableDataSource(response)
+          this.topicDataSource.paginator = this.paginators.toArray()[0];
+        });
+      }
+    )
+   
+  }
 }

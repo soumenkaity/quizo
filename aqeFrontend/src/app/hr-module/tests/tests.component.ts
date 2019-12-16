@@ -19,7 +19,7 @@ export class TestsComponent implements OnInit {
   ngOnInit() {
     this.resultService.getResultOfAllTests().subscribe(
       (response: TestUser[]) =>{
-        console.log(response);
+        //console.log(response);
         this.testsDataSource = new MatTableDataSource(response);
         this.testsDataSource.paginator = this.paginators.toArray()[0];
       }

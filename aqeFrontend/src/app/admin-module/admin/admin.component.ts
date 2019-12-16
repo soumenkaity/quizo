@@ -54,7 +54,7 @@ export class AdminComponent implements OnInit {
       });
   
       dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
+        // console.log('The dialog was closed');
         // this.animal = result;
       });
       this.topic = "";
@@ -80,11 +80,11 @@ export class DialogOverviewExampleDialog implements OnInit{
     private adminService:AdminServiceService) {}
   
   ngOnInit(){
-    console.log(this.data.topic);
+    // console.log(this.data.topic);
     this.showSpinnerIndicator=true;
     this.adminService.createTest(this.data.topic).subscribe(result=> {
       this.responseMessage = result.message;
-      console.log(this.responseMessage);  
+      // console.log(this.responseMessage);  
       this.showSpinnerIndicator = false;
     });
 

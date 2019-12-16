@@ -65,7 +65,7 @@ export class ScoreService {
     for(let i=0; i<questionList.length; i++){
       maxScore = maxScore + questionList[i].weight;
     }
-    console.log("max score is ",maxScore);
+    //console.log("max score is ",maxScore);
     percentage = (score/maxScore)*100;
     return percentage;
   }

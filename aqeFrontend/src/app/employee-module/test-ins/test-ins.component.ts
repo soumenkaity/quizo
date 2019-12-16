@@ -21,7 +21,7 @@ export class TestInsComponent implements OnInit {
 
   onStartTest(){
     const userData = this.dataService.getTestUserDetails();
-    console.log(userData);
+    // console.log(userData);
     // this.http.post(this.URLprefix+'/instructions',{"collectionName":userData.topicName,"empId":userData.userId,"empName":userData.userName})
   }
 
