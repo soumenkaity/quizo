@@ -46,7 +46,7 @@ export class ResultPageComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.resultService.getResultById(id).subscribe(
       (data: Result) => {
-      console.log("data ",data);
+      //console.log("data ",data);
       this.result=data;
        this.attempts = this.result.attempts;
        this.count=0;        
@@ -54,7 +54,7 @@ export class ResultPageComponent implements OnInit {
   }  
     evaluate(response, correct ){
       var result= response.localeCompare(correct);
-      console.log(result);
+      //(result);
       if(result){
        return  true;
       }else{

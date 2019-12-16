@@ -23,7 +23,7 @@ export class EmployeedetailsComponent implements OnInit {
     this.employee.email=email;
    
     sessionStorage.setItem(id,JSON.stringify(this.employee));
-    console.log(JSON.parse(sessionStorage.getItem(id)));
+    // console.log(JSON.parse(sessionStorage.getItem(id)));
     this.router.navigate(['/test-instructions']);
   }
 

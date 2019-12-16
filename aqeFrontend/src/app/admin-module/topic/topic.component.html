@@ -1,1 +1,80 @@
-<p>topic works!</p>
+<app-header></app-header>
+<div class="mt-5"> </div>
+<div class="container">
+    <div id="head" class="jumbotron mt-6" style="background-color: #E0E0E0; padding-top: 2rem; ">
+        <h1 class="display-4" class="y">TOPIC DASHBOARD</h1>
+        <p class="lead">This is the main dashboard screen for viewing topic details .</p>
+        <hr class="my-4">
+        <p class="m">below is a overview of all the activities</p>
+        <button mat-raised-button color="primary" routerLink='/admin/createTopic'>Autogenerate a Topic</button>
+
+        <button mat-raised-button color="primary" class="ml-5" (click)="fileImportInput.click()">Generate a Topic through a CSV</button><input hidden type="file" #fileImportInput name="File Upload" id="txtFileUpload" (change)="fileChangeListener($event)"
+            accept=".csv" />
+
+        <span class="text-muted" style="display: inline-flex;margin: 10px 10px;">{{selectedFile?.name}}<span><i class="material-icons ml-3" style="display: inline-block;" *ngIf="isFileSelected">check</i></span>
+        <span class="text-center"><mat-progress-spinner mode="indeterminate" diameter=20 style="display: inline-block; margin-left: 20px;" *ngIf="isLoading"></mat-progress-spinner></span>
+        </span>
+        <input [(ngModel)]="topicName" placeholder="Enter Topic Name" type="text" *ngIf="isFileSelected"><button class="button ml-3" mat-raised-button color="primary" (click)="submitCsv()" *ngIf="isFileSelected">Submit</button>
+    </div>
+    <div class=text-center>
+        <h3>
+            <b>EXISTING TOPICS</b>:
+        </h3>
+    </div>
+    <div class="inner-container">
+        <mat-form-field>
+            <input matInput (keyup)="applyFilterTopic($event.target.value)" placeholder="Search Topic">
+        </mat-form-field>
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="topicDataSource" style="width: 100%;" matSort #topicSort="matSort">
+
+                <ng-container matColumnDef="id">
+                    <td mat-cell *matCellDef="let element"> {{element.id | slice:20:24}} </td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>ID</b> </th>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <!-- Name Column -->
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Name</b> </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="createdAt">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Creation Date</b> </th>
+                    <td mat-cell *matCellDef="let element"> {{element.createdAt | slice:0:10}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="link">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header><b>Link</b> </th>
+                    <td mat-cell *matCellDef="let element"> {{element.link}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Actions</b> </th>
+                    <td mat-cell *matCellDef="let element">
+                        <span class="btn btn-dark mr-2 material-icons" (click)="deleteTopic(element.name)">delete_forever</span>
+                        <span class="btn btn-dark mr-2 material-icons" (click)="openDialog(element)">list</span>
+                        <span class="btn btn-dark mr-2 material-icons" [routerLink]="['/admin/topic',element.name]">question_answer</span>
+                        <span class="btn btn-dark mr-2 material-icons" (click)="reshuffleTopic()">restore</span>
+                    </td>
+                </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="topicDisplayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: topicDisplayedColumns;"></tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[ 10, 20]" showFirstLastButtons style="width: 100%;">
+            </mat-paginator>
+        </div>
+    </div>
+
+    <hr>
+
+
+    <div class="m-5"></div>
+</div>
+<app-footer></app-footer>

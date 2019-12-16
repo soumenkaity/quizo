@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Topic: {{data.topic.name}}</h1>
+<div mat-dialog-content>
+    <p>Details</p>
+    <mat-list>
+        <mat-list-item> ID {{data.topic.id}} </mat-list-item>
+        <mat-list-item> Created At {{data.topic.createdAt}} </mat-list-item>
+        <mat-list-item> Total Questions: {{data.metadata.questionCount}}</mat-list-item>
+        <mat-list-item> Easy Questions: {{data.metadata.easyQuestionCount}}</mat-list-item>
+        <mat-list-item> Medium Questions: {{data.metadata.mediumQuestionCount}}</mat-list-item>
+        <mat-list-item> Hard Questions: {{data.metadata.hardQuestionCount}}</mat-list-item>
+        <mat-list-item> KeyWords: No Keywords found... </mat-list-item>
+    </mat-list>
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div>

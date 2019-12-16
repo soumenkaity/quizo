@@ -18,7 +18,7 @@ export class DashService {
   constructor(private httpClient: HttpClient) {
   }
   getDetails(): Observable<any> {
-    console.log("test call");
+    //console.log("test call");
     return this.httpClient.get<Detail[]>("http://172.23.234.85:8093/employee/dashboard/");
   }
 }

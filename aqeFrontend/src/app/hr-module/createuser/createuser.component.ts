@@ -48,7 +48,7 @@ export class CreateuserComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if(result == undefined){
-        console.log('-------')
+       // console.log('-------')
         userDetails.role = 'EMP';
         result.role = 'EMP';
         this.createUserService.saveUserInMongo(userDetails).subscribe(

@@ -8,6 +8,8 @@ import com.stackroute.adminService.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -15,6 +17,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Pageable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +41,15 @@ public class TopicService {
   public Topic getTopicById(String id){return topicRepository.findById(id).orElseThrow(()->new RuntimeException());}
   public Topic updateTopic(Topic topic){return topicRepository.save(topic);}
   public String deleteTopic(String topic){ mongoOperations.dropCollection(topic);topicRepository.delete(topicRepository.findByName(topic));return "topic deleted form database";}
+  public Topic insertTopic(Topic topic){return topicRepository.save(topic);}
 
   //---------------------------------------------QUESTIONS----------------------------------------------------
   public List<Question> getAllQuestionsOfTopic(String topicName){return mongoOperations.findAll(Question.class,topicName);}
 
+  public List<Question> getPageOfQuestions(String topicName, int page){
+    Query query = new Query().with(PageRequest.of(page-1,40));
+    return mongoOperations.find(query,Question.class,topicName);
+  }
   public Question getSingleQuestionsOfTopic(String topicName,String id){
     Query searchQuery = new Query(Criteria.where("_id").is(id));
     return (Question) mongoOperations.findOne(searchQuery,Question.class,topicName);
@@ -86,6 +94,11 @@ public class TopicService {
       mongoOperations.save(question,topicName);
     }
     return getMetadata(topicName);
+  }
+
+  public String insertQuestionsInTopic(String topicName, List<Question> questions){
+    for(Question question:questions)mongoOperations.save(question,topicName);
+    return "Sucessfully inserted";
   }
 
 
