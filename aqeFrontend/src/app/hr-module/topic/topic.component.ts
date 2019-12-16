@@ -42,18 +42,11 @@ export class TopicComponent implements OnInit {
         this.topicDataSource = new MatTableDataSource(response);
         this.topicDataSource.paginator = this.paginators.toArray()[0];
         this.topicDataSource.sort = this.sort; 
-
         this.isLoading=false;
-        this.addCheckBoxesToTopics()
       }
     )
   }
-  private addCheckBoxesToTopics() {
-    this.topics.forEach((o, i) => {
-      const control = new FormControl(i === 0); // if first item set to true, else false
-      (this.form.controls.topics as FormArray).push(control);
-    });
-  }
+
   goToEmployeeSelection(){
     //get the first '[0]'th topic selected
     const selectedTopic = this.form.value.topics

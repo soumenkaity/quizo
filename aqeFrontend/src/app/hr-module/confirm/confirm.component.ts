@@ -18,7 +18,7 @@ export class ConfirmComponent implements OnInit {
 
   private testMapping = <Mapping>{};
   private test: Topic;
-  private employees: Employee[]
+  private employees
   private mappingList = new Array();
   employeeDataSource: any;
 
