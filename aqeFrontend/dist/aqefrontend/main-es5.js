@@ -3382,7 +3382,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                 }
                 FetchTestComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this.userDetails = this.dataService.getTestUserDetails();
+                    this.userDetails = this.dataService.getDummyDetails();
                     console.log(this.userDetails);
                     // this.userDummyDetails = this.dataService.getDummyDetails();
                     this.topicName = this.userDetails.topicName;
@@ -3390,9 +3390,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                         _this.question = response;
                         _this.count = 0;
                         _this.choices = _this.question['choices'];
-                        _this.timer = rxjs_Rx__WEBPACK_IMPORTED_MODULE_6__["Observable"].timer(1000, 1000);
-                        _this.sub = _this.timer.subscribe(function (t) { return _this.tickerFunc(t); });
                     });
+                    this.timer = rxjs_Rx__WEBPACK_IMPORTED_MODULE_6__["Observable"].timer(1000, 1000);
+                    this.sub = this.timer.subscribe(function (t) { return _this.tickerFunc(t); });
                     // this.fetchTestService.getFirstQuestion(this.userDetails).subscribe(
                     //   response => {
                     //     console.log(response)
@@ -3416,17 +3416,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                         "choices": this.question.choices
                     };
                     this.attempts.push(thisAttempt);
-                    console.log(this.attempts);
-                    this.evaluateNextQuestion(thisAttempt);
                     this.sub.unsubscribe();
                     this.totalSeconds = 15;
                     this.count++;
+                    this.evaluateNextQuestion(thisAttempt);
                     this.fetchTestService.getQuestion(this.userDetails.topicName, this.pointer.level).subscribe(function (response) {
                         _this.question = response;
                         _this.choices = _this.question['choices'];
-                        _this.timer = rxjs_Rx__WEBPACK_IMPORTED_MODULE_6__["Observable"].timer(1000, 1000);
-                        _this.sub = _this.timer.subscribe(function (t) { return _this.tickerFunc(t); });
                     });
+                    this.timer = rxjs_Rx__WEBPACK_IMPORTED_MODULE_6__["Observable"].timer(1000, 1000);
+                    this.sub = this.timer.subscribe(function (t) { return _this.tickerFunc(t); });
                     // 
                     this.choices = null;
                 };
@@ -3487,7 +3486,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                             this.pointer.wrong++;
                         }
                     }
-                    if (this.pointer.current == 10) {
+                    if (this.pointer.current == 11) {
                         if (this.pointer.level == 'E' && this.pointer.correct <= this.easyLimit) {
                             this.endTest();
                         }

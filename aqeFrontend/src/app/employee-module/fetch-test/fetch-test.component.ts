@@ -66,7 +66,7 @@ export class FetchTestComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.userDetails = this.dataService.getTestUserDetails();
+    this.userDetails = this.dataService.getDummyDetails();
     console.log(this.userDetails);
     // this.userDummyDetails = this.dataService.getDummyDetails();
     this.topicName = this.userDetails.topicName;
@@ -76,10 +76,10 @@ export class FetchTestComponent implements OnInit, OnDestroy {
         this.question = response;
         this.count = 0;
         this.choices=this.question['choices'];
-        this.timer = Observable.timer(1000,1000);
-        this.sub = this.timer.subscribe(t => this.tickerFunc(t));
       }
     )
+    this.timer = Observable.timer(1000,1000);
+    this.sub = this.timer.subscribe(t => this.tickerFunc(t));
     // this.fetchTestService.getFirstQuestion(this.userDetails).subscribe(
     //   response => {
     //     console.log(response)
@@ -105,19 +105,18 @@ export class FetchTestComponent implements OnInit, OnDestroy {
     }
 
     this.attempts.push(thisAttempt);
-    console.log(this.attempts);
-    this.evaluateNextQuestion(thisAttempt);
     this.sub.unsubscribe()
     this.totalSeconds = 15;
     this.count++
+    this.evaluateNextQuestion(thisAttempt);
     this.fetchTestService.getQuestion(this.userDetails.topicName,this.pointer.level).subscribe(
       response=>{
         this.question = response;
         this.choices=this.question['choices'];
-        this.timer = Observable.timer(1000,1000);
-        this.sub = this.timer.subscribe(t => this.tickerFunc(t));
       }
     )
+    this.timer = Observable.timer(1000,1000);
+    this.sub = this.timer.subscribe(t => this.tickerFunc(t));
     // 
     this.choices = null;
   }
@@ -185,7 +184,7 @@ export class FetchTestComponent implements OnInit, OnDestroy {
       }
     }
 
-    if(this.pointer.current == 10){
+    if(this.pointer.current == 11){
       if(this.pointer.level == 'E' && this.pointer.correct <= this.easyLimit){
         this.endTest()
       }
