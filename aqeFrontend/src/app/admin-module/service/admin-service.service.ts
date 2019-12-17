@@ -12,6 +12,7 @@ export class AdminServiceService {
 
   constructor(private http: HttpClient) {}
   public createTest(topic): Observable<any> {
+    console.log(topic)
     return this.http.post<any>(this.URLprefix+'/create-topic', topic);
   }
 }
