@@ -34,4 +34,11 @@ export class FetchTestService {
     console.log("here")
     return this.http.post(this.URLprefix+'/result',result);
   }
+
+  getQuestion(topicName,difficulty){
+    return this.http.get(this.URLprefix+"/test?topic="+topicName+"&difficulty="+difficulty);
+  }
+  sendAttempts(attempts,topic){
+    return this.http.post(this.URLprefix+"/modify?topic="+topic,attempts);
+  }
 }
