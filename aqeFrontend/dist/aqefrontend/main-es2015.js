@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\n<div>\n    <img src=\"../assets/img/logo102 .png\" />\n    <form #userForm=\"ngForm\" name=\"quizo\" (ngSubmit)=\"onSubmit()\" action=\"#\"><br>\n        <input type=\"search\" class=\"search\" [(ngModel)]=\"topic\" name =\"input\" placeholder=\"type your quiz topic here\" required><br>\n        <button type=\"submit\" [disabled]=\"showSpinnerIndicator||!userForm.valid\" mat-raised-button color=\"primary\" style=\"margin-top: 20px;\">Generate Test</button>\n    </form>\n</div>\n<app-footer></app-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\n<div>\n    <img src=\"../assets/img/logo102 .png\" />\n    <form #userForm=\"ngForm\" name=\"quizo\" (ngSubmit)=\"onSubmit()\" action=\"#\"><br>\n        <input type=\"search\" class=\"search\" [(ngModel)]=\"topic\" name=\"input\" placeholder=\"type your quiz topic here\" required><br>\n        <button type=\"submit\" [disabled]=\"showSpinnerIndicator||!userForm.valid\" mat-raised-button color=\"primary\" style=\"margin-top: 20px;\">Generate Test</button>\n    </form>\n</div>");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header>\n</app-header>\n\n\n<section class=\"sample-app-content\">\n    <h1 style=\"font-size: 20px;\">User details form:</h1>\n    <form [formGroup]=\"detailsForm\">\n\n        <table align=\"center\">\n            <tr>\n                <td><label>Name:</label></td>\n                <td><input type=\"text\" formControlName=\"name\" placeholder=\"Enter name...\"></td>\n            </tr>\n            <tr>\n                <td><label>Phone:</label></td>\n                <td><input type=\"text\" formControlName=\"phone\" placeholder=\"Enter phone...\"></td>\n            </tr>\n            <tr>\n                    <td><label>Gender:</label></td>\n                    <td>\n                        <select formControlName=\"gender\">\n                            <option value=\"\" disabled>Enter here...</option>\n                            <option value=\"female\">Female</option>\n                            <option value=\"male\">Male</option>\n                            <option value=\"others\">Others</option>\n                        </select>\n                    </td>\n                </tr>\n            <tr>\n                <td><label>Email:</label></td>\n                <td><input type=\"text\" formControlName=\"email\" placeholder=\"Enter email...\"></td>\n            </tr>\n            <tr>\n                <td><label>Role:</label></td>\n                <td>\n                    <select formControlName=\"role\">\n                        <option value=\"HRM\">HRM</option>\n                        <option value=\"EMP\">EMP</option>\n                    </select>\n                </td>\n            </tr>\n            <tr>\n                <td><label>Designation:</label></td>\n                <td><input type=\"text\" formControlName=\"designation\" placeholder=\"Enter designation...\"></td>\n            </tr>\n            <tr>\n                    <td><label>Address:</label></td>\n                    <td><input type=\"text\" formControlName=\"address\" placeholder=\"Enter address...\"></td>\n                </tr>\n        </table>\n\n        \n        <button class=\"button\" mat-raised-button color=\"primary\" (click)=\"openDialog(detailsForm.value)\" [disabled]=\"!detailsForm.valid\">Enter login details</button>\n        \n    </form>\n</section>\n\n<!-- <app-footer></app-footer> -->");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header>\n</app-header>\n\n\n<section class=\"sample-app-content\">\n    <h1 style=\"font-size: 20px;\">User details form:</h1>\n    <form [formGroup]=\"detailsForm\">\n\n        <table align=\"center\">\n            <tr>\n                <td><label>Name:</label></td>\n                <td><input type=\"text\" formControlName=\"name\" placeholder=\"Enter name...\"></td>\n            </tr>\n            <tr>\n                <td><label>Phone:</label></td>\n                <td><input type=\"text\" formControlName=\"phone\" placeholder=\"Enter phone...\"></td>\n            </tr>\n            <tr>\n                <td><label>Gender:</label></td>\n                <td>\n                    <select formControlName=\"gender\">\n                            <option value=\"\" disabled>Enter here...</option>\n                            <option value=\"female\">Female</option>\n                            <option value=\"male\">Male</option>\n                            <option value=\"others\">Others</option>\n                        </select>\n                </td>\n            </tr>\n            <tr>\n                <td><label>Email:</label></td>\n                <td><input type=\"text\" formControlName=\"email\" placeholder=\"Enter email...\"></td>\n            </tr>\n            <tr>\n                <td><label>Role:</label></td>\n                <td>\n                    <select formControlName=\"role\">\n                        <option value=\"HRM\">HRM</option>\n                        <option value=\"EMP\">EMP</option>\n                    </select>\n                </td>\n            </tr>\n            <tr>\n                <td><label>Designation:</label></td>\n                <td><input type=\"text\" formControlName=\"designation\" placeholder=\"Enter designation...\"></td>\n            </tr>\n            <tr>\n                <td><label>Address:</label></td>\n                <td><input type=\"text\" formControlName=\"address\" placeholder=\"Enter address...\"></td>\n            </tr>\n        </table>\n\n\n        <button class=\"button\" mat-raised-button color=\"primary\" (click)=\"openDialog(detailsForm.value)\" [disabled]=\"!detailsForm.valid\">Register User</button>\n        <div class=\"mt-3\"><span class=\"mr-4\">OR UPLOAD CSV FILE:</span> <button mat-raised-button color=\"primary\" (click)=\"fileImportInput.click()\">Upload</button><input hidden type=\"file\" #fileImportInput name=\"File Upload\" id=\"txtFileUpload\" (change)=\"fileChangeListener($event)\"\n                accept=\".csv\" />\n\n        </div>\n\n        <div class=\"text-muted\" style=\"display: inline-flex;margin-top: 10px;\">{{selectedFile?.name}}<span><i class=\"material-icons ml-3\" style=\"display: inline-block;\" *ngIf=\"isFileSelected\">check</i></span>\n            <span class=\"text-center\"><mat-progress-spinner mode=\"indeterminate\" diameter=20 style=\"display: inline-block; margin-left: 20px;\" *ngIf=\"isLoading\"></mat-progress-spinner></span>\n        </div>\n        <div> <button class=\"button\" mat-raised-button color=\"primary\" (click)=\"submitCsv()\" *ngIf=\"isFileSelected\">Register Filed Users</button></div>\n        <div style=\"display: flex;\">\n\n        </div>\n    </form>\n\n</section>\n\n<!-- <app-footer></app-footer> -->");
 
 /***/ }),
 
@@ -110,7 +110,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\n<div class=\"mt-5\"> </div>\n<div class=\"container\">\n    <div class=\"jumbotron mt-6\" style=\"background-color: #E0E0E0;  padding-top: 2rem; \">\n        <h1 class=\"y\" class=\"display-4\">ADMIN DASHBOARD</h1>\n        <p class=\"lead\">This is the main dashboard screen for creating topics, users and resolving requests .</p>\n        <hr class=\"my-4\">\n        <p class=\"m\">below is a overview of all the activities</p>\n        <button class=\"x\" mat-raised-button color=\"primary\" routerLink='/admin/createTopic'>Create A Topic</button>\n        <button class=\"x\" mat-raised-button color=\"primary\" class=\"ml-5\" routerLink='/admin/createUser'>Create A User</button>\n    </div>\n\n    <div class=text-center>\n        <h3>\n            Created Topics:\n        </h3>\n    </div>\n    <div class=\"row \">\n        <div class=\"col-md-1\">\n        </div>\n        <div class=\"col-md-10\">\n            <div class=\"mat-elevation-z8\">\n                <table mat-table [dataSource]=\"topicDataSource\" style=\"width: 100%;\">\n                    <ng-container matColumnDef=\"id\" class=\"mat-column-id\">\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.id | slice:20:24}} </td>\n                    </ng-container>\n\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"name\">\n                        <th mat-header-cell *matHeaderCellDef> Name </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.name }}</td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"createdAt\" class=\"mat-column-date\">\n                        <th mat-header-cell *matHeaderCellDef> Creation Date </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.createdAt | slice:0:10}} </td>\n                    </ng-container>\n\n                    <!-- Symbol Column -->\n                    <ng-container matColumnDef=\"link\">\n                        <th mat-header-cell *matHeaderCellDef> Link </th>\n                        <td mat-cell *matCellDef=\"let element\"> <a href=element.link>{{element.link | slice:8:28}} ...</a> </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"keywords\">\n                        <th mat-header-cell *matHeaderCellDef> Keywords </th>\n                        <td mat-cell *matCellDef=\"let element\">no keywords found ...</td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"actions\">\n                        <th mat-header-cell *matHeaderCellDef> Details </th>\n                        <td mat-cell *matCellDef=\"let element\">\n                            <button class=\"btn-primary\" [routerLink]=\"['/admin/topic/',element.name]\">Details</button>\n                        </td>\n                    </ng-container>\n\n\n                    <tr mat-header-row *matHeaderRowDef=\"topicDisplayedColumns \"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: topicDisplayedColumns; \"></tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 20] \" showFirstLastButtons style=\"width: 100%; \"></mat-paginator>\n            </div>\n        </div>\n        <div class=\"col-md-1 \"></div>\n    </div>\n    <!-- ------------------- -->\n    <div class=\"mt-5 mb-5 \"></div>\n    <div class=\"text-center \">\n        <h3>\n            Available Users:\n        </h3>\n    </div>\n    <div class=\"row \">\n        <div class=\"col-md-1 \">\n        </div>\n        <div class=\"col-md-10 \">\n            <div class=\"mat-elevation-z8 \">\n                <table mat-table [dataSource]=\"employeeDataSource \" style=\"width: 100%; \">\n\n                    <ng-container matColumnDef=\"id\">\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.id | slice:20:24}} </td>\n                    </ng-container>\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"name\">\n                        <th mat-header-cell *matHeaderCellDef> Name </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.name}} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"phone\">\n                        <th mat-header-cell *matHeaderCellDef> Phone </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.phone}} </td>\n                    </ng-container>\n\n                    <!-- Symbol Column -->\n                    <ng-container matColumnDef=\"email\">\n                        <th mat-header-cell *matHeaderCellDef> Email </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.email}} </td>\n                    </ng-container>\n\n                    <tr mat-header-row *matHeaderRowDef=\"employeeDisplayedColumns \"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: employeeDisplayedColumns; \"></tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 20] \" showFirstLastButtons style=\"width: 100%; \"></mat-paginator>\n            </div>\n        </div>\n        <div class=\"col-md-1 \"></div>\n    </div>\n    <div class=\"mt-5 mb-5 \"></div>\n    <div class=\"text-center \">\n        <h3>\n            All Requests:\n        </h3>\n    </div>\n    <div class=\"row \">\n        <div class=\"col-md-1 \">\n        </div>\n        <div class=\"col-md-10 \">\n            <div class=\"mat-elevation-z8 \">\n                <table mat-table [dataSource]=\"requestDataSource \" style=\"width: 100%; \">\n\n\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"id\">\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.id | slice:20:24}} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"message\">\n                        <th mat-header-cell *matHeaderCellDef> Message </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.message}} </td>\n                    </ng-container>\n\n                    <!-- Symbol Column -->\n                    <ng-container matColumnDef=\"status\">\n                        <th mat-header-cell *matHeaderCellDef> Status </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.status}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"actions\">\n                        <th mat-header-cell *matHeaderCellDef> Actions </th>\n                        <td mat-cell *matCellDef=\"let element\"> <button mat-raised-button color=\"primary\" (click)=\"changeRequestStatus(element)\">C</button> </td>\n                    </ng-container>\n                    <tr mat-header-row *matHeaderRowDef=\"requestDisplayedColumns \"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: requestDisplayedColumns; \"></tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 20] \" showFirstLastButtons style=\"width: 100%; \"></mat-paginator>\n            </div>\n        </div>\n        <div class=\"col-md-1 \"></div>\n    </div>\n</div>\n<div class=\"m-5 \"></div>\n<app-footer></app-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\n<div class=\"mt-5\"> </div>\n<div class=\"container\">\n    <div class=\"jumbotron mt-6\" style=\"background-color: #E0E0E0;  padding-top: 2rem; \">\n        <h1 class=\"y\" class=\"display-4\">ADMIN DASHBOARD</h1>\n        <p class=\"lead\">This is the main dashboard screen for creating topics, users and resolving requests .</p>\n        <hr class=\"my-4\">\n        <p class=\"m\">below is a overview of all the activities</p>\n        <button class=\"mr-4\" mat-raised-button color=\"primary\" routerLink='/admin/createTopic'>Create A Topic</button>\n        <button class=\"mr-4\" mat-raised-button color=\"primary\" routerLink='/admin/topic'>Topic Dashboard</button>\n        <button class=\"mr-4\" mat-raised-button color=\"primary\" routerLink='/admin/createUser'>Create A User</button>\n\n    </div>\n\n    <div class=text-center>\n        <h3>\n            Created Topics:\n        </h3>\n    </div>\n    <div class=\"row \">\n        <div class=\"col-md-1\">\n        </div>\n        <div class=\"col-md-10\">\n            <div class=\"mat-elevation-z8\">\n                <table mat-table [dataSource]=\"topicDataSource\" style=\"width: 100%;\">\n                    <ng-container matColumnDef=\"id\" class=\"mat-column-id\">\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.id | slice:20:24}} </td>\n                    </ng-container>\n\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"name\">\n                        <th mat-header-cell *matHeaderCellDef> Name </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.name }}</td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"createdAt\" class=\"mat-column-date\">\n                        <th mat-header-cell *matHeaderCellDef> Creation Date </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.createdAt | slice:0:10}} </td>\n                    </ng-container>\n\n                    <!-- Symbol Column -->\n                    <ng-container matColumnDef=\"link\">\n                        <th mat-header-cell *matHeaderCellDef> Link </th>\n                        <td mat-cell *matCellDef=\"let element\"> <a href=element.link>{{element.link | slice:8:28}} ...</a> </td>\n                    </ng-container>\n\n\n                    <ng-container matColumnDef=\"actions\">\n                        <th mat-header-cell *matHeaderCellDef> Details </th>\n                        <td mat-cell *matCellDef=\"let element\">\n                            <button mat-raised-button color=\"primary\" (click)=\"deleteTopic(element)\">Delete</button>\n                        </td>\n                    </ng-container>\n\n\n                    <tr mat-header-row *matHeaderRowDef=\"topicDisplayedColumns \"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: topicDisplayedColumns; \"></tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 20] \" showFirstLastButtons style=\"width: 100%; \"></mat-paginator>\n            </div>\n        </div>\n        <div class=\"col-md-1 \"></div>\n    </div>\n    <!-- ------------------- -->\n    <div class=\"mt-5 mb-5 \"></div>\n    <div class=\"text-center \">\n        <h3>\n            Available Users:\n        </h3>\n    </div>\n    <div class=\"row \">\n        <div class=\"col-md-1 \">\n        </div>\n        <div class=\"col-md-10 \">\n            <div class=\"mat-elevation-z8 \">\n                <table mat-table [dataSource]=\"employeeDataSource \" style=\"width: 100%; \">\n\n                    <ng-container matColumnDef=\"id\">\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.id | slice:20:24}} </td>\n                    </ng-container>\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"name\">\n                        <th mat-header-cell *matHeaderCellDef> Name </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.name}} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"phone\">\n                        <th mat-header-cell *matHeaderCellDef> Phone </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.phone}} </td>\n                    </ng-container>\n\n                    <!-- Symbol Column -->\n                    <ng-container matColumnDef=\"email\">\n                        <th mat-header-cell *matHeaderCellDef> Email </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.email}} </td>\n                    </ng-container>\n\n                    <tr mat-header-row *matHeaderRowDef=\"employeeDisplayedColumns \"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: employeeDisplayedColumns; \"></tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 20] \" showFirstLastButtons style=\"width: 100%; \"></mat-paginator>\n            </div>\n        </div>\n        <div class=\"col-md-1 \"></div>\n    </div>\n    <div class=\"mt-5 mb-5 \"></div>\n    <div class=\"text-center \">\n        <h3>\n            All Requests:\n        </h3>\n    </div>\n    <div class=\"row \">\n        <div class=\"col-md-1 \">\n        </div>\n        <div class=\"col-md-10 \">\n            <div class=\"mat-elevation-z8 \">\n                <table mat-table [dataSource]=\"requestDataSource \" style=\"width: 100%; \">\n\n\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"id\">\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.id | slice:20:24}} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"message\">\n                        <th mat-header-cell *matHeaderCellDef> Message </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.message}} </td>\n                    </ng-container>\n\n                    <!-- Symbol Column -->\n                    <ng-container matColumnDef=\"status\">\n                        <th mat-header-cell *matHeaderCellDef> Status </th>\n                        <td mat-cell *matCellDef=\"let element \"> {{element.status}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"actions\">\n                        <th mat-header-cell *matHeaderCellDef> Actions </th>\n                        <td mat-cell *matCellDef=\"let element\"> <button mat-raised-button color=\"primary\" (click)=\"changeRequestStatus(element)\">C</button> </td>\n                    </ng-container>\n                    <tr mat-header-row *matHeaderRowDef=\"requestDisplayedColumns \"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: requestDisplayedColumns; \"></tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 20] \" showFirstLastButtons style=\"width: 100%; \"></mat-paginator>\n            </div>\n        </div>\n        <div class=\"col-md-1 \"></div>\n    </div>\n</div>\n<div class=\"m-5 \"></div>\n<app-footer></app-footer>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/admin-module/question/question.component.html":
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/admin-module/question/question.component.html ***!
+  \*****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\n<div class=\"container\">\n    <div style=\"margin-top:50px\"></div>\n    <div class=\"text-center\">\n        <h2>TOPIC: {{ topicName }} </h2>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col-md-12 text-center\">\n            <mat-spinner *ngIf=\"isLoading\" style=\"display: inline-block;\"></mat-spinner>\n        </div>\n        <div class=\"col-md-12\">\n            <mat-accordion>\n                <mat-expansion-panel *ngFor=\"let question of questions;let i = index\">\n                    <mat-expansion-panel-header>\n                        <mat-panel-title style=\"display: flex;flex-grow: 0;\">\n                            Q-{{(pageNo-1)*40+i+1}}\n                        </mat-panel-title>\n                        <mat-panel-description class=\"float-left\">\n                            {{question.question}}\n                        </mat-panel-description>\n                    </mat-expansion-panel-header>\n                    Choices\n                    <div class=\"row\">\n                        <div class=\"col-md-6\">\n                            <mat-list>\n                                <mat-list-item *ngFor=\"let choice of question.choices\">{{ choice }} </mat-list-item>\n                            </mat-list>\n                        </div>\n                        <div class=\"col-md-6\">\n                            <mat-list>\n                                <mat-list-item>Answer: {{ question.answer }} </mat-list-item>\n                                <mat-list-item>Difficulty: {{ question.difficulty }} </mat-list-item>\n                                <mat-list-item>Total Occurences: {{ question.totalOccurrences }} </mat-list-item>\n                                <mat-list-item>Correct Attempts: {{ question.correctAttempts }} </mat-list-item>\n                            </mat-list>\n                        </div>\n                    </div>\n\n                </mat-expansion-panel>\n            </mat-accordion>\n\n            <div class=\"row mt-5\" style=\"display: flex; justify-content: space-between;padding:0px 10px\">\n                <span class=\"float-left\" (click)=\"prevPage()\"><i class=\"material-icons btn btn-dark\" >keyboard_arrow_left</i></span>\n                <h4 class=\"text-center\">{{pageNo}}</h4>\n                <span class=\"float-right\" (click)=\"nextPage()\"><i class=\"material-icons btn btn-dark\" >keyboard_arrow_right</i></span>\n            </div>\n        </div>\n\n\n    </div>\n</div>\n<app-footer></app-footer>");
 
 /***/ }),
 
@@ -127,6 +140,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/admin-module/topic/topic-details.html":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/admin-module/topic/topic-details.html ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<h1 mat-dialog-title>Topic: {{data.topic.name}}</h1>\n<div mat-dialog-content>\n    <p>Details</p>\n    <mat-list>\n        <mat-list-item> ID {{data.topic.id}} </mat-list-item>\n        <mat-list-item> Created At {{data.topic.createdAt}} </mat-list-item>\n        <mat-list-item> Total Questions: {{data.metadata.questionCount}}</mat-list-item>\n        <mat-list-item> Easy Questions: {{data.metadata.easyQuestionCount}}</mat-list-item>\n        <mat-list-item> Medium Questions: {{data.metadata.mediumQuestionCount}}</mat-list-item>\n        <mat-list-item> Hard Questions: {{data.metadata.hardQuestionCount}}</mat-list-item>\n        <mat-list-item> KeyWords: No Keywords found... </mat-list-item>\n    </mat-list>\n</div>\n<div mat-dialog-actions>\n    <button mat-button [mat-dialog-close]=\"data.animal\" cdkFocusInitial>Ok</button>\n</div>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/admin-module/topic/topic.component.html":
 /*!***********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/admin-module/topic/topic.component.html ***!
@@ -136,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>topic works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\n<div class=\"mt-5\"> </div>\n<div class=\"container\">\n    <div id=\"head\" class=\"jumbotron mt-6\" style=\"background-color: #E0E0E0; padding-top: 2rem; \">\n        <h1 class=\"display-4\" class=\"y\">TOPIC DASHBOARD</h1>\n        <p class=\"lead\">This is the main dashboard screen for viewing topic details .</p>\n        <hr class=\"my-4\">\n        <p class=\"m\">below is a overview of all the activities</p>\n        <button mat-raised-button color=\"primary\" routerLink='/admin/createTopic'>Autogenerate a Topic</button>\n\n        <button mat-raised-button color=\"primary\" class=\"ml-5\" (click)=\"fileImportInput.click()\">Generate a Topic through a CSV</button><input hidden type=\"file\" #fileImportInput name=\"File Upload\" id=\"txtFileUpload\" (change)=\"fileChangeListener($event)\"\n            accept=\".csv\" />\n\n        <span class=\"text-muted\" style=\"display: inline-flex;margin: 10px 10px;\">{{selectedFile?.name}}<span><i class=\"material-icons ml-3\" style=\"display: inline-block;\" *ngIf=\"isFileSelected\">check</i></span>\n        <span class=\"text-center\"><mat-progress-spinner mode=\"indeterminate\" diameter=20 style=\"display: inline-block; margin-left: 20px;\" *ngIf=\"isLoading\"></mat-progress-spinner></span>\n        </span>\n        <input [(ngModel)]=\"topicName\" placeholder=\"Enter Topic Name\" type=\"text\" *ngIf=\"isFileSelected\"><button class=\"button ml-3\" mat-raised-button color=\"primary\" (click)=\"submitCsv()\" *ngIf=\"isFileSelected\">Submit</button>\n    </div>\n    <div class=text-center>\n        <h3>\n            <b>EXISTING TOPICS</b>:\n        </h3>\n    </div>\n    <div class=\"inner-container\">\n        <mat-form-field>\n            <input matInput (keyup)=\"applyFilterTopic($event.target.value)\" placeholder=\"Search Topic\">\n        </mat-form-field>\n        <div class=\"mat-elevation-z8\">\n            <table mat-table [dataSource]=\"topicDataSource\" style=\"width: 100%;\" matSort #topicSort=\"matSort\">\n\n                <ng-container matColumnDef=\"id\">\n                    <td mat-cell *matCellDef=\"let element\"> {{element.id | slice:20:24}} </td>\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>ID</b> </th>\n                </ng-container>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"name\">\n                    <!-- Name Column -->\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Name</b> </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n                </ng-container>\n\n                <!-- Weight Column -->\n                <ng-container matColumnDef=\"createdAt\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Creation Date</b> </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.createdAt | slice:0:10}} </td>\n                </ng-container>\n\n                <!-- Symbol Column -->\n                <ng-container matColumnDef=\"link\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header><b>Link</b> </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.link}} </td>\n                </ng-container>\n\n                <ng-container matColumnDef=\"actions\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Actions</b> </th>\n                    <td mat-cell *matCellDef=\"let element\">\n                        <span class=\"btn btn-dark mr-2 material-icons\" (click)=\"deleteTopic(element.name)\">delete_forever</span>\n                        <span class=\"btn btn-dark mr-2 material-icons\" (click)=\"openDialog(element)\">list</span>\n                        <span class=\"btn btn-dark mr-2 material-icons\" [routerLink]=\"['/admin/topic',element.name]\">question_answer</span>\n                        <span class=\"btn btn-dark mr-2 material-icons\" (click)=\"reshuffleTopic()\">restore</span>\n                    </td>\n                </ng-container>\n\n\n                <tr mat-header-row *matHeaderRowDef=\"topicDisplayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: topicDisplayedColumns;\"></tr>\n            </table>\n\n            <mat-paginator [pageSizeOptions]=\"[ 10, 20]\" showFirstLastButtons style=\"width: 100%;\">\n            </mat-paginator>\n        </div>\n    </div>\n\n    <hr>\n\n\n    <div class=\"m-5\"></div>\n</div>\n<app-footer></app-footer>");
 
 /***/ }),
 
@@ -318,7 +344,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container navbar2\">\n    <div class=\"row text-uppercase\">\n        <div class=\"col-6  testName\">\n            <h3>{{topicName}} - TEST</h3>\n        </div>\n        <div class=\"col-6 timerContainer\">\n            <div class=\"timer\">\n                <h3>{{roundedMins}}:{{roundedSecs}}</h3>\n            </div>\n        </div>\n    </div>\n\n\n\n    <div class=\"card m-5\">\n        <div class=\"card-body\">\n            <h4>Q{{count+1}})</h4>\n            <div class=\"question\">\n                <h3 class=\"card-title\">{{question?.question}}</h3>\n                <div class=\"card-text\">\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"0\" [(ngModel)]=\"choices\">\n                        {{question.choices[0]}}\n                    </label>\n                    </div>\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"1\" [(ngModel)]=\"choices\">\n                        {{question.choices[1]}}\n                    </label>\n                    </div>\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"2\" [(ngModel)]=\"choices\">\n                        {{question.choices[2]}}\n                    </label>\n                    </div>\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"3\" [(ngModel)]=\"choices\">\n                        {{question.choices[3]}}\n                    </label>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col-sm-4\"></div>\n        <div class=\"col-sm-4 text-center\">\n            <button mat-raised-button color=\"primary\" (click)=\"nextQuestion(choices)\">NEXT QUESTION</button>\n        </div>\n        <div class=\"col-sm-4\"></div>\n    </div>\n\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container navbar2\">\n    <div class=\"row text-uppercase\">\n        <div class=\"col-6  testName\">\n            <h3>{{topicName}} - TEST</h3>\n        </div>\n        <div class=\"col-6 timerContainer\">\n            <div class=\"timer\">\n                <h3>{{roundedMins}}:{{roundedSecs}}</h3>\n            </div>\n        </div>\n    </div>\n\n\n\n    <div class=\"card m-5\">\n        <div class=\"card-body\">\n            <h4>Q{{count+1}})</h4>\n            <div class=\"question\">\n                <h3 class=\"card-title\">{{question?.question}}</h3>\n                <div class=\"card-text\">\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"0\" [(ngModel)]=\"choices\">\n                        {{question.choices[0]}}\n                    </label>\n                    </div>\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"1\" [(ngModel)]=\"choices\">\n                        {{question.choices[1]}}\n                    </label>\n                    </div>\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"2\" [(ngModel)]=\"choices\">\n                        {{question.choices[2]}}\n                    </label>\n                    </div>\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"3\" [(ngModel)]=\"choices\">\n                        {{question.choices[3]}}\n                    </label>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col-sm-4 text-center\">\n            <button mat-raised-button color=\"primary\" (click)=\"nextQuestion(choices)\">NEXT QUESTION</button>\n        </div>\n        <div class=\"col-sm-4 \"></div>\n        <div class=\"col-sm-4 text-center\">\n            <button mat-raised-button color=\"primary\" (click)=\"endTest(choices)\">SUBMIT TEST AND EXIT</button>\n        </div>\n    </div>\n\n\n\n</div>");
 
 /***/ }),
 
@@ -435,7 +461,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\n<div class=\"container\">\n    <div class=\"spacing-top\"></div>\n    <div class=\"text-center\">\n        <h1>Confirmation Screen</h1>\n        <mat-progress-spinner class=\"text-center\" mode=\"indeterminate\" *ngIf=\"isLoading\">\n        </mat-progress-spinner>\n    </div>\n    <div class=\"text-center mt-5\">\n        <h3>SELECTED TEST : {{test.name}}</h3>\n    </div>\n    <div class=\"text-center mt-5\">\n        <h3>SELECTED Employees : {{employees.length}}</h3>\n    </div>\n    <div class=\"row\">\n\n        <div class=\"card col-md-3\" *ngFor=\"let employee of employees\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title text-uppercase\">{{employee.name}}</h5>\n                <ul>\n                    <li style=\"font-size: 15px;\">Email: {{employee.email}}</li>\n                    <li style=\"font-size: 15px;\">Phone: {{employee.phone}}</li>\n                </ul>\n                <!-- <a href=\"#\" class=\"btn\" style=\"background-color:#212121; text-decoration-color: white\">Unselect</a> -->\n                <button mat-raised-button color=\"primary\" [routerLink]=\"['/hr/employees']\" routerLinkActive=\"router-link-active\" >Unselect</button>\n            </div>\n        </div>\n    </div>\n    <div class=\"spacing-top\"></div>\n    <div class=\"text-center mb-5\">\n        <button mat-raised-button color=\"primary\" (click)=\"confirmMapping()\">CONFIRM!</button>\n        <button mat-raised-button color=\"primary\" (click)=\"restart()\">RESTART!</button>\n    </div>\n</div>\n<app-footer></app-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\n<div class=\"container\">\n    <div class=\"spacing-top\"></div>\n    <div class=\"text-center\">\n        <h1>Confirmation Screen</h1>\n        <mat-progress-spinner class=\"text-center\" mode=\"indeterminate\" *ngIf=\"isLoading\">\n        </mat-progress-spinner>\n    </div>\n    <div class=\"text-center mt-5\">\n        <h3>SELECTED TEST : {{test.name}}</h3>\n    </div>\n    <div class=\"text-center mt-5\">\n        <h3>SELECTED Employees : {{employees.length}}</h3>\n    </div>\n    <div class=\"row\">\n\n        <!-- <div class=\"card col-md-3\" *ngFor=\"let employee of employees\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title text-uppercase\">{{employee.name}}</h5>\n                <ul>\n                    <li style=\"font-size: 15px;\">Email: {{employee.email}}</li>\n                    <li style=\"font-size: 15px;\">Phone: {{employee.phone}}</li>\n                </ul>\n            </div>\n        </div> -->\n\n        <div class=\"inner-container\" style=\"width:100%\">\n            <mat-form-field>\n                <input matInput (keyup)=\"applyFilterEmployee($event.target.value)\" placeholder=\"Search Employee\">\n            </mat-form-field>\n            <div class=\"mat-elevation-z8\">\n                <table mat-table [dataSource]=\"employeeDataSource\" style=\"width: 100%;\" matSort #empSort='matSort'>\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"id\">\n                        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>ID</b> </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.id | slice:20:24}} </td>\n                    </ng-container>\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"name\">\n                        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Name</b> </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"phone\">\n                        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Phone</b></th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.phone}} </td>\n                    </ng-container>\n\n                    <!-- Symbol Column -->\n                    <ng-container matColumnDef=\"email\">\n                        <th mat-header-cell *matHeaderCellDef> <b>Email</b> </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.email}} </td>\n                    </ng-container>\n\n                    <tr mat-header-row *matHeaderRowDef=\"employeeDisplayedColumns\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: employeeDisplayedColumns;\"></tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons style=\"width: 100%;\">\n                </mat-paginator>\n            </div>\n        </div>\n\n\n    </div>\n    <div class=\"spacing-top\"></div>\n    <div class=\"text-center mb-5\">\n        <button mat-raised-button color=\"primary\" (click)=\"confirmMapping()\">CONFIRM!</button>\n        <button mat-raised-button color=\"primary\" (click)=\"restart()\">RESTART!</button>\n    </div>\n</div>\n<app-footer></app-footer>");
 
 /***/ }),
 
@@ -474,7 +500,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\n<div class=\"mt-5\"> </div>\n<div class=\"container\">\n    <div id=\"head\" class=\"jumbotron mt-6\" style=\"background-color: #E0E0E0; padding-top: 2rem; \">\n        <h1 class=\"display-4\" class=\"y\">HR DASHBOARD</h1>\n        <p class=\"lead\">This is the main dashboard screen for creating tests, users and requests .</p>\n        <hr class=\"my-4\">\n        <p class=\"m\">below is a overview of all the activities</p>\n        <button mat-raised-button color=\"primary\" routerLink='/hr/create'>Create A Test</button>\n        <button mat-raised-button color=\"primary\" class=\"ml-5\" routerLink='/hr/create-user'>Create A User</button>\n        <button class=\"x\" mat-raised-button color=\"primary\" class=\"ml-5\" (click)='openDialog()'>Raise A Request</button>\n        <button class=\"x\" mat-raised-button color=\"primary\" class=\"ml-5\" routerLink='/hr/tests'>View Results</button>\n    </div>\n    <div class=text-center>\n        <h3>\n            Existing Topics:\n        </h3>\n    </div>\n    <div class=\"row \">\n        <div class=\"col-md-1\">\n        </div>\n        <div class=\"col-md-10\">\n            <div class=\"mat-elevation-z8\">\n                <table mat-table [dataSource]=\"topicDataSource\" style=\"width: 100%;\">\n\n                    <ng-container matColumnDef=\"id\">\n                        <td mat-cell *matCellDef=\"let element\"> {{element.id | slice:20:24}} </td>\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                    </ng-container>\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"name\">\n                        <!-- Name Column -->\n                        <th mat-header-cell *matHeaderCellDef> Name </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"createdAt\">\n                        <th mat-header-cell *matHeaderCellDef> Creation Date </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.createdAt | slice:0:10}} </td>\n                    </ng-container>\n\n                    <!-- Symbol Column -->\n                    <ng-container matColumnDef=\"link\">\n                        <th mat-header-cell *matHeaderCellDef> Link </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.link}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"keywords\">\n                        <th mat-header-cell *matHeaderCellDef> Keywords </th>\n                        <td mat-cell *matCellDef=\"let element\">no keywords found ...</td>\n                    </ng-container>\n\n\n                    <tr mat-header-row *matHeaderRowDef=\"topicDisplayedColumns\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: topicDisplayedColumns;\"></tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons style=\"width: 100%;\"></mat-paginator>\n            </div>\n        </div>\n        <div class=\"col-md-1\"></div>\n    </div>\n    <!-- ------------------- -->\n    <div class=\"mt-5 mb-5\"></div>\n    <div class=\"text-center\">\n        <h3>\n            Available Users:\n        </h3>\n    </div>\n    <div class=\"row \">\n        <div class=\"col-md-1\">\n        </div>\n        <div class=\"col-md-10\">\n            <div class=\"mat-elevation-z8\">\n                <table mat-table [dataSource]=\"employeeDataSource\" style=\"width: 100%;\">\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"id\">\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.id | slice:20:24}} </td>\n                    </ng-container>\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"name\">\n                        <th mat-header-cell *matHeaderCellDef> Name </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"phone\">\n                        <th mat-header-cell *matHeaderCellDef> Phone </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.phone}} </td>\n                    </ng-container>\n\n                    <!-- Symbol Column -->\n                    <ng-container matColumnDef=\"email\">\n                        <th mat-header-cell *matHeaderCellDef> Email </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.email}} </td>\n                    </ng-container>\n\n                    <tr mat-header-row *matHeaderRowDef=\"employeeDisplayedColumns\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: employeeDisplayedColumns;\"></tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons style=\"width: 100%;\"></mat-paginator>\n            </div>\n        </div>\n        <div class=\"col-md-1\"></div>\n    </div>\n    <div class=\"mt-5 mb-5\"></div>\n    <div class=\"text-center\">\n        <h3>\n            Sent Request:\n        </h3>\n    </div>\n    <div class=\"row \">\n        <div class=\"col-md-1\">\n        </div>\n        <div class=\"col-md-10\">\n            <div class=\"mat-elevation-z8\">\n                <table mat-table [dataSource]=\"requestDataSource\" style=\"width: 100%;\">\n\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"id\">\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.id | slice:20:24}} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"message\">\n                        <th mat-header-cell *matHeaderCellDef> Message </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.message}} </td>\n                    </ng-container>\n\n                    <!-- Symbol Column -->\n                    <ng-container matColumnDef=\"status\">\n                        <th mat-header-cell *matHeaderCellDef> Status </th>\n                        <td mat-cell *matCellDef=\"let element\"> <span *ngIf=\"status==N\">Not Completed</span><span *ngIf=\"status=='C'\">Completed</span> </td>\n                    </ng-container>\n                    <ng-container matColumnDef=\"actions\">\n                        <th mat-header-cell *matHeaderCellDef> Action </th>\n                        <td mat-cell *matCellDef=\"let element\"> <button mat-raised-button color=\"primary\" (click)=\"deleteRequest(element)\">Delete</button> </td>\n                    </ng-container>\n\n\n                    <tr mat-header-row *matHeaderRowDef=\"requestDisplayedColumns\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: requestDisplayedColumns;\"></tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons style=\"width: 100%;\"></mat-paginator>\n            </div>\n        </div>\n        <div class=\"col-md-1\"></div>\n    </div>\n</div>\n<div class=\"m-5\"></div>\n<app-footer></app-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\n<div class=\"mt-5\"> </div>\n<div class=\"container\">\n    <div id=\"head\" class=\"jumbotron mt-6\" style=\"background-color: #E0E0E0; padding-top: 2rem; \">\n        <h1 class=\"display-4\" class=\"y\">HR DASHBOARD</h1>\n        <p class=\"lead\">This is the main dashboard screen for creating tests, users and requests .</p>\n        <hr class=\"my-4\">\n        <p class=\"m\">below is a overview of all the activities</p>\n        <button mat-raised-button color=\"primary\" routerLink='/hr/create'>Create A Test</button>\n        <!-- <button mat-raised-button color=\"primary\" class=\"ml-5\" routerLink='/hr/create-user'>Create A Employee</button> -->\n        <button class=\"x\" mat-raised-button color=\"primary\" class=\"ml-5\" (click)='openDialog()'>Raise A Request</button>\n        <button class=\"x\" mat-raised-button color=\"primary\" class=\"ml-5\" routerLink='/hr/tests'>View Results</button>\n    </div>\n    <div class=text-center>\n        <h3>\n            <b>EXISTING TOPICS</b>:\n        </h3>\n    </div>\n    <div class=\"inner-container\">\n        <mat-form-field>\n            <input matInput (keyup)=\"applyFilterTopic($event.target.value)\" placeholder=\"Search Topic\">\n        </mat-form-field>\n        <div class=\"mat-elevation-z8\">\n            <table mat-table [dataSource]=\"topicDataSource\" style=\"width: 100%;\" matSort #topicSort=\"matSort\">\n\n                <ng-container matColumnDef=\"id\">\n                    <td mat-cell *matCellDef=\"let element\"> {{element.id | slice:20:24}} </td>\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>ID</b> </th>\n                </ng-container>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"name\">\n                    <!-- Name Column -->\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Name</b> </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n                </ng-container>\n\n                <!-- Weight Column -->\n                <ng-container matColumnDef=\"createdAt\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Creation Date</b> </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.createdAt | slice:0:10}} </td>\n                </ng-container>\n\n                <!-- Symbol Column -->\n                <ng-container matColumnDef=\"link\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header><b>Link</b> </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.link}} </td>\n                </ng-container>\n\n                <ng-container matColumnDef=\"keywords\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Keywords</b> </th>\n                    <td mat-cell *matCellDef=\"let element\">no keywords found ...</td>\n                </ng-container>\n\n\n                <tr mat-header-row *matHeaderRowDef=\"topicDisplayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: topicDisplayedColumns;\"></tr>\n            </table>\n\n            <mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons style=\"width: 100%;\">\n            </mat-paginator>\n        </div>\n    </div>\n\n    <hr>\n\n    <!-- ------------------- -->\n    <div class=\"mt-5 mb-5\"></div>\n    <div class=\"text-center\">\n        <h3>\n            <b>AVAILABLE EMPLOYEES</b>:\n        </h3>\n    </div>\n    <div class=\"inner-container\">\n        <mat-form-field>\n            <input matInput (keyup)=\"applyFilterEmployee($event.target.value)\" placeholder=\"Search Employee\">\n        </mat-form-field>\n        <div class=\"mat-elevation-z8\">\n            <table mat-table [dataSource]=\"employeeDataSource\" style=\"width: 100%;\" matSort #empSort='matSort'>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"id\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>ID</b> </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.id | slice:20:24}} </td>\n                </ng-container>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"name\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Name</b> </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n                </ng-container>\n\n                <!-- Weight Column -->\n                <ng-container matColumnDef=\"phone\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Phone</b></th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.phone}} </td>\n                </ng-container>\n\n                <!-- Symbol Column -->\n                <ng-container matColumnDef=\"email\">\n                    <th mat-header-cell *matHeaderCellDef> <b>Email</b> </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.email}} </td>\n                </ng-container>\n\n                <tr mat-header-row *matHeaderRowDef=\"employeeDisplayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: employeeDisplayedColumns;\"></tr>\n            </table>\n\n            <mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons style=\"width: 100%;\">\n            </mat-paginator>\n        </div>\n    </div>\n\n    <hr>\n\n\n    <div class=\"mt-5 mb-5\"></div>\n    <div class=\"text-center\">\n        <h3>\n            <b>REQUESTS RAISED</b>:\n        </h3>\n    </div>\n    <div class=\"inner-container\">\n        <mat-form-field>\n            <input matInput (keyup)=\"applyFilterRequest($event.target.value)\" placeholder=\"Search Request\">\n        </mat-form-field>\n        <div class=\"mat-elevation-z8\">\n            <table mat-table [dataSource]=\"requestDataSource\" style=\"width: 100%;\" matSort #requestSort=\"matSort\">\n\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"id\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>ID</b> </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.id | slice:20:24}} </td>\n                </ng-container>\n\n                <!-- Weight Column -->\n                <ng-container matColumnDef=\"message\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Message</b> </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.message}} </td>\n                </ng-container>\n\n                <!-- Symbol Column -->\n                <ng-container matColumnDef=\"status\">\n                    <th mat-header-cell *matHeaderCellDef> <b>Status</b> </th>\n                    <td mat-cell *matCellDef=\"let element\"> <span *ngIf=\"element.status=='N'\">Not Completed</span><span *ngIf=\"element.status=='C'\">Completed</span> </td>\n                </ng-container>\n                <ng-container matColumnDef=\"actions\">\n                    <th mat-header-cell *matHeaderCellDef> <b>Action</b> </th>\n                    <td mat-cell *matCellDef=\"let element\"> <button mat-raised-button color=\"primary\" (click)=\"deleteRequest(element)\">Delete</button> </td>\n                </ng-container>\n\n\n                <tr mat-header-row *matHeaderRowDef=\"requestDisplayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: requestDisplayedColumns;\"></tr>\n            </table>\n\n            <mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons style=\"width: 100%;\">\n            </mat-paginator>\n        </div>\n    </div>\n    <div class=\"m-5\"></div>\n</div>\n<app-footer></app-footer>");
 
 /***/ }),
 
@@ -487,7 +513,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header>\n</app-header>\n<br>\n<div class=\"mat-display-1\" style=\"font-size: 35px;\">Select Employees\n\n    <mat-progress-spinner class=\"text-center\" mode=\"indeterminate\" *ngIf=\"isLoading\">\n    </mat-progress-spinner>\n</div>\n\n\n<div class=\"container\">\n    <div class=\"table-responsive\">\n        <form [formGroup]=\"form\" (ngSubmit)=\"submit()\">\n\n            <table class=\"table\">\n                <thead>\n                    <tr>\n                        <th scope=\"col\"></th>\n                        <th scope=\"col\">Name</th>\n                        <th scope=\"col\">Email</th>\n                        <th scope=\"col\">Mobile</th>\n                        <th scope=\"col\">Designation</th>\n                    </tr>\n                </thead>\n\n                <tbody *ngFor=\"let employee of form.controls.employees.controls; let i = index\">\n                    <tr formArrayName=\"employees\">\n                        <td>\n                            <mat-checkbox class=\"checkbox\" formControlName=\"{{i}}\"></mat-checkbox>\n                        </td>\n                        <td>{{employees[i].name}}</td>\n                        <td>{{employees[i].email}}</td>\n                        <td>{{employees[i].phone}}</td>\n                        <td>{{employees[i].designation}}</td>\n\n                    </tr>\n                </tbody>\n\n            </table>\n\n            <button mat-raised-button color=\"primary\">Submit</button>\n        </form>\n    </div>\n</div>\n<app-footer></app-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header>\n</app-header>\n<br>\n<div class=\"mat-display-1\" style=\"font-size: 35px;\">Select Employees\n\n    <mat-progress-spinner class=\"text-center\" mode=\"indeterminate\" *ngIf=\"isLoading\">\n    </mat-progress-spinner>\n</div>\n\n\n<div class=\"container\">\n\n    <div class=\"table-responsive\">\n        <mat-form-field>\n            <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Search Employee\">\n        </mat-form-field>\n        <form [formGroup]=\"form\" (ngSubmit)=\"submit()\">\n            <div class=\"mat-elevation-z8\">\n                <table mat-table [dataSource]=\"dataSource\" formArrayName=\"employees\" matSort>\n\n\n                    <ng-container matColumnDef=\"select\">\n                        <th mat-header-cell *matHeaderCellDef>\n                            <mat-checkbox (change)=\"$event ? masterToggle() : null\"\n                                [checked]=\"selection.hasValue() && isAllSelected()\"\n                                [indeterminate]=\"selection.hasValue() && !isAllSelected()\"\n                                [aria-label]=\"checkboxLabel()\">\n                            </mat-checkbox>\n                        </th>\n                        <td mat-cell *matCellDef=\"let row\">\n                            <mat-checkbox (click)=\"$event.stopPropagation()\"\n                                (change)=\"$event ? selection.toggle(row) : null\" [checked]=\"selection.isSelected(row)\"\n                                [aria-label]=\"checkboxLabel(row)\">\n                            </mat-checkbox>\n                        </td>\n                    </ng-container>\n\n\n                    <ng-container matColumnDef=\"name\">\n                        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Name </b></th>\n                        <td mat-cell *matCellDef=\"let row\"> {{row.name}} </td>\n                    </ng-container>\n\n\n                    <ng-container matColumnDef=\"email\">\n                        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Email</b></th>\n                        <td mat-cell *matCellDef=\"let row\"> {{row.email}} </td>\n                    </ng-container>\n\n\n                    <ng-container matColumnDef=\"phone\">\n                        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Phone</b> </th>\n                        <td mat-cell *matCellDef=\"let row\"> {{row.phone}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"designation\">\n                        <th mat-header-cell *matHeaderCellDef mat-sort-header><b>Designation</b> </th>\n                        <td mat-cell *matCellDef=\"let row\"> {{row.designation}} </td>\n                    </ng-container>\n\n                    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\">\n                    </tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n            </div>\n\n            <button mat-raised-button color=\"primary\">Submit</button>\n        </form>\n\n    </div>\n</div>\n<app-footer></app-footer>");
 
 /***/ }),
 
@@ -526,7 +552,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\n<div style=\"margin-top:70px\"></div>\n<div class=\"container\">\n    <div class=\"row \">\n        <div class=\"col-md-1\">\n        </div>\n        <div class=\"col-md-10\">\n            <div class=\"mat-elevation-z8\">\n                <table mat-table [dataSource]=\"testsDataSource\" style=\"width: 100%;\">\n\n                    <ng-container matColumnDef=\"testId\">\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.testId | slice:20:24}} </td>\n                    </ng-container>\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"empName\">\n                        <!-- Name Column -->\n                        <th mat-header-cell *matHeaderCellDef> Employee Name </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.empName}} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"topicName\">\n                        <th mat-header-cell *matHeaderCellDef> Topic </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.topicName }} </td>\n                    </ng-container>\n\n                    <!-- Symbol Column -->\n                    <ng-container matColumnDef=\"status\">\n                        <th mat-header-cell *matHeaderCellDef> Status </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.status}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"actions\">\n                        <th mat-header-cell *matHeaderCellDef> Actions </th>\n                        <td mat-cell *matCellDef=\"let element\"><a [routerLink]=\"['/hr/result' , element.id ]\" mat-raised-button> Show result </a></td>\n                    </ng-container>\n\n\n                    <tr mat-header-row *matHeaderRowDef=\"testsDataSourceColumns\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: testsDataSourceColumns;\"></tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons style=\"width: 100%;\"></mat-paginator>\n            </div>\n        </div>\n        <div class=\"col-md-1\"></div>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\n<div style=\"margin-top:70px\"></div>\n<div class=\"container\">\n    <div class=\"row \">\n        <div class=\"col-md-1\">\n        </div>\n        <div class=\"col-md-10\">\n            <div class=\"mat-elevation-z8\">\n                <table mat-table [dataSource]=\"testsDataSource\" style=\"width: 100%;\">\n\n                    <ng-container matColumnDef=\"testId\">\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.testId | slice:20:24}} </td>\n                    </ng-container>\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"empName\">\n                        <!-- Name Column -->\n                        <th mat-header-cell *matHeaderCellDef> Employee Name </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.empName}} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"topicName\">\n                        <th mat-header-cell *matHeaderCellDef> Topic </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.topicName }} </td>\n                    </ng-container>\n\n                    <!-- Symbol Column -->\n                    <ng-container matColumnDef=\"status\">\n                        <th mat-header-cell *matHeaderCellDef> Status </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.status}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"actions\">\n                        <th mat-header-cell *matHeaderCellDef> Actions </th>\n                        <td mat-cell *matCellDef=\"let element\"><a [routerLink]=\"['/hr/result' , element.id ]\" mat-raised-button color=\"primary\"> Show result </a></td>\n                    </ng-container>\n\n\n                    <tr mat-header-row *matHeaderRowDef=\"testsDataSourceColumns\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: testsDataSourceColumns;\"></tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons style=\"width: 100%;\"></mat-paginator>\n            </div>\n        </div>\n        <div class=\"col-md-1\"></div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -552,7 +578,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header>\n</app-header>\n\n<div class=\"container\">\n    <div class=\"spacing-top\"></div>\n    <div class=text-center>\n        <h3>\n            Please Select A Topic:\n        </h3>\n    </div>\n    <div class=\"spacing-top\"></div>\n    <div class=\"row \">\n        <div class=\"col-md-1\">\n        </div>\n        <div class=\"col-md-10\">\n            <div class=\"mat-elevation-z8\">\n                <table mat-table [dataSource]=\"topicDataSource\" style=\"width: 100%;\">\n\n                    <ng-container matColumnDef=\"id\">\n                        <th mat-header-cell *matHeaderCellDef> ID </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.id | slice:20:24}} </td>\n                    </ng-container>\n\n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"name\">\n                        <th mat-header-cell *matHeaderCellDef> Name </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n                    </ng-container>\n\n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"createdAt\">\n                        <th mat-header-cell *matHeaderCellDef> Creation Date </th>\n                        <td mat-cell *matCellDef=\"let element\"> {{element.createdAt | slice:0:10}} </td>\n                    </ng-container>\n\n                    <ng-container matColumnDef=\"actions\">\n                        <th mat-header-cell *matHeaderCellDef> Actions </th>\n                        <td mat-cell *matCellDef=\"let element\"> <button mat-raised-button color=\"primary\" (click)='selectedTopic(element)'>Select Topic</button></td>\n                    </ng-container>\n\n\n                    <tr mat-header-row *matHeaderRowDef=\"topicDisplayedColumns\"></tr>\n                    <tr mat-row *matRowDef=\"let row; columns: topicDisplayedColumns;\"></tr>\n                </table>\n\n                <mat-paginator [pageSizeOptions]=\"[10, 20]\" showFirstLastButtons style=\"width: 100%;\"></mat-paginator>\n            </div>\n        </div>\n        <div class=\"col-md-1\"></div>\n    </div>\n</div>\n\n<div class=\"spacing-top\"></div>\n<hr>\n<app-footer></app-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header>\n</app-header>\n\n<div class=\"container\">\n    <div class=\"spacing-top\"></div>\n    <div class=text-center>\n        <h3>\n            Please Select A Topic:\n        </h3>\n    </div>\n    <div class=\"spacing-top\"></div>\n    <div class=\"container\">\n        <mat-form-field>\n            <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Search Topic\">\n        </mat-form-field>\n        <div class=\"mat-elevation-z8\">\n            <table mat-table [dataSource]=\"topicDataSource\" style=\"width: 100%;\" matSort>\n\n                <ng-container matColumnDef=\"id\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.id | slice:20:24}} </td>\n                </ng-container>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"name\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n                </ng-container>\n\n                <!-- Weight Column -->\n                <ng-container matColumnDef=\"createdAt\">\n                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Creation Date </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.createdAt | slice:0:10}} </td>\n                </ng-container>\n\n                <ng-container matColumnDef=\"actions\">\n                    <th mat-header-cell *matHeaderCellDef> Actions </th>\n                    <td mat-cell *matCellDef=\"let element\"> <button mat-raised-button color=\"primary\"\n                            (click)='selectedTopic(element)'>Select Topic</button></td>\n                </ng-container>\n\n\n                <tr mat-header-row *matHeaderRowDef=\"topicDisplayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: topicDisplayedColumns;\"></tr>\n            </table>\n\n            <mat-paginator [pageSizeOptions]=\"[10, 20]\" showFirstLastButtons style=\"width: 100%;\"></mat-paginator>\n        </div>\n    </div>\n\n</div>\n<div class=\"spacing-top\"></div>\n<hr>\n\n<app-footer></app-footer>");
 
 /***/ }),
 
@@ -565,7 +591,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- <div style=\"font-size: 15px;\"> -->\n\n\n<nav class=\"navbar nav navbar-expand-lg navbar-light items whitebg  fixed-top\">\n    <a class=\"pic-brand logo\" href=\"#\">\n        <img class=\"logoM\" src=\"../assets/img/logo102 .png\" alt=\"logo\">\n    </a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                        <span class=\"navbar-toggler-icon\"></span>\n                      </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarContent\">\n\n\n        <ul class=\" main-menu nav  ml-auto \">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link itemk\" href=\"#home\">Home\n                </a>\n            </li>\n            <li class=\"nav-item active\">\n                <a class=\"nav-link itemk\" href=\"#about\"> About\n\n                </a>\n            </li>\n            <li class=\"nav-item active\">\n                <a class=\"nav-link itemk\" href=\"#team\">\n                    Team\n\n                </a>\n            </li>\n            <li class=\"nav-item active\">\n                <a class=\"nav-link itemk\" href=\"#contact\">\n                   Contact\n\n                </a>\n            </li>\n            <li class=\"nav-item active\">\n                <a class=\"nav-link \" routerLink=\"/auth/login\" *ngIf='!isLoggedIn'>\n                    <div class=\"itemk\">Login</div>\n                </a>\n                <a class=\"nav-link \" routerLink=\"/{{loggedInRole}}\" *ngIf='isLoggedIn'>\n                    <div class=\"itemk\">Continue as {{loggedInUser}}</div>\n                </a>\n            </li>\n        </ul>\n    </div>\n\n\n</nav>\n\n\n\n\n\n<!-- Home -->\n<div id=\"home\" class=\"hero-area\">\n\n\n\n    <!-- Backgound Image -->\n    <div class=\"bg-image bg-parallax overlay\" style=\"background-image:url(../../assets/img/home-background.jpg)\">\n    </div>\n    <!-- /Backgound Image -->\n\n    <div class=\"home-wrapper\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-md-12 jumbo\">\n                    <!-- <h1 class=\"white-text\"><b>QUIZO </b></h1>\n                    <h3 class=\"white-text\">Platform for online quizes</h3>\n                    <h3 class=\"lead white-text\">Knowledge is power. Want to test yours? Login\n                        and take a quiz with us.</h3> -->\n\n\n\n                    <!-- <div class=\"box\">\n                        <i class=\"fk fk-quote-left fk2\" aria-hidden=\"true\"></i>\n                        <div class=\"text\">\n                            <i class=\"fk fk-quote-right fk1\" aria-hidden=\"true\"></i>\n                            <div>\n\n                                <h1 class=\"white-text\"><b>QUIZO </b></h1>\n                                <h5 class=\"white-text\" style=\"font-family: 'Aclonica';\">Platform for online quizes</h5>\n                                        <p class=\"lead white-text\" style=\"font-family: Alex Brush;\"><q>Knowledge is power. Want to test yours? Login\n                                            and take a quiz with us.</q></p>\n                            </div>\n\n                        </div>\n                    </div> -->\n\n\n                    <div class=\"animate\">\n                        <a href=\"#\">\n                            <span data-text=\"W\">W</span>\n                            <span data-text=\"E\">E</span>\n                            <span data-text=\"L\">L</span>\n                            <span data-text=\"C\">C</span>\n                            <span data-text=\"O\">O</span>\n                            <span data-text=\"M\">M</span>\n                            <span data-text=\"E\">E</span>\n                            <span data-text=\" \"> &nbsp;</span>\n                            <span data-text=\"T\">T</span>\n                            <span data-text=\"O\">O</span>\n                            <span data-text=\" \">&nbsp;</span>\n                            <span data-text=\"Q\">Q</span>\n                            <span data-text=\"U\">U</span>\n                            <span data-text=\"I\">I</span>\n                            <span data-text=\"Z\">Z</span>\n\n                            <span data-text=\"O\">O</span>\n                        </a>\n                    </div>\n                    <br><br><br><br><br><br>\n                    <br><br><br><br><br><br>\n\n\n                    <h1 style=\"font-family:Alex Brush;\">\n                        <a href=\"\" style=\"color: white;font-family:Alex Brush;\" class=\"typewrite\" data-period=\"2000\" data-type='[ \"Hi.\", \"Knowledge is power.\", \"Want to test yours?\", \"Login and take a quiz with us.\",\"Thank You.\" ]'>\n                            <span class=\"wrap\"></span>\n                        </a>\n                    </h1>\n                </div>\n            </div>\n        </div>\n    </div>\n\n</div>\n<!-- /Home -->\n\n<!-- Moving object starts -->\n\n\n\n<!-- Moving Object Ends -->\n\n\n\n\n<!-- About -->\n<div id=\"about\" class=\"section\">\n\n    <!-- container -->\n    <div class=\"container\">\n\n        <!-- row -->\n        <div class=\"row\">\n\n\n\n\n            <div class=\"col-md-6\">\n                <div class=\"section-header\">\n                    <h3>Welcome to Quizo</h3>\n                    <p>Online Quiz Platform.</p>\n                </div>\n\n                <!-- feature -->\n                <div class=\"feature\">\n                    <i class=\"feature-icon fa fa-flask\"></i>\n                    <div class=\"feature-content\">\n                        <h4>Online Quizes </h4>\n                        <p>Create or take online quizes.</p>\n                    </div>\n                </div>\n                <!-- /feature -->\n\n                <!-- feature -->\n                <div class=\"feature\">\n                    <i class=\"feature-icon fa fa-users\"></i>\n                    <div class=\"feature-content\">\n                        <h4>Autogeneration</h4>\n                        <p>Got no time to set a quiz?\n                            <br>Quizo will do this job for you.<br> All you need to do is feed your quiz topic.\n                        </p>\n                    </div>\n                </div>\n                <!-- /feature -->\n\n                <!-- feature -->\n                <div class=\"feature\">\n                    <i class=\"feature-icon fa fa-comments\"></i>\n                    <div class=\"feature-content\">\n                        <h4>Community</h4>\n                        <p>Our users are HRs of various companies, who can create quizes,and employees who can take these quizes. </p>\n                    </div>\n                </div>\n                <!-- /feature -->\n\n            </div>\n\n            <div class=\"col-md-6\">\n                <div class=\"about-img\">\n                    <img src=\"../../assets/img/about.png\" alt=\"\">\n                </div>\n            </div>\n\n        </div>\n        <!-- row -->\n\n    </div>\n    <div style=\"margin-bottom: -100px\"></div>\n</div>\n<!-- /About -->\n<!-- Why us -->\n\n<!-- /row -->\n\n<hr class=\"section-hr\">\n\n<!-- row -->\n\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-6\">\n            <h3>Quiz generation made easy by quizo</h3>\n\n\n\n            <p>Don't waste your time thinking what questions to ask in a quiz, and give quizo the opportunity to serve you. </p>\n            <p>You are just a few steps away from creating your quiz.<br> Register with us as an HR, Type your quiz topic and we'll create the set of questions for you.<br>Yes, it's that easy here.</p>\n        </div>\n\n        <div class=\"col-md-5 col-md-offset-1\">\n            <!-- <a class=\"about-video\" href=\"#\">\n                <img src=\"../../assets/img/about-video.jpg\" alt=\"\">\n                <i class=\"play-icon fa fa-play\"></i>\n            </a> -->\n            <!-- 21:9 aspect ratio -->\n            <!-- <div class=\"embed-responsive embed-responsive-21by9\">\n    <iframe class=\"embed-responsive-item\" src=\"...\"></iframe>\n  </div> -->\n\n            <!-- 16:9 aspect ratio -->\n            <div class=\"embed-responsive embed-responsive-16by9\">\n                <iframe class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/cN4ZBaz3mLo\"></iframe>\n            </div>\n        </div>\n\n\n\n    </div>\n    <br><br><br>\n    <!-- TEAM Starts -->\n\n\n    <section id=\"team\" class=\"pb-5\">\n        <div class=\"container\">\n\n\n            <h5 class=\"section-title h3\"><i>Our Developer Team</i></h5>\n            <div class=\"row\">\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-1.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Renu</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Renu</h4>\n                                        <p class=\"card-text\">Graduated from NITK, Surathkal. Likes to Sing, Read and Dance.\n                                        </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com/\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com/\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-2.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Shikhar</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Shikhar Gupta</h4>\n                                        <p class=\"card-text\">Graduated from IIT,BHU. Likes to Read and Code.\n                                        </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-3.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Soumen</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Soumen Kaity</h4>\n                                        <p class=\"card-text\">Graduated from IIEST,Shibpur.Likes to play TT and Football. </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com/soumen.kaity.37\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://twitter.com/Som_tron\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-8.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Pranjal</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Pranjal Sarin</h4>\n                                        <p class=\"card-text\">Graduated from BITS,Pilani. Likes to play TT and Tennis .\n                                        </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-5.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Pankaj</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Pankaj Chauhan</h4>\n                                        <p class=\"card-text\">Graduated from IIT,BHU. Likes to Drink and Drive.</p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-6.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Ayush</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Ayush Soni</h4>\n                                        <p class=\"card-text\">Graduated from IIT(BHU),Varanasi. Likes to not drink and get people drunk.</p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-4.png\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Chinmay</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Chinmay Kalegaonkar</h4>\n                                        <p class=\"card-text\">Graduated from NIT, Surat. Likes to drink and sleep.\n                                        </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-7.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Ganesh</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Korada Ganesh</h4>\n                                        <p class=\"card-text\">Graduated from NIT, Warangal. Likes to eat and sleep.\n                                        </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-9.png\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Vishal</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Sai Vishal Vangala</h4>\n                                        <p class=\"card-text\">Graduated from NIT, Nagpur. Likes to crack lame jokes.\n                                        </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n\n            </div>\n        </div>\n    </section>\n    <!-- Team -->\n    <br><br><br>\n\n\n\n\n\n    <!-- TEAM Ends -->\n\n\n    <div style=\"margin-bottom: -90px\"></div>\n    <!-- Contact -->\n    <div id=\"contact\" class=\"section\">\n\n        <!-- container -->\n        <div class=\"container\">\n\n            <!-- row -->\n            <div class=\"row\">\n\n                <!-- contact form -->\n                <div class=\"col-md-6\">\n                    <div class=\"contact-form\">\n                        <h4>Send A Message</h4>\n                        <form>\n                            <input class=\"input\" type=\"text\" name=\"name\" [(ngModel)]=\"name\" placeholder=\"Name\" style=\"border: 1px solid #909090\">\n                            <input class=\"input\" type=\"text\" name=\"email\" [(ngModel)]=\"email\" placeholder=\"Email\" style=\"border: 1px solid #909090\">\n                            <input class=\"input\" type=\"number\" name=\"number\" [(ngModel)]=\"number\" placeholder=\"Phone no\" style=\"border: 1px solid #909090\">\n\n                            <mat-form-field>\n                                <mat-label>Subject</mat-label>\n                                <mat-select>\n                                    <mat-option *ngFor=\"let food of foods\" [value]=\"food.value\">\n                                        {{food.viewValue}}\n                                    </mat-option>\n                                </mat-select>\n                            </mat-form-field>\n\n\n                        </form>\n                        <button class=\"main-button icon-button pull-right\" (click)=checkLogin()>Send\n                            Message</button>\n                    </div>\n                </div>\n                <!-- /contact form -->\n\n                <!-- contact information -->\n                <div class=\"col-md-3\">\n                    <div class=\"contact\" style=\"justify-content: center;\">\n                        <h4>Contact Information</h4>\n                        <ul class=\"contact-details\">\n                            <li>\n\n                            </li>\n                            <li><i class=\"fa fa-envelope\"></i>contact@quizo.com</li>\n                            <li><i class=\"fa fa-phone\"></i>(+91)987-654-32-10</li>\n                            <li><i class=\"fa fa-map-marker\"></i>Quizo Kormangala</li>\n\n                        </ul>\n                    </div>\n                </div>\n                <!-- contact information -->\n                <div class=\"col-md-3\">\n\n                    <div class=\"gmap_canvas\">\n\n                        <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.594726273739!2d77.61283231436309!3d12.93374921920828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3c632a2e17aea311!2sNIIT%20-%20Koramangala%20-%20StackRoute!5e0!3m2!1sen!2sin!4v1575614398154!5m2!1sen!2sin\"\n                            width=\"250\" height=\"300\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\"></iframe>\n\n                    </div>\n\n                </div>\n\n            </div>\n        </div>\n    </div>\n</div>\n\n<!-- <div style=\"margin-bottom: -90px\"></div> -->\n\n<!-- <div style=\"margin-bottom: -90px\"></div>\n    <footer >\n       \n            <div id=\"bottom-footer\" class=\"row\">\n               \n                <div class=\"col-md-4 col-md-push-8\">\n                    \n                    <ul class=\"footer-social\">\n                        <li>Follow us on:-</li>\n                        <li><a href=\"#\" class=\"facebook\"><i class=\"fa fa-facebook\"></i></a></li>\n                        <li><a href=\"#\" class=\"twitter\"><i class=\"fa fa-twitter\"></i></a></li>\n                        <li><a href=\"#\" class=\"youtube\"><i class=\"fa fa-youtube\"></i></a></li>\n                        <li><a href=\"#\" class=\"linkedin\"><i class=\"fa fa-linkedin\"></i></a></li>\n                    </ul>\n                </div>\n                <div class=\"col-md-8 col-md-pull-4\">\n                    <div class=\"footer-copyright\">\n                        <span>&copy; Copyright 2019. All Rights Reserved.<i class=\"fa fa-heart-o\"\n                                aria-hidden=\"true\"></i> by <a href=\"https://colorlib.com\">Quizo</a></span>\n                    </div>\n                </div>\n            </div>\n        \n    </footer> -->\n\n\n\n<!-- Footer -->\n<section id=\"footer\">\n    <div class=\"container\">\n        <!-- <div class=\"row text-center text-xs-center text-sm-left text-md-left\">\n        </div> -->\n        <div class=\"row\">\n\n            <div class=\"col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5\">\n                <ul class=\"list-unstyled list-inline social text-center\">\n                    <li class=\"list-inline-item\"><a href=\"\"><i class=\"fa fa-facebook\"></i></a></li>\n                    <li class=\"list-inline-item\"><a href=\"\"><i class=\"fa fa-twitter\"></i></a></li>\n                    <li class=\"list-inline-item\"><a href=\"\"><i class=\"fa fa-instagram\"></i></a></li>\n                    <li class=\"list-inline-item\"><a href=\"\"><i class=\"fa fa-google-plus\"></i></a></li>\n                    <li class=\"list-inline-item\"><a href=\"\" target=\"_blank\"><i class=\"fa fa-envelope\"></i></a></li>\n                </ul>\n            </div>\n            <hr>\n        </div>\n        <div class=\"row\">\n            <div class=\"col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white\">\n                <div class=\"footer-copyright h6\">\n                    <span>&copy; Copyright 2019. All Rights Reserved.\n                        by <a href=\"#home\" target=\"_blank\">QUIZO</a></span>\n                </div>\n            </div>\n            <hr>\n        </div>\n    </div>\n</section>\n<!-- ./Footer -->\n\n\n\n<!-- </div> -->");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- <div style=\"font-size: 15px;\"> -->\n\n\n<nav class=\"navbar nav navbar-expand-lg navbar-light items whitebg  fixed-top\">\n    <a class=\"pic-brand logo\" href=\"#\">\n        <img class=\"logoM\" src=\"../assets/img/logo102 .png\" alt=\"logo\">\n    </a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                        <span class=\"navbar-toggler-icon\"></span>\n                      </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarContent\">\n\n\n        <ul class=\" main-menu nav  ml-auto \">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link itemk\" href=\"#home\">Home\n                </a>\n            </li>\n            <li class=\"nav-item active\">\n                <a class=\"nav-link itemk\" href=\"#about\"> About\n\n                </a>\n            </li>\n            <li class=\"nav-item active\">\n                <a class=\"nav-link itemk\" href=\"#team\">\n                    Team\n\n                </a>\n            </li>\n            <li class=\"nav-item active\">\n                <a class=\"nav-link itemk\" href=\"#contact\">\n                   Contact\n\n                </a>\n            </li>\n            <li class=\"nav-item active\">\n                <a class=\"nav-link itemk\" routerLink=\"/auth/login\" *ngIf='!isLoggedIn'>\n                    Login\n                </a>\n                <a class=\"nav-link itemk \" routerLink=\"/{{loggedInRole}}\" *ngIf='isLoggedIn'>\n                   Continue as {{loggedInUser}}\n                </a>\n            </li>\n        </ul>\n    </div>\n\n\n</nav>\n\n\n\n\n\n<!-- Home -->\n<div id=\"home\" class=\"hero-area\">\n\n\n\n    <!-- Backgound Image -->\n    <div class=\"bg-image bg-parallax overlay\" style=\"background-image:url(../../assets/img/home-background.jpg)\">\n    </div>\n    <!-- /Backgound Image -->\n\n    <div class=\"home-wrapper\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-md-12 jumbo\">\n                    <!-- <h1 class=\"white-text\"><b>QUIZO </b></h1>\n                    <h3 class=\"white-text\">Platform for online quizes</h3>\n                    <h3 class=\"lead white-text\">Knowledge is power. Want to test yours? Login\n                        and take a quiz with us.</h3> -->\n\n\n\n                    <!-- <div class=\"box\">\n                        <i class=\"fk fk-quote-left fk2\" aria-hidden=\"true\"></i>\n                        <div class=\"text\">\n                            <i class=\"fk fk-quote-right fk1\" aria-hidden=\"true\"></i>\n                            <div>\n\n                                <h1 class=\"white-text\"><b>QUIZO </b></h1>\n                                <h5 class=\"white-text\" style=\"font-family: 'Aclonica';\">Platform for online quizes</h5>\n                                        <p class=\"lead white-text\" style=\"font-family: Alex Brush;\"><q>Knowledge is power. Want to test yours? Login\n                                            and take a quiz with us.</q></p>\n                            </div>\n\n                        </div>\n                    </div> -->\n\n\n                    <div class=\"animate\">\n                        <a href=\"#\">\n                            <span data-text=\"W\">W</span>\n                            <span data-text=\"E\">E</span>\n                            <span data-text=\"L\">L</span>\n                            <span data-text=\"C\">C</span>\n                            <span data-text=\"O\">O</span>\n                            <span data-text=\"M\">M</span>\n                            <span data-text=\"E\">E</span>\n                            <span data-text=\" \"> &nbsp;</span>\n                            <span data-text=\"T\">T</span>\n                            <span data-text=\"O\">O</span>\n                            <span data-text=\" \">&nbsp;</span>\n                            <span data-text=\"Q\">Q</span>\n                            <span data-text=\"U\">U</span>\n                            <span data-text=\"I\">I</span>\n                            <span data-text=\"Z\">Z</span>\n\n                            <span data-text=\"O\">O</span>\n                        </a>\n                    </div>\n                    <br><br><br><br><br><br>\n                    <br><br><br><br><br><br>\n\n\n                    <h1 style=\"font-family:Alex Brush;\">\n                        <a href=\"\" style=\"color: white;font-family:Alex Brush;\" class=\"typewrite\" data-period=\"2000\" data-type='[ \"Hi.\", \"Knowledge is power.\", \"Want to test yours?\", \"Login and take a quiz with us.\",\"Thank You.\" ]'>\n                            <span class=\"wrap\"></span>\n                        </a>\n                    </h1>\n                </div>\n            </div>\n        </div>\n    </div>\n\n</div>\n<!-- /Home -->\n\n<!-- Moving object starts -->\n\n\n\n<!-- Moving Object Ends -->\n\n\n\n\n<!-- About -->\n<div id=\"about\" class=\"section\">\n\n    <!-- container -->\n    <div class=\"container\">\n\n        <!-- row -->\n        <div class=\"row\">\n\n\n\n\n            <div class=\"col-md-6\">\n                <div class=\"section-header\">\n                    <h3>Welcome to Quizo</h3>\n                    <p>Online Quiz Platform.</p>\n                </div>\n\n                <!-- feature -->\n                <div class=\"feature\">\n                    <i class=\"feature-icon fa fa-flask\"></i>\n                    <div class=\"feature-content\">\n                        <h4>Online Quizes </h4>\n                        <p>Create or take online quizes.</p>\n                    </div>\n                </div>\n                <!-- /feature -->\n\n                <!-- feature -->\n                <div class=\"feature\">\n                    <i class=\"feature-icon fa fa-users\"></i>\n                    <div class=\"feature-content\">\n                        <h4>Autogeneration</h4>\n                        <p>Got no time to set a quiz?\n                            <br>Quizo will do this job for you.<br> All you need to do is feed your quiz topic.\n                        </p>\n                    </div>\n                </div>\n                <!-- /feature -->\n\n                <!-- feature -->\n                <div class=\"feature\">\n                    <i class=\"feature-icon fa fa-comments\"></i>\n                    <div class=\"feature-content\">\n                        <h4>Community</h4>\n                        <p>Our users are HRs of various companies, who can create quizes,and employees who can take these quizes. </p>\n                    </div>\n                </div>\n                <!-- /feature -->\n\n            </div>\n\n            <div class=\"col-md-6\">\n                <div class=\"about-img\">\n                    <img src=\"../../assets/img/about.png\" alt=\"\">\n                </div>\n            </div>\n\n        </div>\n        <!-- row -->\n\n    </div>\n    <div style=\"margin-bottom: -100px\"></div>\n</div>\n<!-- /About -->\n<!-- Why us -->\n\n<!-- /row -->\n\n<hr class=\"section-hr\">\n\n<!-- row -->\n\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-6\">\n            <h3>Quiz generation made easy by quizo</h3>\n\n\n\n            <p>Don't waste your time thinking what questions to ask in a quiz, and give quizo the opportunity to serve you. </p>\n            <p>You are just a few steps away from creating your quiz.<br> Register with us as an HR, Type your quiz topic and we'll create the set of questions for you.<br>Yes, it's that easy here.</p>\n        </div>\n\n        <div class=\"col-md-5 col-md-offset-1\">\n            <!-- <a class=\"about-video\" href=\"#\">\n                <img src=\"../../assets/img/about-video.jpg\" alt=\"\">\n                <i class=\"play-icon fa fa-play\"></i>\n            </a> -->\n            <!-- 21:9 aspect ratio -->\n            <!-- <div class=\"embed-responsive embed-responsive-21by9\">\n    <iframe class=\"embed-responsive-item\" src=\"...\"></iframe>\n  </div> -->\n\n            <!-- 16:9 aspect ratio -->\n            <div class=\"embed-responsive embed-responsive-16by9\">\n                <iframe class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/cN4ZBaz3mLo\"></iframe>\n            </div>\n        </div>\n\n\n\n    </div>\n    <br><br><br>\n    <!-- TEAM Starts -->\n\n\n    <section id=\"team\" class=\"pb-5\">\n        <div class=\"container\">\n\n\n            <h5 class=\"section-title h3\"><i>Our Developer Team</i></h5>\n            <div class=\"row\">\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-1.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Renu</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Renu</h4>\n                                        <p class=\"card-text\">Graduated from NITK, Surathkal. Likes to Sing, Read and Dance.\n                                        </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com/\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com/\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-2.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Shikhar</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Shikhar Gupta</h4>\n                                        <p class=\"card-text\">Graduated from IIT,BHU. Likes to Read and Code.\n                                        </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-3.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Soumen</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Soumen Kaity</h4>\n                                        <p class=\"card-text\">Graduated from IIEST,Shibpur.Likes to play TT and Football. </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com/soumen.kaity.37\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://twitter.com/Som_tron\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-8.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Pranjal</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Pranjal Sarin</h4>\n                                        <p class=\"card-text\">Graduated from BITS,Pilani. Likes to play TT and Tennis .\n                                        </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-5.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Pankaj</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Pankaj Chauhan</h4>\n                                        <p class=\"card-text\">Graduated from IIT,BHU. Likes to Drink and Drive.</p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-6.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Ayush</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Ayush Soni</h4>\n                                        <p class=\"card-text\">Graduated from IIT(BHU),Varanasi. Likes to not drink and get people drunk.</p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-4.png\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Chinmay</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Chinmay Kalegaonkar</h4>\n                                        <p class=\"card-text\">Graduated from NIT, Surat. Likes to drink and sleep.\n                                        </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-7.jpg\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Ganesh</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Korada Ganesh</h4>\n                                        <p class=\"card-text\">Graduated from NIT, Warangal. Likes to eat and sleep.\n                                        </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n                <!-- Team member -->\n                <div class=\"col-xs-12 col-sm-6 col-md-4\">\n                    <div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\">\n                        <div class=\"mainflip\">\n                            <div class=\"frontside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center\">\n                                        <p><img class=\" img-fluid\" src=\"../assets/img/emp-9.png\" alt=\"card image\">\n                                        </p>\n                                        <h4 class=\"card-title\">Vishal</h4>\n                                        <p class=\"card-text\">Software Developer</p>\n                                        <!-- <a href=\"#\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-plus\"></i></a> -->\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"backside\">\n                                <div class=\"card\">\n                                    <div class=\"card-body text-center mt-4\">\n                                        <h4 class=\"card-title\">Sai Vishal Vangala</h4>\n                                        <p class=\"card-text\">Graduated from NIT, Nagpur. Likes to crack lame jokes.\n                                        </p>\n                                        <ul class=\"list-inline\">\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.facebook.com\">\n                                                    <i class=\"fa fa-facebook\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.twitter.com\">\n                                                    <i class=\"fa fa-twitter\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.skype.com/en/\">\n                                                    <i class=\"fa fa-skype\"></i>\n                                                </a>\n                                            </li>\n                                            <li class=\"list-inline-item\">\n                                                <a class=\"social-icon text-xs-center\" target=\"_blank\" href=\"https://www.gmail.com\">\n                                                    <i class=\"fa fa-google\"></i>\n                                                </a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- ./Team member -->\n\n            </div>\n        </div>\n    </section>\n    <!-- Team -->\n    <br><br><br>\n\n\n\n\n\n    <!-- TEAM Ends -->\n\n\n    <div style=\"margin-bottom: -90px\"></div>\n    <!-- Contact -->\n    <div id=\"contact\" class=\"section\">\n\n        <!-- container -->\n        <div class=\"container\">\n\n            <!-- row -->\n            <div class=\"row\">\n\n                <!-- contact form -->\n                <div class=\"col-md-6\">\n                    <div class=\"contact-form\">\n                        <h4>Send A Message</h4>\n                        <form>\n                            <input class=\"input\" type=\"text\" name=\"name\" [(ngModel)]=\"name\" placeholder=\"Name\" style=\"border: 1px solid #909090\">\n                            <input class=\"input\" type=\"text\" name=\"email\" [(ngModel)]=\"email\" placeholder=\"Email\" style=\"border: 1px solid #909090\">\n                            <input class=\"input\" type=\"number\" name=\"number\" [(ngModel)]=\"number\" placeholder=\"Phone no\" style=\"border: 1px solid #909090\">\n\n                            <mat-form-field>\n                                <mat-label>Subject</mat-label>\n                                <mat-select name=\"food\">\n                                    <mat-option value=\"buy\">Buy the Product</mat-option>\n                                    <mat-option value=\"view\">View a live demo</mat-option>\n                                </mat-select>\n                            </mat-form-field>\n\n\n                        </form>\n                        <button class=\"main-button icon-button pull-right\" (click)=checkLogin()>Send\n                            Message</button>\n                    </div>\n                </div>\n                <!-- /contact form -->\n\n                <!-- contact information -->\n                <!-- <div class=\"col-md-3\">\n                    <div class=\"contact\" style=\"justify-content: center;\">\n                        <h4>Contact Information</h4>\n                        <ul class=\"contact-details\">\n                            <li>\n\n                            </li>\n                            <li><i class=\"fa fa-envelope\"></i>contact@quizo.com</li>\n                            <li><i class=\"fa fa-phone\"></i>(+91)987-654-32-10</li>\n                            <li><i class=\"fa fa-map-marker\"></i>Quizo Kormangala</li>\n\n                        </ul>\n                    </div>\n                </div> -->\n                <!-- contact information -->\n                <!-- <div class=\"col-md-3\">\n\n                    <div class=\"gmap_canvas\">\n\n                        <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.594726273739!2d77.61283231436309!3d12.93374921920828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3c632a2e17aea311!2sNIIT%20-%20Koramangala%20-%20StackRoute!5e0!3m2!1sen!2sin!4v1575614398154!5m2!1sen!2sin\"\n                            width=\"250\" height=\"300\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\"></iframe>\n\n                    </div>\n\n                </div> -->\n\n<section id=\"tabs\" style=\"padding-left: 170px;\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-xs-12 \">\n\t\t\t\t<nav>\n\t\t\t\t\t<div class=\"nav nav-tabs nav-fill\" id=\"nav-tab\" role=\"tablist\">\n\t\t\t\t\t\t<a class=\"nav-item nav-link active\" id=\"nav-home-tab\" data-toggle=\"tab\" href=\"#nav-home\" role=\"tab\" aria-controls=\"nav-home\" aria-selected=\"true\"><h4>Contact us</h4></a>\n\t\t\t\t\t\t<a class=\"nav-item nav-link\" id=\"nav-profile-tab\" data-toggle=\"tab\" href=\"#nav-profile\" role=\"tab\" aria-controls=\"nav-profile\" aria-selected=\"false\"><h4>Locate us</h4></a>\n\t\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t\t<div class=\"tab-content py-3 px-3 px-sm-0\" id=\"nav-tabContent\">\n\t\t\t\t\t<div class=\"tab-pane fade show active\" id=\"nav-home\" role=\"tabpanel\" aria-labelledby=\"nav-home-tab\">\n                            <div class=\"col-md-12\">\n                                    <div class=\"contact\" style=\"justify-content: center;\">\n                                        <ul class=\"contact-details\">\n                                            <li>\n                \n                                            </li>\n                                            <li><i class=\"fa fa-envelope\"></i>contact@quizo.com</li>\n                                            <li><i class=\"fa fa-phone\"></i>(+91)987-654-32-10</li>\n                                            <li><i class=\"fa fa-map-marker\"></i>Quizo Kormangala</li>\n                \n                                        </ul>\n                                    </div>\n                                </div>\n\n\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"tab-pane fade\" id=\"nav-profile\" role=\"tabpanel\" aria-labelledby=\"nav-profile-tab\">\n                            <div class=\"col-md-12\">\n\n                                    <div >\n                \n                                        <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.594726273739!2d77.61283231436309!3d12.93374921920828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3c632a2e17aea311!2sNIIT%20-%20Koramangala%20-%20StackRoute!5e0!3m2!1sen!2sin!4v1575614398154!5m2!1sen!2sin\"\n                                            width=\"230\" height=\"230\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\"></iframe>\n                \n                                    </div>\n                \n                                </div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>\n\n\n\n\n\n\n            </div>\n        </div>\n    </div>\n</div>\n<!-- Footer -->\n<section id=\"footer\">\n    <div class=\"container\">\n        <!-- <div class=\"row text-center text-xs-center text-sm-left text-md-left\">\n        </div> -->\n        <div class=\"row\">\n\n            <div class=\"col-xs-12 col-sm-12 col-md-12 mt-2  \">\n                <ul class=\"list-unstyled list-inline social text-center\">\n                    <li class=\"list-inline-item\"><a href=\"\"><i class=\"fa fa-facebook\"></i></a></li>\n                    <li class=\"list-inline-item\"><a href=\"\"><i class=\"fa fa-twitter\"></i></a></li>\n                    <li class=\"list-inline-item\"><a href=\"\"><i class=\"fa fa-instagram\"></i></a></li>\n                    <li class=\"list-inline-item\"><a href=\"\"><i class=\"fa fa-google-plus\"></i></a></li>\n                    <li class=\"list-inline-item\"><a href=\"\" target=\"_blank\"><i class=\"fa fa-envelope\"></i></a></li>\n                </ul>\n            </div>\n            <hr>\n        </div>\n        <div class=\"row\">\n            <div class=\"col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white\">\n                <div class=\"footer-copyright h6\">\n                    <span>&copy; Copyright 2019. All Rights Reserved.\n                        by <a href=\"#home\" target=\"_blank\">QUIZO</a></span>\n                </div>\n            </div>\n            <hr>\n        </div>\n    </div>\n</section>\n<!-- ./Footer -->\n\n\n\n<!-- </div> -->");
 
 /***/ }),
 
@@ -836,6 +862,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createuser_createuser_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./createuser/createuser.component */ "./src/app/admin-module/createuser/createuser.component.ts");
 /* harmony import */ var _topic_topic_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./topic/topic.component */ "./src/app/admin-module/topic/topic.component.ts");
 /* harmony import */ var _questions_questions_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./questions/questions.component */ "./src/app/admin-module/questions/questions.component.ts");
+/* harmony import */ var _question_question_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./question/question.component */ "./src/app/admin-module/question/question.component.ts");
+
 
 
 
@@ -864,7 +892,9 @@ AdminModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _admin_admin_component__WEBPACK_IMPORTED_MODULE_5__["DialogOverviewExampleDialog"],
             _create_modal_create_modal_component__WEBPACK_IMPORTED_MODULE_11__["CreateModalComponent"],
             _topic_topic_component__WEBPACK_IMPORTED_MODULE_13__["TopicComponent"],
-            _questions_questions_component__WEBPACK_IMPORTED_MODULE_14__["QuestionsComponent"]
+            _questions_questions_component__WEBPACK_IMPORTED_MODULE_14__["QuestionsComponent"],
+            _question_question_component__WEBPACK_IMPORTED_MODULE_15__["QuestionComponent"],
+            _topic_topic_component__WEBPACK_IMPORTED_MODULE_13__["TopicDetails"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -875,7 +905,7 @@ AdminModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providers: [
             _service_admin_service_service__WEBPACK_IMPORTED_MODULE_8__["AdminServiceService"]
         ],
-        entryComponents: [_create_modal_create_modal_component__WEBPACK_IMPORTED_MODULE_11__["CreateModalComponent"], _admin_admin_component__WEBPACK_IMPORTED_MODULE_5__["DialogOverviewExampleDialog"]],
+        entryComponents: [_create_modal_create_modal_component__WEBPACK_IMPORTED_MODULE_11__["CreateModalComponent"], _admin_admin_component__WEBPACK_IMPORTED_MODULE_5__["DialogOverviewExampleDialog"], _topic_topic_component__WEBPACK_IMPORTED_MODULE_13__["TopicDetails"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
     })
 ], AdminModule);
@@ -947,7 +977,7 @@ let AdminComponent = class AdminComponent {
             data: { topic: this.topic }
         });
         dialogRef.afterClosed().subscribe(result => {
-            console.log('The dialog was closed');
+            // console.log('The dialog was closed');
             // this.animal = result;
         });
         this.topic = "";
@@ -974,11 +1004,11 @@ let DialogOverviewExampleDialog = class DialogOverviewExampleDialog {
         this.showSpinnerIndicator = false;
     }
     ngOnInit() {
-        console.log(this.data.topic);
+        // console.log(this.data.topic);
         this.showSpinnerIndicator = true;
         this.adminService.createTest(this.data.topic).subscribe(result => {
             this.responseMessage = result.message;
-            console.log(this.responseMessage);
+            // console.log(this.responseMessage);  
             this.showSpinnerIndicator = false;
         });
     }
@@ -1024,6 +1054,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../page-not-found/page-not-found.component */ "./src/app/page-not-found/page-not-found.component.ts");
 /* harmony import */ var _createuser_createuser_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./createuser/createuser.component */ "./src/app/admin-module/createuser/createuser.component.ts");
 /* harmony import */ var _topic_topic_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./topic/topic.component */ "./src/app/admin-module/topic/topic.component.ts");
+/* harmony import */ var _question_question_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./question/question.component */ "./src/app/admin-module/question/question.component.ts");
+
 
 
 
@@ -1038,7 +1070,8 @@ const routes = [
     { path: 'admin', children: [
             { path: 'createTopic', component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_3__["AdminComponent"] },
             { path: 'testCreated/:id', component: _created_page_created_page_component__WEBPACK_IMPORTED_MODULE_4__["CreatedPageComponent"] },
-            { path: 'topic/:topic', component: _topic_topic_component__WEBPACK_IMPORTED_MODULE_9__["TopicComponent"] },
+            { path: 'topic', component: _topic_topic_component__WEBPACK_IMPORTED_MODULE_9__["TopicComponent"] },
+            { path: 'topic/:name', component: _question_question_component__WEBPACK_IMPORTED_MODULE_10__["QuestionComponent"] },
             { path: '', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_6__["DashboardComponent"] },
             { path: 'createUser', component: _createuser_createuser_component__WEBPACK_IMPORTED_MODULE_8__["CreateuserComponent"] },
             { path: '**', component: _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_7__["PageNotFoundComponent"] }
@@ -1241,11 +1274,12 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************************************!*\
   !*** ./src/app/admin-module/createuser/createuser.component.ts ***!
   \*****************************************************************/
-/*! exports provided: CreateuserComponent */
+/*! exports provided: CSVRecord, CreateuserComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CSVRecord", function() { return CSVRecord; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateuserComponent", function() { return CreateuserComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
@@ -1254,6 +1288,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
 /* harmony import */ var _create_modal_create_modal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../create-modal/create-modal.component */ "./src/app/admin-module/create-modal/create-modal.component.ts");
+/* harmony import */ var src_app_authentication_module_service_toaster_service_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/authentication-module/service/toaster-service.service */ "./src/app/authentication-module/service/toaster-service.service.ts");
 
 
 
@@ -1261,12 +1296,91 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+class CSVRecord {
+    constructor() {
+    }
+}
 let CreateuserComponent = class CreateuserComponent {
-    constructor(router, createUserService, fb, dialog) {
+    constructor(router, createUserService, ts, fb, dialog) {
         this.router = router;
         this.createUserService = createUserService;
+        this.ts = ts;
         this.fb = fb;
         this.dialog = dialog;
+        this.isFileSelected = false;
+        this.csvRecords = [];
+    }
+    fileChangeListener($event) {
+        this.isFileSelected = false;
+        let text = [];
+        let files = $event.srcElement.files;
+        this.selectedFile = files[0];
+        if (this.isCSVFile(files[0])) {
+            let input = $event.target;
+            let reader = new FileReader();
+            reader.readAsText(input.files[0]);
+            reader.onload = () => {
+                let csvData = reader.result;
+                let csvRecordsArray = csvData.split(/\r\n|\n/);
+                let headersRow = this.getHeaderArray(csvRecordsArray);
+                this.csvRecords = this.getDataRecordsArrayFromCSVFile(csvRecordsArray, headersRow.length);
+            };
+            reader.onerror = function () {
+                alert('Unable to read ' + input.files[0]);
+            };
+        }
+        else {
+            alert("Please import valid .csv file.");
+            this.fileReset();
+        }
+    }
+    getDataRecordsArrayFromCSVFile(csvRecordsArray, headerLength) {
+        let jsonArr = [];
+        for (let i = 1; i < csvRecordsArray.length; i++) {
+            let data = csvRecordsArray[i].split(',');
+            // FOR EACH ROW IN CSV FILE IF THE NUMBER OF COLUMNS
+            // ARE SAME AS NUMBER OF HEADER COLUMNS THEN PARSE THE DATA
+            if (data.length == headerLength) {
+                let csvRecord = new CSVRecord();
+                csvRecord.name = data[0].trim();
+                csvRecord.role = data[1].trim();
+                csvRecord.phone = data[2].trim();
+                csvRecord.email = data[3].trim();
+                csvRecord.designation = data[4].trim();
+                csvRecord.address = data[5].trim();
+                csvRecord.gender = data[6].trim();
+                var obj = {
+                    "name": csvRecord.name,
+                    "role": csvRecord.role,
+                    "phone": csvRecord.phone,
+                    "email": csvRecord.email,
+                    "designation": csvRecord.designation,
+                    "address": csvRecord.address,
+                    "gender": csvRecord.gender
+                };
+                jsonArr.push(obj);
+            }
+        }
+        this.isFileSelected = true;
+        return jsonArr;
+    }
+    // CHECK IF FILE IS A VALID CSV FILE
+    isCSVFile(file) {
+        return file.name.endsWith(".csv");
+    }
+    // GET CSV FILE HEADER COLUMNS
+    getHeaderArray(csvRecordsArr) {
+        let headers = csvRecordsArr[0].split(',');
+        let headerArray = [];
+        for (let j = 0; j < headers.length; j++) {
+            headerArray.push(headers[j]);
+        }
+        return headerArray;
+    }
+    fileReset() {
+        this.fileImportInput.nativeElement.value = "";
+        this.csvRecords = [];
     }
     ngOnInit() {
         this.generateUserAndPass();
@@ -1293,9 +1407,9 @@ let CreateuserComponent = class CreateuserComponent {
             data: { form: this.loginForm },
         });
         dialogRef.afterClosed().subscribe(result => {
-            if (!result == undefined) {
-                this.createUserService.saveUserInMongo(userDetails).subscribe(res => console.log(res));
-                this.createUserService.saveUserInMysql(result).subscribe(res => console.log(res));
+            if (result != undefined) {
+                this.createUserService.saveUserInMongo(userDetails).subscribe(responnse => this.ts.success("User created"));
+                this.createUserService.saveUserInMysql(result).subscribe(response => this.ts.success("User login details sent"));
                 this.router.navigate(['/admin']);
             }
         });
@@ -1308,13 +1422,28 @@ let CreateuserComponent = class CreateuserComponent {
             this.generatedPassword = error.error.text.split(',')[1];
         });
     }
+    submitCsv() {
+        this.isLoading = true;
+        this.isFileSelected = false;
+        this.createUserService.saveUsersInBulk(this.csvRecords).subscribe(response => {
+            this.ts.success("All users in file are Registered");
+            this.isLoading = false;
+        }, error => {
+            this.ts.error("Couldnot register some users");
+            this.isLoading = false;
+        }, () => { });
+    }
 };
 CreateuserComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
     { type: _service_createuser_service__WEBPACK_IMPORTED_MODULE_3__["CreateuserService"] },
+    { type: src_app_authentication_module_service_toaster_service_service__WEBPACK_IMPORTED_MODULE_7__["ToasterService"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] },
     { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('fileImportInput', { static: false })
+], CreateuserComponent.prototype, "fileImportInput", void 0);
 CreateuserComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-createuser',
@@ -1372,7 +1501,7 @@ let DashboardComponent = class DashboardComponent {
         this.employeeService = employeeService;
         this.requestService = requestService;
         this.toasterService = toasterService;
-        this.topicDisplayedColumns = ['id', 'name', 'createdAt', 'link', 'keywords', 'actions'];
+        this.topicDisplayedColumns = ['id', 'name', 'createdAt', 'link', 'actions'];
         this.employeeDisplayedColumns = ['id', 'name', 'phone', 'email'];
         this.requestDisplayedColumns = ['id', 'message', 'status', 'actions'];
         this.paginators = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["QueryList"]();
@@ -1394,11 +1523,20 @@ let DashboardComponent = class DashboardComponent {
         });
     }
     changeRequestStatus(request) {
-        console.log(request);
+        // console.log(request);
         this.requestService.updateRequest(request).subscribe(res => { }, err => { this.toasterService.success("Request Updated"); });
         this.requestService.getAllRequests().subscribe((response) => {
             this.requestDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](response);
             this.requestDataSource.paginator = this.paginators.toArray()[2];
+        });
+    }
+    deleteTopic(topic) {
+        this.topicService.deleteTopic(topic.name).subscribe(res => { }, err => {
+            this.toasterService.success("topic deleted");
+            this.topicService.getAllTopics().subscribe((response) => {
+                this.topicDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](response);
+                this.topicDataSource.paginator = this.paginators.toArray()[0];
+            });
         });
     }
 };
@@ -1418,6 +1556,87 @@ DashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./dashboard.component.css */ "./src/app/admin-module/dashboard/dashboard.component.css")).default]
     })
 ], DashboardComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/admin-module/question/question.component.css":
+/*!**************************************************************!*\
+  !*** ./src/app/admin-module/question/question.component.css ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FkbWluLW1vZHVsZS9xdWVzdGlvbi9xdWVzdGlvbi5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/admin-module/question/question.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/admin-module/question/question.component.ts ***!
+  \*************************************************************/
+/*! exports provided: QuestionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuestionComponent", function() { return QuestionComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _service_topic_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/topic.service */ "./src/app/admin-module/service/topic.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+let QuestionComponent = class QuestionComponent {
+    constructor(topicService, route) {
+        this.topicService = topicService;
+        this.route = route;
+        this.isLoading = true;
+        this.pageNo = 1;
+        this.pages = 5;
+    }
+    ngOnInit() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.topicName = this.route.snapshot.paramMap.get('name');
+            this.getQuestions(this.topicName, this.pageNo);
+            this.metadata = yield this.topicService.getTopicMetadata(this.topicName).then();
+            // console.log(this.metadata);
+            this.pages = this.metadata.questionCount / 40;
+        });
+    }
+    getQuestions(topicName, page) {
+        this.topicService.getQuestionOfTopicByPage(topicName, page).subscribe((response) => {
+            this.questions = response;
+            this.isLoading = false;
+        }, error => {
+            // console.log(error) 
+        });
+    }
+    nextPage() {
+        this.pageNo < this.pages ? this.pageNo++ : this.pageNo;
+        this.getQuestions(this.topicName, this.pageNo);
+    }
+    prevPage() {
+        this.pageNo > 1 ? this.pageNo-- : this.pageNo;
+        this.getQuestions(this.topicName, this.pageNo);
+    }
+};
+QuestionComponent.ctorParameters = () => [
+    { type: _service_topic_service__WEBPACK_IMPORTED_MODULE_2__["TopicService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+];
+QuestionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-question',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./question.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/admin-module/question/question.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./question.component.css */ "./src/app/admin-module/question/question.component.css")).default]
+    })
+], QuestionComponent);
 
 
 
@@ -1491,6 +1710,7 @@ let AdminServiceService = class AdminServiceService {
         this.URLprefix = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].adminURLprefix;
     }
     createTest(topic) {
+        console.log(topic);
         return this.http.post(this.URLprefix + '/create-topic', topic);
     }
 };
@@ -1529,9 +1749,7 @@ let CreateuserService = class CreateuserService {
     constructor(http) {
         this.http = http;
         this.URLprefix = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].HrURLprefix;
-    }
-    postemployeedetails(employee) {
-        return this.http.post(this.URLprefix + "/employeedetails", employee);
+        this.URLprefixForBulk = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].adminURLprefix;
     }
     generateRandomUserAndPass() {
         return this.http.get(this.URLprefix + "/users/generate");
@@ -1541,6 +1759,9 @@ let CreateuserService = class CreateuserService {
     }
     saveUserInMysql(employee) {
         return this.http.post(this.URLprefix + "/users/m", employee);
+    }
+    saveUsersInBulk(users) {
+        return this.http.post(this.URLprefixForBulk + "/users/bulk", users);
     }
 };
 CreateuserService.ctorParameters = () => [
@@ -1632,7 +1853,7 @@ let RequestService = class RequestService {
         return this.http.delete(this.URLprefix + '/requests', request);
     }
     updateRequest(request) {
-        console.log(request);
+        // console.log(request);
         return this.http.put(this.URLprefix + '/requests', request, { headers: { 'Content-Type': 'application/json' } });
     }
 };
@@ -1675,6 +1896,34 @@ let TopicService = class TopicService {
     getAllTopics() {
         return this.http.get(this.URLprefix + "/topics");
     }
+    deleteTopic(topicName) {
+        return this.http.get(this.URLprefix + "/topic/delete?name=" + topicName, {});
+    }
+    reshuffleTopic(topicName) {
+        return this.http.get(this.URLprefix + "/topic/" + topicName + "/reshuffle");
+    }
+    createTopic(topicName) {
+        const today = new Date();
+        return this.http.post(this.URLprefix + "/topic/add", {
+            "name": topicName,
+            "link": "created by csv upload",
+            "createdAt": today.toDateString(),
+            "keywords": ["programming", "stuff"]
+        });
+    }
+    insertQuestions(csvRecords, topicName) {
+        return this.http.post(this.URLprefix + "/topic/" + topicName + "/insert", csvRecords);
+    }
+    getAllQuestionsOfTopic(topicName) {
+        return this.http.get(this.URLprefix + "/topic/" + topicName);
+    }
+    getQuestionOfTopicByPage(topicName, page) {
+        // console.log(page)
+        return this.http.get(this.URLprefix + "/topic/" + topicName + "?page=" + page);
+    }
+    getTopicMetadata(topicName) {
+        return this.http.get(this.URLprefix + "/topic/" + topicName + "/metadata").toPromise();
+    }
 };
 TopicService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
@@ -1706,21 +1955,167 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************!*\
   !*** ./src/app/admin-module/topic/topic.component.ts ***!
   \*******************************************************/
-/*! exports provided: TopicComponent */
+/*! exports provided: CSVRecord, TopicComponent, TopicDetails */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CSVRecord", function() { return CSVRecord; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TopicComponent", function() { return TopicComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TopicDetails", function() { return TopicDetails; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _service_topic_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/topic.service */ "./src/app/admin-module/service/topic.service.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+/* harmony import */ var src_app_authentication_module_service_toaster_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/authentication-module/service/toaster-service.service */ "./src/app/authentication-module/service/toaster-service.service.ts");
 
 
+
+
+
+
+class CSVRecord {
+    constructor() {
+    }
+}
 let TopicComponent = class TopicComponent {
-    constructor() { }
+    constructor(topicService, ts, dialog) {
+        this.topicService = topicService;
+        this.ts = ts;
+        this.dialog = dialog;
+        this.topicDisplayedColumns = ['id', 'name', 'createdAt', 'link', 'actions'];
+        this.paginators = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["QueryList"]();
+    }
     ngOnInit() {
     }
+    ngAfterViewInit() {
+        this.topicService.getAllTopics().subscribe((response) => {
+            this.topicDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](response);
+            this.topicDataSource.paginator = this.paginators.toArray()[0];
+        });
+    }
+    openDialog(topic) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            var metadata = yield this.topicService.getTopicMetadata(topic.name);
+            // console.log(metadata);
+            const dialogRef = this.dialog.open(TopicDetails, {
+                width: '550px',
+                height: '800px',
+                data: { topic: topic, metadata: metadata }
+            });
+            dialogRef.afterClosed().subscribe(result => {
+                // console.log('The dialog was closed');
+            });
+        });
+    }
+    deleteTopic(topicName) {
+        this.topicService.deleteTopic(topicName).subscribe(response => { }, error => {
+            // console.log(error);
+            this.ts.success("Topic Deleted");
+        });
+    }
+    reshuffleTopic(topicName) {
+        this.topicService.reshuffleTopic(topicName).subscribe(response => { }, error => {
+            this.ts.success("Topic Restored to original state");
+        });
+    }
+    fileChangeListener($event) {
+        this.isFileSelected = false;
+        let text = [];
+        let files = $event.srcElement.files;
+        this.selectedFile = files[0];
+        if (this.isCSVFile(files[0])) {
+            let input = $event.target;
+            let reader = new FileReader();
+            reader.readAsText(input.files[0]);
+            reader.onload = () => {
+                let csvData = reader.result;
+                let csvRecordsArray = csvData.split(/\r\n|\n/);
+                let headersRow = this.getHeaderArray(csvRecordsArray);
+                this.csvRecords = this.getDataRecordsArrayFromCSVFile(csvRecordsArray, headersRow.length);
+            };
+            reader.onerror = function () {
+                alert('Unable to read ' + input.files[0]);
+            };
+        }
+        else {
+            alert("Please import valid .csv file.");
+            this.fileReset();
+        }
+    }
+    getDataRecordsArrayFromCSVFile(csvRecordsArray, headerLength) {
+        let jsonArr = [];
+        for (let i = 1; i < csvRecordsArray.length; i++) {
+            let data = csvRecordsArray[i].split(',');
+            // FOR EACH ROW IN CSV FILE IF THE NUMBER OF COLUMNS
+            // ARE SAME AS NUMBER OF HEADER COLUMNS THEN PARSE THE DATA
+            if (data.length == headerLength) {
+                let csvRecord = new CSVRecord();
+                csvRecord.question = data[0].trim();
+                csvRecord.sentence = data[1].trim();
+                csvRecord.answer = data[2].trim();
+                csvRecord.choice1 = data[3].trim();
+                csvRecord.choice2 = data[4].trim();
+                csvRecord.choice3 = data[5].trim();
+                csvRecord.choice4 = data[6].trim();
+                csvRecord.difficulty = data[7].trim();
+                var obj = {
+                    "question": csvRecord.question,
+                    "sentence": csvRecord.sentence,
+                    "answer": csvRecord.answer,
+                    "choices": [csvRecord.choice1, csvRecord.choice2, csvRecord.choice3, csvRecord.choice4],
+                    "difficulty": csvRecord.difficulty,
+                    "correctAttempts": 0,
+                    "totalOccurences": 0
+                };
+                jsonArr.push(obj);
+            }
+        }
+        this.isFileSelected = true;
+        return jsonArr;
+    }
+    // CHECK IF FILE IS A VALID CSV FILE
+    isCSVFile(file) {
+        return file.name.endsWith(".csv");
+    }
+    // GET CSV FILE HEADER COLUMNS
+    getHeaderArray(csvRecordsArr) {
+        let headers = csvRecordsArr[0].split(',');
+        let headerArray = [];
+        for (let j = 0; j < headers.length; j++) {
+            headerArray.push(headers[j]);
+        }
+        return headerArray;
+    }
+    fileReset() {
+        this.fileImportInput.nativeElement.value = "";
+        this.csvRecords = [];
+    }
+    submitCsv() {
+        this.isLoading = true;
+        this.isFileSelected = false;
+        this.topicService.createTopic(this.topicName).subscribe(response => {
+            this.ts.success("Topic was inserted");
+            this.isLoading = false;
+        }, error => {
+            this.ts.error("Couldnot Create topic");
+            this.isLoading = false;
+        }, () => { });
+        this.topicService.insertQuestions(this.csvRecords, this.topicName).subscribe(response => { }, error => {
+            this.ts.success("Questions were uploaded");
+            this.isLoading = false;
+        }, () => { });
+    }
 };
+TopicComponent.ctorParameters = () => [
+    { type: _service_topic_service__WEBPACK_IMPORTED_MODULE_3__["TopicService"] },
+    { type: src_app_authentication_module_service_toaster_service_service__WEBPACK_IMPORTED_MODULE_5__["ToasterService"] },
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialog"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"])
+], TopicComponent.prototype, "paginators", void 0);
 TopicComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-topic',
@@ -1728,6 +2123,27 @@ TopicComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./topic.component.css */ "./src/app/admin-module/topic/topic.component.css")).default]
     })
 ], TopicComponent);
+
+let TopicDetails = class TopicDetails {
+    constructor(dialogRef, data) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+    }
+    onNoClick() {
+        this.dialogRef.close();
+    }
+};
+TopicDetails.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialogRef"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"],] }] }
+];
+TopicDetails = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'topicdetails',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./topic-details.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/admin-module/topic/topic-details.html")).default,
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"]))
+], TopicDetails);
 
 
 
@@ -2318,7 +2734,7 @@ RegistrationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".login-main {\n    padding-top: 10%;\n}\n\nmat-card {\n    min-width: 28%;\n}\n\n.back {\n    /* background-color: #F5F5F5; */\n    box-shadow: 3px 3px 2px 2px #dadada;\n    /* border: 1px solid rgb(155, 155, 155); */\n    height: 240px;\n}\n\n.text {\n    color: #585858;\n}\n\n.spacing-l-20 {\n    margin-left: 20px;\n}\n\n.v-center {\n    vertical-align: -5px;\n}\n\n.spacer {\n    flex: 1 1 auto;\n}\n\nmat-card-header {\n    display: block;\n    flex-direction: row;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXV0aGVudGljYXRpb24tbW9kdWxlL3Jlc2V0L3Jlc2V0LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxjQUFjO0FBQ2xCOztBQUVBO0lBQ0ksK0JBQStCO0lBQy9CLG1DQUFtQztJQUNuQywwQ0FBMEM7SUFDMUMsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxvQkFBb0I7QUFDeEI7O0FBRUE7SUFDSSxjQUFjO0FBQ2xCOztBQUVBO0lBQ0ksY0FBYztJQUNkLG1CQUFtQjtBQUN2QiIsImZpbGUiOiJzcmMvYXBwL2F1dGhlbnRpY2F0aW9uLW1vZHVsZS9yZXNldC9yZXNldC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxvZ2luLW1haW4ge1xuICAgIHBhZGRpbmctdG9wOiAxMCU7XG59XG5cbm1hdC1jYXJkIHtcbiAgICBtaW4td2lkdGg6IDI4JTtcbn1cblxuLmJhY2sge1xuICAgIC8qIGJhY2tncm91bmQtY29sb3I6ICNGNUY1RjU7ICovXG4gICAgYm94LXNoYWRvdzogM3B4IDNweCAycHggMnB4ICNkYWRhZGE7XG4gICAgLyogYm9yZGVyOiAxcHggc29saWQgcmdiKDE1NSwgMTU1LCAxNTUpOyAqL1xuICAgIGhlaWdodDogMjQwcHg7XG59XG5cbi50ZXh0IHtcbiAgICBjb2xvcjogIzU4NTg1ODtcbn1cblxuLnNwYWNpbmctbC0yMCB7XG4gICAgbWFyZ2luLWxlZnQ6IDIwcHg7XG59XG5cbi52LWNlbnRlciB7XG4gICAgdmVydGljYWwtYWxpZ246IC01cHg7XG59XG5cbi5zcGFjZXIge1xuICAgIGZsZXg6IDEgMSBhdXRvO1xufVxuXG5tYXQtY2FyZC1oZWFkZXIge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".login-main {\n    padding-top: 10%;\n}\n\nmat-card {\n    min-width: 28%;\n    box-shadow: 3px 3px 4px 4px #dadada;\n}\n\n.back {\n    /* background-color: #F5F5F5; */\n    box-shadow: 7px 8px 8px 8px #dadada;\n    /* border: 1px solid rgb(155, 155, 155); */\n    height: 240px;\n}\n\n.text {\n    color: #585858;\n}\n\n.spacing-l-20 {\n    margin-left: 20px;\n}\n\n.v-center {\n    vertical-align: -5px;\n}\n\n.spacer {\n    flex: 1 1 auto;\n}\n\nmat-card-header {\n    display: block;\n    flex-direction: row;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXV0aGVudGljYXRpb24tbW9kdWxlL3Jlc2V0L3Jlc2V0LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxjQUFjO0lBQ2QsbUNBQW1DO0FBQ3ZDOztBQUVBO0lBQ0ksK0JBQStCO0lBQy9CLG1DQUFtQztJQUNuQywwQ0FBMEM7SUFDMUMsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxvQkFBb0I7QUFDeEI7O0FBRUE7SUFDSSxjQUFjO0FBQ2xCOztBQUVBO0lBQ0ksY0FBYztJQUNkLG1CQUFtQjtBQUN2QiIsImZpbGUiOiJzcmMvYXBwL2F1dGhlbnRpY2F0aW9uLW1vZHVsZS9yZXNldC9yZXNldC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxvZ2luLW1haW4ge1xuICAgIHBhZGRpbmctdG9wOiAxMCU7XG59XG5cbm1hdC1jYXJkIHtcbiAgICBtaW4td2lkdGg6IDI4JTtcbiAgICBib3gtc2hhZG93OiAzcHggM3B4IDRweCA0cHggI2RhZGFkYTtcbn1cblxuLmJhY2sge1xuICAgIC8qIGJhY2tncm91bmQtY29sb3I6ICNGNUY1RjU7ICovXG4gICAgYm94LXNoYWRvdzogN3B4IDhweCA4cHggOHB4ICNkYWRhZGE7XG4gICAgLyogYm9yZGVyOiAxcHggc29saWQgcmdiKDE1NSwgMTU1LCAxNTUpOyAqL1xuICAgIGhlaWdodDogMjQwcHg7XG59XG5cbi50ZXh0IHtcbiAgICBjb2xvcjogIzU4NTg1ODtcbn1cblxuLnNwYWNpbmctbC0yMCB7XG4gICAgbWFyZ2luLWxlZnQ6IDIwcHg7XG59XG5cbi52LWNlbnRlciB7XG4gICAgdmVydGljYWwtYWxpZ246IC01cHg7XG59XG5cbi5zcGFjZXIge1xuICAgIGZsZXg6IDEgMSBhdXRvO1xufVxuXG5tYXQtY2FyZC1oZWFkZXIge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XG59Il19 */");
 
 /***/ }),
 
@@ -2702,12 +3118,12 @@ let UserDetailsComponent = class UserDetailsComponent {
     }
     ngOnInit() {
         this.mobileQuery.removeListener(this._mobileQueryListener);
-        console.log("okay");
+        // console.log("okay");
         const email = sessionStorage.getItem('email');
-        console.log(email);
+        // console.log(email)
         this.detService.getAllDetails(email).subscribe(response => {
             this.user = response;
-            console.log(response);
+            // console.log(response);  
         });
     }
 };
@@ -2955,7 +3371,7 @@ let DashboardComponent = class DashboardComponent {
             this.activeTestsDataSource.paginator = this.paginators.toArray()[0];
         });
         this.dashboardService.getCompleteTests(userEmail).subscribe((response) => {
-            console.log(response);
+            // console.log(response)
             this.completeTestsDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](response);
             this.completeTestsDataSource.paginator = this.paginators.toArray()[1];
         });
@@ -3110,7 +3526,7 @@ let EmployeedetailsComponent = class EmployeedetailsComponent {
         this.employee.name = name;
         this.employee.email = email;
         sessionStorage.setItem(id, JSON.stringify(this.employee));
-        console.log(JSON.parse(sessionStorage.getItem(id)));
+        // console.log(JSON.parse(sessionStorage.getItem(id)));
         this.router.navigate(['/test-instructions']);
     }
 };
@@ -3290,6 +3706,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _service_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service/data.service */ "./src/app/employee-module/service/data.service.ts");
 /* harmony import */ var src_app_authentication_module_service_toaster_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/authentication-module/service/toaster-service.service */ "./src/app/authentication-module/service/toaster-service.service.ts");
+/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/Rx */ "./node_modules/rxjs-compat/_esm2015/Rx.js");
+
 
 
 
@@ -3313,70 +3731,64 @@ let FetchTestComponent = class FetchTestComponent {
         const userDetails = this.dataService.getTestUserDetails();
         // const userDummyDetails = this.dataService.getDummyDetails();
         this.fetchTestService.getFirstQuestion(userDetails).subscribe(response => {
-            console.log(response);
+            // console.log(response)
             this.question = response;
             this.count = 0;
             this.choices = this.question['choices'];
-            // this.timer = this.checkTime();
+            this.timer = rxjs_Rx__WEBPACK_IMPORTED_MODULE_6__["Observable"].timer(1000, 1000);
+            // subscribing to a observable returns a subscription object
+            this.sub = this.timer.subscribe(t => this.tickerFunc(t));
             this.topicName = userDetails.topicName;
         });
     }
     nextQuestion(choice) {
+        this.sub.unsubscribe();
+        this.timer = rxjs_Rx__WEBPACK_IMPORTED_MODULE_6__["Observable"].timer(1000, 1000);
+        // subscribing to a observable returns a subscription object
+        this.sub = this.timer.subscribe(t => this.tickerFunc(t));
+        this.totalSeconds = 15;
         this.count++;
         this.fetchTestService.getNextQuestion(choice).subscribe((response) => {
             this.question = response;
         }, error => {
             if (error.error == "Your test is completed") {
-                this.resetTime();
+                this.ngOnDestroy();
                 this.feedbackpage();
             }
         });
         this.choices = null;
-        this.resetTime();
     }
     feedbackpage() {
         this.toasterService.success("Test Completed", "Please fill the feedback form");
         this.router.navigate(['/employee/feedback']);
     }
-    resetTime() {
-        this.totalSeconds = 15;
+    tickerFunc(tick) {
+        if (tick >= 15) {
+            this.nextQuestion(0);
+        }
+        this.totalSeconds -= 1;
         this.minutes = Math.floor(this.totalSeconds / 60);
         this.seconds = this.totalSeconds % 60;
-    }
-    checkTime() {
-        if (this.count != 30) {
-            if (this.totalSeconds <= 0) {
-                setTimeout(() => { this.nextQuestion(0); }, 1);
-                setTimeout(() => { this.checkTime(); }, 1000);
-            }
-            else {
-                this.totalSeconds -= 1;
-                this.minutes = Math.floor(this.totalSeconds / 60);
-                this.seconds = this.totalSeconds % 60;
-                this.roundedMins = this.pad(this.minutes);
-                this.roundedSecs = this.pad(this.seconds);
-                setTimeout(() => { this.checkTime(); }, 1000);
-            }
-        }
-        else {
-            if (this.totalSeconds <= 0) {
-                setTimeout(() => { this.nextQuestion(0); }, 1);
-            }
-            else {
-                this.totalSeconds -= 1;
-                this.minutes = Math.floor(this.totalSeconds / 60);
-                this.seconds = this.totalSeconds % 60;
-                this.roundedMins = this.pad(this.minutes);
-                this.roundedSecs = this.pad(this.seconds);
-                setTimeout(() => { this.checkTime(); }, 1000);
-            }
-        }
+        this.roundedMins = this.pad(this.minutes);
+        this.roundedSecs = this.pad(this.seconds);
+        this.ticks = tick;
     }
     pad(number) {
         return (number < 10 ? '0' : '') + number;
     }
+    endTest(choice) {
+        choice == null ? 0 : choice;
+        this.fetchTestService.getNextQuestion(choice + 4).subscribe((response) => { }, error => {
+            if (error.error == "Your test is completed") {
+                this.feedbackpage();
+            }
+        });
+    }
     ngOnDestroy() {
         clearInterval(this.timer);
+        //  console.log("Destroy timer");
+        // unsubscribe here
+        this.sub.unsubscribe();
     }
 };
 FetchTestComponent.ctorParameters = () => [
@@ -3485,18 +3897,18 @@ let ResultPageComponent = class ResultPageComponent {
     }
     ngOnInit() {
         const result = this.dataService.getResultDetails();
-        console.log(result);
+        // console.log(result);
         this.Employeeresult.getResultForEmployeeWhoGaveThisTest(result.empId, result.testId).subscribe((data) => {
-            console.log("data ", data);
+            //console.log("data ",data);
             this.employeeResult = data;
             this.attempts = this.employeeResult.attempts;
-            console.log(this.attempts);
+            //console.log(this.attempts);
             this.count = 0;
         });
     }
     evaluate(response, correct) {
         var result = response.localeCompare(correct);
-        console.log(result);
+        // console.log(result);
         if (result) {
             return true;
         }
@@ -3550,7 +3962,7 @@ let DashService = class DashService {
         this.httpClient = httpClient;
     }
     getDetails() {
-        console.log("test call");
+        //console.log("test call");
         return this.httpClient.get("http://172.23.234.85:8093/employee/dashboard/");
     }
 };
@@ -3767,7 +4179,7 @@ let FetchTestService = class FetchTestService {
         this.topic = "java";
     }
     getFirstQuestion(userDetails) {
-        console.log(userDetails);
+        //console.log(userDetails);
         const details = {
             "id": userDetails.id,
             "testId": userDetails.testId,
@@ -3864,7 +4276,7 @@ let ScoreService = class ScoreService {
         for (let i = 0; i < questionList.length; i++) {
             maxScore = maxScore + questionList[i].weight;
         }
-        console.log("max score is ", maxScore);
+        //console.log("max score is ",maxScore);
         percentage = (score / maxScore) * 100;
         return percentage;
     }
@@ -4012,7 +4424,7 @@ let TestInsComponent = class TestInsComponent {
     }
     onStartTest() {
         const userData = this.dataService.getTestUserDetails();
-        console.log(userData);
+        // console.log(userData);
         // this.http.post(this.URLprefix+'/instructions',{"collectionName":userData.topicName,"empId":userData.userId,"empName":userData.userName})
     }
 };
@@ -4090,7 +4502,7 @@ let TestPageComponent = class TestPageComponent {
             this.topic = message;
         });
         this.s.getQuestions(this.topic).subscribe(data => { this.questionList = data[1].questions; console.log(data[0].questions); });
-        console.log(this.questionList);
+        //console.log(this.questionList)
     }
     ngOnDestroy() {
         // this.subscription.unsubscribe();
@@ -4236,7 +4648,7 @@ FooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".x {\n    position: fixed;\n    top: 0;\n    height: 50px;\n    z-index: 1000;\n    align-content: center;\n    justify-content: space-between;\n    margin-bottom: 100px;\n}\n\n.spacing-l-20 {\n    margin-left: 20px;\n    width: 75px;\n    height: 35px;\n    background: url('logo101.png');\n    background-blend-mode: lighten;\n    background-size: 75px 35px;\n    background-color: #263238;\n}\n\n.v-center {\n    vertical-align: -5px;\n}\n\n.spacer {\n    flex: 1 1 auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTtJQUNmLE1BQU07SUFDTixZQUFZO0lBQ1osYUFBYTtJQUNiLHFCQUFxQjtJQUNyQiw4QkFBOEI7SUFDOUIsb0JBQW9CO0FBQ3hCOztBQUVBO0lBQ0ksaUJBQWlCO0lBQ2pCLFdBQVc7SUFDWCxZQUFZO0lBQ1osOEJBQStDO0lBQy9DLDhCQUE4QjtJQUM5QiwwQkFBMEI7SUFDMUIseUJBQXlCO0FBQzdCOztBQUVBO0lBQ0ksb0JBQW9CO0FBQ3hCOztBQUVBO0lBQ0ksY0FBYztBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi54IHtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiAwO1xuICAgIGhlaWdodDogNTBweDtcbiAgICB6LWluZGV4OiAxMDAwO1xuICAgIGFsaWduLWNvbnRlbnQ6IGNlbnRlcjtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gICAgbWFyZ2luLWJvdHRvbTogMTAwcHg7XG59XG5cbi5zcGFjaW5nLWwtMjAge1xuICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xuICAgIHdpZHRoOiA3NXB4O1xuICAgIGhlaWdodDogMzVweDtcbiAgICBiYWNrZ3JvdW5kOiB1cmwoJy4uLy4uL2Fzc2V0cy9pbWcvbG9nbzEwMS5wbmcnKTtcbiAgICBiYWNrZ3JvdW5kLWJsZW5kLW1vZGU6IGxpZ2h0ZW47XG4gICAgYmFja2dyb3VuZC1zaXplOiA3NXB4IDM1cHg7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI2MzIzODtcbn1cblxuLnYtY2VudGVyIHtcbiAgICB2ZXJ0aWNhbC1hbGlnbjogLTVweDtcbn1cblxuLnNwYWNlciB7XG4gICAgZmxleDogMSAxIGF1dG87XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".x {\n    position: fixed;\n    top: 0;\n    height: 50px;\n    z-index: 1000;\n    align-content: center;\n    justify-content: space-between;\n    margin-bottom: 100px;\n}\n\n.spacing-l-20 {\n    cursor: pointer;\n    margin-left: 20px;\n    width: 75px;\n    height: 35px;\n    background: url('logo101.png');\n    background-blend-mode: lighten;\n    background-size: 75px 35px;\n    background-color: #263238;\n}\n\n.v-center {\n    vertical-align: -5px;\n}\n\n.spacer {\n    flex: 1 1 auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTtJQUNmLE1BQU07SUFDTixZQUFZO0lBQ1osYUFBYTtJQUNiLHFCQUFxQjtJQUNyQiw4QkFBOEI7SUFDOUIsb0JBQW9CO0FBQ3hCOztBQUVBO0lBQ0ksZUFBZTtJQUNmLGlCQUFpQjtJQUNqQixXQUFXO0lBQ1gsWUFBWTtJQUNaLDhCQUErQztJQUMvQyw4QkFBOEI7SUFDOUIsMEJBQTBCO0lBQzFCLHlCQUF5QjtBQUM3Qjs7QUFFQTtJQUNJLG9CQUFvQjtBQUN4Qjs7QUFFQTtJQUNJLGNBQWM7QUFDbEIiLCJmaWxlIjoic3JjL2FwcC9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIueCB7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogMDtcbiAgICBoZWlnaHQ6IDUwcHg7XG4gICAgei1pbmRleDogMTAwMDtcbiAgICBhbGlnbi1jb250ZW50OiBjZW50ZXI7XG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICAgIG1hcmdpbi1ib3R0b206IDEwMHB4O1xufVxuXG4uc3BhY2luZy1sLTIwIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgbWFyZ2luLWxlZnQ6IDIwcHg7XG4gICAgd2lkdGg6IDc1cHg7XG4gICAgaGVpZ2h0OiAzNXB4O1xuICAgIGJhY2tncm91bmQ6IHVybCgnLi4vLi4vYXNzZXRzL2ltZy9sb2dvMTAxLnBuZycpO1xuICAgIGJhY2tncm91bmQtYmxlbmQtbW9kZTogbGlnaHRlbjtcbiAgICBiYWNrZ3JvdW5kLXNpemU6IDc1cHggMzVweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjYzMjM4O1xufVxuXG4udi1jZW50ZXIge1xuICAgIHZlcnRpY2FsLWFsaWduOiAtNXB4O1xufVxuXG4uc3BhY2VyIHtcbiAgICBmbGV4OiAxIDEgYXV0bztcbn0iXX0= */");
 
 /***/ }),
 
@@ -4436,6 +4848,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _model_testUser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../model/testUser */ "./src/app/hr-module/model/testUser.ts");
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/index.js");
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+
 
 
 
@@ -4452,10 +4866,15 @@ let ConfirmComponent = class ConfirmComponent {
         this.ts = ts;
         this.testMapping = {};
         this.mappingList = new Array();
+        this.employeeDisplayedColumns = ['id', 'name', 'phone', 'email'];
+        this.paginators = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["QueryList"]();
     }
     ngOnInit() {
         this.test = this.dataService.getSelectedTest();
         this.employees = this.dataService.getSelectedEmployees();
+        this.employeeDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](this.employees);
+        this.employeeDataSource.sort = this.empSort;
+        this.employeeDataSource.paginator = this.paginators.toArray()[1];
     }
     restart() {
         this.dataService.clearSelectedEmployees();
@@ -4467,16 +4886,22 @@ let ConfirmComponent = class ConfirmComponent {
         this.employees.forEach((user) => {
             this.mappingList.push(new _model_testUser__WEBPACK_IMPORTED_MODULE_6__["TestUser"]("test_" + testId.slice(24, 34), user.id, user.name, user.email, this.test.id, this.test.name, new Date(), "N"));
         });
-        console.log(this.mappingList);
+        // console.log(this.mappingList)
         this.confirmService.postTestMapping(this.mappingList).subscribe(response => {
-            console.log(response);
+            //console.log(response) 
             this.router.navigate(["/hr/finished"]);
             this.ts.success("Test Created", "The Employees have been sent details about the test");
         }, error => {
-            console.log(error);
+            //console.log(error)
             this.router.navigate(["/hr/finished"]);
             this.ts.success("Test Created", "The Employees have been sent details about the test");
         });
+    }
+    applyFilterEmployee(filterValue) {
+        this.employeeDataSource.filter = filterValue.trim().toLowerCase();
+        if (this.employeeDataSource.paginator) {
+            this.employeeDataSource.paginator.firstPage();
+        }
     }
 };
 ConfirmComponent.ctorParameters = () => [
@@ -4485,6 +4910,15 @@ ConfirmComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
     { type: src_app_authentication_module_service_toaster_service_service__WEBPACK_IMPORTED_MODULE_5__["ToasterService"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"])(_angular_material__WEBPACK_IMPORTED_MODULE_8__["MatPaginator"])
+], ConfirmComponent.prototype, "paginators", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSort"], { static: true })
+], ConfirmComponent.prototype, "matSort", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('empSort', { static: true })
+], ConfirmComponent.prototype, "empSort", void 0);
 ConfirmComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-confirm',
@@ -4625,7 +5059,7 @@ let CreateuserComponent = class CreateuserComponent {
         });
         dialogRef.afterClosed().subscribe(result => {
             if (result == undefined) {
-                console.log('-------');
+                // console.log('-------')
                 userDetails.role = 'EMP';
                 result.role = 'EMP';
                 this.createUserService.saveUserInMongo(userDetails).subscribe(res => console.log(res));
@@ -4670,7 +5104,7 @@ CreateuserComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".display-4{\n    font-size: 35px;\n    \n}\n\nh3{\n    font-size: 20px;\n}\n\n.lead{\n    font-size: 18px;\n}\n\n.container{\n    margin-top: 63px;\n}\n\n.ml-5{\n    text-align: center;\n}\n\n.m{\n    font-size: 18px;\n}\n\n@media only screen and (max-width: 992px) {\n    .lead{\n        font-size: 16px;\n    }\n    .m{\n        font-size: 14px;\n    }\n  \n    .jumbotron{\n        font-size: 14px;\n        height: 500px; padding-top: 2rem;\n    }\n    \n        .mat-raised-button{\n            display: flex;\n            flex-direction: row;\n  \n    text-align: left;\n    margin-left: 50px;\n    margin-bottom: 30px;\n\n}\n.y{\n    font-size: 18px;\n}\n\n.ml-5{\n    text-align: center;\n}\n}\n\n@media only screen and ( max-width: 768px) {\n    .lead{\n        font-size: 18px;\n    }\n    .m{\n        font-size: 16px;\n    }\n  \n    .jumbotron{\n        font-size: 18px;\n        height: 500px; padding-top: 2rem;\n    }\n    .mat-raised-button{\n   display: flex;\n   flex-direction: row; \n    text-align: left;\n    margin-left: 50px;\n    margin-bottom: 30px;\n\n}\n.y{\n    font-size: 16px;\n}\n\n.ml-5{\n    text-align: center;\n}\n}\n\n@media only screen and (max-width: 600px) {\n    .lead{\n        font-size: 12px;\n    }\n    .m{\n        font-size: 10px;\n    }\n  \n    .jumbotron{\n        font-size: 10px;\n        height: 450px; padding-top: 2rem;\n    }\n    .mat-raised-button{\n   display: flex;\n   flex-direction: row;\n    width: 8px;\n    height:10% ;\n    font-size:6px; \n    text-align: left;\n    margin-left: 50px;\n    margin-bottom: 20px;\n\n}\n.y{\n    font-size: 14px;\n}\n\n.ml-5{\n    text-align: center;\n}\n}\n\n/* Small devices (portrait tablets and large phones, 600px and up) */\n\n/* Medium devices (landscape tablets, 768px and up) */\n\n/* Large devices (laptops/desktops, 992px and up) */\n\n/* Extra large devices (large laptops and desktops, 1200px and up) */\n\n@media only screen and (min-width: 1200px) {}    \n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaHItbW9kdWxlL2Rhc2hib2FyZC9kYXNoYm9hcmQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGVBQWU7O0FBRW5COztBQUVBO0lBQ0ksZUFBZTtBQUNuQjs7QUFFQTtJQUNJLGVBQWU7QUFDbkI7O0FBR0E7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBQ0E7SUFDSSxrQkFBa0I7QUFDdEI7O0FBQ0E7SUFDSSxlQUFlO0FBQ25COztBQUNBO0lBQ0k7UUFDSSxlQUFlO0lBQ25CO0lBQ0E7UUFDSSxlQUFlO0lBQ25COztJQUVBO1FBQ0ksZUFBZTtRQUNmLGFBQWEsRUFBRSxpQkFBaUI7SUFDcEM7O1FBRUk7WUFDSSxhQUFhO1lBQ2IsbUJBQW1COztJQUUzQixnQkFBZ0I7SUFDaEIsaUJBQWlCO0lBQ2pCLG1CQUFtQjs7QUFFdkI7QUFDQTtJQUNJLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxrQkFBa0I7QUFDdEI7QUFDQTs7QUFFQTtJQUNJO1FBQ0ksZUFBZTtJQUNuQjtJQUNBO1FBQ0ksZUFBZTtJQUNuQjs7SUFFQTtRQUNJLGVBQWU7UUFDZixhQUFhLEVBQUUsaUJBQWlCO0lBQ3BDO0lBQ0E7R0FDRCxhQUFhO0dBQ2IsbUJBQW1CO0lBQ2xCLGdCQUFnQjtJQUNoQixpQkFBaUI7SUFDakIsbUJBQW1COztBQUV2QjtBQUNBO0lBQ0ksZUFBZTtBQUNuQjs7QUFFQTtJQUNJLGtCQUFrQjtBQUN0QjtBQUNBOztBQUVBO0lBQ0k7UUFDSSxlQUFlO0lBQ25CO0lBQ0E7UUFDSSxlQUFlO0lBQ25COztJQUVBO1FBQ0ksZUFBZTtRQUNmLGFBQWEsRUFBRSxpQkFBaUI7SUFDcEM7SUFDQTtHQUNELGFBQWE7R0FDYixtQkFBbUI7SUFDbEIsVUFBVTtJQUNWLFdBQVc7SUFDWCxhQUFhO0lBQ2IsZ0JBQWdCO0lBQ2hCLGlCQUFpQjtJQUNqQixtQkFBbUI7O0FBRXZCO0FBQ0E7SUFDSSxlQUFlO0FBQ25COztBQUVBO0lBQ0ksa0JBQWtCO0FBQ3RCO0FBQ0E7O0FBSUEsb0VBQW9FOztBQUVwRSxxREFBcUQ7O0FBRXJELG1EQUFtRDs7QUFFbkQsb0VBQW9FOztBQUNwRSw0Q0FBNEMiLCJmaWxlIjoic3JjL2FwcC9oci1tb2R1bGUvZGFzaGJvYXJkL2Rhc2hib2FyZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRpc3BsYXktNHtcbiAgICBmb250LXNpemU6IDM1cHg7XG4gICAgXG59XG5cbmgze1xuICAgIGZvbnQtc2l6ZTogMjBweDtcbn1cblxuLmxlYWR7XG4gICAgZm9udC1zaXplOiAxOHB4O1xufVxuXG5cbi5jb250YWluZXJ7XG4gICAgbWFyZ2luLXRvcDogNjNweDtcbn1cbi5tbC01e1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5te1xuICAgIGZvbnQtc2l6ZTogMThweDtcbn1cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1heC13aWR0aDogOTkycHgpIHtcbiAgICAubGVhZHtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgIH1cbiAgICAubXtcbiAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgIH1cbiAgXG4gICAgLmp1bWJvdHJvbntcbiAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICBoZWlnaHQ6IDUwMHB4OyBwYWRkaW5nLXRvcDogMnJlbTtcbiAgICB9XG4gICAgXG4gICAgICAgIC5tYXQtcmFpc2VkLWJ1dHRvbntcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICBcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xuICAgIG1hcmdpbi1sZWZ0OiA1MHB4O1xuICAgIG1hcmdpbi1ib3R0b206IDMwcHg7XG5cbn1cbi55e1xuICAgIGZvbnQtc2l6ZTogMThweDtcbn1cblxuLm1sLTV7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxufVxuXG5AbWVkaWEgb25seSBzY3JlZW4gYW5kICggbWF4LXdpZHRoOiA3NjhweCkge1xuICAgIC5sZWFke1xuICAgICAgICBmb250LXNpemU6IDE4cHg7XG4gICAgfVxuICAgIC5te1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgfVxuICBcbiAgICAuanVtYm90cm9ue1xuICAgICAgICBmb250LXNpemU6IDE4cHg7XG4gICAgICAgIGhlaWdodDogNTAwcHg7IHBhZGRpbmctdG9wOiAycmVtO1xuICAgIH1cbiAgICAubWF0LXJhaXNlZC1idXR0b257XG4gICBkaXNwbGF5OiBmbGV4O1xuICAgZmxleC1kaXJlY3Rpb246IHJvdzsgXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcbiAgICBtYXJnaW4tbGVmdDogNTBweDtcbiAgICBtYXJnaW4tYm90dG9tOiAzMHB4O1xuXG59XG4ueXtcbiAgICBmb250LXNpemU6IDE2cHg7XG59XG5cbi5tbC01e1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbn1cblxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA2MDBweCkge1xuICAgIC5sZWFke1xuICAgICAgICBmb250LXNpemU6IDEycHg7XG4gICAgfVxuICAgIC5te1xuICAgICAgICBmb250LXNpemU6IDEwcHg7XG4gICAgfVxuICBcbiAgICAuanVtYm90cm9ue1xuICAgICAgICBmb250LXNpemU6IDEwcHg7XG4gICAgICAgIGhlaWdodDogNDUwcHg7IHBhZGRpbmctdG9wOiAycmVtO1xuICAgIH1cbiAgICAubWF0LXJhaXNlZC1idXR0b257XG4gICBkaXNwbGF5OiBmbGV4O1xuICAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgICB3aWR0aDogOHB4O1xuICAgIGhlaWdodDoxMCUgO1xuICAgIGZvbnQtc2l6ZTo2cHg7IFxuICAgIHRleHQtYWxpZ246IGxlZnQ7XG4gICAgbWFyZ2luLWxlZnQ6IDUwcHg7XG4gICAgbWFyZ2luLWJvdHRvbTogMjBweDtcblxufVxuLnl7XG4gICAgZm9udC1zaXplOiAxNHB4O1xufVxuXG4ubWwtNXtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG59XG5cblxuXG4vKiBTbWFsbCBkZXZpY2VzIChwb3J0cmFpdCB0YWJsZXRzIGFuZCBsYXJnZSBwaG9uZXMsIDYwMHB4IGFuZCB1cCkgKi9cblxuLyogTWVkaXVtIGRldmljZXMgKGxhbmRzY2FwZSB0YWJsZXRzLCA3NjhweCBhbmQgdXApICovXG5cbi8qIExhcmdlIGRldmljZXMgKGxhcHRvcHMvZGVza3RvcHMsIDk5MnB4IGFuZCB1cCkgKi9cblxuLyogRXh0cmEgbGFyZ2UgZGV2aWNlcyAobGFyZ2UgbGFwdG9wcyBhbmQgZGVza3RvcHMsIDEyMDBweCBhbmQgdXApICovXG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDEyMDBweCkge30gICAgXG4iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".display-4{\n    font-size: 35px;\n    \n}\n\nh3{\n    font-size: 20px;\n}\n\n.lead{\n    font-size: 18px;\n}\n\n.container{\n    margin-top: 63px;\n}\n\n.ml-5{\n    text-align: center;\n}\n\n.m{\n    font-size: 18px;\n}\n\n.inner-container{\n    margin-top:10px;\n}\n\n@media only screen and (max-width: 992px) {\n    .lead{\n        font-size: 16px;\n    }\n    .m{\n        font-size: 14px;\n    }\n  \n    .jumbotron{\n        font-size: 14px;\n        height: 500px; padding-top: 2rem;\n    }\n    \n        .mat-raised-button{\n            display: flex;\n            flex-direction: row;\n  \n    text-align: left;\n    margin-left: 50px;\n    margin-bottom: 30px;\n\n}\n.y{\n    font-size: 18px;\n}\n\n.ml-5{\n    text-align: center;\n}\n}\n\n@media only screen and ( max-width: 768px) {\n    .lead{\n        font-size: 18px;\n    }\n    .m{\n        font-size: 16px;\n    }\n  \n    .jumbotron{\n        font-size: 18px;\n        height: 500px; padding-top: 2rem;\n    }\n    .mat-raised-button{\n   display: flex;\n   flex-direction: row; \n    text-align: left;\n    margin-left: 50px;\n    margin-bottom: 30px;\n\n}\n.y{\n    font-size: 16px;\n}\n\n.ml-5{\n    text-align: center;\n}\n}\n\n@media only screen and (max-width: 600px) {\n    .lead{\n        font-size: 12px;\n    }\n    .m{\n        font-size: 10px;\n    }\n  \n    .jumbotron{\n        font-size: 10px;\n        height: 450px; padding-top: 2rem;\n    }\n    .mat-raised-button{\n   display: flex;\n   flex-direction: row;\n    width: 8px;\n    height:10% ;\n    font-size:6px; \n    text-align: left;\n    margin-left: 50px;\n    margin-bottom: 20px;\n\n}\n.y{\n    font-size: 14px;\n}\n\n.ml-5{\n    text-align: center;\n}\n}\n\n/* Small devices (portrait tablets and large phones, 600px and up) */\n\n/* Medium devices (landscape tablets, 768px and up) */\n\n/* Large devices (laptops/desktops, 992px and up) */\n\n/* Extra large devices (large laptops and desktops, 1200px and up) */\n\n@media only screen and (min-width: 1200px) {}    \n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaHItbW9kdWxlL2Rhc2hib2FyZC9kYXNoYm9hcmQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGVBQWU7O0FBRW5COztBQUVBO0lBQ0ksZUFBZTtBQUNuQjs7QUFFQTtJQUNJLGVBQWU7QUFDbkI7O0FBR0E7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBQ0E7SUFDSSxrQkFBa0I7QUFDdEI7O0FBQ0E7SUFDSSxlQUFlO0FBQ25COztBQUVBO0lBQ0ksZUFBZTtBQUNuQjs7QUFDQTtJQUNJO1FBQ0ksZUFBZTtJQUNuQjtJQUNBO1FBQ0ksZUFBZTtJQUNuQjs7SUFFQTtRQUNJLGVBQWU7UUFDZixhQUFhLEVBQUUsaUJBQWlCO0lBQ3BDOztRQUVJO1lBQ0ksYUFBYTtZQUNiLG1CQUFtQjs7SUFFM0IsZ0JBQWdCO0lBQ2hCLGlCQUFpQjtJQUNqQixtQkFBbUI7O0FBRXZCO0FBQ0E7SUFDSSxlQUFlO0FBQ25COztBQUVBO0lBQ0ksa0JBQWtCO0FBQ3RCO0FBQ0E7O0FBRUE7SUFDSTtRQUNJLGVBQWU7SUFDbkI7SUFDQTtRQUNJLGVBQWU7SUFDbkI7O0lBRUE7UUFDSSxlQUFlO1FBQ2YsYUFBYSxFQUFFLGlCQUFpQjtJQUNwQztJQUNBO0dBQ0QsYUFBYTtHQUNiLG1CQUFtQjtJQUNsQixnQkFBZ0I7SUFDaEIsaUJBQWlCO0lBQ2pCLG1CQUFtQjs7QUFFdkI7QUFDQTtJQUNJLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxrQkFBa0I7QUFDdEI7QUFDQTs7QUFFQTtJQUNJO1FBQ0ksZUFBZTtJQUNuQjtJQUNBO1FBQ0ksZUFBZTtJQUNuQjs7SUFFQTtRQUNJLGVBQWU7UUFDZixhQUFhLEVBQUUsaUJBQWlCO0lBQ3BDO0lBQ0E7R0FDRCxhQUFhO0dBQ2IsbUJBQW1CO0lBQ2xCLFVBQVU7SUFDVixXQUFXO0lBQ1gsYUFBYTtJQUNiLGdCQUFnQjtJQUNoQixpQkFBaUI7SUFDakIsbUJBQW1COztBQUV2QjtBQUNBO0lBQ0ksZUFBZTtBQUNuQjs7QUFFQTtJQUNJLGtCQUFrQjtBQUN0QjtBQUNBOztBQUlBLG9FQUFvRTs7QUFFcEUscURBQXFEOztBQUVyRCxtREFBbUQ7O0FBRW5ELG9FQUFvRTs7QUFDcEUsNENBQTRDIiwiZmlsZSI6InNyYy9hcHAvaHItbW9kdWxlL2Rhc2hib2FyZC9kYXNoYm9hcmQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kaXNwbGF5LTR7XG4gICAgZm9udC1zaXplOiAzNXB4O1xuICAgIFxufVxuXG5oM3tcbiAgICBmb250LXNpemU6IDIwcHg7XG59XG5cbi5sZWFke1xuICAgIGZvbnQtc2l6ZTogMThweDtcbn1cblxuXG4uY29udGFpbmVye1xuICAgIG1hcmdpbi10b3A6IDYzcHg7XG59XG4ubWwtNXtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4ubXtcbiAgICBmb250LXNpemU6IDE4cHg7XG59XG5cbi5pbm5lci1jb250YWluZXJ7XG4gICAgbWFyZ2luLXRvcDoxMHB4O1xufVxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA5OTJweCkge1xuICAgIC5sZWFke1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgfVxuICAgIC5te1xuICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgfVxuICBcbiAgICAuanVtYm90cm9ue1xuICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIGhlaWdodDogNTAwcHg7IHBhZGRpbmctdG9wOiAycmVtO1xuICAgIH1cbiAgICBcbiAgICAgICAgLm1hdC1yYWlzZWQtYnV0dG9ue1xuICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XG4gIFxuICAgIHRleHQtYWxpZ246IGxlZnQ7XG4gICAgbWFyZ2luLWxlZnQ6IDUwcHg7XG4gICAgbWFyZ2luLWJvdHRvbTogMzBweDtcblxufVxuLnl7XG4gICAgZm9udC1zaXplOiAxOHB4O1xufVxuXG4ubWwtNXtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG59XG5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKCBtYXgtd2lkdGg6IDc2OHB4KSB7XG4gICAgLmxlYWR7XG4gICAgICAgIGZvbnQtc2l6ZTogMThweDtcbiAgICB9XG4gICAgLm17XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICB9XG4gIFxuICAgIC5qdW1ib3Ryb257XG4gICAgICAgIGZvbnQtc2l6ZTogMThweDtcbiAgICAgICAgaGVpZ2h0OiA1MDBweDsgcGFkZGluZy10b3A6IDJyZW07XG4gICAgfVxuICAgIC5tYXQtcmFpc2VkLWJ1dHRvbntcbiAgIGRpc3BsYXk6IGZsZXg7XG4gICBmbGV4LWRpcmVjdGlvbjogcm93OyBcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xuICAgIG1hcmdpbi1sZWZ0OiA1MHB4O1xuICAgIG1hcmdpbi1ib3R0b206IDMwcHg7XG5cbn1cbi55e1xuICAgIGZvbnQtc2l6ZTogMTZweDtcbn1cblxuLm1sLTV7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxufVxuXG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDYwMHB4KSB7XG4gICAgLmxlYWR7XG4gICAgICAgIGZvbnQtc2l6ZTogMTJweDtcbiAgICB9XG4gICAgLm17XG4gICAgICAgIGZvbnQtc2l6ZTogMTBweDtcbiAgICB9XG4gIFxuICAgIC5qdW1ib3Ryb257XG4gICAgICAgIGZvbnQtc2l6ZTogMTBweDtcbiAgICAgICAgaGVpZ2h0OiA0NTBweDsgcGFkZGluZy10b3A6IDJyZW07XG4gICAgfVxuICAgIC5tYXQtcmFpc2VkLWJ1dHRvbntcbiAgIGRpc3BsYXk6IGZsZXg7XG4gICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICAgIHdpZHRoOiA4cHg7XG4gICAgaGVpZ2h0OjEwJSA7XG4gICAgZm9udC1zaXplOjZweDsgXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcbiAgICBtYXJnaW4tbGVmdDogNTBweDtcbiAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuXG59XG4ueXtcbiAgICBmb250LXNpemU6IDE0cHg7XG59XG5cbi5tbC01e1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbn1cblxuXG5cbi8qIFNtYWxsIGRldmljZXMgKHBvcnRyYWl0IHRhYmxldHMgYW5kIGxhcmdlIHBob25lcywgNjAwcHggYW5kIHVwKSAqL1xuXG4vKiBNZWRpdW0gZGV2aWNlcyAobGFuZHNjYXBlIHRhYmxldHMsIDc2OHB4IGFuZCB1cCkgKi9cblxuLyogTGFyZ2UgZGV2aWNlcyAobGFwdG9wcy9kZXNrdG9wcywgOTkycHggYW5kIHVwKSAqL1xuXG4vKiBFeHRyYSBsYXJnZSBkZXZpY2VzIChsYXJnZSBsYXB0b3BzIGFuZCBkZXNrdG9wcywgMTIwMHB4IGFuZCB1cCkgKi9cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogMTIwMHB4KSB7fSAgICBcbiJdfQ== */");
 
 /***/ }),
 
@@ -4696,6 +5130,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _service_request_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../service/request.service */ "./src/app/hr-module/service/request.service.ts");
 /* harmony import */ var src_app_authentication_module_service_toaster_service_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/authentication-module/service/toaster-service.service */ "./src/app/authentication-module/service/toaster-service.service.ts");
 /* harmony import */ var _service_data_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../service/data.service */ "./src/app/hr-module/service/data.service.ts");
+/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/sort */ "./node_modules/@angular/material/esm2015/sort.js");
+
+
 
 
 
@@ -4725,14 +5162,17 @@ let DashboardComponent = class DashboardComponent {
     ngOnInit() {
         this.topicService.getAllTopics().subscribe(response => {
             this.topicDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](response);
+            this.topicDataSource.sort = this.topicSort;
             this.topicDataSource.paginator = this.paginators.toArray()[0];
         });
         this.employeeService.getAllEmployees().subscribe(response => {
             this.employeeDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](response);
+            this.employeeDataSource.sort = this.empSort;
             this.employeeDataSource.paginator = this.paginators.toArray()[1];
         });
         this.requestService.getAllRequests().subscribe(response => {
             this.requestDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](response);
+            this.requestDataSource.sort = this.requestSort;
             this.requestDataSource.paginator = this.paginators.toArray()[2];
         });
     }
@@ -4746,16 +5186,24 @@ let DashboardComponent = class DashboardComponent {
             data: { requestForm: this.requestForm },
         });
         dialogRef.afterClosed().subscribe(result => {
-            console.log(result);
+            //console.log(result)
             if (result != undefined) {
-                console.log('-------');
+                //console.log('-------')
                 result.status = 'N';
-                this.requestService.addRequest(result).subscribe(response => { }, error => { console.log(error); });
+                this.requestService.addRequest(result).subscribe(response => {
+                    this.toasterService.success("Request ADDED");
+                    this.requestService.getAllRequests().subscribe(response => {
+                        this.requestDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](response);
+                        this.requestDataSource.sort = this.requestSort;
+                        this.requestDataSource.paginator = this.paginators.toArray()[2];
+                    });
+                }, error => {
+                });
             }
         });
     }
     deleteRequest(request) {
-        console.log(request);
+        //console.log(request)
         this.requestService.deleteRequest(request).subscribe(res => { }, err => { this.toasterService.success("Request Deleted"); });
         this.requestService.getAllRequests().subscribe(response => {
             this.requestDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](response);
@@ -4763,6 +5211,24 @@ let DashboardComponent = class DashboardComponent {
         });
     }
     ngAfterViewInit() {
+    }
+    applyFilterEmployee(filterValue) {
+        this.employeeDataSource.filter = filterValue.trim().toLowerCase();
+        if (this.employeeDataSource.paginator) {
+            this.employeeDataSource.paginator.firstPage();
+        }
+    }
+    applyFilterTopic(filterValue) {
+        this.topicDataSource.filter = filterValue.trim().toLowerCase();
+        if (this.topicDataSource.paginator) {
+            this.topicDataSource.paginator.firstPage();
+        }
+    }
+    applyFilterRequest(filterValue) {
+        this.requestDataSource.filter = filterValue.trim().toLowerCase();
+        if (this.requestDataSource.paginator) {
+            this.requestDataSource.paginator.firstPage();
+        }
     }
 };
 DashboardComponent.ctorParameters = () => [
@@ -4777,6 +5243,18 @@ DashboardComponent.ctorParameters = () => [
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"])(_angular_material_paginator__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"])
 ], DashboardComponent.prototype, "paginators", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material_sort__WEBPACK_IMPORTED_MODULE_12__["MatSort"], { static: true })
+], DashboardComponent.prototype, "matSort", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('topicSort', { static: true })
+], DashboardComponent.prototype, "topicSort", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('empSort', { static: true })
+], DashboardComponent.prototype, "empSort", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('requestSort', { static: true })
+], DashboardComponent.prototype, "requestSort", void 0);
 DashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-dashboard',
@@ -4798,7 +5276,7 @@ DashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".mat-display-1 {\n    align-self: center;\n    margin-top: 50px;\n    margin-left: 530px;\n}\n\n.emp {\n    margin-top: 10px;\n    margin-left: 10px;\n    /* background: #fbfbfb; */\n    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n}\n\n.li {\n    margin-left: 10px;\n}\n\n.mat-raised-button {\n    margin-left: 50px;\n    margin-top: 50px;\n}\n\n.spacing-top {\n    margin-top: 50px\n}\n\n.spacing-bottom {\n    margin-bottom: 50px;\n}\n\n.mat-checkbox {\n    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n}\n\n.grey-color {\n    background-color: grey;\n}\n\n.checkbox{\n    height:100px;\n}\n\n.inner-container{\n    height:150px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaHItbW9kdWxlL2VtcGxveWVlL2VtcGxveWVlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixpQkFBaUI7SUFDakIseUJBQXlCO0lBQ3pCLDZFQUE2RTtBQUNqRjs7QUFFQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGlCQUFpQjtJQUNqQixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSTtBQUNKOztBQUVBO0lBQ0ksbUJBQW1CO0FBQ3ZCOztBQUVBO0lBQ0ksNkVBQTZFO0FBQ2pGOztBQUVBO0lBQ0ksc0JBQXNCO0FBQzFCOztBQUNBO0lBQ0ksWUFBWTtBQUNoQjs7QUFDQTtJQUNJLFlBQVk7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9oci1tb2R1bGUvZW1wbG95ZWUvZW1wbG95ZWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYXQtZGlzcGxheS0xIHtcbiAgICBhbGlnbi1zZWxmOiBjZW50ZXI7XG4gICAgbWFyZ2luLXRvcDogNTBweDtcbiAgICBtYXJnaW4tbGVmdDogNTMwcHg7XG59XG5cbi5lbXAge1xuICAgIG1hcmdpbi10b3A6IDEwcHg7XG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XG4gICAgLyogYmFja2dyb3VuZDogI2ZiZmJmYjsgKi9cbiAgICBmb250LWZhbWlseTogJ0dpbGwgU2FucycsICdHaWxsIFNhbnMgTVQnLCBDYWxpYnJpLCAnVHJlYnVjaGV0IE1TJywgc2Fucy1zZXJpZjtcbn1cblxuLmxpIHtcbiAgICBtYXJnaW4tbGVmdDogMTBweDtcbn1cblxuLm1hdC1yYWlzZWQtYnV0dG9uIHtcbiAgICBtYXJnaW4tbGVmdDogNTBweDtcbiAgICBtYXJnaW4tdG9wOiA1MHB4O1xufVxuXG4uc3BhY2luZy10b3Age1xuICAgIG1hcmdpbi10b3A6IDUwcHhcbn1cblxuLnNwYWNpbmctYm90dG9tIHtcbiAgICBtYXJnaW4tYm90dG9tOiA1MHB4O1xufVxuXG4ubWF0LWNoZWNrYm94IHtcbiAgICBmb250LWZhbWlseTogJ0dpbGwgU2FucycsICdHaWxsIFNhbnMgTVQnLCBDYWxpYnJpLCAnVHJlYnVjaGV0IE1TJywgc2Fucy1zZXJpZjtcbn1cblxuLmdyZXktY29sb3Ige1xuICAgIGJhY2tncm91bmQtY29sb3I6IGdyZXk7XG59XG4uY2hlY2tib3h7XG4gICAgaGVpZ2h0OjEwMHB4O1xufVxuLmlubmVyLWNvbnRhaW5lcntcbiAgICBoZWlnaHQ6MTUwcHg7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".mat-display-1 {\n    align-self: center;\n    margin-top: 50px;\n    margin-left: 530px;\n}\n\n.emp {\n    margin-top: 10px;\n    margin-left: 10px;\n    /* background: #fbfbfb; */\n    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n}\n\n.li {\n    margin-left: 10px;\n}\n\n.mat-raised-button {\n    margin-left: 50px;\n    margin-top: 50px;\n}\n\n.spacing-top {\n    margin-top: 50px\n}\n\n.spacing-bottom {\n    margin-bottom: 50px;\n}\n\n.mat-checkbox {\n    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n}\n\n.grey-color {\n    background-color: grey;\n}\n\n.checkbox{\n    height:100px;\n}\n\n.inner-container{\n    height:150px;\n}\n\ntable {\n    width: 100%;\n  }\n\nth.mat-sort-header-sorted {\n    color: black;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaHItbW9kdWxlL2VtcGxveWVlL2VtcGxveWVlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixpQkFBaUI7SUFDakIseUJBQXlCO0lBQ3pCLDZFQUE2RTtBQUNqRjs7QUFFQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGlCQUFpQjtJQUNqQixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSTtBQUNKOztBQUVBO0lBQ0ksbUJBQW1CO0FBQ3ZCOztBQUVBO0lBQ0ksNkVBQTZFO0FBQ2pGOztBQUVBO0lBQ0ksc0JBQXNCO0FBQzFCOztBQUNBO0lBQ0ksWUFBWTtBQUNoQjs7QUFDQTtJQUNJLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxXQUFXO0VBQ2I7O0FBRUE7SUFDRSxZQUFZO0VBQ2QiLCJmaWxlIjoic3JjL2FwcC9oci1tb2R1bGUvZW1wbG95ZWUvZW1wbG95ZWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYXQtZGlzcGxheS0xIHtcbiAgICBhbGlnbi1zZWxmOiBjZW50ZXI7XG4gICAgbWFyZ2luLXRvcDogNTBweDtcbiAgICBtYXJnaW4tbGVmdDogNTMwcHg7XG59XG5cbi5lbXAge1xuICAgIG1hcmdpbi10b3A6IDEwcHg7XG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XG4gICAgLyogYmFja2dyb3VuZDogI2ZiZmJmYjsgKi9cbiAgICBmb250LWZhbWlseTogJ0dpbGwgU2FucycsICdHaWxsIFNhbnMgTVQnLCBDYWxpYnJpLCAnVHJlYnVjaGV0IE1TJywgc2Fucy1zZXJpZjtcbn1cblxuLmxpIHtcbiAgICBtYXJnaW4tbGVmdDogMTBweDtcbn1cblxuLm1hdC1yYWlzZWQtYnV0dG9uIHtcbiAgICBtYXJnaW4tbGVmdDogNTBweDtcbiAgICBtYXJnaW4tdG9wOiA1MHB4O1xufVxuXG4uc3BhY2luZy10b3Age1xuICAgIG1hcmdpbi10b3A6IDUwcHhcbn1cblxuLnNwYWNpbmctYm90dG9tIHtcbiAgICBtYXJnaW4tYm90dG9tOiA1MHB4O1xufVxuXG4ubWF0LWNoZWNrYm94IHtcbiAgICBmb250LWZhbWlseTogJ0dpbGwgU2FucycsICdHaWxsIFNhbnMgTVQnLCBDYWxpYnJpLCAnVHJlYnVjaGV0IE1TJywgc2Fucy1zZXJpZjtcbn1cblxuLmdyZXktY29sb3Ige1xuICAgIGJhY2tncm91bmQtY29sb3I6IGdyZXk7XG59XG4uY2hlY2tib3h7XG4gICAgaGVpZ2h0OjEwMHB4O1xufVxuLmlubmVyLWNvbnRhaW5lcntcbiAgICBoZWlnaHQ6MTUwcHg7XG59XG5cbnRhYmxlIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuICBcbiAgdGgubWF0LXNvcnQtaGVhZGVyLXNvcnRlZCB7XG4gICAgY29sb3I6IGJsYWNrO1xuICB9Il19 */");
 
 /***/ }),
 
@@ -4818,6 +5296,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _service_employee_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/employee.service */ "./src/app/hr-module/service/employee.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _service_data_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../service/data.service */ "./src/app/hr-module/service/data.service.ts");
+/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/paginator */ "./node_modules/@angular/material/esm2015/paginator.js");
+/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/sort */ "./node_modules/@angular/material/esm2015/sort.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/esm2015/table.js");
+/* harmony import */ var _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/cdk/collections */ "./node_modules/@angular/cdk/esm2015/collections.js");
+
+
+
+
+
 
 
 
@@ -4831,34 +5318,61 @@ let EmployeeComponent = class EmployeeComponent {
         this.router = router;
         this.formBuilder = formBuilder;
         this.isLoading = true;
+        this.displayedColumns = ['select', 'name', 'email', 'phone', 'designation'];
+        this.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_9__["SelectionModel"](true, []);
         this.form = this.formBuilder.group({
             employees: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormArray"]([])
         });
     }
     ngOnInit() {
         this.getAllEmployeesList();
+        this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](this.employees);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
     }
     getAllEmployeesList() {
         this.employeeService.getAllEmployees().subscribe((response) => {
-            console.log(response);
+            //console.log(response)
             this.employees = response;
+            this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](this.employees);
             this.isLoading = false;
-            this.addCheckBoxesToEmp();
-        });
-    }
-    addCheckBoxesToEmp() {
-        this.employees.forEach((o, i) => {
-            const control = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](i === -1); // if first item set to true, else false
-            this.form.controls.employees.push(control);
+            this.dataSource.paginator = this.paginator;
+            this.dataSource.sort = this.sort;
         });
     }
     submit() {
-        const selectedEmp = this.form.value.employees
-            .map((v, i) => v ? this.employees[i] : null)
-            .filter(v => v !== null);
-        console.log(selectedEmp);
+        // const selectedEmp = this.form.value.employees
+        //   .map((v, i) => v ? this.employees[i] : null)
+        //   .filter(v => v !== null);
+        const selectedEmp = this.selection.selected;
+        //console.log(selectedEmp);
         this.dataService.setSelectedEmployees(selectedEmp);
         this.router.navigate(['/hr/confirm']);
+    }
+    applyFilter(filterValue) {
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+        if (this.dataSource.paginator) {
+            this.dataSource.paginator.firstPage();
+        }
+    }
+    /** Whether the number of selected elements matches the total number of rows. */
+    isAllSelected() {
+        const numSelected = this.selection.selected.length;
+        const numRows = this.dataSource.data.length;
+        return numSelected === numRows;
+    }
+    /** Selects all rows if they are not all selected; otherwise clear selection. */
+    masterToggle() {
+        this.isAllSelected() ?
+            this.selection.clear() :
+            this.dataSource.data.forEach(row => this.selection.select(row));
+    }
+    /** The label for the checkbox on the passed row */
+    checkboxLabel(row) {
+        if (!row) {
+            return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
+        }
+        return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row `;
     }
 };
 EmployeeComponent.ctorParameters = () => [
@@ -4867,6 +5381,12 @@ EmployeeComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material_paginator__WEBPACK_IMPORTED_MODULE_6__["MatPaginator"], { static: true })
+], EmployeeComponent.prototype, "paginator", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material_sort__WEBPACK_IMPORTED_MODULE_7__["MatSort"], { static: true })
+], EmployeeComponent.prototype, "sort", void 0);
 EmployeeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-employee',
@@ -4958,7 +5478,8 @@ HrModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         ],
         entryComponents: [_create_modal_create_modal_component__WEBPACK_IMPORTED_MODULE_17__["CreateModalComponent"], _request_modal_request_modal_component__WEBPACK_IMPORTED_MODULE_18__["RequestModalComponent"]],
         providers: [_service_topic_service__WEBPACK_IMPORTED_MODULE_9__["TopicService"], _service_employee_service__WEBPACK_IMPORTED_MODULE_10__["EmployeeService"], _service_confirm_service__WEBPACK_IMPORTED_MODULE_11__["ConfirmService"]],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
+        exports: []
     })
 ], HrModule);
 
@@ -5096,7 +5617,7 @@ let ResultPageComponent = class ResultPageComponent {
     ngOnInit() {
         const id = this.route.snapshot.paramMap.get('id');
         this.resultService.getResultById(id).subscribe((data) => {
-            console.log("data ", data);
+            //console.log("data ",data);
             this.result = data;
             this.attempts = this.result.attempts;
             this.count = 0;
@@ -5104,7 +5625,7 @@ let ResultPageComponent = class ResultPageComponent {
     }
     evaluate(response, correct) {
         var result = response.localeCompare(correct);
-        console.log(result);
+        //(result);
         if (result) {
             return true;
         }
@@ -5486,7 +6007,7 @@ let TestsComponent = class TestsComponent {
     }
     ngOnInit() {
         this.resultService.getResultOfAllTests().subscribe((response) => {
-            console.log(response);
+            //console.log(response);
             this.testsDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](response);
             this.testsDataSource.paginator = this.paginators.toArray()[0];
         });
@@ -5583,7 +6104,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _service_data_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../service/data.service */ "./src/app/hr-module/service/data.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/paginator */ "./node_modules/@angular/material/esm2015/paginator.js");
+/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/sort */ "./node_modules/@angular/material/esm2015/sort.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/esm2015/table.js");
+
+
+
 
 
 
@@ -5609,17 +6135,11 @@ let TopicComponent = class TopicComponent {
     }
     getAllTopics() {
         this.topicService.getAllTopics().subscribe((response) => {
-            console.log(response);
-            this.topicDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableDataSource"](response);
+            //console.log(response)
+            this.topicDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__["MatTableDataSource"](response);
             this.topicDataSource.paginator = this.paginators.toArray()[0];
+            this.topicDataSource.sort = this.sort;
             this.isLoading = false;
-            this.addCheckBoxesToTopics();
-        });
-    }
-    addCheckBoxesToTopics() {
-        this.topics.forEach((o, i) => {
-            const control = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](i === 0); // if first item set to true, else false
-            this.form.controls.topics.push(control);
         });
     }
     goToEmployeeSelection() {
@@ -5627,7 +6147,7 @@ let TopicComponent = class TopicComponent {
         const selectedTopic = this.form.value.topics
             .map((v, i) => v ? this.topics[i] : null)
             .filter(v => v !== null)[0];
-        console.log(selectedTopic);
+        //console.log(selectedTopic);
         this.dataService.setSelectedTest(selectedTopic);
         this.router.navigate(['/hr/employees']);
     }
@@ -5635,6 +6155,12 @@ let TopicComponent = class TopicComponent {
         // console.log(selectedTopic);
         this.dataService.setSelectedTest(selectedTopic);
         this.router.navigate(['/hr/employees']);
+    }
+    applyFilter(filterValue) {
+        this.topicDataSource.filter = filterValue.trim().toLowerCase();
+        if (this.topicDataSource.paginator) {
+            this.topicDataSource.paginator.firstPage();
+        }
     }
 };
 TopicComponent.ctorParameters = () => [
@@ -5644,8 +6170,11 @@ TopicComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"])(_angular_material__WEBPACK_IMPORTED_MODULE_6__["MatPaginator"])
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"])(_angular_material_paginator__WEBPACK_IMPORTED_MODULE_6__["MatPaginator"])
 ], TopicComponent.prototype, "paginators", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material_sort__WEBPACK_IMPORTED_MODULE_7__["MatSort"], { static: true })
+], TopicComponent.prototype, "sort", void 0);
 TopicComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-topic',
@@ -5721,13 +6250,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
 /* harmony import */ var _authentication_module_service_toaster_service_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../authentication-module/service/toaster-service.service */ "./src/app/authentication-module/service/toaster-service.service.ts");
 /* harmony import */ var _landing_module_service_messageservice_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../landing-module/service/messageservice.service */ "./src/app/landing-module/service/messageservice.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 
 
 
 let AppComponent = class AppComponent {
-    constructor(toastr, toasterService, messageservicce) {
+    constructor(router, toastr, toasterService, messageservicce) {
+        this.router = router;
         this.toastr = toastr;
         this.toasterService = toasterService;
         this.messageservicce = messageservicce;
@@ -5745,10 +6277,11 @@ let AppComponent = class AppComponent {
     }
     checkLogin() {
         this.messageservicce.post(this.name, this.email, this.number);
-        this.toasterService.success('Message sent');
+        this.toasterService.success('Message sent, we will contact you');
     }
 };
 AppComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
     { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_2__["ToastrService"] },
     { type: _authentication_module_service_toaster_service_service__WEBPACK_IMPORTED_MODULE_3__["ToasterService"] },
     { type: _landing_module_service_messageservice_service__WEBPACK_IMPORTED_MODULE_4__["MessageserviceService"] }
@@ -5909,7 +6442,7 @@ let MessageserviceService = class MessageserviceService {
         this.message.name = name;
         this.message.email = email;
         this.message.phone = number;
-        console.log("message:", this.message);
+        //console.log("message:",this.message);
         return this.http.post(this.URLprefix + '/sendmessage', this.message);
     }
 };
@@ -5961,6 +6494,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/checkbox */ "./node_modules/@angular/material/esm2015/checkbox.js");
 /* harmony import */ var _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/sidenav */ "./node_modules/@angular/material/esm2015/sidenav.js");
 /* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/esm2015/select.js");
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/cdk/a11y */ "./node_modules/@angular/cdk/esm2015/a11y.js");
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/cdk/drag-drop */ "./node_modules/@angular/cdk/esm2015/drag-drop.js");
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/cdk/portal */ "./node_modules/@angular/cdk/esm2015/portal.js");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @angular/cdk/scrolling */ "./node_modules/@angular/cdk/esm2015/scrolling.js");
+/* harmony import */ var _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/cdk/stepper */ "./node_modules/@angular/cdk/esm2015/stepper.js");
+/* harmony import */ var _angular_cdk_table__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @angular/cdk/table */ "./node_modules/@angular/cdk/esm2015/table.js");
+/* harmony import */ var _angular_cdk_tree__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @angular/cdk/tree */ "./node_modules/@angular/cdk/esm2015/tree.js");
+/* harmony import */ var _angular_material_badge__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @angular/material/badge */ "./node_modules/@angular/material/esm2015/badge.js");
+/* harmony import */ var _angular_material_bottom_sheet__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @angular/material/bottom-sheet */ "./node_modules/@angular/material/esm2015/bottom-sheet.js");
+/* harmony import */ var _angular_material_button_toggle__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @angular/material/button-toggle */ "./node_modules/@angular/material/esm2015/button-toggle.js");
+/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @angular/material/chips */ "./node_modules/@angular/material/esm2015/chips.js");
+/* harmony import */ var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @angular/material/stepper */ "./node_modules/@angular/material/esm2015/stepper.js");
+/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm2015/datepicker.js");
+/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @angular/material/divider */ "./node_modules/@angular/material/esm2015/divider.js");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm2015/core.js");
+/* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @angular/material/slide-toggle */ "./node_modules/@angular/material/esm2015/slide-toggle.js");
+/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @angular/material/sort */ "./node_modules/@angular/material/esm2015/sort.js");
+/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm2015/tabs.js");
+/* harmony import */ var _angular_material_tree__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @angular/material/tree */ "./node_modules/@angular/material/esm2015/tree.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6009,7 +6580,29 @@ const MaterialComponents = [
     _angular_material_paginator__WEBPACK_IMPORTED_MODULE_21__["MatPaginatorModule"],
     _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_22__["MatCheckboxModule"],
     _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_23__["MatSidenavModule"],
-    _angular_material_select__WEBPACK_IMPORTED_MODULE_24__["MatSelectModule"]
+    _angular_material_select__WEBPACK_IMPORTED_MODULE_24__["MatSelectModule"],
+    _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_25__["A11yModule"],
+    _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_29__["CdkStepperModule"],
+    _angular_cdk_table__WEBPACK_IMPORTED_MODULE_30__["CdkTableModule"],
+    _angular_cdk_tree__WEBPACK_IMPORTED_MODULE_31__["CdkTreeModule"],
+    _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_26__["DragDropModule"],
+    _angular_material_badge__WEBPACK_IMPORTED_MODULE_32__["MatBadgeModule"],
+    _angular_material_bottom_sheet__WEBPACK_IMPORTED_MODULE_33__["MatBottomSheetModule"],
+    _angular_material_button_toggle__WEBPACK_IMPORTED_MODULE_34__["MatButtonToggleModule"],
+    _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_22__["MatCheckboxModule"],
+    _angular_material_chips__WEBPACK_IMPORTED_MODULE_35__["MatChipsModule"],
+    _angular_material_stepper__WEBPACK_IMPORTED_MODULE_36__["MatStepperModule"],
+    _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_37__["MatDatepickerModule"],
+    _angular_material_divider__WEBPACK_IMPORTED_MODULE_38__["MatDividerModule"],
+    _angular_material_core__WEBPACK_IMPORTED_MODULE_39__["MatNativeDateModule"],
+    _angular_material_core__WEBPACK_IMPORTED_MODULE_39__["MatRippleModule"],
+    _angular_material_slider__WEBPACK_IMPORTED_MODULE_13__["MatSliderModule"],
+    _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_40__["MatSlideToggleModule"],
+    _angular_material_sort__WEBPACK_IMPORTED_MODULE_41__["MatSortModule"],
+    _angular_material_tabs__WEBPACK_IMPORTED_MODULE_42__["MatTabsModule"],
+    _angular_material_tree__WEBPACK_IMPORTED_MODULE_43__["MatTreeModule"],
+    _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_27__["PortalModule"],
+    _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_28__["ScrollingModule"],
 ];
 let MaterialModule = class MaterialModule {
 };
@@ -6085,10 +6678,10 @@ __webpack_require__.r(__webpack_exports__);
 
 const environment = {
     production: false,
-    HrURLprefix: 'http://15.206.152.181:8084/hr',
-    employeeURLprefix: 'http://15.206.152.181:8083/employee',
-    adminURLprefix: 'http://15.206.152.181:8082/admin',
-    authURLprefix: 'http://15.206.152.181:8081/auth',
+    HrURLprefix: 'http://15.206.152.181:8080/hrService',
+    employeeURLprefix: 'http://15.206.152.181:8080/employeeService',
+    adminURLprefix: 'http://15.206.152.181:8080/adminService',
+    authURLprefix: 'http://15.206.152.181:8080/loginService/auth',
 };
 /*
  * For easier debugging in development mode, you can import the following file
