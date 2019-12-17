@@ -5,10 +5,10 @@
 export const environment = {
   production: false,
 
-  HrURLprefix: 'http://15.206.152.181:8080/hrService',
-  employeeURLprefix: 'http://15.206.152.181:8080/employeeService',
-  adminURLprefix:'http://15.206.152.181:8080/adminService',
-  authURLprefix:'http://15.206.152.181:8080/loginService/auth',
+  HrURLprefix: 'https://quizo.stackroute.io:8099/hrService',
+  employeeURLprefix: 'https://quizo.stackroute.io:8099/employeeService',
+  adminURLprefix:'https://quizo.stackroute.io:8082/admin',
+  authURLprefix:'https://quizo.stackroute.io:8099/loginService/auth',
 };
 
 /*
