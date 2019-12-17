@@ -3382,7 +3382,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                 }
                 FetchTestComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this.userDetails = this.dataService.getDummyDetails();
+                    this.userDetails = this.dataService.getTestUserDetails();
                     console.log(this.userDetails);
                     // this.userDummyDetails = this.dataService.getDummyDetails();
                     this.topicName = this.userDetails.topicName;

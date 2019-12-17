@@ -3739,7 +3739,7 @@ let FetchTestComponent = class FetchTestComponent {
         };
     }
     ngOnInit() {
-        this.userDetails = this.dataService.getDummyDetails();
+        this.userDetails = this.dataService.getTestUserDetails();
         console.log(this.userDetails);
         // this.userDummyDetails = this.dataService.getDummyDetails();
         this.topicName = this.userDetails.topicName;
