@@ -86,9 +86,9 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
     @Override
     public Question getFirstQuestion(String id,String testId, String collectionName, String empId, String empName) throws QuestionNotFoundException {
 
-//        TestUser currentTest = testUserRepository.findById(id).orElseThrow(()->new RuntimeException());
-//        currentTest.setStatus("C");
-//        testUserRepository.save(currentTest);
+        TestUser currentTest = testUserRepository.findById(id).orElseThrow(()->new RuntimeException());
+        currentTest.setStatus("C");
+        testUserRepository.save(currentTest);
 
         this.collectionName = collectionName;
         this.testId = testId;
@@ -183,6 +183,7 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
         attempt.setResponse(easyQuestions.get(easyIndex-1).getChoices()[response]);
         attempt.setAnswer(easyQuestions.get(easyIndex-1).getAnswer());
         attempt.setChoices(easyQuestions.get(easyIndex-1).getChoices());
+        attempt.setDifficulty("E");
         list.add(attempt);
 
         if(endTest){
@@ -261,6 +262,7 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
         attempt.setResponse(mediumQuestions.get(mediumIndex-1).getChoices()[response]);
         attempt.setAnswer(mediumQuestions.get(mediumIndex-1).getAnswer());
         attempt.setChoices(mediumQuestions.get(mediumIndex-1).getChoices());
+        attempt.setDifficulty("M");
         list.add(attempt);
 
         if(endTest){
@@ -338,6 +340,7 @@ public class FetchQuestionsServiceImpl implements FetchQuestionsService {
         attempt.setResponse(hardQuestions.get(hardIndex-1).getChoices()[response]);
         attempt.setAnswer(hardQuestions.get(hardIndex-1).getAnswer());
         attempt.setChoices(hardQuestions.get(hardIndex-1).getChoices());
+        attempt.setDifficulty("H");
         list.add(attempt);
 
         if(endTest){

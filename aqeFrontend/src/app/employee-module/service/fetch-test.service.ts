@@ -9,7 +9,6 @@ import { environment } from 'src/environments/environment';
 export class FetchTestService {
 
   URLprefix: string = environment.employeeURLprefix;
-  public topic:string="java"; 
   constructor(private http: HttpClient) { }
 
   getFirstQuestion(userDetails){
@@ -30,5 +29,9 @@ export class FetchTestService {
   }
   getNextQuestion(choice){
     return this.http.post(this.URLprefix+'/test',choice);
+  }
+  postResult(result){
+    console.log("here")
+    return this.http.post(this.URLprefix+'/result',result);
   }
 }

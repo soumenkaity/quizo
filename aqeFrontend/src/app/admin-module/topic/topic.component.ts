@@ -4,7 +4,7 @@ import { Topic } from 'src/app/hr-module/model/topic';
 import { TopicService } from '../service/topic.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { DialogData } from '../admin/admin.component';
-import { result } from 'src/app/employee-module/model/result';
+import { Result } from 'src/app/employee-module/model/result';
 import { Observable } from 'rxjs';
 import { ToasterService } from 'src/app/authentication-module/service/toaster-service.service';
 

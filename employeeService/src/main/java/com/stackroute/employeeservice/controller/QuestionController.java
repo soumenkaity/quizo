@@ -28,16 +28,16 @@ public class QuestionController {
 
 
     @PostMapping("instruction")
-    public ResponseEntity<?> getFirstQuestion(@RequestBody ObjectNode jsonNodes) throws QuestionNotFoundException{
+    public ResponseEntity getFirstQuestion(@RequestBody ObjectNode jsonNodes) throws QuestionNotFoundException{
         ResponseEntity responseEntity;
-
-        responseEntity = new ResponseEntity<Question>(fetchQuestionsService.getFirstQuestion(jsonNodes.get("id").asText(),jsonNodes.get("testId").asText(), jsonNodes.get("collectionName").asText(), jsonNodes.get("empId").asText(), jsonNodes.get("empName").asText()), HttpStatus.OK);
+        Question q = fetchQuestionsService.getFirstQuestion(jsonNodes.get("id").asText(),jsonNodes.get("testId").asText(), jsonNodes.get("collectionName").asText(), jsonNodes.get("empId").asText(), jsonNodes.get("empName").asText());
+        responseEntity = new ResponseEntity(q, HttpStatus.OK);
 
         return responseEntity;
     }
 
     @PostMapping("test")
-    public ResponseEntity<?> getNextQuestion(@RequestBody String response) throws QuestionNotFoundException{
+    public ResponseEntity getNextQuestion(@RequestBody String response) throws QuestionNotFoundException{
         ResponseEntity responseEntity;
 
         List<Object> question = fetchQuestionsService.getNextQuestion(Integer.parseInt(response));

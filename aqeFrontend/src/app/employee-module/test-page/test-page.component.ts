@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { score } from '../models/score';
 import { DataService } from '../service/data.service';
 import { TopicService } from '../service/topic.service';
-import { ScoreService } from '../service/score.service';
 
 @Component({
   selector: 'app-test-page-component',
@@ -22,7 +21,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
   correct:number = 0;
   incorrect:number = 0;
 
-  constructor(private data:DataService, private s: TopicService, private r: Router, private score: ScoreService) { }
+  constructor(private data:DataService, private s: TopicService, private r: Router) { }
 
   ngOnInit() {
     this.data.userName.subscribe(data => {
@@ -58,13 +57,7 @@ export class TestPageComponent implements OnInit, OnDestroy {
       }
     }
     //Posts score json
-    this.score.postScore(this.correct, this.incorrect).subscribe();
-    let scoreObj:score = {
-      correct: this.correct,
-      incorrect: this.incorrect
-    };
-    this.data.changeScore(scoreObj);
-    this.r.navigate(['/thankyou']);
+  
   }
 
 }

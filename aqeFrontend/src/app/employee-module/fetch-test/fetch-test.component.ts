@@ -5,7 +5,15 @@ import { Router } from '@angular/router';
 import { DataService } from '../service/data.service';
 import { ToasterService } from 'src/app/authentication-module/service/toaster-service.service';
 import { Observable, Subscription } from 'rxjs/Rx';
-
+import { Result } from '../model/result';
+interface Attempt{
+  difficulty: string;
+  answer: String;
+  choices: String[];
+  question: String;
+  questionId: String;
+  response: String;
+}
 // import { testResult } from '../model/testResult';
 
 @Component({
@@ -27,13 +35,15 @@ export class FetchTestComponent implements OnInit, OnDestroy {
 
   private topic;
   private topicName;
-
+  private attempts: Attempt[] = [];
   private question;
   private count: number;
   choices: any;
   timer: any;
   sub: any;
   ticks: any;
+  userDetails: any;
+  userDummyDetails: { createdAt: string; id: string; testId: string; status: string; topicId: string; topicName: string; userEmail: string; userId: string; userName: string; };
 
 
   constructor(
@@ -44,19 +54,19 @@ export class FetchTestComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    const userDetails = this.dataService.getTestUserDetails();
-    // const userDummyDetails = this.dataService.getDummyDetails();
+    this.userDetails = this.dataService.getTestUserDetails();
+    // this.userDummyDetails = this.dataService.getDummyDetails();
   
-    this.fetchTestService.getFirstQuestion(userDetails).subscribe(
+    this.fetchTestService.getFirstQuestion(this.userDetails).subscribe(
       response => {
-        // console.log(response)
+        console.log(response)
         this.question = response;
         this.count = 0;
         this.choices=this.question['choices'];
         this.timer = Observable.timer(1000,1000);
         // subscribing to a observable returns a subscription object
         this.sub = this.timer.subscribe(t => this.tickerFunc(t));
-        this.topicName = userDetails.topicName;
+        this.topicName = this.userDetails.topicName;
       }
     )
   }
@@ -71,12 +81,15 @@ export class FetchTestComponent implements OnInit, OnDestroy {
 
     this.count++
     this.fetchTestService.getNextQuestion(choice).subscribe(
-      (response: Question) =>{
-        this.question = response;
+      (response) =>{
+        this.question = response[1];
+        this.attempts.push(response[0]);
+        
       },
       error => {
-        if(error.error ==   "Your test is completed"){
+        if(error.error == "Your test is completed"){
           this.ngOnDestroy();
+          this.calculateResult();
           this.feedbackpage()
         }
       }
@@ -113,12 +126,64 @@ export class FetchTestComponent implements OnInit, OnDestroy {
     this.fetchTestService.getNextQuestion(choice+4).subscribe(
       (response: Question) =>{},
       error => {
+        this.calculateResult()
         if(error.error == "Your test is completed"){
           this.feedbackpage()
         }
       }
     )
 
+  }
+
+  calculateResult(){
+    var total = 0;
+    var score = 0;
+    var correct = 0;
+    var wrong = 0;
+    var totalEasy = 0;
+    var correctEasy = 0;
+    var totalMedium = 0;
+    var correctMedium = 0;
+    var totalHard = 0;
+    var correctHard = 0;
+    this.attempts.forEach(element => {
+      total++;
+      if(element.difficulty == "E"){
+        totalEasy++;
+        if(element.answer == element.response){
+          correctEasy++;
+        }
+      }else if(element.difficulty == "M"){
+        totalMedium++;
+        if(element.answer == element.response){
+          correctMedium++;
+        }
+      }else if(element.difficulty == "H"){
+        totalHard++;
+        if(element.answer == element.response){
+          correctHard++;
+        }
+      }
+    });
+    totalHard==0?totalHard=1:totalHard;
+    totalMedium==0?totalMedium=1:totalMedium;
+    score = ((correctEasy/totalEasy)*30)+((correctMedium/totalMedium)*30)+((correctHard/totalHard)*40);
+    correct = correctEasy+correctMedium+correctHard;
+    wrong = total - correct;
+
+    var result = {
+      "id": this.userDetails.id,
+      "empId": this.userDetails.userId,
+      "topicId": this.userDetails.topicId,
+      "testId": this.userDetails.testId,
+      "empName": this.userDetails.userName,
+      "topicName": this.userDetails.topicName,
+      "score": score,
+      "correct": correct,
+      "wrong": wrong,
+      "attempts": this.attempts
+    }
+    this.fetchTestService.postResult(result).subscribe();
   }
   ngOnDestroy(): void {
    clearInterval(this.timer);

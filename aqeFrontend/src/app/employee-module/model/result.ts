@@ -1,14 +1,18 @@
-export class result{
-    id : string;
-    question: String;
-    option : number;
-    correctOption : number;
-    userResponse : boolean;
-    constructor(id,option,correctOption,userResponse){
-
-        this.id=id;
-        this.option=option;
-        this.correctOption=correctOption;
-        this.userResponse=userResponse;
+export interface Result{
+    id: String;
+    empId: String;
+    topicId: String;
+    testId: String;
+    empName: String;
+    topicName: String;
+    score: number;
+    correct: number;
+    wrong: number;
+    attempts: {
+        questionId: String;
+        question: String;
+        response: String;
+        answer: String;
+        choices: String[];
     }
 }

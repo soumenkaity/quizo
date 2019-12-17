@@ -57,9 +57,10 @@ export class DataService {
     return {
       createdAt: "2019-12-03T08:59:38.559+0000",
       id: "5de623face226315ff90d5f5",
+      testId:"dummy-test-01",
       status: "N",
       topicId: "5dd37eeed2dfaaa776485bee",
-      topicName: "java programming language",
+      topicName: "java_programming_language",
       userEmail: "aayush123@gmail.com",
       userId: "5dca397c27670ed5007b7830",
       userName: "aayush",
