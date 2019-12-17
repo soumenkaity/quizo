@@ -5,6 +5,7 @@ public class Attempt {
     private String question;
     private String response;
     private String answer;
+    private String difficulty;
     private String[] choices;
 
     public String getQuestionId() {
@@ -47,7 +48,15 @@ public class Attempt {
         this.choices = choices;
     }
 
-    public Attempt(String questionId, String question, String response, String answer, String[] choices) {
+    public String getDifficulty() {
+      return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+      this.difficulty = difficulty;
+    }
+
+  public Attempt(String questionId, String question, String response, String answer, String[] choices) {
         this.questionId = questionId;
         this.question = question;
         this.response = response;

@@ -9,7 +9,6 @@ import { environment } from 'src/environments/environment';
 export class FetchTestService {
 
   URLprefix: string = environment.employeeURLprefix;
-  public topic:string="java"; 
   constructor(private http: HttpClient) { }
 
   getFirstQuestion(userDetails){
@@ -30,5 +29,19 @@ export class FetchTestService {
   }
   getNextQuestion(choice){
     return this.http.post(this.URLprefix+'/test',choice);
+  }
+  postResult(result){
+    console.log("here")
+    return this.http.post(this.URLprefix+'/result',result);
+  }
+
+  getQuestion(topicName,difficulty){
+    return this.http.get(this.URLprefix+"/test?topic="+topicName+"&difficulty="+difficulty);
+  }
+  sendAttempts(attempts,topic){
+    return this.http.post(this.URLprefix+"/modify?topic="+topic,attempts);
+  }
+  completeTest(userDetails){
+    return this.http.post(this.URLprefix+"/complete",userDetails);
   }
 }

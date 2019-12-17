@@ -20,7 +20,7 @@ public class ResultController {
         this.resultService = resultService;
     }
 
-    @PostMapping("result")
+    @PostMapping("/result")
     public ResponseEntity<?> getNextQuestion(@RequestBody Result result) throws QuestionNotFoundException {
         ResponseEntity responseEntity;
 

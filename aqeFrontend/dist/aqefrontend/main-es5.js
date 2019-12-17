@@ -319,7 +319,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container navbar2\">\n    <div class=\"row text-uppercase\">\n        <div class=\"col-6  testName\">\n            <h3>{{topicName}} - TEST</h3>\n        </div>\n        <div class=\"col-6 timerContainer\">\n            <div class=\"timer\">\n                <h3>{{roundedMins}}:{{roundedSecs}}</h3>\n            </div>\n        </div>\n    </div>\n\n\n\n    <div class=\"card m-5\">\n        <div class=\"card-body\">\n            <h4>Q{{count+1}})</h4>\n            <div class=\"question\">\n                <h3 class=\"card-title\">{{question?.question}}</h3>\n                <div class=\"card-text\">\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"0\" [(ngModel)]=\"choices\">\n                        {{question.choices[0]}}\n                    </label>\n                    </div>\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"1\" [(ngModel)]=\"choices\">\n                        {{question.choices[1]}}\n                    </label>\n                    </div>\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"2\" [(ngModel)]=\"choices\">\n                        {{question.choices[2]}}\n                    </label>\n                    </div>\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"3\" [(ngModel)]=\"choices\">\n                        {{question.choices[3]}}\n                    </label>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col-sm-4 text-center\">\n            <button mat-raised-button color=\"primary\" (click)=\"nextQuestion(choices)\">NEXT QUESTION</button>\n        </div>\n        <div class=\"col-sm-4 \"></div>\n        <div class=\"col-sm-4 text-center\">\n            <button mat-raised-button color=\"primary\" (click)=\"endTest(choices)\">SUBMIT TEST AND EXIT</button>\n        </div>\n    </div>\n\n\n\n</div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container navbar2\">\n    <div class=\"row text-uppercase\">\n        <div class=\"col-6  testName\">\n            <h3>{{topicName}} - TEST</h3>\n        </div>\n        <div class=\"col-6 timerContainer\">\n            <div class=\"timer\">\n                <h3>{{roundedMins}}:{{roundedSecs}}</h3>\n            </div>\n        </div>\n    </div>\n\n\n\n    <div class=\"card m-5\">\n        <div class=\"card-body\">\n            <h4>Q{{count+1}})</h4>\n            <div class=\"question\">\n                <h3 class=\"card-title\">{{question?.question}}</h3>\n                <div class=\"card-text\">\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"0\" [(ngModel)]=\"choices\">\n                        {{question.choices[0]}}\n                    </label>\n                    </div>\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"1\" [(ngModel)]=\"choices\">\n                        {{question.choices[1]}}\n                    </label>\n                    </div>\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"2\" [(ngModel)]=\"choices\">\n                        {{question.choices[2]}}\n                    </label>\n                    </div>\n                    <div class=\"custom-control\">\n                        <label>\n                        <input type=\"radio\" name=\"options\" value=\"3\" [(ngModel)]=\"choices\">\n                        {{question.choices[3]}}\n                    </label>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"row\">\n        <div class=\"col-sm-4 text-center\">\n            <button mat-raised-button color=\"primary\" (click)=\"nextQuestion(choices)\">NEXT QUESTION</button>\n        </div>\n        <div class=\"col-sm-4 \"></div>\n        <div class=\"col-sm-4 text-center\">\n            <button mat-raised-button color=\"primary\" (click)=\"endTest()\">SUBMIT TEST AND EXIT</button>\n        </div>\n    </div>\n\n\n\n</div>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/employee-module/landing/landing.component.html": 
@@ -3368,38 +3368,65 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     this.seconds = this.totalSeconds % 60;
                     this.roundedMins = this.pad(this.minutes);
                     this.roundedSecs = this.pad(this.seconds);
+                    this.attempts = [];
+                    this.totalQuestionsInSection = 10;
+                    this.easyLimit = 6;
+                    this.hardLimit = 4;
+                    this.mediumLimit = 5;
+                    this.pointer = {
+                        level: 'E',
+                        correct: 0,
+                        wrong: 0,
+                        current: 1
+                    };
                 }
                 FetchTestComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    var userDetails = this.dataService.getTestUserDetails();
-                    // const userDummyDetails = this.dataService.getDummyDetails();
-                    this.fetchTestService.getFirstQuestion(userDetails).subscribe(function (response) {
-                        // console.log(response)
+                    this.userDetails = this.dataService.getTestUserDetails();
+                    console.log(this.userDetails);
+                    // this.userDummyDetails = this.dataService.getDummyDetails();
+                    this.topicName = this.userDetails.topicName;
+                    this.fetchTestService.getQuestion(this.userDetails.topicName, 'E').subscribe(function (response) {
                         _this.question = response;
                         _this.count = 0;
                         _this.choices = _this.question['choices'];
-                        _this.timer = rxjs_Rx__WEBPACK_IMPORTED_MODULE_6__["Observable"].timer(1000, 1000);
-                        // subscribing to a observable returns a subscription object
-                        _this.sub = _this.timer.subscribe(function (t) { return _this.tickerFunc(t); });
-                        _this.topicName = userDetails.topicName;
                     });
+                    this.timer = rxjs_Rx__WEBPACK_IMPORTED_MODULE_6__["Observable"].timer(1000, 1000);
+                    this.sub = this.timer.subscribe(function (t) { return _this.tickerFunc(t); });
+                    // this.fetchTestService.getFirstQuestion(this.userDetails).subscribe(
+                    //   response => {
+                    //     console.log(response)
+                    //     this.question = response;
+                    //     this.count = 0;
+                    //     this.choices=this.question['choices'];
+                    //     this.timer = Observable.timer(1000,1000);
+                    //     // subscribing to a observable returns a subscription object
+                    //     this.sub = this.timer.subscribe(t => this.tickerFunc(t));
+                    //   }
+                    // )
                 };
                 FetchTestComponent.prototype.nextQuestion = function (choice) {
                     var _this = this;
+                    var thisAttempt = {
+                        "questionId": this.question.id,
+                        "question": this.question.question,
+                        "response": this.question.choices[choice],
+                        "answer": this.question.answer,
+                        "difficulty": this.question.difficulty,
+                        "choices": this.question.choices
+                    };
+                    this.attempts.push(thisAttempt);
                     this.sub.unsubscribe();
-                    this.timer = rxjs_Rx__WEBPACK_IMPORTED_MODULE_6__["Observable"].timer(1000, 1000);
-                    // subscribing to a observable returns a subscription object
-                    this.sub = this.timer.subscribe(function (t) { return _this.tickerFunc(t); });
                     this.totalSeconds = 15;
                     this.count++;
-                    this.fetchTestService.getNextQuestion(choice).subscribe(function (response) {
+                    this.evaluateNextQuestion(thisAttempt);
+                    this.fetchTestService.getQuestion(this.userDetails.topicName, this.pointer.level).subscribe(function (response) {
                         _this.question = response;
-                    }, function (error) {
-                        if (error.error == "Your test is completed") {
-                            _this.ngOnDestroy();
-                            _this.feedbackpage();
-                        }
+                        _this.choices = _this.question['choices'];
                     });
+                    this.timer = rxjs_Rx__WEBPACK_IMPORTED_MODULE_6__["Observable"].timer(1000, 1000);
+                    this.sub = this.timer.subscribe(function (t) { return _this.tickerFunc(t); });
+                    // 
                     this.choices = null;
                 };
                 FetchTestComponent.prototype.feedbackpage = function () {
@@ -3420,19 +3447,113 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                 FetchTestComponent.prototype.pad = function (number) {
                     return (number < 10 ? '0' : '') + number;
                 };
-                FetchTestComponent.prototype.endTest = function (choice) {
-                    var _this = this;
-                    choice == null ? 0 : choice;
-                    this.fetchTestService.getNextQuestion(choice + 4).subscribe(function (response) { }, function (error) {
-                        if (error.error == "Your test is completed") {
-                            _this.feedbackpage();
+                FetchTestComponent.prototype.endTest = function () {
+                    // this.fetchTestService.getNextQuestion(choice+4).subscribe(
+                    //   (response: Question) =>{},
+                    //   error => {
+                    //     this.calculateResult()
+                    //     if(error.error == "Your test is completed"){
+                    //       this.feedbackpage()
+                    //     }
+                    //   }
+                    // )
+                    this.sub.unsubscribe();
+                    this.completeTest();
+                    this.calculateResult();
+                    this.fetchTestService.sendAttempts(this.attempts, this.topicName).subscribe(function (res) { return console.log(res); });
+                    this.feedbackpage();
+                    this.ngOnDestroy();
+                };
+                FetchTestComponent.prototype.evaluateNextQuestion = function (attempt) {
+                    this.pointer.current++;
+                    if (attempt.response == attempt.answer) {
+                        this.pointer.correct++;
+                        if (this.pointer.level == 'E' && this.pointer.correct >= this.easyLimit) {
+                            this.pointer.level = 'M';
+                            this.pointer.current = 1;
+                        }
+                        else if (this.pointer.level == 'M' && this.pointer.correct >= this.mediumLimit) {
+                            this.pointer.level = 'H';
+                            this.pointer.current = 1;
+                        }
+                        else if (this.pointer.level == 'H' && this.pointer.correct >= this.hardLimit) {
+                            this.endTest();
+                        }
+                    }
+                    else {
+                        this.pointer.wrong++;
+                        if (this.pointer.level == 'E' && this.pointer.wrong >= this.easyLimit) {
+                            this.pointer.wrong++;
+                        }
+                    }
+                    if (this.pointer.current == 11) {
+                        if (this.pointer.level == 'E' && this.pointer.correct <= this.easyLimit) {
+                            this.endTest();
+                        }
+                        else if (this.pointer.level == 'M' && this.pointer.correct <= this.mediumLimit) {
+                            this.endTest();
+                        }
+                        else if (this.pointer.level == 'H' && this.pointer.correct <= this.hardLimit) {
+                            this.endTest();
+                        }
+                    }
+                };
+                FetchTestComponent.prototype.calculateResult = function () {
+                    var total = 0;
+                    var score = 0;
+                    var correct = 0;
+                    var wrong = 0;
+                    var totalEasy = 0;
+                    var correctEasy = 0;
+                    var totalMedium = 0;
+                    var correctMedium = 0;
+                    var totalHard = 0;
+                    var correctHard = 0;
+                    this.attempts.forEach(function (element) {
+                        total++;
+                        if (element.difficulty == "E") {
+                            totalEasy++;
+                            if (element.answer == element.response) {
+                                correctEasy++;
+                            }
+                        }
+                        else if (element.difficulty == "M") {
+                            totalMedium++;
+                            if (element.answer == element.response) {
+                                correctMedium++;
+                            }
+                        }
+                        else if (element.difficulty == "H") {
+                            totalHard++;
+                            if (element.answer == element.response) {
+                                correctHard++;
+                            }
                         }
                     });
+                    totalHard == 0 ? totalHard = 1 : totalHard;
+                    totalMedium == 0 ? totalMedium = 1 : totalMedium;
+                    score = ((correctEasy / totalEasy) * 30) + ((correctMedium / totalMedium) * 30) + ((correctHard / totalHard) * 40);
+                    correct = correctEasy + correctMedium + correctHard;
+                    wrong = total - correct;
+                    var result = {
+                        "id": this.userDetails.id,
+                        "empId": this.userDetails.userId,
+                        "topicId": this.userDetails.topicId,
+                        "testId": this.userDetails.testId,
+                        "empName": this.userDetails.userName,
+                        "topicName": this.userDetails.topicName,
+                        "score": score,
+                        "correct": correct,
+                        "wrong": wrong,
+                        "attempts": this.attempts
+                    };
+                    this.fetchTestService.postResult(result).subscribe();
+                };
+                FetchTestComponent.prototype.completeTest = function () {
+                    this.fetchTestService.completeTest(this.userDetails).subscribe();
                 };
                 FetchTestComponent.prototype.ngOnDestroy = function () {
                     clearInterval(this.timer);
-                    //  console.log("Destroy timer");
-                    // unsubscribe here
                     this.sub.unsubscribe();
                 };
                 return FetchTestComponent;
@@ -3695,9 +3816,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     return {
                         createdAt: "2019-12-03T08:59:38.559+0000",
                         id: "5de623face226315ff90d5f5",
+                        testId: "dummy-test-01",
                         status: "N",
                         topicId: "5dd37eeed2dfaaa776485bee",
-                        topicName: "java programming language",
+                        topicName: "java_programming_language",
                         userEmail: "aayush123@gmail.com",
                         userId: "5dca397c27670ed5007b7830",
                         userName: "aayush",
@@ -3773,7 +3895,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                 function FetchTestService(http) {
                     this.http = http;
                     this.URLprefix = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].employeeURLprefix;
-                    this.topic = "java";
                 }
                 FetchTestService.prototype.getFirstQuestion = function (userDetails) {
                     //console.log(userDetails);
@@ -3792,6 +3913,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                 FetchTestService.prototype.getNextQuestion = function (choice) {
                     return this.http.post(this.URLprefix + '/test', choice);
                 };
+                FetchTestService.prototype.postResult = function (result) {
+                    console.log("here");
+                    return this.http.post(this.URLprefix + '/result', result);
+                };
+                FetchTestService.prototype.getQuestion = function (topicName, difficulty) {
+                    return this.http.get(this.URLprefix + "/test?topic=" + topicName + "&difficulty=" + difficulty);
+                };
+                FetchTestService.prototype.sendAttempts = function (attempts, topic) {
+                    return this.http.post(this.URLprefix + "/modify?topic=" + topic, attempts);
+                };
+                FetchTestService.prototype.completeTest = function (userDetails) {
+                    return this.http.post(this.URLprefix + "/complete", userDetails);
+                };
                 return FetchTestService;
             }());
             FetchTestService.ctorParameters = function () { return [
@@ -3802,84 +3936,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     providedIn: 'root'
                 })
             ], FetchTestService);
-            /***/ 
-        }),
-        /***/ "./src/app/employee-module/service/score.service.ts": 
-        /*!**********************************************************!*\
-          !*** ./src/app/employee-module/service/score.service.ts ***!
-          \**********************************************************/
-        /*! exports provided: ScoreService */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScoreService", function () { return ScoreService; });
-            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-            /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
-            var ScoreService = /** @class */ (function () {
-                function ScoreService(http) {
-                    this.http = http;
-                    this.URLprefix = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].employeeURLprefix;
-                    this.url = 'http://localhost:8083/quiz/test/submit';
-                    this.httpOptions = {
-                        headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
-                            'Content-Type': 'application/json'
-                        })
-                    };
-                    this.count = 0;
-                }
-                ScoreService.prototype.postScore = function (c, i) {
-                    var scoreJSON = {
-                        correct: c,
-                        incorrect: i
-                    };
-                    return this.http.post(this.URLprefix + '/questions', scoreJSON, this.httpOptions);
-                };
-                ScoreService.prototype.postScore2 = function (testResult) {
-                    return this.http.post(this.url, testResult);
-                };
-                ScoreService.prototype.calculateCorrectAnswers = function (resultList) {
-                    for (var i = 0; i < resultList.length; i++) {
-                        if (resultList[i].userResponse) {
-                            this.count = this.count + 1;
-                        }
-                    }
-                    return this.count;
-                };
-                ScoreService.prototype.calculateScore = function (resultList, questionList) {
-                    var score = 0;
-                    for (var i = 0; i < resultList.length; i++) {
-                        if (resultList[i].userResponse) {
-                            for (var j = 0; j < questionList.length; j++) {
-                                if (questionList[j].id == resultList[i].id) {
-                                    score = score + questionList[j].weight;
-                                }
-                            }
-                        }
-                    }
-                    return score;
-                };
-                ScoreService.prototype.calculatePercentage = function (score, questionList) {
-                    var maxScore = 0;
-                    var percentage;
-                    for (var i = 0; i < questionList.length; i++) {
-                        maxScore = maxScore + questionList[i].weight;
-                    }
-                    //console.log("max score is ",maxScore);
-                    percentage = (score / maxScore) * 100;
-                    return percentage;
-                };
-                return ScoreService;
-            }());
-            ScoreService.ctorParameters = function () { return [
-                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-            ]; };
-            ScoreService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-                    providedIn: 'root'
-                })
-            ], ScoreService);
             /***/ 
         }),
         /***/ "./src/app/employee-module/service/topic.service.ts": 
@@ -4033,13 +4089,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
             /* harmony import */ var _service_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/data.service */ "./src/app/employee-module/service/data.service.ts");
             /* harmony import */ var _service_topic_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service/topic.service */ "./src/app/employee-module/service/topic.service.ts");
-            /* harmony import */ var _service_score_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../service/score.service */ "./src/app/employee-module/service/score.service.ts");
             var TestPageComponent = /** @class */ (function () {
-                function TestPageComponent(data, s, r, score) {
+                function TestPageComponent(data, s, r) {
                     this.data = data;
                     this.s = s;
                     this.r = r;
-                    this.score = score;
                     //ngModule for two way binding
                     this.answerChoices = [];
                     this.topic = "java";
@@ -4080,21 +4134,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                         }
                     }
                     //Posts score json
-                    this.score.postScore(this.correct, this.incorrect).subscribe();
-                    var scoreObj = {
-                        correct: this.correct,
-                        incorrect: this.incorrect
-                    };
-                    this.data.changeScore(scoreObj);
-                    this.r.navigate(['/thankyou']);
                 };
                 return TestPageComponent;
             }());
             TestPageComponent.ctorParameters = function () { return [
                 { type: _service_data_service__WEBPACK_IMPORTED_MODULE_3__["DataService"] },
                 { type: _service_topic_service__WEBPACK_IMPORTED_MODULE_4__["TopicService"] },
-                { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
-                { type: _service_score_service__WEBPACK_IMPORTED_MODULE_5__["ScoreService"] }
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
             ]; };
             TestPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

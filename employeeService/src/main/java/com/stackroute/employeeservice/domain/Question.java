@@ -105,4 +105,8 @@ public class Question {
     public void setTotalOccurrences(int totalOccurrences) {
         this.totalOccurrences = totalOccurrences;
     }
+
+    public void incrementCorrect(){this.correctAttempts++;}
+    public void incrementTotal(){this.totalOccurrences++;}
+    public double getCTRatio(){return  this.correctAttempts/Double.valueOf(this.totalOccurrences);}
 }
