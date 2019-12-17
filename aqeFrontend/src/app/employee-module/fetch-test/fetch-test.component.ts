@@ -66,7 +66,7 @@ export class FetchTestComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.userDetails = this.dataService.getDummyDetails();
+    this.userDetails = this.dataService.getTestUserDetails();
     // this.userDummyDetails = this.dataService.getDummyDetails();
     this.topicName = this.userDetails.topicName;
   
