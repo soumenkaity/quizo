@@ -67,6 +67,7 @@ export class FetchTestComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.userDetails = this.dataService.getTestUserDetails();
+    console.log(this.userDetails);
     // this.userDummyDetails = this.dataService.getDummyDetails();
     this.topicName = this.userDetails.topicName;
   
@@ -109,7 +110,6 @@ export class FetchTestComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe()
     this.totalSeconds = 5;
     this.count++
-    this.toasterService.success(this.pointer.level);
     this.fetchTestService.getQuestion(this.userDetails.topicName,this.pointer.level).subscribe(
       response=>{
         this.question = response;
@@ -246,6 +246,9 @@ export class FetchTestComponent implements OnInit, OnDestroy {
       "attempts": this.attempts
     }
     this.fetchTestService.postResult(result).subscribe();
+  }
+  completeTest(){
+    this.fetchTestService.completeTest(this.userDetails).subscribe();
   }
   ngOnDestroy(): void {
    clearInterval(this.timer);

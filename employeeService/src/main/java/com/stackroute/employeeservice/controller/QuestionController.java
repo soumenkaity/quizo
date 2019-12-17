@@ -3,6 +3,7 @@ package com.stackroute.employeeservice.controller;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.stackroute.employeeservice.domain.Attempt;
 import com.stackroute.employeeservice.domain.Question;
+import com.stackroute.employeeservice.domain.TestUser;
 import com.stackroute.employeeservice.exception.QuestionNotFoundException;
 import com.stackroute.employeeservice.service.FetchQuestionsService;
 import com.stackroute.employeeservice.service.FetchTopicService;
@@ -59,5 +60,10 @@ public class QuestionController {
     @PostMapping("/modify")
     public ResponseEntity saveQuestionAfterTest(@RequestParam String topic,@RequestBody List<Attempt> answers){
       return new ResponseEntity(questionService.saveQuestionAfterTest(topic,answers),HttpStatus.OK);
+    }
+
+    @PostMapping("/complete")
+    public ResponseEntity completeTest(@RequestBody TestUser testUser){
+      return new ResponseEntity(questionService.saveTestDetails(testUser),HttpStatus.OK);
     }
 }

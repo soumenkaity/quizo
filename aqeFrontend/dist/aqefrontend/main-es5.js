@@ -3383,6 +3383,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                 FetchTestComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this.userDetails = this.dataService.getTestUserDetails();
+                    console.log(this.userDetails);
                     // this.userDummyDetails = this.dataService.getDummyDetails();
                     this.topicName = this.userDetails.topicName;
                     this.fetchTestService.getQuestion(this.userDetails.topicName, 'E').subscribe(function (response) {
@@ -3420,7 +3421,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     this.sub.unsubscribe();
                     this.totalSeconds = 5;
                     this.count++;
-                    this.toasterService.success(this.pointer.level);
                     this.fetchTestService.getQuestion(this.userDetails.topicName, this.pointer.level).subscribe(function (response) {
                         _this.question = response;
                         _this.choices = _this.question['choices'];
@@ -3548,6 +3548,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                         "attempts": this.attempts
                     };
                     this.fetchTestService.postResult(result).subscribe();
+                };
+                FetchTestComponent.prototype.completeTest = function () {
+                    this.fetchTestService.completeTest(this.userDetails).subscribe();
                 };
                 FetchTestComponent.prototype.ngOnDestroy = function () {
                     clearInterval(this.timer);
@@ -3919,6 +3922,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                 };
                 FetchTestService.prototype.sendAttempts = function (attempts, topic) {
                     return this.http.post(this.URLprefix + "/modify?topic=" + topic, attempts);
+                };
+                FetchTestService.prototype.completeTest = function (userDetails) {
+                    return this.http.post(this.URLprefix + "/complete", userDetails);
                 };
                 return FetchTestService;
             }());

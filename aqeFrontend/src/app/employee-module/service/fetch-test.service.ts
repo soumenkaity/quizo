@@ -41,4 +41,7 @@ export class FetchTestService {
   sendAttempts(attempts,topic){
     return this.http.post(this.URLprefix+"/modify?topic="+topic,attempts);
   }
+  completeTest(userDetails){
+    return this.http.post(this.URLprefix+"/complete",userDetails);
+  }
 }

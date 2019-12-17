@@ -3740,6 +3740,7 @@ let FetchTestComponent = class FetchTestComponent {
     }
     ngOnInit() {
         this.userDetails = this.dataService.getTestUserDetails();
+        console.log(this.userDetails);
         // this.userDummyDetails = this.dataService.getDummyDetails();
         this.topicName = this.userDetails.topicName;
         this.fetchTestService.getQuestion(this.userDetails.topicName, 'E').subscribe(response => {
@@ -3776,7 +3777,6 @@ let FetchTestComponent = class FetchTestComponent {
         this.sub.unsubscribe();
         this.totalSeconds = 5;
         this.count++;
-        this.toasterService.success(this.pointer.level);
         this.fetchTestService.getQuestion(this.userDetails.topicName, this.pointer.level).subscribe(response => {
             this.question = response;
             this.choices = this.question['choices'];
@@ -3904,6 +3904,9 @@ let FetchTestComponent = class FetchTestComponent {
             "attempts": this.attempts
         };
         this.fetchTestService.postResult(result).subscribe();
+    }
+    completeTest() {
+        this.fetchTestService.completeTest(this.userDetails).subscribe();
     }
     ngOnDestroy() {
         clearInterval(this.timer);
@@ -4323,6 +4326,9 @@ let FetchTestService = class FetchTestService {
     }
     sendAttempts(attempts, topic) {
         return this.http.post(this.URLprefix + "/modify?topic=" + topic, attempts);
+    }
+    completeTest(userDetails) {
+        return this.http.post(this.URLprefix + "/complete", userDetails);
     }
 };
 FetchTestService.ctorParameters = () => [

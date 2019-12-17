@@ -4,6 +4,7 @@ package com.stackroute.employeeservice.service;
 import com.mongodb.MongoClient;
 import com.stackroute.employeeservice.domain.Attempt;
 import com.stackroute.employeeservice.domain.Question;
+import com.stackroute.employeeservice.domain.TestUser;
 import com.stackroute.employeeservice.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -66,6 +67,7 @@ public class QuestionService {
   }
 
   public List<Question> saveQuestionAfterTest(String topicName,List<Attempt> answers){
+
     List<Question> questions = new ArrayList<Question>();
     for(Attempt attempt: answers ){
       Question question = mongoOperations.findById(attempt.getQuestionId(),Question.class,topicName);
@@ -88,5 +90,11 @@ public class QuestionService {
     }
 
     return questions;
+  }
+
+  public TestUser saveTestDetails(TestUser testUser){
+  testUser.setStatus("C");
+  mongoOperations.save(testUser,"testUser");
+  return testUser;
   }
 }
