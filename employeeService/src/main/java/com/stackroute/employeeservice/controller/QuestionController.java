@@ -40,9 +40,9 @@ public class QuestionController {
     public ResponseEntity<?> getNextQuestion(@RequestBody String response) throws QuestionNotFoundException{
         ResponseEntity responseEntity;
 
-        Question question = fetchQuestionsService.getNextQuestion(Integer.parseInt(response));
+        List<Object> question = fetchQuestionsService.getNextQuestion(Integer.parseInt(response));
         if(question != null)
-            responseEntity = new ResponseEntity<Question>(question, HttpStatus.OK);
+            responseEntity = new ResponseEntity(question, HttpStatus.OK);
         else
             responseEntity = new ResponseEntity<String>("Your test is completed", HttpStatus.NOT_FOUND);
         return responseEntity;
