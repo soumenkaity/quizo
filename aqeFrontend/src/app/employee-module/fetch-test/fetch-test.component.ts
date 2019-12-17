@@ -108,7 +108,7 @@ export class FetchTestComponent implements OnInit, OnDestroy {
     console.log(this.attempts);
     this.evaluateNextQuestion(thisAttempt);
     this.sub.unsubscribe()
-    this.totalSeconds = 5;
+    this.totalSeconds = 15;
     this.count++
     this.fetchTestService.getQuestion(this.userDetails.topicName,this.pointer.level).subscribe(
       response=>{
@@ -157,6 +157,7 @@ export class FetchTestComponent implements OnInit, OnDestroy {
     //   }
     // )
     this.sub.unsubscribe()
+    this.completeTest();
     this.calculateResult();
     this.fetchTestService.sendAttempts(this.attempts,this.topicName).subscribe(res=>console.log(res))
     this.feedbackpage();

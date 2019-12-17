@@ -3775,7 +3775,7 @@ let FetchTestComponent = class FetchTestComponent {
         console.log(this.attempts);
         this.evaluateNextQuestion(thisAttempt);
         this.sub.unsubscribe();
-        this.totalSeconds = 5;
+        this.totalSeconds = 15;
         this.count++;
         this.fetchTestService.getQuestion(this.userDetails.topicName, this.pointer.level).subscribe(response => {
             this.question = response;
@@ -3815,6 +3815,7 @@ let FetchTestComponent = class FetchTestComponent {
         //   }
         // )
         this.sub.unsubscribe();
+        this.completeTest();
         this.calculateResult();
         this.fetchTestService.sendAttempts(this.attempts, this.topicName).subscribe(res => console.log(res));
         this.feedbackpage();

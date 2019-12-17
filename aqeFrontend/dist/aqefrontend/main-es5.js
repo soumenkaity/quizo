@@ -3419,7 +3419,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     console.log(this.attempts);
                     this.evaluateNextQuestion(thisAttempt);
                     this.sub.unsubscribe();
-                    this.totalSeconds = 5;
+                    this.totalSeconds = 15;
                     this.count++;
                     this.fetchTestService.getQuestion(this.userDetails.topicName, this.pointer.level).subscribe(function (response) {
                         _this.question = response;
@@ -3459,6 +3459,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     //   }
                     // )
                     this.sub.unsubscribe();
+                    this.completeTest();
                     this.calculateResult();
                     this.fetchTestService.sendAttempts(this.attempts, this.topicName).subscribe(function (res) { return console.log(res); });
                     this.feedbackpage();
