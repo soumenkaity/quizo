@@ -6719,7 +6719,7 @@ const environment = {
     production: false,
     HrURLprefix: 'https://quizo.stackroute.io:8099/hrService',
     employeeURLprefix: 'https://quizo.stackroute.io:8099/employeeService',
-    adminURLprefix: 'http://quizo.stackroute.io:8082/admin',
+    adminURLprefix: 'http://localhost:8082/admin',
     authURLprefix: 'https://quizo.stackroute.io:8099/loginService/auth',
 };
 /*
